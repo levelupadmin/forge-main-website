@@ -10,7 +10,7 @@ const faqs = [
   {
     question: 'Who is the Forge for?',
     answer:
-      'the Forge is for aspiring filmmakers, writers, content creators, and creative professionals aged 18–30 who want to build real-world skills through immersive, hands-on programs. Whether you're a beginner or have some experience, our programs are designed to accelerate your creative career.',
+      'the Forge is for aspiring filmmakers, writers, content creators, and creative professionals aged 18-30 who want to build real-world skills through immersive, hands-on programs. Whether you are a beginner or have some experience, our programs are designed to accelerate your creative career.',
   },
   {
     question: 'How long are the programs?',
