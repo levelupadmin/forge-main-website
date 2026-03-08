@@ -241,7 +241,8 @@ export default function Footer() {
               Get in touch
             </div>
             <a
-              href="mailto:hello@theforge.in"
+            <a
+              href="mailto:forge@leveluplearning.in"
               style={{
                 color: 'rgba(255,255,255,0.5)',
                 textDecoration: 'none',
@@ -257,7 +258,28 @@ export default function Footer() {
                 (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
               }}
             >
-              hello@theforge.in
+              forge@leveluplearning.in
+            </a>
+            <a
+              href="https://wa.me/919791520177"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                textDecoration: 'none',
+                fontSize: 14,
+                display: 'block',
+                marginBottom: 12,
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLAnchorElement).style.color = 'var(--forge-yellow)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
+              }}
+            >
+              +91 97915 20177
             </a>
             <button
               onClick={scrollToTop}
