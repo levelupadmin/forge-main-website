@@ -9,7 +9,7 @@ const leftLinks: NavLink[] = [
   { label: 'About', href: '#about' },
 ];
 
-const rightLinks = [
+const rightLinks: NavLink[] = [
   { label: 'Community', href: '/community', isRoute: true },
   { label: 'Careers', href: '#careers' },
   { label: 'Be a Mentor', href: '#mentors' },
