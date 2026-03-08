@@ -3,7 +3,7 @@ export default function HeroBar() {
     <section style={{
       width: '100%',
       background: '#FFBC3B',
-      padding: '12px 0',
+      padding: '10px 0',
       textAlign: 'center',
       borderRadius: '0 0 24px 24px',
       marginTop: '-24px',
@@ -25,15 +25,14 @@ export default function HeroBar() {
         }}>
           From the House of
         </span>
-        {/* LevelUp Learning logo placeholder — replace with actual logo */}
-        <span style={{
-          fontSize: 'clamp(12px, 1.8vw, 15px)',
-          fontWeight: 800,
-          color: '#1a1a1a',
-          letterSpacing: -0.5,
-        }}>
-          LevelUp Learning
-        </span>
+        <img
+          src="/images/levelup-learning-logo.png"
+          alt="LevelUp Learning"
+          style={{
+            height: 'clamp(18px, 2.5vw, 26px)',
+            objectFit: 'contain',
+          }}
+        />
         <span style={{
           width: 4,
           height: 4,
