@@ -136,21 +136,21 @@ export default function Ethos() {
             );
           })}
 
-          {/* Center Forge logo — white, transparent background */}
-          <image
-            href="/images/forge-logo.png"
-            x={cx - 50}
-            y={cy - 20}
-            width="100"
-            height="40"
+          {/* Center "the Forge" text */}
+          <text
+            x={cx}
+            y={cy}
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#FFBC3B"
+            fontWeight="700"
+            fontSize="22"
+            letterSpacing="0.05em"
             style={{
               opacity: centerLabelOpacity,
               transition: 'opacity 1s ease-in-out',
-              filter: 'brightness(0) invert(1)',
-              mixBlendMode: 'screen',
             }}
-            preserveAspectRatio="xMidYMid meet"
-          />
+          >the Forge</text>
         </svg>
 
         {/* Narrative text */}
