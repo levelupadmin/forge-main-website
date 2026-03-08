@@ -113,13 +113,14 @@ export default function GlobalReach() {
       }}>
         <Suspense fallback={null}>
           <Canvas
-            camera={{ position: [0, 0, 5], fov: 50 }}
+            camera={{ position: [0, 1, 5], fov: 45 }}
             style={{ background: 'transparent' }}
             gl={{ alpha: true, antialias: true }}
           >
-            <ambientLight intensity={0.8} />
-            <directionalLight position={[5, 3, 5]} intensity={0.5} />
-            <directionalLight position={[-3, 2, -3]} intensity={0.2} />
+            <ambientLight intensity={1.2} />
+            <directionalLight position={[5, 5, 5]} intensity={0.8} />
+            <directionalLight position={[-5, 3, -2]} intensity={0.4} />
+            <directionalLight position={[0, -3, 5]} intensity={0.2} />
             <Globe />
           </Canvas>
         </Suspense>
