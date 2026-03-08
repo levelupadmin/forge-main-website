@@ -114,7 +114,7 @@ export default function Navigation() {
               />
             </button>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
               {rightLinks.map(link => (
                 <button
                   key={link.href}
