@@ -10,7 +10,7 @@ export default function Testimonials() {
   return (
     <section id="stories" style={{
       background: 'var(--forge-cream)',
-      padding: 'clamp(80px, 12vw, 140px) 0',
+      padding: 'clamp(48px, 6vw, 80px) 0',
     }}>
       <div style={{ textAlign: 'center', marginBottom: 56, padding: '0 24px' }}>
         <div className="forge-subheading">Hear it from</div>

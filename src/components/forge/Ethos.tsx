@@ -70,7 +70,7 @@ export default function Ethos() {
 
       <div style={{
         position: 'relative', zIndex: 1,
-        padding: 'clamp(48px, 8vw, 100px) clamp(24px, 5vw, 80px)',
+        padding: 'clamp(40px, 6vw, 72px) clamp(24px, 5vw, 80px)',
         textAlign: 'center',
         display: 'flex', flexDirection: 'column', alignItems: 'center',
       }}>
