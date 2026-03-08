@@ -36,8 +36,10 @@ export default function Mentors() {
       <div ref={scrollRef} className="forge-scroll" style={{
         display: 'flex',
         gap: 20,
+        marginLeft: 'calc(-1 * clamp(24px, 5vw, 80px))',
+        marginRight: 'calc(-1 * clamp(24px, 5vw, 80px))',
         paddingLeft: 'clamp(24px, 5vw, 80px)',
-        paddingRight: 80,
+        paddingRight: 'clamp(24px, 5vw, 80px)',
         alignItems: 'flex-end',
       }}>
         {mentors.map((mentor, i) => {
