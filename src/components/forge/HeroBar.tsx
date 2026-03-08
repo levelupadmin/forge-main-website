@@ -3,12 +3,12 @@ export default function HeroBar() {
     <section style={{
       width: '100%',
       background: '#FFBC3B',
-      padding: '10px 0',
+      padding: '40px 0 10px',
       textAlign: 'center',
       borderRadius: '0 0 24px 24px',
-      marginTop: '-24px',
+      marginTop: '-32px',
       position: 'relative',
-      zIndex: 10,
+      zIndex: 5,
     }}>
       <div style={{
         display: 'flex',
