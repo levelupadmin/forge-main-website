@@ -322,10 +322,11 @@ export default function TrustedAcrossBorders() {
     }}>
       <style>{`
         @keyframes pulse-dot {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 0.7; transform: scale(1.4); }
+          0% { transform: scale(1); opacity: 0.6; }
+          50% { transform: scale(1.6); opacity: 0; }
+          100% { transform: scale(1); opacity: 0; }
         }
-        .pulse-marker { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; }
+        .pulse-ring { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; }
       `}</style>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <h2
