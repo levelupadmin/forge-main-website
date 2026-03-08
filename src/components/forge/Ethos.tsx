@@ -10,9 +10,9 @@ const narrativeSteps = [
 ];
 
 const circleConfigs = [
-  { label: 'Learning', scatterX: -160, scatterY: -40, finalX: -75, finalY: -60 },
-  { label: 'Travel', scatterX: 160, scatterY: -40, finalX: 75, finalY: -60 },
-  { label: 'Community', scatterX: 0, scatterY: 140, finalX: 0, finalY: 75 },
+  { label: 'Learning', scatterX: -140, scatterY: -50, finalX: -65, finalY: -50 },
+  { label: 'Travel', scatterX: 140, scatterY: -50, finalX: 65, finalY: -50 },
+  { label: 'Community', scatterX: 0, scatterY: 120, finalX: 0, finalY: 65 },
 ];
 
 export default function Ethos() {
@@ -33,6 +33,9 @@ export default function Ethos() {
     return () => timers.forEach(clearTimeout);
   }, [isVisible]);
 
+  const cx = 350, cy = 350, r = 110;
+  const circumference = 2 * Math.PI * r;
+
   const getTranslate = (idx: number) => {
     const c = circleConfigs[idx];
     const appearAt = [1, 2, 4][idx];
@@ -47,9 +50,6 @@ export default function Ethos() {
   const centerLabelOpacity = stage >= 7 ? 1 : 0;
   const finalOpacity = stage >= 7 ? 1 : 0;
   const narrativeIdx = stage >= 7 ? -1 : stage >= 5 ? 4 : stage >= 4 ? 3 : stage >= 3 ? 2 : stage >= 2 ? 1 : stage >= 1 ? 0 : -1;
-
-  const cx = 250, cy = 250, r = 140;
-  const circumference = 2 * Math.PI * r;
 
   return (
     <section ref={ref} style={{
@@ -74,7 +74,7 @@ export default function Ethos() {
         textAlign: 'center',
         display: 'flex', flexDirection: 'column', alignItems: 'center',
       }}>
-        {/* Title — standardized */}
+        {/* Title */}
         <div style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -86,8 +86,8 @@ export default function Ethos() {
         </div>
 
         {/* SVG Venn Diagram */}
-        <svg viewBox="0 0 500 500" style={{
-          width: 'clamp(360px, 50vw, 560px)', height: 'auto',
+        <svg viewBox="0 0 700 700" style={{
+          width: 'clamp(320px, 45vw, 500px)', height: 'auto',
           marginBottom: 16,
         }}>
           <defs>
@@ -105,7 +105,7 @@ export default function Ethos() {
             </filter>
           </defs>
 
-          <circle cx={cx} cy={cy} r="80" fill="url(#forge-glow-ethos)" filter="url(#glow-blur)"
+          <circle cx={cx} cy={cy} r="70" fill="url(#forge-glow-ethos)" filter="url(#glow-blur)"
             style={{ opacity: glowOpacity, transition: 'opacity 1s ease' }} />
 
           {circleConfigs.map((c, idx) => {
@@ -122,13 +122,13 @@ export default function Ethos() {
                 <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,188,59,0.15)" strokeWidth="3"
                   style={{ strokeDasharray: circumference, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease', filter: 'blur(4px)' }} />
                 <text
-                  x={cx + (idx === 0 ? -70 : idx === 1 ? 70 : 0)}
-                  y={cy + (idx === 2 ? 70 : -20)}
+                  x={cx + (idx === 0 ? -55 : idx === 1 ? 55 : 0)}
+                  y={cy + (idx === 2 ? 55 : -15)}
                   textAnchor="middle"
                   dominantBaseline="middle"
                   fill="white"
                   fontWeight="600"
-                  fontSize="20"
+                  fontSize="18"
                   letterSpacing="0.04em"
                   style={{ opacity: 0.9, transition: 'opacity 0.6s ease' }}
                 >{c.label}</text>
@@ -136,12 +136,19 @@ export default function Ethos() {
             );
           })}
 
-          <text x={cx} y={cy - 12} textAnchor="middle" dominantBaseline="middle"
-            fill="rgba(255,255,255,0.7)" fontWeight="300" fontSize="16" letterSpacing="0.1em"
-            style={{ opacity: centerLabelOpacity, transition: 'opacity 0.8s ease' }}>the</text>
-          <text x={cx} y={cy + 16} textAnchor="middle" dominantBaseline="middle"
-            fill="#FFBC3B" fontWeight="700" fontSize="28" letterSpacing="0.02em"
-            style={{ opacity: centerLabelOpacity, transition: 'opacity 0.8s ease' }}>Forge</text>
+          {/* Center Forge logo (white) */}
+          <image
+            href="/images/forge-logo.png"
+            x={cx - 40}
+            y={cy - 16}
+            width="80"
+            height="32"
+            style={{
+              opacity: centerLabelOpacity,
+              transition: 'opacity 0.8s ease',
+              filter: 'brightness(0) invert(1)',
+            }}
+          />
         </svg>
 
         {/* Narrative text */}
