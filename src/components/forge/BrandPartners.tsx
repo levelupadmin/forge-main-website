@@ -109,20 +109,6 @@ export default function BrandPartners() {
               {activePartner.description}
             </p>
 
-            {/* Discount */}
-            {activePartner.discount && (
-              <div style={{
-                background: '#FFBC3B',
-                color: '#1a1a1a',
-                fontWeight: 600,
-                fontSize: 13,
-                padding: '8px 16px',
-                borderRadius: 8,
-                width: 'fit-content',
-              }}>
-                {activePartner.discount}
-              </div>
-            )}
           </div>
         </div>
       ) : (
