@@ -66,4 +66,14 @@ export const mentors: Mentor[] = [
       "Directed and produced masterclasses of Karthik Subbaraj, G Venket Ram, Anthony Gonsalvez",
     ],
   },
+  {
+    name: "Prakriti Madan",
+    designation: "Actor | Creator | Storyteller",
+    photo: "/images/mentors/prakriti.jpg",
+    highlights: [
+      "Popular actor and content creator with a massive social media following",
+      "Known for authentic storytelling and engaging digital content",
+      "Inspires thousands of aspiring creators through workshops and mentoring",
+    ],
+  },
 ];
