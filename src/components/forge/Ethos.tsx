@@ -10,9 +10,9 @@ const narrativeSteps = [
 ];
 
 const circleConfigs = [
-  { label: 'Filmmaking', scatterX: -160, scatterY: -40, finalX: -75, finalY: -60 },
-  { label: 'Travelling', scatterX: 160, scatterY: -40, finalX: 75, finalY: -60 },
-  { label: 'Making\nNew Friends', scatterX: 0, scatterY: 140, finalX: 0, finalY: 75 },
+  { label: 'Learning', scatterX: -160, scatterY: -40, finalX: -75, finalY: -60 },
+  { label: 'Travel', scatterX: 160, scatterY: -40, finalX: 75, finalY: -60 },
+  { label: 'Community', scatterX: 0, scatterY: 140, finalX: 0, finalY: 75 },
 ];
 
 export default function Ethos() {
@@ -108,7 +108,7 @@ export default function Ethos() {
         {/* SVG Venn Diagram — bigger circles */}
         <svg viewBox="0 0 500 500" style={{
           width: 'clamp(360px, 50vw, 560px)', height: 'auto',
-          marginBottom: 'clamp(8px, 1.5vw, 16px)',
+          marginBottom: 0,
         }}>
           <defs>
             <radialGradient id="forge-glow-ethos" cx="50%" cy="50%" r="50%">
@@ -169,7 +169,7 @@ export default function Ethos() {
         </svg>
 
         {/* Narrative text */}
-        <div style={{ position: 'relative', minHeight: 70, maxWidth: 640, marginBottom: 'clamp(8px, 1vw, 16px)' }}>
+        <div style={{ position: 'relative', minHeight: 60, maxWidth: 640, marginBottom: 4 }}>
           {narrativeSteps.map((text, i) => (
             <p key={i} style={{
               position: 'absolute', top: 0, left: 0, right: 0,
@@ -195,9 +195,9 @@ export default function Ethos() {
           lineHeight: 1.8, textAlign: 'center', fontWeight: 400,
         }}>
           We meet dreamers at the intersection of{' '}
-          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>filmmaking</span>,{' '}
+          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>learning</span>,{' '}
           <span style={{ color: '#FFBC3B', fontWeight: 700 }}>travel</span> and{' '}
-          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>making new friends</span>{' '}
+          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>community</span>{' '}
           — to enable them to become doers.
         </p>
       </div>
