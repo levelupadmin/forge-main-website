@@ -39,13 +39,13 @@ export default function Navigation() {
           gap: 0,
         }}>
           {/* Left links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, justifyContent: 'flex-end' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-end' }}>
             {leftLinks.map(link => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 className="forge-nav-link"
-                style={{ color: '#222', fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}
+                style={{ color: '#999', fontSize: 15, fontWeight: 400 }}
               >
                 {link.label}
               </button>
