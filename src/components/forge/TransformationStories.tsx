@@ -43,7 +43,7 @@ export default function TransformationStories() {
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
         textAlign: 'center',
         padding: '0 24px',
-        marginBottom: 48,
+        marginBottom: isMobile ? 48 : 64,
       }}>
         <div className="forge-subheading forge-subheading--light">Career Outcomes</div>
         <div className="forge-heading forge-heading--light" style={{
@@ -71,26 +71,127 @@ export default function TransformationStories() {
           ))}
         </div>
       ) : (
+        /* Desktop: Editorial two-column layout */
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 24,
-          maxWidth: 1200,
+          maxWidth: 1100,
           margin: '0 auto',
           padding: '0 clamp(24px, 5vw, 80px)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 80,
         }}>
           {transformations.map((t, i) => (
-            <div
-              key={i}
-              className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-              style={{ transitionDelay: `${200 + i * 150}ms` }}
-            >
-              <TransformationCard transformation={t} />
-            </div>
+            <EditorialStory key={i} transformation={t} isVisible={isVisible} index={i} reverse={i % 2 === 1} />
           ))}
         </div>
       )}
     </section>
+  );
+}
+
+function EditorialStory({ transformation, isVisible, index, reverse }: {
+  transformation: typeof transformations[0];
+  isVisible: boolean;
+  index: number;
+  reverse: boolean;
+}) {
+  return (
+    <div
+      className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+      style={{
+        display: 'flex',
+        flexDirection: reverse ? 'row-reverse' : 'row',
+        gap: 56,
+        alignItems: 'center',
+        transitionDelay: `${200 + index * 200}ms`,
+      }}
+    >
+      {/* Photo column */}
+      <div style={{
+        flex: '0 0 400px',
+        borderRadius: 20,
+        overflow: 'hidden',
+        position: 'relative',
+      }}>
+        <img
+          src={transformation.photo}
+          alt={transformation.name}
+          style={{
+            width: '100%',
+            height: 500,
+            objectFit: 'cover',
+            display: 'block',
+          }}
+        />
+        <div style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: 120,
+          background: 'linear-gradient(transparent, rgba(0,0,0,0.6))',
+        }} />
+      </div>
+
+      {/* Content column */}
+      <div style={{ flex: 1 }}>
+        <div style={{
+          fontSize: 11,
+          fontWeight: 700,
+          color: '#FFBC3B',
+          letterSpacing: '0.15em',
+          textTransform: 'uppercase',
+          marginBottom: 16,
+        }}>
+          {transformation.program}
+        </div>
+
+        <div style={{
+          fontWeight: 700,
+          fontSize: 32,
+          color: 'white',
+          marginBottom: 28,
+          lineHeight: 1.15,
+        }}>
+          {transformation.name}
+        </div>
+
+        {/* Journey narrative */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 16,
+          marginBottom: 32,
+          padding: '20px 24px',
+          background: 'rgba(255,255,255,0.04)',
+          borderRadius: 14,
+          border: '1px solid rgba(255,255,255,0.06)',
+        }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>Before</div>
+            <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>{transformation.before}</div>
+          </div>
+          <ArrowRight size={20} color="#FFBC3B" style={{ flexShrink: 0 }} />
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>After</div>
+            <div style={{ fontSize: 16, color: '#FFBC3B', fontWeight: 700 }}>{transformation.after}</div>
+          </div>
+        </div>
+
+        {/* Large editorial quote */}
+        <blockquote style={{
+          fontSize: 22,
+          fontStyle: 'italic',
+          color: 'rgba(255,255,255,0.6)',
+          lineHeight: 1.6,
+          margin: 0,
+          borderLeft: '3px solid #FFBC3B',
+          paddingLeft: 24,
+        }}>
+          "{transformation.quote}"
+        </blockquote>
+      </div>
+    </div>
   );
 }
 
@@ -113,7 +214,6 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
       (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
     }}
     >
-      {/* Photo */}
       <div style={{ position: 'relative', height: 240, overflow: 'hidden' }}>
         <img
           src={transformation.photo}
@@ -130,7 +230,6 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
         }} />
       </div>
 
-      {/* Content */}
       <div style={{ padding: '0 24px 28px' }}>
         <div style={{ fontWeight: 700, fontSize: 20, color: 'white', marginBottom: 4 }}>
           {transformation.name}
@@ -146,7 +245,6 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
           {transformation.program}
         </div>
 
-        {/* Before → After */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
@@ -167,7 +265,6 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
           </div>
         </div>
 
-        {/* Quote */}
         <p style={{
           fontSize: 14,
           fontStyle: 'italic',

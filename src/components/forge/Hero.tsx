@@ -52,6 +52,18 @@ export default function Hero() {
         textAlign: 'center',
         padding: '0 24px',
       }}>
+        {/* Emotional tagline */}
+        <p style={{
+          fontSize: 13,
+          fontWeight: 600,
+          textTransform: 'uppercase',
+          letterSpacing: '4px',
+          color: 'rgba(255,255,255,0.5)',
+          marginBottom: 20,
+        }}>
+          World's Most Immersive Creative Education Experience
+        </p>
+
         <h1 style={{
           fontWeight: 700,
           fontSize: 'clamp(36px, 9vw, 80px)',
@@ -65,6 +77,25 @@ export default function Hero() {
         <button className="forge-cta-light" onClick={scrollToExperiences}>
           Explore Experiences
         </button>
+      </div>
+
+      {/* Subtle trust stat line at very bottom */}
+      <div style={{
+        position: 'absolute',
+        bottom: 20,
+        left: 0,
+        right: 0,
+        textAlign: 'center',
+      }}>
+        <p style={{
+          fontSize: 12,
+          fontWeight: 500,
+          letterSpacing: '2px',
+          color: 'rgba(255,255,255,0.3)',
+          margin: 0,
+        }}>
+          600+ Alumni · 12 Countries · 25+ Editions
+        </p>
       </div>
     </section>
   );

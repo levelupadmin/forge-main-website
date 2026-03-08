@@ -48,6 +48,7 @@ const Index = () => {
       <TransformationStories />
       <NotSureCTA />
       <FAQ />
+      <ClosingStatement />
       <Footer />
     </div>
   );
