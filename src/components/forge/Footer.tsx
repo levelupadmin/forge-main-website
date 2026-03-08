@@ -241,7 +241,6 @@ export default function Footer() {
               Get in touch
             </div>
             <a
-            <a
               href="mailto:forge@leveluplearning.in"
               style={{
                 color: 'rgba(255,255,255,0.5)',
