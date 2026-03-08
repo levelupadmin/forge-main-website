@@ -109,28 +109,23 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
       style={{
         position: 'relative',
         transitionDelay: '500ms',
-        maxWidth: 800,
+        maxWidth: 1000,
         margin: '0 auto',
+        overflow: 'hidden',
+        borderRadius: 16,
+        background: 'linear-gradient(180deg, #E8ECF0 0%, #D5DBE1 100%)',
       }}
     >
       <ComposableMap
-        projection="geoOrthographic"
+        projection="geoMercator"
         projectionConfig={{
-          rotate: [-15, -50, 0],
-          scale: isMobile ? 280 : 380,
+          center: [40, 45],
+          scale: isMobile ? 280 : 450,
         }}
-        width={800}
-        height={800}
+        width={900}
+        height={isMobile ? 400 : 500}
         style={{ width: '100%', height: 'auto' }}
       >
-        <defs>
-          <radialGradient id="globe-bg" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#F8F9FA" />
-            <stop offset="85%" stopColor="#EEF0F2" />
-            <stop offset="100%" stopColor="#DEE2E6" />
-          </radialGradient>
-        </defs>
-        <circle cx={400} cy={400} r={380} fill="url(#globe-bg)" />
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map((geo) => {
@@ -140,14 +135,14 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={isHighlighted ? '#DC2626' : '#E2E2E2'}
-                  stroke="#fff"
-                  strokeWidth={0.5}
+                  fill={isHighlighted ? '#DC2626' : '#C8CDD3'}
+                  stroke="#B0B8C1"
+                  strokeWidth={0.4}
                   style={{
                     default: { outline: 'none' },
                     hover: {
                       outline: 'none',
-                      fill: isHighlighted ? '#B91C1C' : '#D5D5D5',
+                      fill: isHighlighted ? '#B91C1C' : '#B8BFC7',
                     },
                     pressed: { outline: 'none' },
                   }}
@@ -171,8 +166,8 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
         </Geographies>
         {PRESENCE_MARKERS.map((marker) => (
           <Marker key={marker.name} coordinates={marker.coordinates}>
-            <circle r={6} fill="#fff" stroke="#222" strokeWidth={2} />
-            <circle r={3} fill="#222" />
+            <circle r={7} fill="#fff" opacity={0.6} />
+            <circle r={5} fill="#fff" stroke="#999" strokeWidth={1.5} />
           </Marker>
         ))}
       </ComposableMap>
@@ -201,22 +196,21 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
       {/* Legend */}
       <div style={{
         position: 'absolute',
-        bottom: isMobile ? 8 : 24,
-        right: isMobile ? 8 : 24,
+        bottom: isMobile ? 8 : 16,
+        right: isMobile ? 8 : 16,
         display: 'flex',
-        flexDirection: 'column',
-        gap: 6,
+        gap: 16,
       }}>
         {[
           { color: '#DC2626', label: 'Sales Regions' },
-          { color: '#888', label: 'Company Presence' },
+          { color: '#999', label: 'Company Presence' },
         ].map((item) => (
-          <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
             <div style={{
-              width: 10, height: 10, borderRadius: '50%',
+              width: 8, height: 8, borderRadius: '50%',
               background: item.color,
             }} />
-            <span style={{ fontSize: 11, color: '#888', fontWeight: 500 }}>{item.label}</span>
+            <span style={{ fontSize: 10, color: '#666', fontWeight: 500 }}>{item.label}</span>
           </div>
         ))}
       </div>
