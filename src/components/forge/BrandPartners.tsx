@@ -9,7 +9,7 @@ export default function BrandPartners() {
 
   return (
     <section ref={ref} style={{
-      background: '#FFFFFF',
+      background: 'var(--forge-cream)',
       padding: 'clamp(64px, 10vw, 120px) clamp(24px, 5vw, 80px)',
     }}>
       {/* Header — standardized */}

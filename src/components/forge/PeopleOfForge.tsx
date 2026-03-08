@@ -12,7 +12,7 @@ export default function PeopleOfForge() {
 
   return (
     <section ref={ref} style={{
-      background: '#FFFFFF',
+      background: 'var(--forge-cream)',
       padding: '0 clamp(24px, 3vw, 40px)',
     }}>
       <div style={{
