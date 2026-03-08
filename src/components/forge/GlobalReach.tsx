@@ -186,7 +186,7 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
 
   return (
     <div style={{
-      background: 'rgba(240, 240, 240, 0.7)',
+      background: 'rgba(255, 255, 255, 0.06)',
       backdropFilter: 'blur(6px)',
       WebkitBackdropFilter: 'blur(6px)',
       borderRadius: 6,
@@ -198,7 +198,7 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
         fontSize: 9,
         fontWeight: 600,
         letterSpacing: '0.12em',
-        color: '#888888',
+        color: 'rgba(255,255,255,0.5)',
         fontFamily: "'Open Sauce One', sans-serif",
         textTransform: 'uppercase',
         marginBottom: 6,
@@ -208,7 +208,7 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
       <div style={{
         fontSize: 'clamp(36px, 5vw, 56px)',
         fontWeight: 700,
-        color: '#1a1a1a',
+        color: '#FFFFFF',
         lineHeight: 1,
         letterSpacing: -2,
         fontFamily: "'Open Sauce One', sans-serif",
@@ -236,7 +236,7 @@ export default function GlobalReach() {
 
   return (
     <section ref={ref} style={{
-      background: '#dcdcdc',
+      background: '#000000',
       position: 'relative',
       overflow: 'hidden',
       minHeight: isMobile ? 500 : 700,
@@ -292,7 +292,7 @@ export default function GlobalReach() {
             style={{
               fontSize: isMobile ? 'clamp(28px, 7vw, 40px)' : 'clamp(40px, 6vw, 64px)',
               fontWeight: 700,
-              color: '#1a1a1a',
+              color: '#FFFFFF',
               marginBottom: 12,
               lineHeight: 1.05,
               letterSpacing: -1,
@@ -332,7 +332,7 @@ export default function GlobalReach() {
         <div
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
-            background: 'rgba(240, 240, 240, 0.75)',
+            background: 'rgba(255, 255, 255, 0.06)',
             backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
             borderRadius: 10,
@@ -343,7 +343,7 @@ export default function GlobalReach() {
           <div style={{
             fontSize: isMobile ? 'clamp(20px, 5vw, 28px)' : 'clamp(24px, 3.5vw, 36px)',
             fontWeight: 700,
-            color: '#1a1a1a',
+            color: '#FFFFFF',
             marginBottom: 12,
             fontFamily: "'Open Sauce One', sans-serif",
           }}>
@@ -357,8 +357,8 @@ export default function GlobalReach() {
             {locations.map((loc) => (
               <span key={loc} style={{
                 fontSize: isMobile ? 12 : 14,
-                color: '#1a1a1a',
-                opacity: 0.5,
+                color: 'rgba(255,255,255,0.5)',
+                opacity: 1,
                 fontFamily: "'Open Sauce One', sans-serif",
                 lineHeight: 2,
               }}>
