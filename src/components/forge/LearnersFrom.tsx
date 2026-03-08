@@ -11,6 +11,7 @@ const row1 = [
   { name: 'Swiggy', logo: '/images/learners/swiggy.png' },
   { name: 'Zomato', logo: '/images/learners/zomato.png' },
   { name: 'American Express', logo: '/images/learners/amex.png' },
+  { name: 'Ashoka University', logo: '/images/learners/ashoka.png' },
 ];
 
 const row2 = [
