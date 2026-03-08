@@ -20,6 +20,7 @@ import Testimonials from '@/components/forge/Testimonials';
 import TransformationStories from '@/components/forge/TransformationStories';
 import NotSureCTA from '@/components/forge/NotSureCTA';
 import FAQ from '@/components/forge/FAQ';
+import ClosingStatement from '@/components/forge/ClosingStatement';
 import Footer from '@/components/forge/Footer';
 
 const Index = () => {
