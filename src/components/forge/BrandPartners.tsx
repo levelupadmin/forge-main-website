@@ -3,9 +3,7 @@ import { partners, partnerCategories } from '@/data/partners';
 
 export default function BrandPartners() {
   const [activeCategory, setActiveCategory] = useState<string>(partnerCategories[0]);
-
-  const filteredPartners = partners.filter(p => p.category === activeCategory);
-  const activePartner = filteredPartners[0] || partners[0];
+  const activePartner = partners.find(p => p.category === activeCategory) || partners[0];
 
   return (
     <section style={{
@@ -18,21 +16,21 @@ export default function BrandPartners() {
         <div style={{ fontWeight: 700, fontSize: 'clamp(40px, 6vw, 56px)', letterSpacing: -1 }}>the best.</div>
       </div>
 
-      {/* Three-column layout */}
+      {/* Main layout */}
       <div style={{
         display: 'flex',
         gap: 48,
         maxWidth: 1100,
         margin: '0 auto',
-        alignItems: 'flex-start',
+        alignItems: 'stretch',
         flexWrap: 'wrap',
       }}>
-        {/* Left — Categories */}
+        {/* Left — Category bento tabs */}
         <div style={{
-          flex: '0 0 180px',
+          flex: '0 0 200px',
           display: 'flex',
           flexDirection: 'column',
-          gap: 8,
+          gap: 12,
         }}>
           {partnerCategories.map((cat) => {
             const isActive = cat === activeCategory;
@@ -41,30 +39,19 @@ export default function BrandPartners() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 style={{
-                  background: 'none',
-                  border: 'none',
+                  background: isActive ? '#1a1a1a' : '#fff',
+                  color: isActive ? '#fff' : '#1a1a1a',
+                  border: '1.5px solid rgba(34,34,34,0.12)',
+                  borderRadius: 14,
+                  padding: '18px 22px',
+                  fontSize: 16,
+                  fontWeight: 600,
                   cursor: 'pointer',
                   textAlign: 'left',
-                  padding: '8px 0',
-                  fontSize: 17,
-                  fontWeight: isActive ? 700 : 400,
-                  color: isActive ? '#222' : 'rgba(34,34,34,0.4)',
-                  transition: 'color 0.3s ease, font-weight 0.3s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 10,
+                  transition: 'all 0.3s ease',
                   fontFamily: 'inherit',
                 }}
               >
-                {isActive && (
-                  <span style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: '50%',
-                    background: '#222',
-                    flexShrink: 0,
-                  }} />
-                )}
                 {cat}
               </button>
             );
@@ -95,7 +82,7 @@ export default function BrandPartners() {
           </div>
         </div>
 
-        {/* Right — Description + Logo */}
+        {/* Right — Description + Logo + Discount */}
         <div style={{
           flex: '1 1 260px',
           display: 'flex',
@@ -148,34 +135,6 @@ export default function BrandPartners() {
               width: 'fit-content',
             }}>
               {activePartner.discount}
-            </div>
-          )}
-
-          {/* Other partners in same category */}
-          {filteredPartners.length > 1 && (
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 8 }}>
-              {filteredPartners.map((p, i) => (
-                <div
-                  key={i}
-                  style={{
-                    border: `1.5px solid ${p.name === activePartner.name ? '#222' : 'rgba(34,34,34,0.12)'}`,
-                    borderRadius: 10,
-                    padding: '10px 16px',
-                    cursor: 'pointer',
-                    background: '#fff',
-                    height: 44,
-                    display: 'flex',
-                    alignItems: 'center',
-                    transition: 'border-color 0.2s ease',
-                  }}
-                >
-                  <img
-                    src={p.logo}
-                    alt={p.name}
-                    style={{ maxWidth: 80, maxHeight: '100%', objectFit: 'contain' }}
-                  />
-                </div>
-              ))}
             </div>
           )}
         </div>
