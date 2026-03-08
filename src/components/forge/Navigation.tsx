@@ -65,13 +65,13 @@ export default function Navigation() {
           </button>
 
           {/* Right links + CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, justifyContent: 'flex-start' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
             {rightLinks.map(link => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 className="forge-nav-link"
-                style={{ color: '#222', fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}
+                style={{ color: '#999', fontSize: 15, fontWeight: 400 }}
               >
                 {link.label}
               </button>
@@ -79,7 +79,7 @@ export default function Navigation() {
             <button
               onClick={() => scrollTo('#experiences')}
               className="forge-cta-dark"
-              style={{ padding: '8px 18px', fontSize: 12, margin: 0, whiteSpace: 'nowrap', borderRadius: 100 }}
+              style={{ padding: '10px 24px', fontSize: 14, margin: 0, whiteSpace: 'nowrap', borderRadius: 100 }}
             >
               Request an Invite
             </button>
