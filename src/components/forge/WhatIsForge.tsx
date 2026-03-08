@@ -10,13 +10,13 @@ const photos = [
 ];
 
 const descriptionWords = (
-  'A filmmaking bootcamp for aspiring filmmakers, writers, creators, and storytellers where in 12 days we teach you filmmaking hands-on, collaborate and network with 24 filmmakers and in the process create your very own shortfilm.'
+  'The Forge is an experiential learning residency that brings together travel, hands-on creation, and a like-minded community. Built for filmmakers, writers, founders, builders, artists, and creators. You learn by doing, collaborate with your peers, and leave with something you actually made.'
 ).split(' ');
 
-// Words that should be bold when highlighted
 const boldWords = new Set([
-  'filmmaking', 'aspiring', 'filmmakers,', 'writers,', 'creators,', 'storytellers',
-  '12', 'days', 'filmmakers', '24', 'shortfilm.'
+  'experiential', 'learning', 'residency', 'travel,', 'hands-on', 'creation,',
+  'community.', 'filmmakers,', 'writers,', 'founders,', 'builders,', 'artists,',
+  'creators.', 'doing,', 'peers,', 'made.'
 ]);
 
 export default function WhatIsForge() {
