@@ -9,7 +9,7 @@ export const mentors: Mentor[] = [
   {
     name: "Juhi Sharma",
     designation: "Director | Cinematographer",
-    photo: "/images/mentors/mentor-1.png",
+    photo: "/images/mentors/juhi.jpg",
     highlights: [
       "Emmy-nominated filmmaker with over 50 credits in documentaries, fiction, and branded content",
       "Director of Photography for Amazon Prime's \"Rainbow Rishta,\" India's first LGBTQIA+ docu-series",
@@ -29,7 +29,7 @@ export const mentors: Mentor[] = [
   {
     name: "Sharanya Chander",
     designation: "Cinematographer | Photographer",
-    photo: "/images/mentors/mentor-3.png",
+    photo: "/images/mentors/sharanya.jpg",
     highlights: [
       "Lead Director of Photography for Nayanthara: Beyond the Fairytale, produced by Netflix",
       "Assistant Cinematographer in Vakeel Saab, Super Deluxe, 2.0, Sita Ramam",
