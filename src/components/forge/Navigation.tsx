@@ -65,7 +65,7 @@ export default function Navigation() {
           </button>
 
           {/* Right links + CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, justifyContent: 'flex-start' }}>
             {rightLinks.map(link => (
               <button
                 key={link.href}
