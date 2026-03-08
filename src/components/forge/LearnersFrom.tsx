@@ -52,10 +52,10 @@ export default function LearnersFrom() {
     <section
       ref={ref}
       className="bg-white overflow-hidden"
-      style={{ padding: isMobile ? '40px 0' : '48px 0' }}
+      style={{ padding: isMobile ? '24px 0 16px' : '32px 0 20px' }}
     >
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
-        <p className="text-center mb-8" style={{
+        <p className="text-center mb-4" style={{
           fontSize: isMobile ? 12 : 14,
           fontWeight: 600,
           letterSpacing: '0.15em',
@@ -65,7 +65,7 @@ export default function LearnersFrom() {
           Our learners are from
         </p>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2">
           <MarqueeRow items={row1} direction="left" />
           <MarqueeRow items={row2} direction="right" />
         </div>
