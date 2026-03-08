@@ -83,22 +83,16 @@ export default function BrandPartners() {
 
             {/* Logo */}
             <div style={{
-              border: '1.5px solid rgba(34,34,34,0.15)',
-              borderRadius: 12,
-              padding: '12px 20px',
-              display: 'inline-flex',
-              alignItems: 'center',
+              display: 'flex',
               justifyContent: 'center',
-              width: 'fit-content',
-              height: 48,
-              background: '#fff',
+              padding: '8px 0',
             }}>
               <img
                 src={activePartner.logo}
                 alt={activePartner.name}
                 style={{
-                  maxWidth: 100,
-                  maxHeight: '100%',
+                  maxWidth: 160,
+                  maxHeight: 64,
                   objectFit: 'contain',
                 }}
               />
