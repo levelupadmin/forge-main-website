@@ -39,7 +39,7 @@ export default function Navigation() {
           gap: 0,
         }}>
           {/* Left links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-end' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, justifyContent: 'flex-end' }}>
             {leftLinks.map(link => (
               <button
                 key={link.href}
