@@ -29,7 +29,7 @@ export const mentors: Mentor[] = [
   {
     name: "Sharanya Chander",
     designation: "Cinematographer | Photographer",
-    photo: "/images/mentors/mentor-3.png",
+    photo: "/images/mentors/sharanya.jpg",
     highlights: [
       "Lead Director of Photography for Nayanthara: Beyond the Fairytale, produced by Netflix",
       "Assistant Cinematographer in Vakeel Saab, Super Deluxe, 2.0, Sita Ramam",
