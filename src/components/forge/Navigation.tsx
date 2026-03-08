@@ -71,7 +71,7 @@ export default function Navigation() {
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 className="forge-nav-link"
-                style={{ color: '#999', fontSize: 15, fontWeight: 400 }}
+                style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
               >
                 {link.label}
               </button>
