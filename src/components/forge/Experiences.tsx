@@ -8,7 +8,7 @@ export default function Experiences() {
 
   return (
     <section id="experiences" ref={ref} style={{
-      background: 'linear-gradient(180deg, #FFFFFF 0%, var(--forge-cream) 100%)',
+      background: 'var(--forge-cream)',
       padding: 'clamp(64px, 10vw, 120px) clamp(24px, 5vw, 80px)',
       position: 'relative',
     }}>
