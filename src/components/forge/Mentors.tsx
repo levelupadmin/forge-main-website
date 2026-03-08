@@ -63,7 +63,7 @@ export default function Mentors() {
   return (
     <section id="mentors" style={{
       background: 'var(--forge-cream)',
-      padding: 'clamp(80px, 12vw, 140px) 0',
+      padding: 'clamp(48px, 6vw, 80px) 0',
       overflow: 'hidden',
     }}>
       {/* Header — standardized */}

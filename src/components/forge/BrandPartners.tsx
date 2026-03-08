@@ -10,7 +10,7 @@ export default function BrandPartners() {
   return (
     <section ref={ref} style={{
       background: 'var(--forge-cream)',
-      padding: 'clamp(64px, 10vw, 120px) clamp(24px, 5vw, 80px)',
+      padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 80px)',
     }}>
       {/* Header — standardized */}
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: 64 }}>

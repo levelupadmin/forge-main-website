@@ -265,7 +265,7 @@ export default function GlobalReach() {
         zIndex: 1,
         maxWidth: 1280,
         margin: '0 auto',
-        padding: 'clamp(40px, 5vw, 72px) clamp(24px, 5vw, 80px)',
+        padding: 'clamp(40px, 5vw, 64px) clamp(24px, 5vw, 80px)',
         display: 'flex',
         flexDirection: 'column',
         minHeight: 700,
