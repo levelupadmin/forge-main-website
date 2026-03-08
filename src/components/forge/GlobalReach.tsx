@@ -23,25 +23,25 @@ function Globe() {
       <sphereGeometry args={[2.2, 64, 64]} />
       <meshStandardMaterial
         map={texture}
-        metalness={0.1}
-        roughness={0.85}
-        color="#b8c4d0"
+        metalness={0.05}
+        roughness={0.9}
+        color="#c8ccd0"
       />
     </mesh>
   );
 }
 
 const stats = [
-  { label: 'FOUNDED IN', number: 2019, suffix: '', color: '#222222' },
-  { label: 'DREAMERS', number: 600, suffix: '+', color: '#FFBC3B' },
-  { label: 'EDITIONS', number: 25, suffix: '+', color: '#222222' },
-  { label: 'CITIES EXPLORED', number: 10, suffix: '+', color: '#FFBC3B' },
+  { label: 'FOUNDED IN', number: 2019, suffix: '', suffixColor: '' },
+  { label: 'DREAMERS', number: 600, suffix: '+', suffixColor: '#E53935' },
+  { label: 'EDITIONS', number: 25, suffix: '+', suffixColor: '#E53935' },
+  { label: 'CITIES EXPLORED', number: 10, suffix: '+', suffixColor: '#E53935' },
 ];
 
 const locations = [
-  'India', 'Dubai', 'Bali', 'Thailand', 'Vietnam',
-  'Sri Lanka', 'Nepal', 'Singapore', 'Indonesia', 'Malaysia',
-  'Portugal', 'Spain',
+  'India', 'Dubai', 'Bali', 'Thailand',
+  'Vietnam', 'Sri Lanka', 'Nepal', 'Singapore',
+  'Indonesia', 'Malaysia', 'Portugal', 'Spain',
 ];
 
 function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boolean }) {
@@ -49,38 +49,50 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
 
   return (
     <div style={{
-      background: 'rgba(255,255,255,0.85)',
-      backdropFilter: 'blur(12px)',
-      WebkitBackdropFilter: 'blur(12px)',
-      borderRadius: 16,
-      padding: '24px 28px',
-      minWidth: 160,
+      background: 'rgba(245, 245, 245, 0.75)',
+      backdropFilter: 'blur(8px)',
+      WebkitBackdropFilter: 'blur(8px)',
+      borderRadius: 8,
+      padding: '16px 20px',
       flex: '1 1 0',
-      boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-      border: '1px solid rgba(255,255,255,0.6)',
+      minWidth: 140,
     }}>
       <div style={{
-        fontSize: 11,
-        fontWeight: 700,
-        letterSpacing: '0.08em',
-        color: '#222222',
-        opacity: 0.5,
-        marginBottom: 8,
-        fontFamily: "'Open Sauce One', sans-serif",
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        marginBottom: 10,
       }}>
-        {stat.label}
+        <div style={{
+          fontSize: 10,
+          fontWeight: 600,
+          letterSpacing: '0.1em',
+          color: '#666666',
+          fontFamily: "'Open Sauce One', sans-serif",
+          textTransform: 'uppercase',
+        }}>
+          {stat.label}
+        </div>
       </div>
       <div style={{
-        fontSize: 'clamp(28px, 4vw, 44px)',
+        fontSize: 'clamp(32px, 4.5vw, 52px)',
         fontWeight: 700,
-        color: '#222222',
+        color: '#1a1a1a',
         lineHeight: 1,
-        letterSpacing: -1,
+        letterSpacing: -1.5,
         fontFamily: "'Open Sauce One', sans-serif",
       }}>
         {count}
         {stat.suffix && (
-          <span style={{ color: stat.color }}>{stat.suffix}</span>
+          <span style={{
+            color: stat.suffixColor,
+            fontSize: 'clamp(18px, 2.5vw, 28px)',
+            fontWeight: 700,
+            verticalAlign: 'super',
+            marginLeft: 2,
+          }}>
+            {stat.suffix}
+          </span>
         )}
       </div>
     </div>
@@ -92,36 +104,35 @@ export default function GlobalReach() {
 
   return (
     <section ref={ref} style={{
-      background: '#FCF7EF',
-      padding: 'clamp(48px, 8vw, 100px) clamp(20px, 5vw, 80px)',
+      background: '#e8e8e8',
+      padding: 'clamp(48px, 6vw, 80px) clamp(20px, 5vw, 80px) 0',
       position: 'relative',
       overflow: 'hidden',
     }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
         {/* Headline */}
         <h2
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
-            fontSize: 'clamp(32px, 5vw, 56px)',
+            fontSize: 'clamp(36px, 5.5vw, 64px)',
             fontWeight: 700,
-            color: '#222222',
-            marginBottom: 40,
-            lineHeight: 1.1,
+            color: '#1a1a1a',
+            marginBottom: 28,
+            lineHeight: 1.05,
             fontFamily: "'Open Sauce One', sans-serif",
           }}
         >
-          Trusted across borders
+          Trusted<br />across borders
         </h2>
 
-        {/* Stat Cards */}
+        {/* Stat Cards Row */}
         <div
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
             display: 'flex',
-            gap: 16,
-            marginBottom: 0,
+            gap: 12,
             position: 'relative',
-            zIndex: 2,
+            zIndex: 3,
             flexWrap: 'wrap',
             transitionDelay: '200ms',
           }}
@@ -131,11 +142,11 @@ export default function GlobalReach() {
           ))}
         </div>
 
-        {/* Globe Container */}
+        {/* Globe Container — overlaps behind cards and bottom panel */}
         <div style={{
           width: '100%',
-          height: 'clamp(320px, 50vw, 560px)',
-          marginTop: -40,
+          height: 'clamp(340px, 50vw, 580px)',
+          marginTop: -20,
           position: 'relative',
           zIndex: 1,
         }}>
@@ -145,44 +156,50 @@ export default function GlobalReach() {
               style={{ background: 'transparent' }}
               gl={{ alpha: true, antialias: true }}
             >
-              <ambientLight intensity={0.6} />
-              <directionalLight position={[5, 3, 5]} intensity={0.8} />
-              <directionalLight position={[-3, -2, -3]} intensity={0.3} />
+              <ambientLight intensity={0.7} />
+              <directionalLight position={[5, 3, 5]} intensity={0.6} />
+              <directionalLight position={[-3, -2, -3]} intensity={0.2} />
               <Globe />
             </Canvas>
           </Suspense>
         </div>
 
-        {/* Bottom: Locations */}
+        {/* Bottom Panel: "We are worldwide" */}
         <div
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
-            marginTop: -20,
+            background: 'rgba(245, 245, 245, 0.8)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
+            borderRadius: '12px 12px 0 0',
+            padding: 'clamp(24px, 3vw, 40px) clamp(24px, 3vw, 40px)',
+            marginTop: -60,
             position: 'relative',
             zIndex: 2,
             transitionDelay: '600ms',
           }}
         >
           <div style={{
-            fontSize: 'clamp(18px, 2.5vw, 24px)',
+            fontSize: 'clamp(22px, 3vw, 32px)',
             fontWeight: 700,
-            color: '#222222',
-            marginBottom: 16,
+            color: '#1a1a1a',
+            marginBottom: 20,
             fontFamily: "'Open Sauce One', sans-serif",
           }}>
             We are worldwide
           </div>
           <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '8px 24px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '8px 0',
           }}>
             {locations.map((loc) => (
               <span key={loc} style={{
                 fontSize: 14,
-                color: '#222222',
-                opacity: 0.5,
+                color: '#1a1a1a',
+                opacity: 0.55,
                 fontFamily: "'Open Sauce One', sans-serif",
+                lineHeight: 1.8,
               }}>
                 {loc}
               </span>
