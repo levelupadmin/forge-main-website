@@ -208,7 +208,7 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
       <div style={{
         fontSize: 'clamp(36px, 5vw, 56px)',
         fontWeight: 700,
-        color: '#1a1a1a',
+        color: '#FFFFFF',
         lineHeight: 1,
         letterSpacing: -2,
         fontFamily: "'Open Sauce One', sans-serif",
