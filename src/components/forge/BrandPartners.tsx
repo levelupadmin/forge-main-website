@@ -198,40 +198,18 @@ export default function BrandPartners() {
               </p>
 
               <div style={{
-                border: '1.5px solid rgba(34,34,34,0.15)',
-                borderRadius: 12,
-                padding: '16px 24px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: 'fit-content',
-                height: 56,
-                background: '#fff',
+                padding: '8px 0',
               }}>
                 <img
                   src={activePartner.logo}
                   alt={activePartner.name}
                   style={{
-                    maxWidth: 120,
-                    maxHeight: '100%',
+                    maxWidth: 160,
+                    maxHeight: 64,
                     objectFit: 'contain',
                   }}
                 />
               </div>
-
-              {activePartner.discount && (
-                <div style={{
-                  background: '#FFBC3B',
-                  color: '#1a1a1a',
-                  fontWeight: 600,
-                  fontSize: 14,
-                  padding: '8px 16px',
-                  borderRadius: 8,
-                  width: 'fit-content',
-                }}>
-                  {activePartner.discount}
-                </div>
-              )}
             </div>
           </div>
         </div>
