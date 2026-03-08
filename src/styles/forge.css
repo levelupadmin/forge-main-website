@@ -500,3 +500,19 @@ body {
 @media (max-width: 1023px) and (min-width: 768px) {
   .forge-masonry { columns: 2; }
 }
+
+/* === Infinite Marquee === */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+@keyframes marquee-right {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+.marquee-scroll-left {
+  animation: marquee-left 30s linear infinite;
+}
+.marquee-scroll-right {
+  animation: marquee-right 30s linear infinite;
+}
