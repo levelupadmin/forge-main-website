@@ -137,16 +137,19 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
         style={{ width: '100%', height: 'auto' }}
       >
         <defs>
-          <linearGradient id="globe-ocean" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#D8DCE3" />
-            <stop offset="100%" stopColor="#C4C8D0" />
-          </linearGradient>
-          <radialGradient id="globe-vignette" cx="50%" cy="50%" r="50%">
-            <stop offset="70%" stopColor="transparent" />
-            <stop offset="100%" stopColor="rgba(0,0,0,0.12)" />
+          <radialGradient id="globe-ocean" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stopColor="#E8ECF2" />
+            <stop offset="40%" stopColor="#DEE2E8" />
+            <stop offset="80%" stopColor="#CDD2D9" />
+            <stop offset="100%" stopColor="#B8BEC7" />
           </radialGradient>
-          <filter id="globe-shadow" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="4" stdDeviation="12" floodColor="rgba(0,0,0,0.15)" />
+          <radialGradient id="globe-vignette" cx="50%" cy="50%" r="50%">
+            <stop offset="60%" stopColor="transparent" />
+            <stop offset="85%" stopColor="rgba(0,0,0,0.08)" />
+            <stop offset="100%" stopColor="rgba(0,0,0,0.2)" />
+          </radialGradient>
+          <filter id="globe-shadow" x="-15%" y="-15%" width="130%" height="130%">
+            <feDropShadow dx="0" dy="6" stdDeviation="16" floodColor="rgba(0,0,0,0.18)" />
           </filter>
         </defs>
 
