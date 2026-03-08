@@ -140,7 +140,7 @@ export default function Navigation() {
             <X size={28} />
           </button>
           {[...leftLinks, ...rightLinks].map(link => (
-            <a key={link.href} onClick={() => scrollTo(link.href)} style={{ cursor: 'pointer' }}>
+            <a key={link.href} onClick={() => handleNav(link)} style={{ cursor: 'pointer' }}>
               {link.label}
             </a>
           ))}
