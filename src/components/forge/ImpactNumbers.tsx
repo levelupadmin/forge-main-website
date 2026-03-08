@@ -3,11 +3,11 @@ import { useCountUp } from '@/hooks/useCountUp';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const stats = [
-  { number: 600, suffix: '+', label: 'Alumni', image: '/images/gallery/gallery-1.png' },
-  { number: 250, suffix: '+', label: 'Shortfilms', image: '/images/gallery/gallery-2.png' },
-  { number: 85, suffix: '+', label: 'Creators Built', image: '/images/gallery/gallery-3.png' },
-  { number: 60, suffix: '+', label: 'Scripts', image: '/images/gallery/gallery-4.png' },
-  { number: 200, suffix: '+', label: 'Collaborations Enabled', image: '/images/gallery/gallery-5.png' },
+  { number: 600, suffix: '+', label: 'Alumni', context: 'from 12+ countries across 25 editions', image: '/images/gallery/gallery-1.png' },
+  { number: 250, suffix: '+', label: 'Shortfilms', context: 'produced, shot & edited during bootcamps', image: '/images/gallery/gallery-2.png' },
+  { number: 85, suffix: '+', label: 'Creators Built', context: 'now creating full-time on YouTube & Instagram', image: '/images/gallery/gallery-3.png' },
+  { number: 60, suffix: '+', label: 'Scripts', context: 'written, workshopped & refined in retreats', image: '/images/gallery/gallery-4.png' },
+  { number: 200, suffix: '+', label: 'Collaborations Enabled', context: 'cross-discipline creative partnerships formed', image: '/images/gallery/gallery-5.png' },
 ];
 
 const gridAreas = [
@@ -140,6 +140,15 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
           textTransform: 'uppercase',
         }}>
           {stat.label}
+        </div>
+        <div style={{
+          fontSize: 13,
+          color: 'rgba(255,255,255,0.35)',
+          marginTop: 6,
+          fontStyle: 'italic',
+          lineHeight: 1.4,
+        }}>
+          {stat.context}
         </div>
       </div>
     </div>
