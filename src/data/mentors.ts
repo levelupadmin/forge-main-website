@@ -9,7 +9,7 @@ export const mentors: Mentor[] = [
   {
     name: "Juhi Sharma",
     designation: "Director | Cinematographer",
-    photo: "/images/mentors/mentor-1.png",
+    photo: "/images/mentors/juhi.jpg",
     highlights: [
       "Emmy-nominated filmmaker with over 50 credits in documentaries, fiction, and branded content",
       "Director of Photography for Amazon Prime's \"Rainbow Rishta,\" India's first LGBTQIA+ docu-series",
