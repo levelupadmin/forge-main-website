@@ -1,4 +1,4 @@
-import { Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { Instagram, Youtube, MessageCircle, ArrowUpRight } from 'lucide-react';
 
 const navLinks = [
   { label: 'Experiences', href: '#experiences' },
@@ -14,6 +14,12 @@ const programLinks = [
   { label: 'the Forge Writing Retreat', href: '/writing-retreat' },
 ];
 
+const steps = [
+  { word: 'Learn.', color: '#FFBC3B' },
+  { word: 'Do.', color: '#FFA800' },
+  { word: 'Become.', color: '#DD6F15' },
+];
+
 export default function Footer() {
   const scrollTo = (href: string) => {
     if (href.startsWith('#')) {
@@ -22,100 +28,301 @@ export default function Footer() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer style={{
-      background: '#222222',
-      padding: '80px clamp(24px, 5vw, 80px) 40px',
-    }}>
+    <footer style={{ background: '#000000' }}>
+      {/* Learn Do Become strip */}
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: 48,
-        maxWidth: 1280,
-        margin: '0 auto',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        padding: 'clamp(40px, 6vw, 64px) clamp(24px, 5vw, 80px)',
       }}>
-        {/* Brand */}
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ fontWeight: 700, fontSize: 24, color: 'white' }}>the Forge</div>
-          <div style={{ fontSize: 13, color: 'white', opacity: 0.3, fontStyle: 'italic', marginTop: 8 }}>
-            Learn. Do. Become.
-          </div>
-          <div style={{ display: 'flex', gap: 12, marginTop: 24, justifyContent: 'center' }}>
-            <a href="#" className="forge-social" aria-label="Instagram"><Instagram size={20} /></a>
-            <a href="#" className="forge-social" aria-label="YouTube"><Youtube size={20} /></a>
-            <a href="#" className="forge-social" aria-label="WhatsApp"><MessageCircle size={20} /></a>
-          </div>
-        </div>
-
-        {/* Navigate */}
-        <div style={{ textAlign: 'center' }}>
-          <div style={{
-            fontSize: 11,
-            color: 'white',
-            opacity: 0.25,
-            letterSpacing: '0.12em',
-            marginBottom: 16,
-          }}>
-            Navigate
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {navLinks.map(link => (
-              <a
-                key={link.href}
-                onClick={() => scrollTo(link.href)}
-                className="forge-footer-link"
-                style={{ cursor: 'pointer' }}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Programs */}
-        <div style={{ textAlign: 'center' }}>
-          <div style={{
-            fontSize: 11,
-            color: 'white',
-            opacity: 0.25,
-            letterSpacing: '0.12em',
-            marginBottom: 16,
-          }}>
-            Our Programs
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {programLinks.map(link => (
-              <a key={link.href} href={link.href} className="forge-footer-link">
-                {link.label}
-              </a>
-            ))}
-          </div>
+        <div style={{
+          maxWidth: 1280,
+          margin: '0 auto',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 'clamp(24px, 4vw, 56px)',
+          flexWrap: 'wrap',
+        }}>
+          {steps.map((step, i) => (
+            <div key={step.word} style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'clamp(16px, 3vw, 40px)',
+            }}>
+              <span style={{
+                fontWeight: 800,
+                fontSize: 'clamp(32px, 5vw, 56px)',
+                color: step.color,
+                lineHeight: 1,
+                letterSpacing: -1,
+              }}>
+                {step.word}
+              </span>
+              {i < steps.length - 1 && (
+                <span style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: '50%',
+                  background: 'rgba(255,255,255,0.15)',
+                  flexShrink: 0,
+                }} />
+              )}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Bottom bar */}
+      {/* Main footer content */}
       <div style={{
-        borderTop: '1px solid rgba(255,255,255,0.08)',
-        paddingTop: 24,
-        marginTop: 48,
+        padding: 'clamp(60px, 8vw, 100px) clamp(24px, 5vw, 80px) 40px',
         maxWidth: 1280,
-        margin: '48px auto 0',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        gap: 16,
+        margin: '0 auto',
       }}>
-        <div style={{ fontSize: 12, color: 'white', opacity: 0.25 }}>
-          &copy; 2025 the Forge by LevelUp Learning. All rights reserved.
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '2fr 1fr 1fr 1fr',
+          gap: 'clamp(32px, 4vw, 64px)',
+          marginBottom: 80,
+        }}>
+          {/* Brand Column */}
+          <div>
+            <img
+              src="/images/forge-logo.png"
+              alt="the Forge"
+              style={{
+                height: 36,
+                marginBottom: 20,
+                filter: 'brightness(0) invert(1)',
+              }}
+            />
+            <p style={{
+              fontSize: 15,
+              color: 'rgba(255,255,255,0.4)',
+              lineHeight: 1.8,
+              maxWidth: 320,
+              margin: '0 0 32px',
+            }}>
+              India's most immersive creative education experience. Where practitioners teach, creators build, and artists find their voice.
+            </p>
+            <div style={{ display: 'flex', gap: 12 }}>
+              {[
+                { icon: <Instagram size={18} />, label: 'Instagram' },
+                { icon: <Youtube size={18} />, label: 'YouTube' },
+                { icon: <MessageCircle size={18} />, label: 'WhatsApp' },
+              ].map(social => (
+                <a
+                  key={social.label}
+                  href="#"
+                  aria-label={social.label}
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: '50%',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'rgba(255,255,255,0.4)',
+                    textDecoration: 'none',
+                    transition: 'all 0.25s ease',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--forge-yellow)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = 'var(--forge-yellow)';
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,188,59,0.08)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.4)';
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
+                  }}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigate */}
+          <div>
+            <div style={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: 'rgba(255,255,255,0.2)',
+              letterSpacing: 2,
+              textTransform: 'uppercase' as const,
+              marginBottom: 24,
+            }}>
+              Navigate
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {navLinks.map(link => (
+                <a
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  style={{
+                    color: 'rgba(255,255,255,0.5)',
+                    textDecoration: 'none',
+                    fontSize: 14,
+                    cursor: 'pointer',
+                    transition: 'color 0.2s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4,
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = 'white';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Programs */}
+          <div>
+            <div style={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: 'rgba(255,255,255,0.2)',
+              letterSpacing: 2,
+              textTransform: 'uppercase' as const,
+              marginBottom: 24,
+            }}>
+              Programs
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {programLinks.map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  style={{
+                    color: 'rgba(255,255,255,0.5)',
+                    textDecoration: 'none',
+                    fontSize: 14,
+                    transition: 'color 0.2s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4,
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = 'white';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
+                  }}
+                >
+                  {link.label}
+                  <ArrowUpRight size={12} style={{ opacity: 0.4 }} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact / CTA */}
+          <div>
+            <div style={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: 'rgba(255,255,255,0.2)',
+              letterSpacing: 2,
+              textTransform: 'uppercase' as const,
+              marginBottom: 24,
+            }}>
+              Get in touch
+            </div>
+            <a
+              href="mailto:hello@theforge.in"
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                textDecoration: 'none',
+                fontSize: 14,
+                display: 'block',
+                marginBottom: 12,
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLAnchorElement).style.color = 'var(--forge-yellow)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
+              }}
+            >
+              hello@theforge.in
+            </a>
+            <button
+              onClick={scrollToTop}
+              style={{
+                marginTop: 24,
+                padding: '12px 28px',
+                borderRadius: 100,
+                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'transparent',
+                color: 'rgba(255,255,255,0.6)',
+                fontSize: 13,
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.25s ease',
+                fontFamily: "'Open Sauce One', sans-serif",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--forge-yellow)';
+                (e.currentTarget as HTMLButtonElement).style.color = 'var(--forge-yellow)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.12)';
+                (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.6)';
+              }}
+            >
+              Back to top ↑
+            </button>
+          </div>
         </div>
-        <div style={{ display: 'flex', gap: 16 }}>
-          <a href="#" style={{ fontSize: 12, color: 'white', opacity: 0.25, textDecoration: 'none' }}>
-            Privacy Policy
-          </a>
-          <a href="#" style={{ fontSize: 12, color: 'white', opacity: 0.25, textDecoration: 'none' }}>
-            Terms
-          </a>
+
+        {/* Bottom bar */}
+        <div style={{
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          paddingTop: 32,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 16,
+        }}>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>
+            &copy; 2025 the Forge by LevelUp Learning. All rights reserved.
+          </div>
+          <div style={{ display: 'flex', gap: 24 }}>
+            {['Privacy Policy', 'Terms of Service'].map(label => (
+              <a
+                key={label}
+                href="#"
+                style={{
+                  fontSize: 12,
+                  color: 'rgba(255,255,255,0.2)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.2)';
+                }}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
