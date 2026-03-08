@@ -37,6 +37,7 @@ const Index = () => {
       <GlobalReach />
       <Gallery />
       <Testimonials />
+      <FAQ />
       <Footer />
     </div>
   );
