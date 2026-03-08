@@ -186,7 +186,7 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
 
   return (
     <div style={{
-      background: 'rgba(240, 240, 240, 0.7)',
+      background: 'rgba(255, 255, 255, 0.06)',
       backdropFilter: 'blur(6px)',
       WebkitBackdropFilter: 'blur(6px)',
       borderRadius: 6,
