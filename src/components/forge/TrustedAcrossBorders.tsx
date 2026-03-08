@@ -231,14 +231,12 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
         </div>
       )}
 
-      {/* Legend */}
+      {/* Legend centered below globe */}
       <div style={{
-        position: 'absolute',
-        bottom: 12,
-        right: 12,
         display: 'flex',
-        gap: 20,
-        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 24,
+        marginTop: 16,
       }}>
         {[
           { color: '#DC2626', label: 'Sales Regions' },
