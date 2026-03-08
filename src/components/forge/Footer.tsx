@@ -117,7 +117,9 @@ export default function Footer() {
               ].map(social => (
                 <a
                   key={social.label}
-                  href="#"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   style={{
                     width: 40,
