@@ -169,7 +169,7 @@ export default function Ethos() {
         </svg>
 
         {/* Narrative text */}
-        <div style={{ position: 'relative', minHeight: 70, maxWidth: 640, marginBottom: 'clamp(8px, 1vw, 16px)' }}>
+        <div style={{ position: 'relative', minHeight: 60, maxWidth: 640, marginBottom: 4 }}>
           {narrativeSteps.map((text, i) => (
             <p key={i} style={{
               position: 'absolute', top: 0, left: 0, right: 0,
