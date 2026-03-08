@@ -311,6 +311,26 @@ body {
   font-family: 'Open Sauce One', sans-serif;
 }
 
+/* === Photo Strip === */
+.forge-photo-item {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.forge-photo-item.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.forge-quote-overlay {
+  opacity: 0;
+  transition: opacity 800ms ease;
+  transition-delay: 500ms;
+}
+.forge-quote-overlay.visible {
+  opacity: 1;
+}
+
 /* === Responsive === */
 @media (max-width: 767px) {
   .forge-desktop-nav { display: none !important; }
