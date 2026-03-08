@@ -10,9 +10,9 @@ const narrativeSteps = [
 ];
 
 const circleConfigs = [
-  { label: 'Learning', scatterX: -120, scatterY: -30, finalX: -55, finalY: -45 },
-  { label: 'Travel', scatterX: 120, scatterY: -30, finalX: 55, finalY: -45 },
-  { label: 'Community', scatterX: 0, scatterY: 100, finalX: 0, finalY: 55 },
+  { label: 'Filmmaking', scatterX: -160, scatterY: -40, finalX: -75, finalY: -60 },
+  { label: 'Travelling', scatterX: 160, scatterY: -40, finalX: 75, finalY: -60 },
+  { label: 'Making\nNew Friends', scatterX: 0, scatterY: 140, finalX: 0, finalY: 75 },
 ];
 
 export default function Ethos() {
@@ -46,21 +46,20 @@ export default function Ethos() {
     return {
       transform: `translate(${x}px, ${y}px)`,
       transition: 'transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease',
-      transformOrigin: '200px 200px',
+      transformOrigin: '250px 250px',
       opacity,
     };
   };
 
   const getStrokeOffset = (idx: number) => {
     const appearAt = [1, 2, 4][idx];
-    return stage >= appearAt ? 0 : 630;
+    return stage >= appearAt ? 0 : 880;
   };
 
   const glowOpacity = stage >= 6 ? 1 : 0;
   const centerLabelOpacity = stage >= 7 ? 1 : 0;
   const finalOpacity = stage >= 7 ? 1 : 0;
 
-  // Active narrative index
   const narrativeIdx = stage >= 7 ? -1 : stage >= 5 ? 4 : stage >= 4 ? 3 : stage >= 3 ? 2 : stage >= 2 ? 1 : stage >= 1 ? 0 : -1;
 
   return (
@@ -83,7 +82,7 @@ export default function Ethos() {
 
       <div style={{
         position: 'relative', zIndex: 1,
-        padding: 'clamp(64px, 10vw, 120px) clamp(24px, 5vw, 80px)',
+        padding: 'clamp(48px, 8vw, 100px) clamp(24px, 5vw, 80px)',
         textAlign: 'center',
         display: 'flex', flexDirection: 'column', alignItems: 'center',
       }}>
@@ -92,7 +91,7 @@ export default function Ethos() {
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
           transition: 'opacity 0.8s ease, transform 0.8s ease',
-          marginBottom: 'clamp(24px, 3vw, 48px)',
+          marginBottom: 'clamp(16px, 2vw, 32px)',
         }}>
           <div style={{
             fontSize: 'clamp(16px, 2vw, 22px)',
@@ -106,10 +105,10 @@ export default function Ethos() {
           }}>ethos</div>
         </div>
 
-        {/* SVG Venn Diagram */}
-        <svg viewBox="0 0 400 400" style={{
-          width: 'clamp(300px, 40vw, 440px)', height: 'auto',
-          marginBottom: 'clamp(24px, 3vw, 40px)',
+        {/* SVG Venn Diagram — bigger circles */}
+        <svg viewBox="0 0 500 500" style={{
+          width: 'clamp(360px, 50vw, 560px)', height: 'auto',
+          marginBottom: 'clamp(8px, 1.5vw, 16px)',
         }}>
           <defs>
             <radialGradient id="forge-glow-ethos" cx="50%" cy="50%" r="50%">
@@ -126,37 +125,51 @@ export default function Ethos() {
             </filter>
           </defs>
 
-          <circle cx="200" cy="200" r="65" fill="url(#forge-glow-ethos)" filter="url(#glow-blur)"
+          {/* Center glow */}
+          <circle cx="250" cy="250" r="80" fill="url(#forge-glow-ethos)" filter="url(#glow-blur)"
             style={{ opacity: glowOpacity, transition: 'opacity 1s ease' }} />
 
           {circleConfigs.map((c, idx) => {
             const style = getCircleStyle(idx);
             const strokeOffset = getStrokeOffset(idx);
+
+            // Label positions relative to circle center, pushed outward from intersection
+            const labelX = idx === 0 ? 190 : idx === 1 ? 310 : 250;
+            const labelY = idx === 0 ? 240 : idx === 1 ? 240 : 310;
+
             return (
               <g key={c.label} style={style}>
-                <circle cx="200" cy="200" r="100" fill="rgba(255,255,255,0.03)" />
-                <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1"
-                  style={{ strokeDasharray: 630, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease' }} />
-                <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(255,188,59,0.15)" strokeWidth="3"
-                  style={{ strokeDasharray: 630, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease', filter: 'blur(4px)' }} />
-                <text
-                  x={200 + (idx === 0 ? -60 : idx === 1 ? 60 : 0)}
-                  y={200 + (idx === 2 ? 10 : -10)}
-                  textAnchor="middle" fill="white" fontWeight="600" fontSize="14" letterSpacing="0.08em"
-                  style={{ opacity: style.opacity * 0.8, transition: 'opacity 0.6s ease' }}
-                >{c.label}</text>
+                <circle cx="250" cy="250" r="140" fill="rgba(255,255,255,0.03)" />
+                <circle cx="250" cy="250" r="140" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1"
+                  style={{ strokeDasharray: 880, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease' }} />
+                <circle cx="250" cy="250" r="140" fill="none" stroke="rgba(255,188,59,0.15)" strokeWidth="3"
+                  style={{ strokeDasharray: 880, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease', filter: 'blur(4px)' }} />
+                {c.label.split('\n').map((line, li) => (
+                  <text
+                    key={li}
+                    x={labelX}
+                    y={labelY + li * 24}
+                    textAnchor="middle"
+                    fill="white"
+                    fontWeight="600"
+                    fontSize="18"
+                    letterSpacing="0.04em"
+                    style={{ opacity: style.opacity * 0.9, transition: 'opacity 0.6s ease' }}
+                  >{line}</text>
+                ))}
               </g>
             );
           })}
 
-          <text x="200" y="192" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontWeight="300" fontSize="14" letterSpacing="0.1em"
+          {/* Center label: "the Forge" */}
+          <text x="250" y="238" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontWeight="300" fontSize="16" letterSpacing="0.1em"
             style={{ opacity: centerLabelOpacity, transition: 'opacity 0.8s ease' }}>the</text>
-          <text x="200" y="216" textAnchor="middle" fill="#FFBC3B" fontWeight="700" fontSize="22" letterSpacing="0.02em"
+          <text x="250" y="268" textAnchor="middle" fill="#FFBC3B" fontWeight="700" fontSize="28" letterSpacing="0.02em"
             style={{ opacity: centerLabelOpacity, transition: 'opacity 0.8s ease' }}>Forge</text>
         </svg>
 
         {/* Narrative text */}
-        <div style={{ position: 'relative', minHeight: 80, maxWidth: 640, marginBottom: 'clamp(16px, 2vw, 32px)' }}>
+        <div style={{ position: 'relative', minHeight: 70, maxWidth: 640, marginBottom: 'clamp(8px, 1vw, 16px)' }}>
           {narrativeSteps.map((text, i) => (
             <p key={i} style={{
               position: 'absolute', top: 0, left: 0, right: 0,
@@ -182,9 +195,9 @@ export default function Ethos() {
           lineHeight: 1.8, textAlign: 'center', fontWeight: 400,
         }}>
           We meet dreamers at the intersection of{' '}
-          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>learning</span>,{' '}
+          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>filmmaking</span>,{' '}
           <span style={{ color: '#FFBC3B', fontWeight: 700 }}>travel</span> and{' '}
-          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>community</span>{' '}
+          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>making new friends</span>{' '}
           — to enable them to become doers.
         </p>
       </div>
