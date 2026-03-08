@@ -3,27 +3,52 @@ export default function HeroBar() {
     <section style={{
       width: '100%',
       background: '#FFBC3B',
-      padding: 'clamp(20px, 4vw, 32px) 0',
+      padding: '12px 0',
       textAlign: 'center',
-      borderRadius: '0 0 32px 32px',
-      marginTop: '-32px',
+      borderRadius: '0 0 24px 24px',
+      marginTop: '-24px',
       position: 'relative',
       zIndex: 10,
     }}>
       <div style={{
-        maxWidth: '100%',
-        padding: '0 clamp(24px, 5vw, 60px)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 8,
+        flexWrap: 'wrap',
+        padding: '0 24px',
       }}>
-        <p style={{
-          fontSize: 'clamp(14px, 2.5vw, 20px)',
+        <span style={{
+          fontSize: 'clamp(12px, 1.8vw, 15px)',
           fontWeight: 500,
-          color: '#000',
-          margin: 0,
-          lineHeight: 1.4,
+          color: '#1a1a1a',
         }}>
-          From the House of LevelUp Learning<br />
+          From the House of
+        </span>
+        {/* LevelUp Learning logo placeholder — replace with actual logo */}
+        <span style={{
+          fontSize: 'clamp(12px, 1.8vw, 15px)',
+          fontWeight: 800,
+          color: '#1a1a1a',
+          letterSpacing: -0.5,
+        }}>
+          LevelUp Learning
+        </span>
+        <span style={{
+          width: 4,
+          height: 4,
+          borderRadius: '50%',
+          background: '#1a1a1a',
+          opacity: 0.4,
+          display: 'inline-block',
+        }} />
+        <span style={{
+          fontSize: 'clamp(12px, 1.8vw, 15px)',
+          fontWeight: 500,
+          color: '#1a1a1a',
+        }}>
           India's Largest Community of Creatives
-        </p>
+        </span>
       </div>
     </section>
   );
