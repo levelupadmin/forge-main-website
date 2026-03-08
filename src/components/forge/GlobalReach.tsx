@@ -357,8 +357,8 @@ export default function GlobalReach() {
             {locations.map((loc) => (
               <span key={loc} style={{
                 fontSize: isMobile ? 12 : 14,
-                color: '#1a1a1a',
-                opacity: 0.5,
+                color: 'rgba(255,255,255,0.5)',
+                opacity: 1,
                 fontFamily: "'Open Sauce One', sans-serif",
                 lineHeight: 2,
               }}>
