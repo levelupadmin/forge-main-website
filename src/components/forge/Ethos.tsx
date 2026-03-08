@@ -10,9 +10,9 @@ const narrativeSteps = [
 ];
 
 const circleConfigs = [
-  { label: 'Filmmaking', scatterX: -160, scatterY: -40, finalX: -75, finalY: -60 },
-  { label: 'Travelling', scatterX: 160, scatterY: -40, finalX: 75, finalY: -60 },
-  { label: 'Making\nNew Friends', scatterX: 0, scatterY: 140, finalX: 0, finalY: 75 },
+  { label: 'Learning', scatterX: -160, scatterY: -40, finalX: -75, finalY: -60 },
+  { label: 'Travel', scatterX: 160, scatterY: -40, finalX: 75, finalY: -60 },
+  { label: 'Community', scatterX: 0, scatterY: 140, finalX: 0, finalY: 75 },
 ];
 
 export default function Ethos() {
