@@ -66,7 +66,7 @@ export default function Hero() {
           lineHeight: 1.0,
           margin: '0 0 32px',
         }}>
-          Where Dreamers Become Doers.
+          Where Dreamers<br />Become Doers.
         </h1>
         <button className="forge-cta-light" onClick={scrollToExperiences}>
           Explore Experiences
