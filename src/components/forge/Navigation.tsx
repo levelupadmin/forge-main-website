@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { X, Menu } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface NavLink { label: string; href: string; isRoute?: boolean; }
 
@@ -16,14 +17,7 @@ const rightLinks: NavLink[] = [
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  const isMobile = useIsMobile();
   const navigate = useNavigate();
 
   const handleNav = (link: { href: string; isRoute?: boolean }) => {
@@ -41,87 +35,99 @@ export default function Navigation() {
     <>
       <nav style={{
         position: 'fixed',
-        top: 24,
+        top: isMobile ? 16 : 24,
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 100,
       }}>
-        <div className="forge-desktop-nav" style={{
-          background: 'white',
-          borderRadius: 100,
-          padding: '8px 32px',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 0,
-        }}>
-          {/* Left links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-end' }}>
-            {leftLinks.map(link => (
-              <button
-                key={link.href}
-                onClick={() => handleNav(link)}
-                className="forge-nav-link"
-                style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Center logo */}
-          <button
-            onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
-          >
-            <img
-              src="/images/forge-logo.png"
-              alt="the Forge"
-              style={{ height: 52, width: 'auto', display: 'block' }}
-            />
-          </button>
-
-          {/* Right links + CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
-            {rightLinks.map(link => (
-              <button
-                key={link.href}
-                onClick={() => handleNav(link)}
-                className="forge-nav-link"
-                style={{ color: '#222', fontSize: 15, fontWeight: 400, whiteSpace: 'nowrap' }}
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="forge-mobile-hamburger"
-          style={{
-            display: 'none',
-            background: 'rgba(255,255,255,0.9)',
-            border: 'none',
-            borderRadius: 12,
-            padding: 10,
-            cursor: 'pointer',
-            flexDirection: 'column',
-            gap: 5,
+        {isMobile ? (
+          /* Mobile pill nav */
+          <div style={{
+            background: 'white',
+            borderRadius: 100,
+            padding: '6px 8px 6px 16px',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+            display: 'flex',
             alignItems: 'center',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
-          }}
-        >
-          {[0, 1, 2].map(i => (
-            <span key={i} style={{
-              display: 'block',
-              width: 22,
-              height: 2,
-              background: '#222',
-            }} />
-          ))}
-        </button>
+            gap: 12,
+          }}>
+            <button
+              onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
+            >
+              <img
+                src="/images/forge-logo.png"
+                alt="the Forge"
+                style={{ height: 36, width: 'auto', display: 'block' }}
+              />
+            </button>
+            <button
+              onClick={() => setMenuOpen(true)}
+              style={{
+                background: '#222',
+                border: 'none',
+                borderRadius: 100,
+                width: 36,
+                height: 36,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                flexShrink: 0,
+              }}
+            >
+              <Menu size={18} color="white" />
+            </button>
+          </div>
+        ) : (
+          /* Desktop pill nav */
+          <div style={{
+            background: 'white',
+            borderRadius: 100,
+            padding: '8px 32px',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 0,
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-end' }}>
+              {leftLinks.map(link => (
+                <button
+                  key={link.href}
+                  onClick={() => handleNav(link)}
+                  className="forge-nav-link"
+                  style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
+            >
+              <img
+                src="/images/forge-logo.png"
+                alt="the Forge"
+                style={{ height: 52, width: 'auto', display: 'block' }}
+              />
+            </button>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
+              {rightLinks.map(link => (
+                <button
+                  key={link.href}
+                  onClick={() => handleNav(link)}
+                  className="forge-nav-link"
+                  style={{ color: '#222', fontSize: 15, fontWeight: 400, whiteSpace: 'nowrap' }}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
 
       {menuOpen && (

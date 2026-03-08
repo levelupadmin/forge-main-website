@@ -19,7 +19,7 @@ export default function Community() {
   return (
     <section id="community" ref={ref} style={{
       background: 'var(--forge-cream)',
-      padding: 'clamp(48px, 6vw, 80px) 0 0',
+      padding: isMobile ? 'clamp(32px, 5vw, 48px) 0 0' : 'clamp(48px, 6vw, 80px) 0 0',
     }}>
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', padding: '0 24px', marginBottom: 48 }}>
         <div className="forge-heading">

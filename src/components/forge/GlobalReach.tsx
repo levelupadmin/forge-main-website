@@ -4,6 +4,7 @@ import { useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useCountUp } from '@/hooks/useCountUp';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const INDIA_LON = 78.9;
 const INITIAL_Y_ROTATION = -((INDIA_LON - 90) * Math.PI) / 180;
@@ -231,19 +232,21 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
 
 export default function GlobalReach() {
   const { ref, isVisible } = useScrollAnimation(0.1);
+  const isMobile = useIsMobile();
 
   return (
     <section ref={ref} style={{
       background: '#dcdcdc',
       position: 'relative',
       overflow: 'hidden',
-      minHeight: 700,
+      minHeight: isMobile ? 500 : 700,
     }}>
       {/* 3D Globe background */}
       <div style={{
         position: 'absolute',
         inset: 0,
         zIndex: 0,
+        opacity: isMobile ? 0.5 : 1,
       }}>
         <Suspense fallback={null}>
           <Canvas
@@ -265,15 +268,17 @@ export default function GlobalReach() {
         zIndex: 1,
         maxWidth: 1280,
         margin: '0 auto',
-        padding: 'clamp(40px, 5vw, 64px) clamp(24px, 5vw, 80px)',
+        padding: isMobile
+          ? 'clamp(32px, 5vw, 48px) 20px'
+          : 'clamp(40px, 5vw, 64px) clamp(24px, 5vw, 80px)',
         display: 'flex',
         flexDirection: 'column',
-        minHeight: 700,
+        minHeight: isMobile ? 500 : 700,
       }}>
-        <div style={{ textAlign: 'center', marginBottom: 32 }}>
+        <div style={{ textAlign: 'center', marginBottom: isMobile ? 20 : 32 }}>
           <div className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{ marginBottom: 8 }}>
             <span style={{
-              fontSize: 15,
+              fontSize: isMobile ? 13 : 15,
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: 3,
@@ -285,7 +290,7 @@ export default function GlobalReach() {
           <h2
             className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
             style={{
-              fontSize: 'clamp(40px, 6vw, 64px)',
+              fontSize: isMobile ? 'clamp(28px, 7vw, 40px)' : 'clamp(40px, 6vw, 64px)',
               fontWeight: 700,
               color: '#1a1a1a',
               marginBottom: 12,
@@ -297,7 +302,7 @@ export default function GlobalReach() {
             Our Students are Everywhere
           </h2>
           <p className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{
-            fontSize: 17,
+            fontSize: isMobile ? 14 : 17,
             opacity: 0.55,
             maxWidth: 520,
             margin: '0 auto',
@@ -321,7 +326,7 @@ export default function GlobalReach() {
           ))}
         </div>
 
-        <div style={{ flex: 1, minHeight: 200 }} />
+        <div style={{ flex: 1, minHeight: isMobile ? 80 : 200 }} />
 
 
         <div
@@ -331,27 +336,27 @@ export default function GlobalReach() {
             backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
             borderRadius: 10,
-            padding: 'clamp(20px, 3vw, 36px)',
+            padding: isMobile ? '16px' : 'clamp(20px, 3vw, 36px)',
             transitionDelay: '500ms',
           }}
         >
           <div style={{
-            fontSize: 'clamp(24px, 3.5vw, 36px)',
+            fontSize: isMobile ? 'clamp(20px, 5vw, 28px)' : 'clamp(24px, 3.5vw, 36px)',
             fontWeight: 700,
             color: '#1a1a1a',
-            marginBottom: 16,
+            marginBottom: 12,
             fontFamily: "'Open Sauce One', sans-serif",
           }}>
             A Global Community
           </div>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
             gap: '4px 0',
           }}>
             {locations.map((loc) => (
               <span key={loc} style={{
-                fontSize: 14,
+                fontSize: isMobile ? 12 : 14,
                 color: '#1a1a1a',
                 opacity: 0.5,
                 fontFamily: "'Open Sauce One', sans-serif",
