@@ -37,14 +37,13 @@ export default function Navigation() {
         zIndex: 100,
       }}>
         <div className={`forge-desktop-nav${scrolled ? ' forge-nav-blur' : ''}`} style={{
-          background: scrolled ? 'rgba(255,255,255,0.85)' : 'white',
+          background: 'white',
           borderRadius: 100,
-          padding: '8px 8px 8px 32px',
-          boxShadow: scrolled ? '0 4px 32px rgba(0,0,0,0.12)' : '0 4px 24px rgba(0,0,0,0.10)',
+          padding: '8px 32px',
+          boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
           display: 'flex',
           alignItems: 'center',
           gap: 0,
-          transition: 'background 300ms ease, box-shadow 300ms ease',
         }}>
           {/* Left links */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-end' }}>
