@@ -34,7 +34,7 @@ export default function Experiences() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gridTemplateColumns: 'repeat(3, 1fr)',
         gap: 28,
         maxWidth: 1280,
         margin: '0 auto',

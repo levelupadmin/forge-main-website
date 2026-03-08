@@ -270,31 +270,42 @@ export default function GlobalReach() {
         flexDirection: 'column',
         minHeight: 700,
       }}>
-        <div className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{ marginBottom: 8 }}>
-          <span style={{
-            fontSize: 15,
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: 3,
-            color: '#DD6F15',
+        <div style={{ textAlign: 'center', marginBottom: 32 }}>
+          <div className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{ marginBottom: 8 }}>
+            <span style={{
+              fontSize: 15,
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: 3,
+              color: '#DD6F15',
+            }}>
+              Global Reach
+            </span>
+          </div>
+          <h2
+            className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
+            style={{
+              fontSize: 'clamp(40px, 6vw, 64px)',
+              fontWeight: 700,
+              color: '#1a1a1a',
+              marginBottom: 12,
+              lineHeight: 1.05,
+              letterSpacing: -1,
+              fontFamily: "'Open Sauce One', sans-serif",
+            }}
+          >
+            Our Students are Everywhere
+          </h2>
+          <p className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{
+            fontSize: 17,
+            opacity: 0.55,
+            maxWidth: 520,
+            margin: '0 auto',
+            lineHeight: 1.6,
           }}>
-            Global Reach
-          </span>
+            From India to across the globe, the Forge community spans 13 countries and 128 cities.
+          </p>
         </div>
-        <h2
-          className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
-          style={{
-            fontSize: 'clamp(40px, 6vw, 64px)',
-            fontWeight: 700,
-            color: '#1a1a1a',
-            marginBottom: 24,
-            lineHeight: 1.05,
-            letterSpacing: -1,
-            fontFamily: "'Open Sauce One', sans-serif",
-          }}
-        >
-          Our Students are Everywhere
-        </h2>
 
         <div
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
@@ -312,26 +323,6 @@ export default function GlobalReach() {
 
         <div style={{ flex: 1, minHeight: 200 }} />
 
-        {/* Legend */}
-        <div
-          className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
-          style={{
-            display: 'flex',
-            gap: 20,
-            marginBottom: 16,
-            justifyContent: 'flex-end',
-            transitionDelay: '400ms',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: '#666' }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FFBC3B' }} />
-            Student Regions
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: '#666' }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#aaa' }} />
-            Global Presence
-          </div>
-        </div>
 
         <div
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
