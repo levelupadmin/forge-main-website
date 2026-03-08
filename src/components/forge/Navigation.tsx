@@ -55,7 +55,7 @@ export default function Navigation() {
           {/* Center logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 28px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 20px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
             <img
               src="/images/forge-logo.png"
