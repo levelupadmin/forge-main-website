@@ -10,7 +10,7 @@ const cardColors = [
   '#F4C87A', // warm gold
 ];
 
-const cardHeights = [380, 340, 400, 360, 350, 390];
+const cardHeights = [420, 360, 440, 380, 400, 430];
 
 export default function Mentors() {
   const scrollRef = useDragScroll();
@@ -18,7 +18,7 @@ export default function Mentors() {
   return (
     <section style={{
       background: '#1a1a1a',
-      padding: 'clamp(64px, 10vw, 120px) 0',
+      padding: 'clamp(64px, 10vw, 120px) 0 0',
     }}>
       <div style={{
         textAlign: 'center',
@@ -35,11 +35,7 @@ export default function Mentors() {
 
       <div ref={scrollRef} className="forge-scroll" style={{
         display: 'flex',
-        gap: 20,
-        marginLeft: 'calc(-1 * clamp(24px, 5vw, 80px))',
-        marginRight: 'calc(-1 * clamp(24px, 5vw, 80px))',
-        paddingLeft: 'clamp(24px, 5vw, 80px)',
-        paddingRight: 'clamp(24px, 5vw, 80px)',
+        gap: 0,
         alignItems: 'flex-end',
       }}>
         {mentors.map((mentor, i) => {
@@ -48,30 +44,26 @@ export default function Mentors() {
 
           return (
             <div key={i} style={{
-              minWidth: 220,
-              width: 220,
+              minWidth: 240,
+              flex: '1 0 240px',
               height,
               background: bgColor,
-              borderRadius: 120,
+              borderRadius: '140px 140px 0 0',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '32px 16px 28px',
               position: 'relative',
               overflow: 'hidden',
               transition: 'transform 0.3s ease',
             }}
             className="forge-mentor-pill"
             >
-              {/* Photo */}
+              {/* Photo — oval filling the top */}
               <div style={{
-                width: 160,
-                height: 160,
-                borderRadius: '50%',
+                width: '100%',
+                flex: 1,
                 overflow: 'hidden',
-                flexShrink: 0,
-                border: `4px solid rgba(255,255,255,0.3)`,
+                borderRadius: '140px 140px 0 0',
               }}>
                 <img
                   src={mentor.photo}
@@ -84,11 +76,16 @@ export default function Mentors() {
                 />
               </div>
 
-              {/* Info */}
-              <div style={{ textAlign: 'center', marginTop: 'auto', paddingTop: 16 }}>
+              {/* Info — flat bottom */}
+              <div style={{
+                width: '100%',
+                textAlign: 'center',
+                padding: '20px 16px 28px',
+                background: bgColor,
+              }}>
                 <div style={{
                   fontWeight: 700,
-                  fontSize: 20,
+                  fontSize: 22,
                   color: '#1a1a1a',
                   marginBottom: 4,
                 }}>
