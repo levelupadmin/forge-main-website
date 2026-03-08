@@ -135,10 +135,10 @@ export default function Ethos() {
                 {/* Glow stroke */}
                 <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,188,59,0.15)" strokeWidth="3"
                   style={{ strokeDasharray: circumference, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease', filter: 'blur(4px)' }} />
-                {/* Label centered in circle */}
+                {/* Label offset outward from Venn center */}
                 <text
-                  x={cx}
-                  y={cy + 6}
+                  x={cx + (idx === 0 ? -70 : idx === 1 ? 70 : 0)}
+                  y={cy + (idx === 2 ? 70 : -20)}
                   textAnchor="middle"
                   dominantBaseline="middle"
                   fill="white"
