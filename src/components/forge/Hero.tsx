@@ -46,7 +46,7 @@ export default function Hero() {
       {/* Content — centered */}
       <div style={{
         position: 'absolute',
-        bottom: 48,
+        bottom: 24,
         left: 0,
         right: 0,
         textAlign: 'center',
