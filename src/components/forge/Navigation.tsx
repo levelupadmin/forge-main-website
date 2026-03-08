@@ -9,6 +9,7 @@ const leftLinks = [
 const rightLinks = [
   { label: 'Community', href: '#community' },
   { label: 'Careers', href: '#careers' },
+  { label: 'Be a Mentor', href: '#mentors' },
 ];
 
 export default function Navigation() {
@@ -78,18 +79,11 @@ export default function Navigation() {
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 className="forge-nav-link"
-                style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
+                style={{ color: '#222', fontSize: 15, fontWeight: 400, whiteSpace: 'nowrap' }}
               >
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={() => scrollTo('#mentors')}
-              className="forge-nav-link"
-              style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
-            >
-              Be a Mentor
-            </button>
           </div>
         </div>
 
