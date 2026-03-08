@@ -12,20 +12,23 @@ function Globe() {
   const meshRef = useRef<THREE.Mesh>(null);
   const texture = useTexture('/textures/earth.jpg');
 
+  // Desaturate the texture
+  texture.colorSpace = THREE.SRGBColorSpace;
+
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.0008;
+      meshRef.current.rotation.y += 0.0006;
     }
   });
 
   return (
-    <mesh ref={meshRef} rotation={[0.15, INITIAL_Y_ROTATION, 0]}>
-      <sphereGeometry args={[2.2, 64, 64]} />
+    <mesh ref={meshRef} rotation={[0.2, INITIAL_Y_ROTATION, 0]} position={[0.8, -0.8, 0]}>
+      <sphereGeometry args={[3.2, 64, 64]} />
       <meshStandardMaterial
         map={texture}
-        metalness={0.05}
-        roughness={0.9}
-        color="#c8ccd0"
+        metalness={0.0}
+        roughness={1}
+        color="#9a9a9a"
       />
     </mesh>
   );
@@ -33,9 +36,9 @@ function Globe() {
 
 const stats = [
   { label: 'FOUNDED IN', number: 2019, suffix: '', suffixColor: '' },
-  { label: 'DREAMERS', number: 600, suffix: '+', suffixColor: '#E53935' },
-  { label: 'EDITIONS', number: 25, suffix: '+', suffixColor: '#E53935' },
-  { label: 'CITIES EXPLORED', number: 10, suffix: '+', suffixColor: '#E53935' },
+  { label: 'DREAMERS', number: 600, suffix: '+', suffixColor: '#D32F2F' },
+  { label: 'EDITIONS', number: 25, suffix: '+', suffixColor: '#D32F2F' },
+  { label: 'CITIES EXPLORED', number: 10, suffix: '+', suffixColor: '#D32F2F' },
 ];
 
 const locations = [
@@ -49,47 +52,41 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
 
   return (
     <div style={{
-      background: 'rgba(245, 245, 245, 0.75)',
-      backdropFilter: 'blur(8px)',
-      WebkitBackdropFilter: 'blur(8px)',
-      borderRadius: 8,
-      padding: '16px 20px',
+      background: 'rgba(240, 240, 240, 0.7)',
+      backdropFilter: 'blur(6px)',
+      WebkitBackdropFilter: 'blur(6px)',
+      borderRadius: 6,
+      padding: '14px 18px',
       flex: '1 1 0',
-      minWidth: 140,
+      minWidth: 130,
     }}>
       <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-        marginBottom: 10,
+        fontSize: 9,
+        fontWeight: 600,
+        letterSpacing: '0.12em',
+        color: '#888888',
+        fontFamily: "'Open Sauce One', sans-serif",
+        textTransform: 'uppercase',
+        marginBottom: 6,
       }}>
-        <div style={{
-          fontSize: 10,
-          fontWeight: 600,
-          letterSpacing: '0.1em',
-          color: '#666666',
-          fontFamily: "'Open Sauce One', sans-serif",
-          textTransform: 'uppercase',
-        }}>
-          {stat.label}
-        </div>
+        {stat.label}
       </div>
       <div style={{
-        fontSize: 'clamp(32px, 4.5vw, 52px)',
+        fontSize: 'clamp(36px, 5vw, 56px)',
         fontWeight: 700,
         color: '#1a1a1a',
         lineHeight: 1,
-        letterSpacing: -1.5,
+        letterSpacing: -2,
         fontFamily: "'Open Sauce One', sans-serif",
       }}>
         {count}
         {stat.suffix && (
           <span style={{
             color: stat.suffixColor,
-            fontSize: 'clamp(18px, 2.5vw, 28px)',
+            fontSize: 'clamp(20px, 3vw, 32px)',
             fontWeight: 700,
             verticalAlign: 'super',
-            marginLeft: 2,
+            marginLeft: 1,
           }}>
             {stat.suffix}
           </span>
@@ -100,25 +97,55 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
 }
 
 export default function GlobalReach() {
-  const { ref, isVisible } = useScrollAnimation(0.15);
+  const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
     <section ref={ref} style={{
-      background: '#e8e8e8',
-      padding: 'clamp(48px, 6vw, 80px) clamp(20px, 5vw, 80px) 0',
+      background: '#dcdcdc',
       position: 'relative',
       overflow: 'hidden',
+      minHeight: 700,
     }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
-        {/* Headline */}
+      {/* Globe canvas — fills entire section background */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        zIndex: 0,
+      }}>
+        <Suspense fallback={null}>
+          <Canvas
+            camera={{ position: [0, 0, 5], fov: 50 }}
+            style={{ background: 'transparent' }}
+            gl={{ alpha: true, antialias: true }}
+          >
+            <ambientLight intensity={0.8} />
+            <directionalLight position={[5, 3, 5]} intensity={0.5} />
+            <directionalLight position={[-3, 2, -3]} intensity={0.2} />
+            <Globe />
+          </Canvas>
+        </Suspense>
+      </div>
+
+      {/* Content overlay */}
+      <div style={{
+        position: 'relative',
+        zIndex: 1,
+        maxWidth: 1280,
+        margin: '0 auto',
+        padding: 'clamp(40px, 5vw, 72px) clamp(24px, 5vw, 80px)',
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: 700,
+      }}>
+        {/* Top: Headline */}
         <h2
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
-            fontSize: 'clamp(36px, 5.5vw, 64px)',
+            fontSize: 'clamp(40px, 6vw, 72px)',
             fontWeight: 700,
             color: '#1a1a1a',
-            marginBottom: 28,
-            lineHeight: 1.05,
+            marginBottom: 24,
+            lineHeight: 1.0,
             fontFamily: "'Open Sauce One', sans-serif",
           }}
         >
@@ -130,9 +157,7 @@ export default function GlobalReach() {
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
             display: 'flex',
-            gap: 12,
-            position: 'relative',
-            zIndex: 3,
+            gap: 10,
             flexWrap: 'wrap',
             transitionDelay: '200ms',
           }}
@@ -142,48 +167,26 @@ export default function GlobalReach() {
           ))}
         </div>
 
-        {/* Globe Container — overlaps behind cards and bottom panel */}
-        <div style={{
-          width: '100%',
-          height: 'clamp(340px, 50vw, 580px)',
-          marginTop: -20,
-          position: 'relative',
-          zIndex: 1,
-        }}>
-          <Suspense fallback={null}>
-            <Canvas
-              camera={{ position: [0, 0, 5.5], fov: 45 }}
-              style={{ background: 'transparent' }}
-              gl={{ alpha: true, antialias: true }}
-            >
-              <ambientLight intensity={0.7} />
-              <directionalLight position={[5, 3, 5]} intensity={0.6} />
-              <directionalLight position={[-3, -2, -3]} intensity={0.2} />
-              <Globe />
-            </Canvas>
-          </Suspense>
-        </div>
+        {/* Spacer — push bottom panel down */}
+        <div style={{ flex: 1, minHeight: 200 }} />
 
-        {/* Bottom Panel: "We are worldwide" */}
+        {/* Bottom Panel */}
         <div
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
-            background: 'rgba(245, 245, 245, 0.8)',
+            background: 'rgba(240, 240, 240, 0.75)',
             backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
-            borderRadius: '12px 12px 0 0',
-            padding: 'clamp(24px, 3vw, 40px) clamp(24px, 3vw, 40px)',
-            marginTop: -60,
-            position: 'relative',
-            zIndex: 2,
-            transitionDelay: '600ms',
+            borderRadius: 10,
+            padding: 'clamp(20px, 3vw, 36px)',
+            transitionDelay: '500ms',
           }}
         >
           <div style={{
-            fontSize: 'clamp(22px, 3vw, 32px)',
+            fontSize: 'clamp(24px, 3.5vw, 36px)',
             fontWeight: 700,
             color: '#1a1a1a',
-            marginBottom: 20,
+            marginBottom: 16,
             fontFamily: "'Open Sauce One', sans-serif",
           }}>
             We are worldwide
@@ -191,15 +194,15 @@ export default function GlobalReach() {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '8px 0',
+            gap: '4px 0',
           }}>
             {locations.map((loc) => (
               <span key={loc} style={{
                 fontSize: 14,
                 color: '#1a1a1a',
-                opacity: 0.55,
+                opacity: 0.5,
                 fontFamily: "'Open Sauce One', sans-serif",
-                lineHeight: 1.8,
+                lineHeight: 2,
               }}>
                 {loc}
               </span>
