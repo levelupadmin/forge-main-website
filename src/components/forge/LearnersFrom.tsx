@@ -35,7 +35,7 @@ function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left
             <img
               src={item.logo}
               alt={item.name}
-              className="h-20 md:h-32 w-auto object-contain brightness-0"
+              className="h-20 md:h-32 w-auto object-contain opacity-40 grayscale"
               loading="lazy"
             />
           </div>
