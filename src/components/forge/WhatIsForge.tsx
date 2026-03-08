@@ -45,7 +45,7 @@ export default function WhatIsForge() {
   return (
     <section id="about" ref={ref} style={{
       background: '#FCF7EF',
-      padding: 'clamp(64px, 10vw, 120px) 0',
+      padding: 'clamp(64px, 10vw, 120px) 0 clamp(24px, 4vw, 48px)',
       position: 'relative',
       overflow: 'hidden',
     }}>
