@@ -78,16 +78,6 @@ export default function Hero() {
         <button className="forge-cta-light" onClick={scrollToExperiences}>
           Explore Experiences
         </button>
-        <p style={{
-          fontSize: isMobile ? 10 : 12,
-          fontWeight: 600,
-          textTransform: 'uppercase',
-          letterSpacing: isMobile ? 2 : 3,
-          color: 'rgba(255,255,255,0.4)',
-          marginTop: 20,
-        }}>
-          India's most immersive creative education experience
-        </p>
       </div>
 
       <style>{`
