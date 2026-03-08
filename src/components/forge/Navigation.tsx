@@ -85,8 +85,8 @@ export default function Navigation() {
             ))}
             <button
               onClick={() => scrollTo('#mentors')}
-              className="forge-cta-dark"
-              style={{ padding: '10px 24px', fontSize: 14, margin: 0, whiteSpace: 'nowrap', borderRadius: 100 }}
+              className="forge-nav-link"
+              style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
             >
               Be a Mentor
             </button>
