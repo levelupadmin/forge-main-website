@@ -3,7 +3,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const row1 = [
   { name: 'Google', logo: '/images/learners/google.png' },
-  { name: 'Adobe', logo: '/images/learners/adobe.png' },
+  { name: 'McKinsey & Co', logo: '/images/learners/mckinsey.png' },
   { name: 'Amazon', logo: '/images/learners/amazon.png' },
   { name: 'Netflix', logo: '/images/learners/netflix.png' },
   { name: 'Meta', logo: '/images/learners/meta.png' },
