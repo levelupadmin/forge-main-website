@@ -45,10 +45,14 @@ export const programs: Program[] = [
     href: "https://creators.forgebylevelup.com/writing",
     nextEdition: "Dehradun · Mar 2025",
     photos: [
-      "/images/programs/writing-hero.png",
-      "/images/programs/creators-4.jpg",
-      "/images/gallery/gallery-1.png",
-      "/images/gallery/gallery-2.png",
+      "/images/programs/writing-1.jpg",
+      "/images/programs/writing-2.jpg",
+      "/images/programs/writing-3.jpg",
+      "/images/programs/writing-4.jpg",
+      "/images/programs/writing-5.jpg",
+      "/images/programs/writing-6.jpg",
+      "/images/programs/writing-7.jpg",
+      "/images/programs/writing-8.jpg",
     ],
   },
 ];

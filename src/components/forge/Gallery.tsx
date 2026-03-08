@@ -4,16 +4,27 @@ import { X } from 'lucide-react';
 
 const galleryImages = [
   { src: '/images/programs/filmmaking-5.jpg', alt: 'Filmmaking bootcamp — cinematic lighting setup' },
+  { src: '/images/programs/writing-1.jpg', alt: 'Writing Retreat — group photo' },
   { src: '/images/programs/creators-1.jpg', alt: 'Creator Residency — content recording session' },
+
+  { src: '/images/programs/writing-3.jpg', alt: 'Writing Retreat — whiteboard session' },
   { src: '/images/programs/filmmaking-8.jpg', alt: 'Filmmaking bootcamp — outdoor shoot' },
   { src: '/images/programs/creators-2.jpg', alt: 'Creator Residency — group photo by the pool' },
+
   { src: '/images/programs/creators-5.jpg', alt: 'Creator Residency — lighting workshop' },
+  { src: '/images/programs/writing-4.jpg', alt: 'Writing Retreat — writing outdoors' },
   { src: '/images/programs/filmmaking-7.jpg', alt: 'Filmmaking bootcamp — hands-on camera work' },
+
+  { src: '/images/programs/writing-5.jpg', alt: 'Writing Retreat — indoor discussion' },
   { src: '/images/programs/creators-6.jpg', alt: 'Creator Residency — vlogging in Ubud' },
-  { src: '/images/programs/creators-7.jpg', alt: 'Creator Residency — presentation session' },
+  { src: '/images/programs/writing-7.jpg', alt: 'Writing Retreat — outdoor workshop' },
+
   { src: '/images/programs/creators-8.jpg', alt: 'Creator Residency — group selfie' },
   { src: '/images/programs/filmmaking-6.jpg', alt: 'Filmmaking bootcamp — group photo' },
+  { src: '/images/programs/writing-8.jpg', alt: 'Writing Retreat — sunset session' },
+
   { src: '/images/programs/creators-3.jpg', alt: 'Creator Residency — exploring nature' },
+  { src: '/images/programs/writing-2.jpg', alt: 'Writing Retreat — smiling outdoors' },
   { src: '/images/programs/creators-4.jpg', alt: 'Creator Residency — outdoor mentoring' },
 ];
 
