@@ -12,7 +12,6 @@ const leftLinks: NavLink[] = [
 const rightLinks: NavLink[] = [
   { label: 'Community', href: '/community', isRoute: true },
   { label: 'Careers', href: '#careers' },
-  { label: 'Be a Mentor', href: '#mentors' },
 ];
 
 export default function Navigation() {
@@ -72,7 +71,7 @@ export default function Navigation() {
 
           {/* Center logo */}
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
             <img
@@ -83,7 +82,7 @@ export default function Navigation() {
           </button>
 
           {/* Right links + CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1.4, justifyContent: 'flex-start' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
             {rightLinks.map(link => (
               <button
                 key={link.href}
