@@ -6,14 +6,13 @@ export interface Person {
 }
 
 export const people: Person[] = [
-  { name: "Dreamer 1", designation: "Filmmaker", photo: "/placeholder.svg", rotation: -1.2 },
-  { name: "Dreamer 2", designation: "Writer", photo: "/placeholder.svg", rotation: 1.5 },
-  { name: "Dreamer 3", designation: "Creator", photo: "/placeholder.svg", rotation: -0.8 },
-  { name: "Dreamer 4", designation: "Founder", photo: "/placeholder.svg", rotation: 1.0 },
-  { name: "Dreamer 5", designation: "Artist", photo: "/placeholder.svg", rotation: -1.5 },
-  { name: "Dreamer 6", designation: "Designer", photo: "/placeholder.svg", rotation: 0.5 },
-  { name: "Dreamer 7", designation: "Musician", photo: "/placeholder.svg", rotation: -1.0 },
-  { name: "Dreamer 8", designation: "Photographer", photo: "/placeholder.svg", rotation: 1.3 },
-  { name: "Dreamer 9", designation: "Entrepreneur", photo: "/placeholder.svg", rotation: -0.5 },
+  { name: "Chetan", designation: "Student", photo: "/images/people/person-1.png", rotation: -1.2 },
+  { name: "Devansh", designation: "Product Manager", photo: "/images/people/person-2.png", rotation: 1.5 },
+  { name: "Karmal", designation: "Freelancer", photo: "/images/people/person-3.png", rotation: -0.8 },
+  { name: "Dreamer 4", designation: "Filmmaker", photo: "/images/people/person-4.png", rotation: 1.0 },
+  { name: "Dreamer 5", designation: "Creator", photo: "/images/people/person-5.png", rotation: -1.5 },
+  { name: "Dreamer 6", designation: "Writer", photo: "/images/people/person-6.png", rotation: 0.5 },
+  { name: "Dreamer 7", designation: "Artist", photo: "/images/people/person-7.png", rotation: -1.0 },
+  { name: "Dreamer 8", designation: "Photographer", photo: "/images/people/person-8.png", rotation: 1.3 },
+  { name: "Dreamer 9", designation: "Entrepreneur", photo: "/images/people/person-9.png", rotation: -0.5 },
 ];
-/* REPLACE: All photos with real Forge batch participant photos */

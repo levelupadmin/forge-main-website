@@ -1,11 +1,11 @@
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const panels = [
-  { label: 'Online Community', photo: '/placeholder.svg' }, /* REPLACE: Community photo */
-  { label: 'Offline Meet-ups', photo: '/placeholder.svg' }, /* REPLACE: Meetup photo */
-  { label: 'Learning Experiences', photo: '/placeholder.svg' }, /* REPLACE: Workshop photo */
-  { label: 'Alumni Collabs', photo: '/placeholder.svg' }, /* REPLACE: Collaboration photo */
-  { label: 'City Chapters', photo: '/placeholder.svg' }, /* REPLACE: City event photo */
+  { label: 'Offline Meet-ups', photo: '/images/community/community-meetups.png' },
+  { label: 'Learning Experiences', photo: '/images/community/learning-experiences.png' },
+  { label: 'Our Productions', photo: '/images/community/productions.png' },
+  { label: 'Guest Lectures', photo: '/images/community/guest-lectures.png' },
+  { label: 'A Community that Celebrates You', photo: '/images/community/celebrates-you.png' },
 ];
 
 export default function Community() {

@@ -1,14 +1,13 @@
-/* REPLACE: All 9+ images below with real Forge behind-the-scenes photos — mix portrait, landscape, square */
 const galleryImages = [
-  { src: '/placeholder.svg', alt: 'Behind the scenes 1' },
-  { src: '/placeholder.svg', alt: 'Behind the scenes 2' },
-  { src: '/placeholder.svg', alt: 'Behind the scenes 3' },
-  { src: '/placeholder.svg', alt: 'Behind the scenes 4' },
-  { src: '/placeholder.svg', alt: 'Behind the scenes 5' },
-  { src: '/placeholder.svg', alt: 'Behind the scenes 6' },
-  { src: '/placeholder.svg', alt: 'Behind the scenes 7' },
-  { src: '/placeholder.svg', alt: 'Behind the scenes 8' },
-  { src: '/placeholder.svg', alt: 'Behind the scenes 9' },
+  { src: '/images/gallery/gallery-1.png', alt: 'Behind the scenes 1' },
+  { src: '/images/gallery/gallery-2.png', alt: 'Behind the scenes 2' },
+  { src: '/images/gallery/gallery-3.png', alt: 'Behind the scenes 3' },
+  { src: '/images/gallery/gallery-4.png', alt: 'Behind the scenes 4' },
+  { src: '/images/gallery/gallery-5.png', alt: 'Behind the scenes 5' },
+  { src: '/images/gallery/gallery-6.png', alt: 'Behind the scenes 6' },
+  { src: '/images/gallery/gallery-7.png', alt: 'Behind the scenes 7' },
+  { src: '/images/gallery/gallery-8.png', alt: 'Behind the scenes 8' },
+  { src: '/images/gallery/gallery-9.png', alt: 'Behind the scenes 9' },
 ];
 
 export default function Gallery() {
@@ -35,7 +34,6 @@ export default function Gallery() {
               borderRadius: 12,
               objectFit: 'cover',
               boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
-              /* Vary heights for natural masonry rhythm */
               height: i % 3 === 0 ? 300 : i % 3 === 1 ? 200 : 250,
             }}
           />

@@ -15,10 +15,10 @@ export const programs: Program[] = [
     href: "/filmmaking",
     nextEdition: "Goa \u00B7 Apr 2025",
     photos: [
-      "/placeholder.svg", /* REPLACE: Filmmaking bootcamp photo 1 */
-      "/placeholder.svg", /* REPLACE: Filmmaking bootcamp photo 2 */
-      "/placeholder.svg", /* REPLACE: Filmmaking bootcamp photo 3 */
-      "/placeholder.svg", /* REPLACE: Filmmaking bootcamp photo 4 */
+      "/images/programs/filmmaking-1.png",
+      "/images/programs/filmmaking-2.png",
+      "/images/programs/filmmaking-3.png",
+      "/images/programs/filmmaking-4.png",
     ],
   },
   {
@@ -28,10 +28,10 @@ export const programs: Program[] = [
     href: "/creator-residency",
     nextEdition: "Manali \u00B7 Jun 2025",
     photos: [
-      "/placeholder.svg", /* REPLACE: Creator residency photo 1 */
-      "/placeholder.svg", /* REPLACE: Creator residency photo 2 */
-      "/placeholder.svg", /* REPLACE: Creator residency photo 3 */
-      "/placeholder.svg", /* REPLACE: Creator residency photo 4 */
+      "/images/gallery/gallery-6.png",
+      "/images/gallery/gallery-7.png",
+      "/images/gallery/gallery-8.png",
+      "/images/gallery/gallery-9.png",
     ],
   },
   {
@@ -41,10 +41,10 @@ export const programs: Program[] = [
     href: "/writing-retreat",
     nextEdition: null,
     photos: [
-      "/placeholder.svg", /* REPLACE: Writing retreat photo 1 */
-      "/placeholder.svg", /* REPLACE: Writing retreat photo 2 */
-      "/placeholder.svg", /* REPLACE: Writing retreat photo 3 */
-      "/placeholder.svg", /* REPLACE: Writing retreat photo 4 */
+      "/images/gallery/gallery-1.png",
+      "/images/gallery/gallery-2.png",
+      "/images/gallery/gallery-3.png",
+      "/images/gallery/gallery-4.png",
     ],
   },
 ];
