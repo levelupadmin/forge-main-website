@@ -10,7 +10,7 @@ export default function PeopleOfForge() {
 
   return (
     <section style={{
-      background: '#FCF7EF',
+      background: '#FFFFFF',
       padding: '0 clamp(24px, 3vw, 40px)',
     }}>
       <div style={{

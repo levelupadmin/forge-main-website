@@ -5,7 +5,7 @@ export default function ClosingStatement() {
 
   return (
     <section ref={ref} className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
-      background: '#FCF7EF',
+      background: '#FFFFFF',
       padding: 'clamp(100px, 12vw, 160px) clamp(24px, 5vw, 80px)',
       textAlign: 'center',
     }}>

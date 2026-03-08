@@ -12,7 +12,7 @@ export default function ImpactNumbers() {
 
   return (
     <section ref={ref} style={{
-      background: '#FCF7EF',
+      background: '#FFFFFF',
       padding: '48px 80px 16px',
     }}>
       <div style={{
