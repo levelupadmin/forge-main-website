@@ -1,8 +1,10 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { mentors } from '@/data/mentors';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function Mentors() {
+  const isMobile = useIsMobile();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -25,16 +27,12 @@ export default function Mentors() {
     setTimeout(() => setIsTransitioning(false), 500);
   }, [isTransitioning, activeIndex]);
 
-  // Auto-play
   useEffect(() => {
-    const startAutoPlay = () => {
-      autoPlayRef.current = setInterval(() => {
-        if (!pausedRef.current) {
-          setActiveIndex(prev => (prev + 1) % mentors.length);
-        }
-      }, 4000);
-    };
-    startAutoPlay();
+    autoPlayRef.current = setInterval(() => {
+      if (!pausedRef.current) {
+        setActiveIndex(prev => (prev + 1) % mentors.length);
+      }
+    }, 4000);
     return () => { if (autoPlayRef.current) clearInterval(autoPlayRef.current); };
   }, []);
 
@@ -43,7 +41,6 @@ export default function Mentors() {
     setTimeout(() => { pausedRef.current = false; }, 8000);
   };
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') { navigate('prev'); handleInteraction(); }
@@ -60,21 +57,137 @@ export default function Mentors() {
     return diff;
   };
 
+  if (isMobile) {
+    return (
+      <section id="mentors" style={{
+        background: 'var(--forge-cream)',
+        padding: 'clamp(48px, 6vw, 80px) 0',
+      }}>
+        <div style={{
+          textAlign: 'center',
+          maxWidth: 600,
+          margin: '0 auto 40px',
+          padding: '0 24px',
+        }}>
+          <div className="forge-subheading">Your</div>
+          <div className="forge-heading">Mentors</div>
+          <p style={{
+            fontSize: 15,
+            opacity: 0.55,
+            lineHeight: 1.7,
+            color: 'var(--forge-black)',
+            maxWidth: 400,
+            margin: '16px auto 0',
+          }}>
+            Your mentors aren't professors. They're creators who've grossed 100M+ views, taught 7,000+ students, and monetized their content.
+          </p>
+        </div>
+
+        {/* Mobile: Stacked cards */}
+        <div style={{ padding: '0 20px', display: 'flex', flexDirection: 'column', gap: 24 }}>
+          {mentors.map((mentor, i) => (
+            <div key={i} style={{
+              background: '#1a1a1a',
+              borderRadius: 20,
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'row',
+              gap: 0,
+            }}>
+              {/* Photo */}
+              <div style={{
+                width: '40%',
+                minHeight: 200,
+                flexShrink: 0,
+              }}>
+                <img
+                  src={mentor.photo}
+                  alt={mentor.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
+              </div>
+
+              {/* Info */}
+              <div style={{
+                flex: 1,
+                padding: '16px 16px 16px 14px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}>
+                <div style={{
+                  fontWeight: 800,
+                  fontSize: 17,
+                  color: 'white',
+                  marginBottom: 3,
+                  letterSpacing: -0.2,
+                }}>
+                  {mentor.name}
+                </div>
+                <div style={{
+                  fontSize: 10,
+                  color: '#FFBC3B',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: 0.8,
+                  marginBottom: 10,
+                }}>
+                  {mentor.designation}
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  {mentor.highlights.map((h, hi) => (
+                    <div key={hi} style={{
+                      display: 'flex',
+                      gap: 8,
+                      alignItems: 'flex-start',
+                    }}>
+                      <div style={{
+                        width: 5,
+                        height: 5,
+                        borderRadius: '50%',
+                        background: '#FFBC3B',
+                        marginTop: 5,
+                        flexShrink: 0,
+                      }} />
+                      <span style={{
+                        fontSize: 11,
+                        color: 'rgba(255,255,255,0.75)',
+                        lineHeight: 1.45,
+                      }}>
+                        {h}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop: Carousel
   return (
     <section id="mentors" style={{
       background: 'var(--forge-cream)',
       padding: 'clamp(48px, 6vw, 80px) 0',
       overflow: 'hidden',
     }}>
-      {/* Header — standardized */}
       <div style={{
         textAlign: 'center',
         maxWidth: 600,
         margin: '0 auto 64px',
         padding: '0 24px',
       }}>
-        <div className="forge-subheading">Learn from</div>
-        <div className="forge-heading">The Best</div>
+        <div className="forge-subheading">Your</div>
+        <div className="forge-heading">Mentors</div>
         <p style={{
           fontSize: 17,
           opacity: 0.55,
@@ -83,15 +196,14 @@ export default function Mentors() {
           maxWidth: 480,
           margin: '20px auto 0',
         }}>
-          Every mentor at the Forge is a practitioner of their craft. A working filmmaker, a published author, a full-time creator. Not a professor.
+          Your mentors aren't professors. They're creators who've grossed 100M+ views, taught 7,000+ students, and monetized their content.
         </p>
       </div>
 
-      {/* Carousel */}
       <div
         style={{
           position: 'relative',
-          height: 520,
+          height: 560,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -99,7 +211,6 @@ export default function Mentors() {
         onMouseEnter={() => { pausedRef.current = true; }}
         onMouseLeave={() => { pausedRef.current = false; }}
       >
-        {/* Arrow Left */}
         <button
           onClick={() => { navigate('prev'); handleInteraction(); }}
           aria-label="Previous mentor"
@@ -132,7 +243,6 @@ export default function Mentors() {
           <ChevronLeft size={20} color="#222" />
         </button>
 
-        {/* Cards */}
         <div style={{
           position: 'relative',
           width: '100%',
@@ -145,7 +255,6 @@ export default function Mentors() {
             const offset = getOffset(i);
             const isActive = offset === 0;
             const isVisible = Math.abs(offset) <= 2;
-
             if (!isVisible) return null;
 
             const scale = isActive ? 1 : 0.68;
@@ -159,7 +268,7 @@ export default function Mentors() {
                 onClick={() => { if (!isActive) { goTo(i); handleInteraction(); } }}
                 style={{
                   position: 'absolute',
-                  width: isActive ? 320 : 220,
+                  width: isActive ? 340 : 220,
                   transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                   transform: `translateX(${translateX}px) scale(${scale})`,
                   opacity,
@@ -194,7 +303,7 @@ export default function Mentors() {
 
                 <div style={{
                   textAlign: 'center',
-                  marginTop: 24,
+                  marginTop: 20,
                   opacity: isActive ? 1 : 0,
                   transform: isActive ? 'translateY(0)' : 'translateY(10px)',
                   transition: 'opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s',
@@ -210,37 +319,47 @@ export default function Mentors() {
                     {mentor.name}
                   </div>
                   <div style={{
-                    fontSize: 15,
-                    color: 'var(--forge-black)',
-                    opacity: 0.5,
-                    marginBottom: 16,
-                    fontWeight: 500,
+                    fontSize: 13,
+                    color: '#FFBC3B',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: 1,
+                    marginBottom: 14,
                   }}>
                     {mentor.designation}
                   </div>
 
                   <div style={{
                     display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: 8,
-                    justifyContent: 'center',
+                    flexDirection: 'column',
+                    gap: 6,
+                    textAlign: 'left',
+                    maxWidth: 380,
+                    margin: '0 auto',
                   }}>
-                    {mentor.credentials.map((cred, ci) => (
-                      <span key={ci} style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: 5,
-                        padding: '6px 14px',
-                        borderRadius: 100,
-                        fontSize: 12,
-                        fontWeight: 600,
-                        color: 'var(--forge-dark-amber)',
-                        background: 'rgba(255,188,59,0.12)',
-                        border: '1px solid rgba(255,188,59,0.25)',
-                        letterSpacing: 0.2,
+                    {mentor.highlights.slice(0, 2).map((h, hi) => (
+                      <div key={hi} style={{
+                        display: 'flex',
+                        gap: 8,
+                        alignItems: 'flex-start',
                       }}>
-                        {cred}
-                      </span>
+                        <div style={{
+                          width: 5,
+                          height: 5,
+                          borderRadius: '50%',
+                          background: '#FFBC3B',
+                          marginTop: 6,
+                          flexShrink: 0,
+                        }} />
+                        <span style={{
+                          fontSize: 13,
+                          color: 'var(--forge-black)',
+                          opacity: 0.6,
+                          lineHeight: 1.5,
+                        }}>
+                          {h}
+                        </span>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -249,7 +368,6 @@ export default function Mentors() {
           })}
         </div>
 
-        {/* Arrow Right */}
         <button
           onClick={() => { navigate('next'); handleInteraction(); }}
           aria-label="Next mentor"
@@ -283,7 +401,6 @@ export default function Mentors() {
         </button>
       </div>
 
-      {/* Dot Indicators */}
       <div style={{
         display: 'flex',
         justifyContent: 'center',
