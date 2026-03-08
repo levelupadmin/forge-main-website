@@ -107,7 +107,7 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const isMobile = useIsMobile();
 
-  const globeScale = isMobile ? 240 : 300;
+  const globeScale = isMobile ? 380 : 500;
   const svgW = 700;
   const svgH = 700;
   const cx = svgW / 2;
