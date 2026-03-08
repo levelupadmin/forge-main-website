@@ -5,6 +5,7 @@ export interface Partner {
   description: string;
   discount?: string;
   image: string;
+  invertLogo?: boolean;
 }
 
 export const partnerCategories = [
