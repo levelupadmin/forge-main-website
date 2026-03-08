@@ -107,7 +107,7 @@ export default function WhatIsForge() {
                 loading="lazy"
                 style={{
                   width: '100%',
-                  height: isMobile ? 200 : photo.height,
+                  height: isMobile ? 160 : photo.height,
                   objectFit: 'cover',
                   borderRadius: 16,
                   filter: 'grayscale(30%) sepia(10%)',
