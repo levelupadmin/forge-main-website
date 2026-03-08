@@ -1,10 +1,12 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { mentors } from '@/data/mentors';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Mentors() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const pausedRef = useRef(false);
 
   const navigate = useCallback((direction: 'prev' | 'next') => {
     if (isTransitioning) return;
@@ -23,11 +25,29 @@ export default function Mentors() {
     setTimeout(() => setIsTransitioning(false), 500);
   }, [isTransitioning, activeIndex]);
 
+  // Auto-play
+  useEffect(() => {
+    const startAutoPlay = () => {
+      autoPlayRef.current = setInterval(() => {
+        if (!pausedRef.current) {
+          setActiveIndex(prev => (prev + 1) % mentors.length);
+        }
+      }, 4000);
+    };
+    startAutoPlay();
+    return () => { if (autoPlayRef.current) clearInterval(autoPlayRef.current); };
+  }, []);
+
+  const handleInteraction = () => {
+    pausedRef.current = true;
+    setTimeout(() => { pausedRef.current = false; }, 8000);
+  };
+
   // Keyboard navigation
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') navigate('prev');
-      if (e.key === 'ArrowRight') navigate('next');
+      if (e.key === 'ArrowLeft') { navigate('prev'); handleInteraction(); }
+      if (e.key === 'ArrowRight') { navigate('next'); handleInteraction(); }
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
@@ -35,7 +55,6 @@ export default function Mentors() {
 
   const getOffset = (index: number) => {
     let diff = index - activeIndex;
-    // Wrap around for circular navigation
     if (diff > mentors.length / 2) diff -= mentors.length;
     if (diff < -mentors.length / 2) diff += mentors.length;
     return diff;
@@ -47,55 +66,42 @@ export default function Mentors() {
       padding: 'clamp(80px, 12vw, 140px) 0',
       overflow: 'hidden',
     }}>
-      {/* Header */}
+      {/* Header — standardized */}
       <div style={{
         textAlign: 'center',
         maxWidth: 600,
         margin: '0 auto 64px',
         padding: '0 24px',
       }}>
-        <div style={{
-          fontSize: 15,
-          fontWeight: 600,
-          textTransform: 'uppercase' as const,
-          letterSpacing: 3,
-          color: 'var(--forge-dark-amber)',
-          marginBottom: 12,
-        }}>
-          Learn from
-        </div>
-        <div style={{
-          fontWeight: 800,
-          fontSize: 'clamp(36px, 5vw, 56px)',
-          lineHeight: 1.1,
-          color: 'var(--forge-black)',
-          marginBottom: 20,
-        }}>
-          the best
-        </div>
+        <div className="forge-subheading">Learn from</div>
+        <div className="forge-heading">the best</div>
         <p style={{
           fontSize: 17,
           opacity: 0.55,
           lineHeight: 1.8,
           color: 'var(--forge-black)',
           maxWidth: 480,
-          margin: '0 auto',
+          margin: '20px auto 0',
         }}>
           Every mentor at the Forge is a practitioner of their craft. A working filmmaker, a published author, a full-time creator. Not a professor.
         </p>
       </div>
 
       {/* Carousel */}
-      <div style={{
-        position: 'relative',
-        height: 520,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+      <div
+        style={{
+          position: 'relative',
+          height: 520,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        onMouseEnter={() => { pausedRef.current = true; }}
+        onMouseLeave={() => { pausedRef.current = false; }}
+      >
         {/* Arrow Left */}
         <button
-          onClick={() => navigate('prev')}
+          onClick={() => { navigate('prev'); handleInteraction(); }}
           aria-label="Previous mentor"
           style={{
             position: 'absolute',
@@ -150,7 +156,7 @@ export default function Mentors() {
             return (
               <div
                 key={i}
-                onClick={() => !isActive && goTo(i)}
+                onClick={() => { if (!isActive) { goTo(i); handleInteraction(); } }}
                 style={{
                   position: 'absolute',
                   width: isActive ? 320 : 220,
@@ -159,10 +165,8 @@ export default function Mentors() {
                   opacity,
                   zIndex,
                   cursor: isActive ? 'default' : 'pointer',
-                  pointerEvents: isActive ? 'auto' : 'auto',
                 }}
               >
-                {/* Photo Container */}
                 <div style={{
                   width: '100%',
                   height: isActive ? 400 : 280,
@@ -188,7 +192,6 @@ export default function Mentors() {
                   />
                 </div>
 
-                {/* Info — only visible on active */}
                 <div style={{
                   textAlign: 'center',
                   marginTop: 24,
@@ -216,7 +219,6 @@ export default function Mentors() {
                     {mentor.designation}
                   </div>
 
-                  {/* Credential Badges */}
                   <div style={{
                     display: 'flex',
                     flexWrap: 'wrap',
@@ -249,7 +251,7 @@ export default function Mentors() {
 
         {/* Arrow Right */}
         <button
-          onClick={() => navigate('next')}
+          onClick={() => { navigate('next'); handleInteraction(); }}
           aria-label="Next mentor"
           style={{
             position: 'absolute',
@@ -291,7 +293,7 @@ export default function Mentors() {
         {mentors.map((_, i) => (
           <button
             key={i}
-            onClick={() => goTo(i)}
+            onClick={() => { goTo(i); handleInteraction(); }}
             aria-label={`Go to mentor ${i + 1}`}
             style={{
               width: activeIndex === i ? 28 : 8,

@@ -1,4 +1,5 @@
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const panels = [
   { label: 'Offline Meet-ups', photo: '/images/community/community-meetups.png' },
@@ -10,23 +11,19 @@ const panels = [
 
 export default function Community() {
   const isMobile = useIsMobile();
+  const { ref, isVisible } = useScrollAnimation(0.1);
 
-  // Bento layout: row 1 = 3 cards, row 2 = 2 cards (wider)
   const row1 = panels.slice(0, 3);
   const row2 = panels.slice(3);
 
   return (
-    <section id="community" style={{
+    <section id="community" ref={ref} style={{
       background: 'var(--forge-cream)',
       padding: 'clamp(64px, 10vw, 120px) 0 0',
     }}>
-      <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: 48 }}>
-        <h2 style={{
-          fontWeight: 700,
-          fontSize: 'clamp(36px, 4vw, 52px)',
-          color: '#222',
-          lineHeight: 1.1,
-        }}>
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', padding: '0 24px', marginBottom: 48 }}>
+        <div className="forge-subheading">Community</div>
+        <div className="forge-heading">
           Come for the Learning.<br />
           Stay for the{' '}
           <span style={{
@@ -37,7 +34,7 @@ export default function Community() {
           }}>
             Community
           </span>.
-        </h2>
+        </div>
         <p style={{ fontSize: 17, opacity: 0.6, marginTop: 16 }}>
           Your network is your networth.
         </p>
@@ -49,7 +46,6 @@ export default function Community() {
         maxWidth: 1320,
         margin: '0 auto',
       }}>
-        {/* Row 1: 3 cards */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
@@ -57,23 +53,34 @@ export default function Community() {
           marginBottom: 16,
         }}>
           {row1.map((panel, i) => (
-            <BentoCard key={i} panel={panel} height={isMobile ? 220 : 300} />
+            <div
+              key={i}
+              className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+              style={{ transitionDelay: `${200 + i * 150}ms` }}
+            >
+              <BentoCard panel={panel} height={isMobile ? 220 : 300} />
+            </div>
           ))}
         </div>
 
-        {/* Row 2: 2 cards */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: isMobile ? '1fr' : '1fr 1.2fr',
           gap: 16,
         }}>
           {row2.map((panel, i) => (
-            <BentoCard key={i} panel={panel} height={isMobile ? 220 : 280} />
+            <div
+              key={i}
+              className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+              style={{ transitionDelay: `${500 + i * 150}ms` }}
+            >
+              <BentoCard panel={panel} height={isMobile ? 220 : 280} />
+            </div>
           ))}
         </div>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '40px 24px' }}>
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', padding: '40px 24px', transitionDelay: '700ms' }}>
         <a href="#" className="forge-cta-dark" style={{ padding: '14px 32px', fontSize: 15 }}>
           Join the Community
         </a>
@@ -113,13 +120,11 @@ function BentoCard({ panel, height }: { panel: { label: string; photo: string };
           inset: 0,
         }}
       />
-      {/* Gradient overlay */}
       <div style={{
         position: 'absolute',
         inset: 0,
         background: 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 60%, transparent 100%)',
       }} />
-      {/* Label at top-left */}
       <div style={{
         position: 'absolute',
         top: 24,
