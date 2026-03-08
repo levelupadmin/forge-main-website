@@ -10,9 +10,9 @@ const narrativeSteps = [
 ];
 
 const circleConfigs = [
-  { label: 'Learning', scatterX: -140, scatterY: -50, finalX: -65, finalY: -50 },
-  { label: 'Travel', scatterX: 140, scatterY: -50, finalX: 65, finalY: -50 },
-  { label: 'Community', scatterX: 0, scatterY: 120, finalX: 0, finalY: 65 },
+  { label: 'Learning', scatterX: -180, scatterY: -60, finalX: -72, finalY: -56 },
+  { label: 'Travel', scatterX: 180, scatterY: -60, finalX: 72, finalY: -56 },
+  { label: 'Community', scatterX: 0, scatterY: 150, finalX: 0, finalY: 72 },
 ];
 
 export default function Ethos() {
@@ -33,7 +33,7 @@ export default function Ethos() {
     return () => timers.forEach(clearTimeout);
   }, [isVisible]);
 
-  const cx = 350, cy = 350, r = 110;
+  const cx = 400, cy = 400, r = 130;
   const circumference = 2 * Math.PI * r;
 
   const getTranslate = (idx: number) => {
@@ -54,7 +54,7 @@ export default function Ethos() {
   return (
     <section ref={ref} style={{
       position: 'relative',
-      minHeight: 700,
+      minHeight: 750,
       overflow: 'hidden',
     }}>
       <div style={{
@@ -65,7 +65,7 @@ export default function Ethos() {
       <div style={{
         position: 'absolute', inset: 0,
         background: `radial-gradient(ellipse at 50% 50%, rgba(255,188,59,${stage >= 6 ? 0.16 : 0.04}) 0%, transparent 70%)`,
-        transition: 'background 1s ease',
+        transition: 'background 1.2s ease',
       }} />
 
       <div style={{
@@ -78,7 +78,7 @@ export default function Ethos() {
         <div style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-          transition: 'opacity 0.8s ease, transform 0.8s ease',
+          transition: 'opacity 1s ease, transform 1s ease',
           marginBottom: 'clamp(16px, 2vw, 32px)',
         }}>
           <div className="forge-subheading forge-subheading--light">Our</div>
@@ -86,8 +86,8 @@ export default function Ethos() {
         </div>
 
         {/* SVG Venn Diagram */}
-        <svg viewBox="0 0 700 700" style={{
-          width: 'clamp(320px, 45vw, 500px)', height: 'auto',
+        <svg viewBox="0 0 800 800" style={{
+          width: 'clamp(360px, 55vw, 620px)', height: 'auto',
           marginBottom: 16,
         }}>
           <defs>
@@ -97,7 +97,7 @@ export default function Ethos() {
               <stop offset="100%" stopColor="#FFBC3B" stopOpacity="0" />
             </radialGradient>
             <filter id="glow-blur">
-              <feGaussianBlur stdDeviation="8" result="blur" />
+              <feGaussianBlur stdDeviation="10" result="blur" />
               <feMerge>
                 <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
@@ -105,8 +105,8 @@ export default function Ethos() {
             </filter>
           </defs>
 
-          <circle cx={cx} cy={cy} r="70" fill="url(#forge-glow-ethos)" filter="url(#glow-blur)"
-            style={{ opacity: glowOpacity, transition: 'opacity 1s ease' }} />
+          <circle cx={cx} cy={cy} r="80" fill="url(#forge-glow-ethos)" filter="url(#glow-blur)"
+            style={{ opacity: glowOpacity, transition: 'opacity 1.2s ease-in-out' }} />
 
           {circleConfigs.map((c, idx) => {
             const { x, y, drawn } = getTranslate(idx);
@@ -115,39 +115,41 @@ export default function Ethos() {
 
             return (
               <g key={c.label} transform={`translate(${x}, ${y})`}
-                style={{ transition: 'transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease', opacity }}>
+                style={{ transition: 'transform 1.4s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease', opacity }}>
                 <circle cx={cx} cy={cy} r={r} fill="rgba(255,255,255,0.03)" />
-                <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1"
-                  style={{ strokeDasharray: circumference, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease' }} />
-                <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,188,59,0.15)" strokeWidth="3"
-                  style={{ strokeDasharray: circumference, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease', filter: 'blur(4px)' }} />
+                <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,255,255,0.45)" strokeWidth="1"
+                  style={{ strokeDasharray: circumference, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.4s ease-in-out' }} />
+                <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,188,59,0.12)" strokeWidth="3"
+                  style={{ strokeDasharray: circumference, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.4s ease-in-out', filter: 'blur(5px)' }} />
                 <text
-                  x={cx + (idx === 0 ? -55 : idx === 1 ? 55 : 0)}
-                  y={cy + (idx === 2 ? 55 : -15)}
+                  x={cx + (idx === 0 ? -60 : idx === 1 ? 60 : 0)}
+                  y={cy + (idx === 2 ? 60 : -18)}
                   textAnchor="middle"
                   dominantBaseline="middle"
                   fill="white"
                   fontWeight="600"
-                  fontSize="18"
+                  fontSize="20"
                   letterSpacing="0.04em"
-                  style={{ opacity: 0.9, transition: 'opacity 0.6s ease' }}
+                  style={{ opacity: 0.9, transition: 'opacity 0.8s ease' }}
                 >{c.label}</text>
               </g>
             );
           })}
 
-          {/* Center Forge logo (white) */}
+          {/* Center Forge logo — white, transparent background */}
           <image
             href="/images/forge-logo.png"
-            x={cx - 40}
-            y={cy - 16}
-            width="80"
-            height="32"
+            x={cx - 50}
+            y={cy - 20}
+            width="100"
+            height="40"
             style={{
               opacity: centerLabelOpacity,
-              transition: 'opacity 0.8s ease',
+              transition: 'opacity 1s ease-in-out',
               filter: 'brightness(0) invert(1)',
+              mixBlendMode: 'screen',
             }}
+            preserveAspectRatio="xMidYMid meet"
           />
         </svg>
 
@@ -160,7 +162,7 @@ export default function Ethos() {
               color: 'white',
               opacity: narrativeIdx === i ? 0.8 : 0,
               transform: `translateY(${narrativeIdx === i ? 0 : 10}px)`,
-              transition: 'opacity 0.6s ease, transform 0.6s ease',
+              transition: 'opacity 0.8s ease, transform 0.8s ease',
               fontStyle: 'italic', lineHeight: 1.6, fontWeight: 300,
               pointerEvents: 'none',
               margin: 0,
@@ -177,7 +179,7 @@ export default function Ethos() {
           color: 'white',
           opacity: finalOpacity ? 0.85 : 0,
           transform: `translateY(${finalOpacity ? 0 : 20}px)`,
-          transition: 'opacity 0.8s ease, transform 0.8s ease',
+          transition: 'opacity 1s ease, transform 1s ease',
           lineHeight: 1.8, textAlign: 'center', fontWeight: 400,
           margin: 0,
         }}>
