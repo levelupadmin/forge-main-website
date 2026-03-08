@@ -483,6 +483,10 @@ body {
 @media (max-width: 767px) {
   .forge-desktop-nav { display: none !important; }
   .forge-mobile-hamburger { display: flex !important; }
+  .forge-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
   .forge-panels {
     flex-direction: column;
     height: auto;

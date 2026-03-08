@@ -68,7 +68,7 @@ export default function Footer() {
         maxWidth: 1280,
         margin: '0 auto',
       }}>
-        <div style={{
+        <div className="forge-footer-grid" style={{
           display: 'grid',
           gridTemplateColumns: '2fr 1fr 1fr 1fr',
           gap: 'clamp(32px, 4vw, 64px)',
