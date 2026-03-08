@@ -19,17 +19,17 @@ const WaveIcon = ({ color }: { color: string }) => (
 const steps = [
   {
     word: 'Learn.',
-    text: 'Scene-setting, finding the theme, character development, script-writing, storyboarding and pre-production. These initial learnings lay the foundation for your short film and your filmmaking dreams.',
+    text: 'Everything starts with understanding your craft. The fundamentals, the process, the tools. Taught by people who are still out there doing it.',
     color: '#FFBC3B',
   },
   {
     word: 'Do.',
-    text: "Express your passion through the process of production of your own film. Call your own shots, frame your frames, direct your actors, set up the scene and find your unique voice as a filmmaker.",
+    text: "You don't just study the craft. You practice it. Every session, every day, you're creating something real. No theory without action.",
     color: '#FFA800',
   },
   {
     word: 'Become.',
-    text: "Finally, the grand screening, a recognition of your creative storytelling where each film is not just screened, but celebrated; concluding with a farewell that's not an end, but a new beginning in your creative path.",
+    text: "You leave the Forge having made something that's yours. A short film. A reel. A manuscript. You're not a creator if you aren't creating something, right?",
     color: '#DD6F15',
   },
 ];
