@@ -204,8 +204,8 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
         {/* Presence markers with pulse */}
         {PRESENCE_MARKERS.map((marker) => (
           <Marker key={marker.name} coordinates={marker.coordinates}>
-            <circle r={8} fill="white" opacity={0.3} className="pulse-marker" />
-            <circle r={5} fill="#FFF" stroke="#999" strokeWidth={1} />
+            <circle r={12} fill="white" opacity={0.3} className="pulse-ring" />
+            <circle r={6} fill="#FFF" stroke="#999" strokeWidth={1.5} />
           </Marker>
         ))}
       </ComposableMap>
