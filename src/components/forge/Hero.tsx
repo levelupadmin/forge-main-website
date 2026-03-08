@@ -7,11 +7,10 @@ export default function Hero() {
   return (
     <section style={{
       position: 'relative',
-      width: 'calc(100% - 32px)',
+      width: '100%',
       height: '100vh',
       overflow: 'hidden',
       borderRadius: '0 0 32px 32px',
-      margin: '0 auto',
     }}>
       {/* Hero video background */}
       <video
