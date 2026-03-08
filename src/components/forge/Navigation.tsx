@@ -71,7 +71,7 @@ export default function Navigation() {
 
           {/* Center logo */}
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
             <img
