@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
-const navLinks = [
+const leftLinks = [
   { label: 'Experiences', href: '#experiences' },
   { label: 'About', href: '#about' },
+];
+
+const rightLinks = [
   { label: 'Community', href: '#community' },
   { label: 'Stories', href: '#stories' },
   { label: 'Careers', href: '#careers' },
@@ -29,81 +32,71 @@ export default function Navigation() {
     <>
       <nav style={{
         position: 'fixed',
-        top: scrolled ? 0 : 24,
-        left: 0,
-        right: 0,
+        top: 24,
+        left: '50%',
+        transform: 'translateX(-50%)',
         zIndex: 100,
-        padding: scrolled ? '12px 40px' : '0 40px',
-        background: scrolled ? 'rgba(252,247,239,0.95)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(34,34,34,0.08)' : 'none',
         transition: 'all 300ms ease',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
       }}>
-        <div>
-          <div style={{
-            fontWeight: 700,
-            fontSize: 20,
-            color: scrolled ? '#222' : '#fff',
-            transition: 'color 300ms ease',
-          }}>
-            the Forge
-          </div>
-          <div style={{
-            fontSize: 10,
-            letterSpacing: '0.12em',
-            opacity: 0.5,
-            color: scrolled ? '#222' : '#fff',
-            transition: 'color 300ms ease',
-          }}>
-            by LevelUp Learning
-          </div>
-        </div>
-
         <div className="forge-desktop-nav" style={{
           background: 'white',
-          borderRadius: 100,
-          padding: '8px 8px 8px 24px',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.15)',
+          borderRadius: 16,
+          padding: '10px 32px',
+          boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
           display: 'flex',
           alignItems: 'center',
-          gap: 24,
+          gap: 32,
         }}>
-          {navLinks.map(link => (
+          {leftLinks.map(link => (
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
               className="forge-nav-link"
-              style={{ color: '#222' }}
+              style={{ color: '#222', fontSize: 14, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}
             >
               {link.label}
             </button>
           ))}
+
+          {/* Center logo */}
           <button
-            onClick={() => scrollTo('#experiences')}
-            className="forge-cta-dark"
-            style={{ padding: '10px 24px', fontSize: 13, margin: 0 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 8px', display: 'flex', alignItems: 'center' }}
           >
-            Apply Now
+            <img
+              src="/images/forge-logo.png"
+              alt="the Forge"
+              style={{ height: 40, width: 'auto' }}
+            />
           </button>
+
+          {rightLinks.map(link => (
+            <button
+              key={link.href}
+              onClick={() => scrollTo(link.href)}
+              className="forge-nav-link"
+              style={{ color: '#222', fontSize: 14, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              {link.label}
+            </button>
+          ))}
         </div>
 
+        {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(true)}
           className="forge-mobile-hamburger"
           style={{
             display: 'none',
-            background: 'rgba(255,255,255,0.15)',
+            background: 'rgba(255,255,255,0.9)',
             border: 'none',
-            borderRadius: 8,
+            borderRadius: 12,
             padding: 10,
             cursor: 'pointer',
             flexDirection: 'column',
             gap: 5,
             alignItems: 'center',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
           }}
         >
           {[0, 1, 2].map(i => (
@@ -111,8 +104,7 @@ export default function Navigation() {
               display: 'block',
               width: 22,
               height: 2,
-              background: scrolled ? '#222' : 'white',
-              transition: 'background 300ms ease',
+              background: '#222',
             }} />
           ))}
         </button>
@@ -134,7 +126,7 @@ export default function Navigation() {
           >
             <X size={28} />
           </button>
-          {navLinks.map(link => (
+          {[...leftLinks, ...rightLinks].map(link => (
             <a key={link.href} onClick={() => scrollTo(link.href)} style={{ cursor: 'pointer' }}>
               {link.label}
             </a>
