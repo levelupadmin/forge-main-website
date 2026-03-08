@@ -195,9 +195,9 @@ export default function Ethos() {
           lineHeight: 1.8, textAlign: 'center', fontWeight: 400,
         }}>
           We meet dreamers at the intersection of{' '}
-          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>filmmaking</span>,{' '}
+          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>learning</span>,{' '}
           <span style={{ color: '#FFBC3B', fontWeight: 700 }}>travel</span> and{' '}
-          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>making new friends</span>{' '}
+          <span style={{ color: '#FFBC3B', fontWeight: 700 }}>community</span>{' '}
           — to enable them to become doers.
         </p>
       </div>
