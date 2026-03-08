@@ -24,7 +24,7 @@ export default function ImpactNumbers() {
 
   return (
     <section ref={ref} style={{
-      backgroundColor: '#000',
+      backgroundColor: '#FCF7EF',
       padding: isMobile ? '48px 20px' : 'clamp(48px, 6vw, 80px) 80px',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
@@ -35,7 +35,7 @@ export default function ImpactNumbers() {
           letterSpacing: '3px',
           color: '#DD6F15',
           marginBottom: 12,
-          textAlign: isMobile ? 'center' : 'left',
+          textAlign: 'center',
         }}>
           The Numbers
         </p>
@@ -43,11 +43,11 @@ export default function ImpactNumbers() {
         <h2 className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
           fontSize: 'clamp(40px, 6vw, 64px)',
           fontWeight: 700,
-          color: '#FFFFFF',
+          color: '#222222',
           letterSpacing: -1.5,
           lineHeight: 1.05,
           marginBottom: isMobile ? 36 : 56,
-          textAlign: isMobile ? 'center' : 'left',
+          textAlign: 'center',
           transitionDelay: '100ms',
         }}>
           Good Vibes.<br />Greater Impact.
