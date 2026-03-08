@@ -11,12 +11,28 @@ export default function Hero() {
       height: '100vh',
       overflow: 'hidden',
     }}>
-      {/* REPLACE: Hero video — Forge editions montage */}
-      {/* Fallback gradient background */}
+      {/* Hero video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+        }}
+      >
+        <source src="/videos/forge-hero.mp4" type="video/mp4" />
+      </video>
+      {/* Fallback gradient background (behind video) */}
       <div style={{
         position: 'absolute',
         inset: 0,
         background: 'linear-gradient(135deg, #1a1a0e 0%, #2d1f00 40%, #1a1200 100%)',
+        zIndex: -1,
       }} />
 
       {/* Radial glow overlay */}
