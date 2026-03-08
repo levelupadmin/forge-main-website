@@ -1,7 +1,7 @@
 import Navigation from '@/components/forge/Navigation';
 import Hero from '@/components/forge/Hero';
 import SmoothScroll from '@/components/forge/SmoothScroll';
-import CustomCursor from '@/components/forge/CustomCursor';
+
 import FilmGrain from '@/components/forge/FilmGrain';
 import ImpactNumbers from '@/components/forge/ImpactNumbers';
 import WhatIsForge from '@/components/forge/WhatIsForge';
