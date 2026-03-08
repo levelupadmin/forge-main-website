@@ -8,7 +8,7 @@ const leftLinks = [
 
 const rightLinks = [
   { label: 'Community', href: '#community' },
-  { label: 'Stories', href: '#stories' },
+  { label: 'Careers', href: '#careers' },
 ];
 
 export default function Navigation() {
@@ -32,20 +32,20 @@ export default function Navigation() {
         <div className="forge-desktop-nav" style={{
           background: 'white',
           borderRadius: 100,
-          padding: '4px 4px 4px 24px',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
+          padding: '8px 8px 8px 32px',
+          boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
           display: 'flex',
           alignItems: 'center',
           gap: 0,
         }}>
           {/* Left links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, justifyContent: 'flex-end' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-end' }}>
             {leftLinks.map(link => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 className="forge-nav-link"
-                style={{ color: '#222', fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}
+                style={{ color: '#999', fontSize: 15, fontWeight: 400 }}
               >
                 {link.label}
               </button>
@@ -55,23 +55,23 @@ export default function Navigation() {
           {/* Center logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 20px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
             <img
               src="/images/forge-logo.png"
               alt="the Forge"
-              style={{ height: 36, width: 'auto', display: 'block' }}
+              style={{ height: 32, width: 'auto', display: 'block' }}
             />
           </button>
 
           {/* Right links + CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, justifyContent: 'flex-start' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
             {rightLinks.map(link => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 className="forge-nav-link"
-                style={{ color: '#222', fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}
+                style={{ color: '#999', fontSize: 15, fontWeight: 400 }}
               >
                 {link.label}
               </button>
@@ -79,7 +79,7 @@ export default function Navigation() {
             <button
               onClick={() => scrollTo('#experiences')}
               className="forge-cta-dark"
-              style={{ padding: '8px 18px', fontSize: 12, margin: 0, whiteSpace: 'nowrap', borderRadius: 100 }}
+              style={{ padding: '10px 24px', fontSize: 14, margin: 0, whiteSpace: 'nowrap', borderRadius: 100 }}
             >
               Request an Invite
             </button>
