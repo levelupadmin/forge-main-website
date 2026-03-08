@@ -31,8 +31,8 @@ export default function Navigation() {
       }}>
         <div className="forge-desktop-nav" style={{
           background: 'white',
-          borderRadius: 16,
-          padding: '8px 12px 8px 28px',
+          borderRadius: 100,
+          padding: '6px 6px 6px 28px',
           boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
           display: 'flex',
           alignItems: 'center',
