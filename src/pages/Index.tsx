@@ -27,6 +27,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <ImpactNumbers />
+      <GlobalReach />
       <WhatIsForge />
       <LearnDoBecome />
       <Experiences />
