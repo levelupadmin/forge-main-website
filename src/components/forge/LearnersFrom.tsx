@@ -28,13 +28,13 @@ function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left
 
   return (
     <div className="overflow-hidden w-full">
-      <div className={`flex items-center gap-12 md:gap-20 ${animClass}`} style={{ width: 'max-content' }}>
+      <div className={`flex items-center ${animClass}`} style={{ width: 'max-content', gap: 0 }}>
         {duplicated.map((item, i) => (
-          <div key={`${item.name}-${i}`} className="flex-shrink-0 flex items-center justify-center" style={{ height: 80 }}>
+          <div key={`${item.name}-${i}`} className="flex-shrink-0 flex items-center justify-center px-4" style={{ height: 128 }}>
             <img
               src={item.logo}
               alt={item.name}
-              className="h-14 md:h-20 w-auto object-contain opacity-50 grayscale brightness-200"
+              className="h-20 md:h-32 w-auto object-contain opacity-30 grayscale"
               loading="lazy"
             />
           </div>
