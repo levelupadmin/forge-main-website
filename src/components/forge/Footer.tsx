@@ -37,7 +37,7 @@ export default function Footer() {
       {/* Learn Do Become strip */}
       <div style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
-        padding: 'clamp(40px, 6vw, 64px) clamp(24px, 5vw, 80px)',
+        padding: 'clamp(28px, 4vw, 48px) clamp(24px, 5vw, 80px)',
       }}>
         <div style={{
           maxWidth: 1280,
@@ -45,34 +45,19 @@ export default function Footer() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: 'clamp(24px, 4vw, 56px)',
+          gap: 'clamp(16px, 3vw, 40px)',
           flexWrap: 'wrap',
         }}>
-          {steps.map((step, i) => (
-            <div key={step.word} style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'clamp(16px, 3vw, 40px)',
+          {steps.map((step) => (
+            <span key={step.word} style={{
+              fontWeight: 800,
+              fontSize: 'clamp(28px, 4vw, 48px)',
+              color: step.color,
+              lineHeight: 1,
+              letterSpacing: -1,
             }}>
-              <span style={{
-                fontWeight: 800,
-                fontSize: 'clamp(32px, 5vw, 56px)',
-                color: step.color,
-                lineHeight: 1,
-                letterSpacing: -1,
-              }}>
-                {step.word}
-              </span>
-              {i < steps.length - 1 && (
-                <span style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.15)',
-                  flexShrink: 0,
-                }} />
-              )}
-            </div>
+              {step.word}
+            </span>
           ))}
         </div>
       </div>
