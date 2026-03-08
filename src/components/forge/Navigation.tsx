@@ -32,7 +32,7 @@ export default function Navigation() {
         <div className="forge-desktop-nav" style={{
           background: 'white',
           borderRadius: 100,
-          padding: '6px 6px 6px 24px',
+          padding: '4px 4px 4px 24px',
           boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
           display: 'flex',
           alignItems: 'center',
@@ -60,7 +60,7 @@ export default function Navigation() {
             <img
               src="/images/forge-logo.png"
               alt="the Forge"
-              style={{ height: 72, width: 'auto', display: 'block' }}
+              style={{ height: 36, width: 'auto', display: 'block' }}
             />
           </button>
 
@@ -79,7 +79,7 @@ export default function Navigation() {
             <button
               onClick={() => scrollTo('#experiences')}
               className="forge-cta-dark"
-              style={{ padding: '10px 20px', fontSize: 12, margin: 0, whiteSpace: 'nowrap' }}
+              style={{ padding: '8px 18px', fontSize: 12, margin: 0, whiteSpace: 'nowrap', borderRadius: 100 }}
             >
               Request an Invite
             </button>
