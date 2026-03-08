@@ -19,15 +19,14 @@ export default function BrandPartners() {
       {/* Main layout */}
       <div style={{
         display: 'flex',
-        gap: 48,
+        gap: 40,
         maxWidth: 1100,
         margin: '0 auto',
-        alignItems: 'stretch',
-        flexWrap: 'wrap',
+        alignItems: 'flex-start',
       }}>
         {/* Left — Category bento tabs */}
         <div style={{
-          flex: '0 0 200px',
+          flex: '0 0 180px',
           display: 'flex',
           flexDirection: 'column',
           gap: 12,
@@ -58,85 +57,91 @@ export default function BrandPartners() {
           })}
         </div>
 
-        {/* Center — Image */}
+        {/* Right area — Image + Details side by side */}
         <div style={{
-          flex: '1 1 360px',
-          minWidth: 280,
-        }}>
-          <div style={{
-            borderRadius: 16,
-            overflow: 'hidden',
-            aspectRatio: '4 / 5',
-            maxHeight: 480,
-          }}>
-            <img
-              src={activePartner.image}
-              alt={activePartner.name}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                transition: 'opacity 0.4s ease',
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Right — Description + Logo + Discount */}
-        <div style={{
-          flex: '1 1 260px',
+          flex: 1,
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          gap: 24,
-          minWidth: 220,
+          gap: 36,
+          alignItems: 'flex-start',
         }}>
-          <p style={{
-            fontSize: 15,
-            lineHeight: 1.7,
-            color: '#222',
-            opacity: 0.7,
-            margin: 0,
-          }}>
-            {activePartner.description}
-          </p>
-
-          {/* Partner logo */}
+          {/* Image */}
           <div style={{
-            border: '1.5px solid rgba(34,34,34,0.15)',
-            borderRadius: 12,
-            padding: '16px 24px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: 'fit-content',
-            height: 56,
-            background: '#fff',
+            flex: '0 0 320px',
           }}>
-            <img
-              src={activePartner.logo}
-              alt={activePartner.name}
-              style={{
-                maxWidth: 120,
-                maxHeight: '100%',
-                objectFit: 'contain',
-              }}
-            />
+            <div style={{
+              borderRadius: 16,
+              overflow: 'hidden',
+              aspectRatio: '4 / 5',
+            }}>
+              <img
+                src={activePartner.image}
+                alt={activePartner.name}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  transition: 'opacity 0.4s ease',
+                }}
+              />
+            </div>
           </div>
 
-          {activePartner.discount && (
-            <div style={{
-              background: '#FFBC3B',
-              color: '#1a1a1a',
-              fontWeight: 600,
-              fontSize: 14,
-              padding: '8px 16px',
-              borderRadius: 8,
-              width: 'fit-content',
+          {/* Description + Logo + Discount */}
+          <div style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: 24,
+            paddingTop: 40,
+          }}>
+            <p style={{
+              fontSize: 15,
+              lineHeight: 1.7,
+              color: '#222',
+              opacity: 0.7,
+              margin: 0,
             }}>
-              {activePartner.discount}
+              {activePartner.description}
+            </p>
+
+            {/* Partner logo */}
+            <div style={{
+              border: '1.5px solid rgba(34,34,34,0.15)',
+              borderRadius: 12,
+              padding: '16px 24px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 'fit-content',
+              height: 56,
+              background: '#fff',
+            }}>
+              <img
+                src={activePartner.logo}
+                alt={activePartner.name}
+                style={{
+                  maxWidth: 120,
+                  maxHeight: '100%',
+                  objectFit: 'contain',
+                }}
+              />
             </div>
-          )}
+
+            {activePartner.discount && (
+              <div style={{
+                background: '#FFBC3B',
+                color: '#1a1a1a',
+                fontWeight: 600,
+                fontSize: 14,
+                padding: '8px 16px',
+                borderRadius: 8,
+                width: 'fit-content',
+              }}>
+                {activePartner.discount}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
