@@ -11,17 +11,13 @@ const INITIAL_Y_ROTATION = -((INDIA_LON - 90) * Math.PI) / 180;
 // Lat/Lng of student countries
 const studentCountries = [
   { name: 'India', lat: 20.5, lng: 78.9 },
-  { name: 'Dubai', lat: 25.2, lng: 55.3 },
-  { name: 'Bali', lat: -8.3, lng: 115.1 },
-  { name: 'Thailand', lat: 15.9, lng: 100.9 },
-  { name: 'Vietnam', lat: 14.1, lng: 108.3 },
-  { name: 'Sri Lanka', lat: 7.9, lng: 80.8 },
-  { name: 'Nepal', lat: 28.4, lng: 84.1 },
-  { name: 'Singapore', lat: 1.3, lng: 103.8 },
-  { name: 'Indonesia', lat: -0.8, lng: 113.9 },
+  { name: 'United Kingdom', lat: 51.5, lng: -0.1 },
   { name: 'Malaysia', lat: 4.2, lng: 101.9 },
-  { name: 'Portugal', lat: 39.4, lng: -8.2 },
-  { name: 'Spain', lat: 40.5, lng: -3.7 },
+  { name: 'Indonesia', lat: -0.8, lng: 113.9 },
+  { name: 'United States', lat: 37.1, lng: -95.7 },
+  { name: 'Sri Lanka', lat: 7.9, lng: 80.8 },
+  { name: 'Dubai', lat: 25.2, lng: 55.3 },
+  { name: 'South Africa', lat: -30.6, lng: 22.9 },
 ];
 
 // Extra points to fill India's landmass
@@ -174,16 +170,14 @@ function Globe() {
 }
 
 const stats = [
-  { label: 'FOUNDED IN', number: 2019, suffix: '', suffixColor: '' },
-  { label: 'DREAMERS', number: 600, suffix: '+', suffixColor: '#D32F2F' },
-  { label: 'EDITIONS', number: 25, suffix: '+', suffixColor: '#D32F2F' },
-  { label: 'CITIES EXPLORED', number: 10, suffix: '+', suffixColor: '#D32F2F' },
+  { label: 'Dreamt in', number: 2023, suffix: '', suffixColor: '' },
+  { label: 'Countries', number: 13, suffix: '', suffixColor: '#D32F2F' },
+  { label: 'Cities', number: 128, suffix: '', suffixColor: '#D32F2F' },
 ];
 
 const locations = [
-  'India', 'Dubai', 'Bali', 'Thailand',
-  'Vietnam', 'Sri Lanka', 'Nepal', 'Singapore',
-  'Indonesia', 'Malaysia', 'Portugal', 'Spain',
+  'India', 'United Kingdom', 'Malaysia', 'Indonesia',
+  'United States of America', 'Sri Lanka', 'Dubai', 'South Africa',
 ];
 
 function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boolean }) {
@@ -287,7 +281,7 @@ export default function GlobalReach() {
             fontFamily: "'Open Sauce One', sans-serif",
           }}
         >
-          Trusted<br />across borders
+          Our Students are Everywhere
         </h2>
 
         <div
@@ -345,7 +339,7 @@ export default function GlobalReach() {
             marginBottom: 16,
             fontFamily: "'Open Sauce One', sans-serif",
           }}>
-            We are worldwide
+            A global Community
           </div>
           <div style={{
             display: 'grid',
