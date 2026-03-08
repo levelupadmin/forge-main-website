@@ -79,7 +79,7 @@ export default function Navigation() {
             <button
               onClick={() => scrollTo('#experiences')}
               className="forge-cta-dark"
-              style={{ padding: '10px 20px', fontSize: 12, margin: 0, whiteSpace: 'nowrap' }}
+              style={{ padding: '8px 18px', fontSize: 12, margin: 0, whiteSpace: 'nowrap', borderRadius: 100 }}
             >
               Request an Invite
             </button>
