@@ -46,7 +46,7 @@ export default function Navigation() {
         transform: 'translateX(-50%)',
         zIndex: 100,
       }}>
-        <div className={`forge-desktop-nav${scrolled ? ' forge-nav-blur' : ''}`} style={{
+        <div className="forge-desktop-nav" style={{
           background: 'white',
           borderRadius: 100,
           padding: '8px 32px',
