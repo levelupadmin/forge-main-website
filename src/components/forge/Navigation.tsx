@@ -60,7 +60,7 @@ export default function Navigation() {
             <img
               src="/images/forge-logo.png"
               alt="the Forge"
-              style={{ height: 44, width: 'auto', display: 'block' }}
+              style={{ height: 52, width: 'auto', display: 'block' }}
             />
           </button>
 
