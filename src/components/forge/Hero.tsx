@@ -43,13 +43,14 @@ export default function Hero() {
         background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 40%, transparent 100%)',
       }} />
 
-      {/* Content — pinned to bottom-left */}
+      {/* Content — centered */}
       <div style={{
         position: 'absolute',
-        bottom: 56,
-        left: 56,
-        right: 56,
-        textAlign: 'left',
+        bottom: 72,
+        left: 0,
+        right: 0,
+        textAlign: 'center',
+        padding: '0 24px',
       }}>
         <h1 style={{
           fontWeight: 700,
@@ -57,10 +58,13 @@ export default function Hero() {
           color: 'white',
           letterSpacing: -1,
           lineHeight: 1.05,
-          margin: 0,
+          margin: '0 0 32px',
         }}>
           Where Dreamers.<br />Become Doers.
         </h1>
+        <button className="forge-cta-light" onClick={scrollToExperiences}>
+          Explore Experiences
+        </button>
       </div>
     </section>
   );
