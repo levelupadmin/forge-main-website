@@ -44,31 +44,20 @@ export default function LearnDoBecome() {
       maxWidth: 1280,
       margin: '0 auto',
     }}>
-      {/* Header */}
+      {/* Header — standardized */}
       <div
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
         style={{ textAlign: 'center', marginBottom: 16 }}
       >
-        <div style={{
-          fontSize: 'clamp(18px, 2vw, 24px)',
-          fontStyle: 'italic',
-          opacity: 0.5,
-          marginBottom: 4,
-        }}>the science behind</div>
-        <div style={{
+        <div className="forge-subheading" style={{ fontStyle: 'italic' }}>the science behind</div>
+        <div className="forge-heading" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           gap: 'clamp(8px, 1.5vw, 16px)',
         }}>
           <WaveIcon color="#FFBC3B" />
-          <span style={{
-            fontWeight: 700,
-            fontSize: 'clamp(48px, 7vw, 80px)',
-            color: '#222',
-            letterSpacing: -2,
-            lineHeight: 1,
-          }}>the Forge</span>
+          <span>the Forge</span>
         </div>
       </div>
 
@@ -108,7 +97,6 @@ export default function LearnDoBecome() {
               transitionDelay: `${200 + i * 200}ms`,
             }}
           >
-            {/* Wave + Word */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
@@ -126,7 +114,6 @@ export default function LearnDoBecome() {
               </div>
             </div>
 
-            {/* Description */}
             <p style={{
               fontSize: 'clamp(14px, 1.1vw, 16px)',
               color: 'rgba(255,255,255,0.7)',

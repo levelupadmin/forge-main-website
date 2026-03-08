@@ -1,28 +1,31 @@
 import { useState } from 'react';
 import { partners, partnerCategories } from '@/data/partners';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function BrandPartners() {
   const [activeCategory, setActiveCategory] = useState<string>(partnerCategories[0]);
   const activePartner = partners.find(p => p.category === activeCategory) || partners[0];
+  const { ref, isVisible } = useScrollAnimation(0.15);
 
   return (
-    <section style={{
+    <section ref={ref} style={{
       background: '#FFFFFF',
       padding: 'clamp(64px, 10vw, 120px) clamp(24px, 5vw, 80px)',
     }}>
-      {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: 64 }}>
-        <div style={{ fontSize: 18, opacity: 0.5, marginBottom: 12, color: '#222' }}>Backed by</div>
-        <div style={{ fontWeight: 800, fontSize: 'clamp(48px, 7vw, 72px)', letterSpacing: -2, color: '#1a1a1a', lineHeight: 1 }}>the best.</div>
+      {/* Header — standardized */}
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: 64 }}>
+        <div className="forge-subheading">Backed by</div>
+        <div className="forge-heading">the best</div>
       </div>
 
       {/* Main layout */}
-      <div style={{
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
         display: 'flex',
         gap: 40,
         maxWidth: 1100,
         margin: '0 auto',
         alignItems: 'flex-start',
+        transitionDelay: '200ms',
       }}>
         {/* Left — Category bento tabs */}
         <div style={{
@@ -58,16 +61,14 @@ export default function BrandPartners() {
         </div>
 
         {/* Right area — Image + Details side by side */}
-        <div style={{
+        <div key={activeCategory} className="forge-partner-content" style={{
           flex: 1,
           display: 'flex',
           gap: 36,
           alignItems: 'flex-start',
         }}>
           {/* Image */}
-          <div style={{
-            flex: '0 0 320px',
-          }}>
+          <div style={{ flex: '0 0 320px' }}>
             <div style={{
               borderRadius: 16,
               overflow: 'hidden',
@@ -80,7 +81,6 @@ export default function BrandPartners() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  transition: 'opacity 0.4s ease',
                 }}
               />
             </div>
@@ -105,7 +105,6 @@ export default function BrandPartners() {
               {activePartner.description}
             </p>
 
-            {/* Partner logo */}
             <div style={{
               border: '1.5px solid rgba(34,34,34,0.15)',
               borderRadius: 12,

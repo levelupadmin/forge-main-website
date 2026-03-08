@@ -13,24 +13,8 @@ export default function Testimonials() {
       padding: 'clamp(80px, 12vw, 140px) 0',
     }}>
       <div style={{ textAlign: 'center', marginBottom: 56, padding: '0 24px' }}>
-        <div style={{
-          fontSize: 15,
-          fontWeight: 600,
-          textTransform: 'uppercase' as const,
-          letterSpacing: 3,
-          color: 'var(--forge-dark-amber)',
-          marginBottom: 12,
-        }}>
-          Hear it from
-        </div>
-        <div style={{
-          fontWeight: 800,
-          fontSize: 'clamp(36px, 5vw, 56px)',
-          lineHeight: 1.1,
-          color: 'var(--forge-black)',
-        }}>
-          the people who were there.
-        </div>
+        <div className="forge-subheading">Hear it from</div>
+        <div className="forge-heading">the people who were there</div>
       </div>
 
       <div ref={scrollRef} className="forge-scroll" style={{
@@ -130,7 +114,6 @@ function TestimonialCard({ testimonial, onPlay }: { testimonial: typeof import('
         (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 32px rgba(0,0,0,0.12)';
       }}
     >
-      {/* Thumbnail */}
       <img
         src={testimonial.thumbnail}
         alt={testimonial.name}
@@ -142,15 +125,11 @@ function TestimonialCard({ testimonial, onPlay }: { testimonial: typeof import('
           objectFit: 'cover',
         }}
       />
-
-      {/* Gradient overlay */}
       <div style={{
         position: 'absolute',
         inset: 0,
         background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.75) 100%)',
       }} />
-
-      {/* Play button */}
       <div style={{
         position: 'absolute',
         top: '50%',
@@ -169,8 +148,6 @@ function TestimonialCard({ testimonial, onPlay }: { testimonial: typeof import('
       }}>
         <Play size={22} fill="white" color="white" style={{ marginLeft: 3 }} />
       </div>
-
-      {/* Info at bottom */}
       <div style={{
         position: 'absolute',
         bottom: 0,

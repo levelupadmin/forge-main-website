@@ -22,6 +22,30 @@ body {
 
 #root { max-width: none; margin: 0; padding: 0; text-align: left; }
 
+/* === Section Heading System === */
+.forge-subheading {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--forge-dark-amber);
+  margin-bottom: 12px;
+}
+.forge-subheading--light {
+  color: var(--forge-yellow);
+  opacity: 0.8;
+}
+.forge-heading {
+  font-weight: 700;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.1;
+  color: var(--forge-black);
+  letter-spacing: -1px;
+}
+.forge-heading--light {
+  color: #FFFFFF;
+}
+
 /* === Animations === */
 .forge-fade-up {
   opacity: 0;
@@ -31,6 +55,119 @@ body {
 .forge-fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* === Floating Bob Animation === */
+@keyframes forge-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.forge-bob {
+  animation: forge-bob 3.5s ease-in-out infinite;
+}
+.forge-bob:nth-child(2) { animation-delay: 0.4s; }
+.forge-bob:nth-child(3) { animation-delay: 0.8s; }
+.forge-bob:nth-child(4) { animation-delay: 1.2s; }
+.forge-bob:nth-child(5) { animation-delay: 1.6s; }
+.forge-bob:nth-child(6) { animation-delay: 0.6s; }
+.forge-bob:nth-child(7) { animation-delay: 1.0s; }
+.forge-bob:nth-child(8) { animation-delay: 1.4s; }
+.forge-bob:nth-child(9) { animation-delay: 1.8s; }
+
+/* === Badge Pulse === */
+@keyframes forge-badge-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,188,59,0.4); }
+  50% { transform: scale(1.04); box-shadow: 0 0 16px 4px rgba(255,188,59,0.2); }
+}
+.forge-badge-pulse {
+  animation: forge-badge-pulse 2.5s ease-in-out infinite;
+}
+
+/* === Golden Glow on Cards === */
+.forge-card-glow {
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+  border: 2px solid transparent;
+}
+.forge-card-glow:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 48px rgba(255,188,59,0.18), 0 4px 16px rgba(0,0,0,0.08);
+  border-color: rgba(255,188,59,0.35);
+}
+
+/* === Floating CTA === */
+.forge-floating-cta {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 400ms ease, transform 400ms ease;
+  pointer-events: none;
+}
+.forge-floating-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* === Section Nudge === */
+.forge-nudge {
+  text-align: center;
+  padding: 40px 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.forge-nudge.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.forge-nudge a {
+  color: var(--forge-dark-amber);
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 200ms ease, gap 200ms ease;
+}
+.forge-nudge a:hover {
+  color: var(--forge-yellow);
+  gap: 14px;
+}
+
+/* === Nav Blur === */
+.forge-nav-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.85) !important;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.12) !important;
+}
+
+/* === Gallery Lightbox === */
+.forge-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  animation: forge-lightbox-in 300ms ease forwards;
+}
+@keyframes forge-lightbox-in {
+  to { opacity: 1; }
+}
+.forge-lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 16px;
+  object-fit: contain;
+  cursor: default;
 }
 
 /* === Scroll Container === */
@@ -121,6 +258,7 @@ body {
 .forge-gallery-img {
   transition: filter 300ms ease, transform 300ms ease;
   display: block;
+  cursor: pointer;
 }
 .forge-gallery-img:hover {
   filter: brightness(1.05);
@@ -331,6 +469,16 @@ body {
   opacity: 1;
 }
 
+/* === Brand Partner Fade === */
+.forge-partner-content {
+  opacity: 0;
+  transform: translateX(10px);
+  animation: forge-partner-fade-in 400ms ease forwards;
+}
+@keyframes forge-partner-fade-in {
+  to { opacity: 1; transform: translateX(0); }
+}
+
 /* === Responsive === */
 @media (max-width: 767px) {
   .forge-desktop-nav { display: none !important; }
@@ -355,6 +503,10 @@ body {
   }
   .forge-photo-item img {
     height: 160px !important;
+  }
+  .forge-floating-cta {
+    bottom: 20px;
+    right: 20px;
   }
 }
 

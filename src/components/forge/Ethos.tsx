@@ -48,7 +48,6 @@ export default function Ethos() {
   const finalOpacity = stage >= 7 ? 1 : 0;
   const narrativeIdx = stage >= 7 ? -1 : stage >= 5 ? 4 : stage >= 4 ? 3 : stage >= 3 ? 2 : stage >= 2 ? 1 : stage >= 1 ? 0 : -1;
 
-  // Circle radius and center in viewBox
   const cx = 250, cy = 250, r = 140;
   const circumference = 2 * Math.PI * r;
 
@@ -58,7 +57,6 @@ export default function Ethos() {
       minHeight: 700,
       overflow: 'hidden',
     }}>
-      {/* Background */}
       <div style={{
         position: 'absolute', inset: 0,
         background: 'linear-gradient(135deg, #0d0800 0%, #1a1200 50%, #0d0d0d 100%)',
@@ -76,23 +74,15 @@ export default function Ethos() {
         textAlign: 'center',
         display: 'flex', flexDirection: 'column', alignItems: 'center',
       }}>
-        {/* Title */}
+        {/* Title — standardized */}
         <div style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
           transition: 'opacity 0.8s ease, transform 0.8s ease',
           marginBottom: 'clamp(16px, 2vw, 32px)',
         }}>
-          <div style={{
-            fontSize: 'clamp(16px, 2vw, 22px)',
-            color: 'white', opacity: 0.5,
-            letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 300,
-          }}>our</div>
-          <div style={{
-            fontWeight: 700,
-            fontSize: 'clamp(56px, 8vw, 96px)',
-            color: '#FFBC3B', lineHeight: 1, letterSpacing: -2,
-          }}>ethos</div>
+          <div className="forge-subheading forge-subheading--light">Our</div>
+          <div className="forge-heading forge-heading--light" style={{ color: '#FFBC3B' }}>Ethos</div>
         </div>
 
         {/* SVG Venn Diagram */}
@@ -115,7 +105,6 @@ export default function Ethos() {
             </filter>
           </defs>
 
-          {/* Center glow */}
           <circle cx={cx} cy={cy} r="80" fill="url(#forge-glow-ethos)" filter="url(#glow-blur)"
             style={{ opacity: glowOpacity, transition: 'opacity 1s ease' }} />
 
@@ -127,15 +116,11 @@ export default function Ethos() {
             return (
               <g key={c.label} transform={`translate(${x}, ${y})`}
                 style={{ transition: 'transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease', opacity }}>
-                {/* Fill */}
                 <circle cx={cx} cy={cy} r={r} fill="rgba(255,255,255,0.03)" />
-                {/* Stroke */}
                 <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1"
                   style={{ strokeDasharray: circumference, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease' }} />
-                {/* Glow stroke */}
                 <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,188,59,0.15)" strokeWidth="3"
                   style={{ strokeDasharray: circumference, strokeDashoffset: strokeOffset, transition: 'stroke-dashoffset 1.2s ease', filter: 'blur(4px)' }} />
-                {/* Label offset outward from Venn center */}
                 <text
                   x={cx + (idx === 0 ? -70 : idx === 1 ? 70 : 0)}
                   y={cy + (idx === 2 ? 70 : -20)}
@@ -151,7 +136,6 @@ export default function Ethos() {
             );
           })}
 
-          {/* Center label: "the Forge" */}
           <text x={cx} y={cy - 12} textAnchor="middle" dominantBaseline="middle"
             fill="rgba(255,255,255,0.7)" fontWeight="300" fontSize="16" letterSpacing="0.1em"
             style={{ opacity: centerLabelOpacity, transition: 'opacity 0.8s ease' }}>the</text>

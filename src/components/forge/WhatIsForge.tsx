@@ -29,7 +29,6 @@ export default function WhatIsForge() {
       if (!textRef.current) return;
       const rect = textRef.current.getBoundingClientRect();
       const windowH = window.innerHeight;
-      // Start highlighting when section enters bottom third, complete by middle
       const start = windowH * 0.8;
       const end = windowH * 0.25;
       const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
@@ -49,26 +48,20 @@ export default function WhatIsForge() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* Heading */}
+      {/* Heading — standardized */}
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
         textAlign: 'center',
         marginBottom: 48,
         padding: '0 24px',
       }}>
-        <div style={{ fontSize: 'clamp(24px, 3vw, 36px)', opacity: 0.5, marginBottom: 8, fontWeight: 400 }}>what is</div>
-        <div style={{
-          fontWeight: 700,
-          fontSize: 'clamp(72px, 10vw, 130px)',
-          color: '#222',
-          letterSpacing: -3,
-          lineHeight: 0.95,
+        <div className="forge-subheading">What is</div>
+        <div className="forge-heading" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           gap: 'clamp(8px, 1.5vw, 16px)',
         }}>
-          {/* Yellow wave decoration */}
-          <svg viewBox="0 0 80 50" style={{ width: 'clamp(60px, 8vw, 100px)', height: 'auto', flexShrink: 0 }}>
+          <svg viewBox="0 0 80 50" style={{ width: 'clamp(40px, 5vw, 60px)', height: 'auto', flexShrink: 0 }}>
             {[0, 10, 20, 30].map((yOff, i) => (
               <path
                 key={i}
@@ -130,7 +123,6 @@ export default function WhatIsForge() {
           ))}
         </div>
 
-        {/* Gradient overlay */}
         <div style={{
           position: 'absolute',
           inset: 0,
@@ -139,7 +131,6 @@ export default function WhatIsForge() {
           zIndex: 1,
         }} />
 
-        {/* Quote overlay */}
         <div className={`forge-quote-overlay${isVisible ? ' visible' : ''}`} style={{
           position: 'absolute',
           inset: 0,
