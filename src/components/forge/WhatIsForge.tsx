@@ -3,11 +3,11 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const allPhotos = [
-  { src: '/images/gallery/gallery-1.png', alt: 'Forge moment 1', height: 320 },
-  { src: '/images/programs/creators-hero.jpg', alt: 'Creators at work', height: 260 },
-  { src: '/images/gallery/gallery-3.png', alt: 'Forge moment 3', height: 340 },
-  { src: '/images/gallery/gallery-4.png', alt: 'Forge moment 4', height: 280 },
-  { src: '/images/gallery/gallery-5.png', alt: 'Forge moment 5', height: 310 },
+  { src: '/images/programs/filmmaking-5.jpg', alt: 'Filmmaking', height: 320 },
+  { src: '/images/partners/cinema-cameras.jpg', alt: 'Camera work', height: 260 },
+  { src: '/images/partners/creator-tech.jpg', alt: 'Lighting', height: 340 },
+  { src: '/images/programs/writing-3.jpg', alt: 'Writing workshop', height: 280 },
+  { src: '/images/partners/publishing.jpg', alt: 'Scripting', height: 310 },
 ];
 
 const descriptionWords = (
