@@ -332,7 +332,7 @@ export default function GlobalReach() {
         <div
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
-            background: 'rgba(240, 240, 240, 0.75)',
+            background: 'rgba(255, 255, 255, 0.06)',
             backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
             borderRadius: 10,
