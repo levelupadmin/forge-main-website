@@ -292,7 +292,7 @@ export default function GlobalReach() {
             style={{
               fontSize: isMobile ? 'clamp(28px, 7vw, 40px)' : 'clamp(40px, 6vw, 64px)',
               fontWeight: 700,
-              color: '#1a1a1a',
+              color: '#FFFFFF',
               marginBottom: 12,
               lineHeight: 1.05,
               letterSpacing: -1,
