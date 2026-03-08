@@ -22,9 +22,9 @@ const METRICS = [
 
 const HIGHLIGHTED_COUNTRIES = [
   'India', 'Sri Lanka', 'Nepal', 'Bangladesh', 'Myanmar', 'Thailand',
-  'Malaysia', 'Singapore', 'Indonesia', 'Vietnam',
-  'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Oman',
-  'Kenya', 'South Africa',
+  'Malaysia', 'Singapore', 'Indonesia', 'Vietnam', 'Philippines', 'Cambodia', 'Laos',
+  'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Oman', 'Pakistan',
+  'Kenya', 'South Africa', 'China', 'South Korea',
 ];
 
 const PRESENCE_MARKERS = [
