@@ -94,6 +94,8 @@ export default function BrandPartners() {
                   maxWidth: 160,
                   maxHeight: 64,
                   objectFit: 'contain',
+                  filter: activePartner.invertLogo ? 'invert(1) grayscale(100%) contrast(1.5)' : 'grayscale(100%) contrast(1.2)',
+                  mixBlendMode: 'multiply',
                 }}
               />
             </div>
@@ -207,6 +209,8 @@ export default function BrandPartners() {
                     maxWidth: 160,
                     maxHeight: 64,
                     objectFit: 'contain',
+                    filter: activePartner.invertLogo ? 'invert(1) grayscale(100%) contrast(1.5)' : 'grayscale(100%) contrast(1.2)',
+                    mixBlendMode: 'multiply',
                   }}
                 />
               </div>
