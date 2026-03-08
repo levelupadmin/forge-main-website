@@ -1,5 +1,6 @@
 import Navigation from '@/components/forge/Navigation';
 import Hero from '@/components/forge/Hero';
+import HeroBar from '@/components/forge/HeroBar';
 import SmoothScroll from '@/components/forge/SmoothScroll';
 
 import FilmGrain from '@/components/forge/FilmGrain';
