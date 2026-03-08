@@ -21,7 +21,7 @@ const Index = () => {
   return (
     <div>
       <SmoothScroll />
-      <CustomCursor />
+      
       <FilmGrain />
       <Navigation />
       <Hero />
