@@ -11,17 +11,13 @@ const INITIAL_Y_ROTATION = -((INDIA_LON - 90) * Math.PI) / 180;
 // Lat/Lng of student countries
 const studentCountries = [
   { name: 'India', lat: 20.5, lng: 78.9 },
-  { name: 'Dubai', lat: 25.2, lng: 55.3 },
-  { name: 'Bali', lat: -8.3, lng: 115.1 },
-  { name: 'Thailand', lat: 15.9, lng: 100.9 },
-  { name: 'Vietnam', lat: 14.1, lng: 108.3 },
-  { name: 'Sri Lanka', lat: 7.9, lng: 80.8 },
-  { name: 'Nepal', lat: 28.4, lng: 84.1 },
-  { name: 'Singapore', lat: 1.3, lng: 103.8 },
-  { name: 'Indonesia', lat: -0.8, lng: 113.9 },
+  { name: 'United Kingdom', lat: 51.5, lng: -0.1 },
   { name: 'Malaysia', lat: 4.2, lng: 101.9 },
-  { name: 'Portugal', lat: 39.4, lng: -8.2 },
-  { name: 'Spain', lat: 40.5, lng: -3.7 },
+  { name: 'Indonesia', lat: -0.8, lng: 113.9 },
+  { name: 'United States', lat: 37.1, lng: -95.7 },
+  { name: 'Sri Lanka', lat: 7.9, lng: 80.8 },
+  { name: 'Dubai', lat: 25.2, lng: 55.3 },
+  { name: 'South Africa', lat: -30.6, lng: 22.9 },
 ];
 
 // Extra points to fill India's landmass
