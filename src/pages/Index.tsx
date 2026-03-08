@@ -4,6 +4,7 @@ import SmoothScroll from '@/components/forge/SmoothScroll';
 
 import FilmGrain from '@/components/forge/FilmGrain';
 import ImpactNumbers from '@/components/forge/ImpactNumbers';
+import GlobalReach from '@/components/forge/GlobalReach';
 import WhatIsForge from '@/components/forge/WhatIsForge';
 import LearnDoBecome from '@/components/forge/LearnDoBecome';
 import Experiences from '@/components/forge/Experiences';
@@ -26,6 +27,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <ImpactNumbers />
+      <GlobalReach />
       <WhatIsForge />
       <LearnDoBecome />
       <Experiences />
