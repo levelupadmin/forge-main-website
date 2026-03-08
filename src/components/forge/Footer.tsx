@@ -80,7 +80,7 @@ export default function Footer() {
               src="/images/forge-logo.png"
               alt="the Forge"
               style={{
-                height: 36,
+                height: 56,
                 marginBottom: 20,
                 filter: 'brightness(0) invert(1)',
               }}

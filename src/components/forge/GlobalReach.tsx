@@ -323,26 +323,6 @@ export default function GlobalReach() {
 
         <div style={{ flex: 1, minHeight: 200 }} />
 
-        {/* Legend */}
-        <div
-          className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
-          style={{
-            display: 'flex',
-            gap: 20,
-            marginBottom: 16,
-            justifyContent: 'flex-end',
-            transitionDelay: '400ms',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: '#666' }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FFBC3B' }} />
-            Student Regions
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: '#666' }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#aaa' }} />
-            Global Presence
-          </div>
-        </div>
 
         <div
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}

@@ -22,7 +22,6 @@ export default function Community() {
       padding: 'clamp(64px, 10vw, 120px) 0 0',
     }}>
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', padding: '0 24px', marginBottom: 48 }}>
-        <div className="forge-subheading">Community</div>
         <div className="forge-heading">
           Come for the Learning.<br />
           Stay for the{' '}
