@@ -174,16 +174,14 @@ function Globe() {
 }
 
 const stats = [
-  { label: 'FOUNDED IN', number: 2019, suffix: '', suffixColor: '' },
-  { label: 'DREAMERS', number: 600, suffix: '+', suffixColor: '#D32F2F' },
-  { label: 'EDITIONS', number: 25, suffix: '+', suffixColor: '#D32F2F' },
-  { label: 'CITIES EXPLORED', number: 10, suffix: '+', suffixColor: '#D32F2F' },
+  { label: 'Dreamt in', number: 2023, suffix: '', suffixColor: '' },
+  { label: 'Countries', number: 13, suffix: '', suffixColor: '#D32F2F' },
+  { label: 'Cities', number: 128, suffix: '', suffixColor: '#D32F2F' },
 ];
 
 const locations = [
-  'India', 'Dubai', 'Bali', 'Thailand',
-  'Vietnam', 'Sri Lanka', 'Nepal', 'Singapore',
-  'Indonesia', 'Malaysia', 'Portugal', 'Spain',
+  'India', 'United Kingdom', 'Malaysia', 'Indonesia',
+  'United States of America', 'Sri Lanka', 'Dubai', 'South Africa',
 ];
 
 function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boolean }) {
