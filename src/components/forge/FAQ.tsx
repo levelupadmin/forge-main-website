@@ -30,7 +30,7 @@ const faqs = [
   {
     question: 'Is financial aid or scholarships available?',
     answer:
-      'Yes — the Forge offers merit-based scholarships and need-based financial aid for select programs. Reach out to us at hello@theforge.in with your situation and we'll do our best to make it work.',
+      'Yes - the Forge offers merit-based scholarships and need-based financial aid for select programs. Reach out to us at hello@theforge.in with your situation and we will do our best to make it work.',
   },
   {
     question: 'Where do the programs take place?',
