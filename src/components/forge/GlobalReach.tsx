@@ -285,7 +285,7 @@ export default function GlobalReach() {
             fontFamily: "'Open Sauce One', sans-serif",
           }}
         >
-          Trusted<br />across borders
+          Our Students are Everywhere
         </h2>
 
         <div
