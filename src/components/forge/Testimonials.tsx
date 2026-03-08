@@ -1,75 +1,199 @@
 import { useState } from 'react';
 import { testimonials } from '@/data/testimonials';
 import { useDragScroll } from '@/hooks/useDragScroll';
-import { Play } from 'lucide-react';
+import { Play, X } from 'lucide-react';
 
 export default function Testimonials() {
   const scrollRef = useDragScroll();
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
     <section id="stories" style={{
-      background: '#FFFFFF',
-      padding: 'clamp(64px, 10vw, 120px) 0',
+      background: 'var(--forge-cream)',
+      padding: 'clamp(80px, 12vw, 140px) 0',
     }}>
-      <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 24px' }}>
-        <div style={{ fontSize: 18, opacity: 0.5, marginBottom: 8 }}>Hear it from</div>
-        <div style={{ fontWeight: 700, fontSize: 48 }}>the people who were there.</div>
+      <div style={{ textAlign: 'center', marginBottom: 56, padding: '0 24px' }}>
+        <div style={{
+          fontSize: 15,
+          fontWeight: 600,
+          textTransform: 'uppercase' as const,
+          letterSpacing: 3,
+          color: 'var(--forge-dark-amber)',
+          marginBottom: 12,
+        }}>
+          Hear it from
+        </div>
+        <div style={{
+          fontWeight: 800,
+          fontSize: 'clamp(36px, 5vw, 56px)',
+          lineHeight: 1.1,
+          color: 'var(--forge-black)',
+        }}>
+          the people who were there.
+        </div>
       </div>
 
       <div ref={scrollRef} className="forge-scroll" style={{
         display: 'flex',
-        gap: 24,
+        gap: 20,
         paddingLeft: 'clamp(24px, 5vw, 80px)',
         paddingRight: 80,
+        alignItems: 'flex-start',
       }}>
         {testimonials.map((t, i) => (
-          <TestimonialCard key={i} testimonial={t} />
+          <TestimonialCard key={i} testimonial={t} onPlay={() => setActiveVideo(t.vimeoId)} />
         ))}
       </div>
+
+      {/* Vimeo Modal */}
+      {activeVideo && (
+        <div
+          onClick={() => setActiveVideo(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 1000,
+            background: 'rgba(0,0,0,0.85)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+          }}
+        >
+          <button
+            onClick={() => setActiveVideo(null)}
+            style={{
+              position: 'absolute',
+              top: 24,
+              right: 24,
+              width: 44,
+              height: 44,
+              borderRadius: '50%',
+              border: '1px solid rgba(255,255,255,0.2)',
+              background: 'rgba(255,255,255,0.1)',
+              color: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              zIndex: 1001,
+            }}
+          >
+            <X size={20} />
+          </button>
+          <div
+            onClick={e => e.stopPropagation()}
+            style={{
+              width: '90vw',
+              maxWidth: 400,
+              aspectRatio: '9/16',
+              borderRadius: 20,
+              overflow: 'hidden',
+              cursor: 'default',
+            }}
+          >
+            <iframe
+              src={`https://player.vimeo.com/video/${activeVideo}?autoplay=1&title=0&byline=0&portrait=0`}
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              allow="autoplay; fullscreen"
+              title="Testimonial video"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
-function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
-  const [playing, setPlaying] = useState(false);
-
+function TestimonialCard({ testimonial, onPlay }: { testimonial: typeof import('@/data/testimonials').testimonials[0]; onPlay: () => void }) {
   return (
-    <div style={{
-      minWidth: 'clamp(280px, 22vw, 300px)',
-      background: '#FFFFFF',
-      borderRadius: 16,
-      overflow: 'hidden',
-      boxShadow: '0 2px 24px rgba(0,0,0,0.06)',
-    }}>
-      {/* Video area */}
-      <div style={{ position: 'relative', paddingBottom: '56.25%' }}>
-        {playing ? (
-          <iframe
-            src={`https://player.vimeo.com/video/${testimonial.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
-            allow="autoplay; fullscreen"
-            title={`${testimonial.name} testimonial`}
-          />
-        ) : (
-          <>
-            <img
-              src={testimonial.thumbnail}
-              alt={testimonial.name}
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-            <button className="forge-play-btn" onClick={() => setPlaying(true)}>
-              <Play size={20} fill="white" color="white" style={{ marginLeft: 3 }} />
-            </button>
-          </>
-        )}
+    <div
+      onClick={onPlay}
+      style={{
+        minWidth: 240,
+        flex: '0 0 240px',
+        borderRadius: 20,
+        overflow: 'hidden',
+        position: 'relative',
+        aspectRatio: '9/16',
+        cursor: 'pointer',
+        background: '#1a1a1a',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+      }}
+      onMouseEnter={e => {
+        (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-6px) scale(1.02)';
+        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 16px 48px rgba(0,0,0,0.2)';
+      }}
+      onMouseLeave={e => {
+        (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0) scale(1)';
+        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 32px rgba(0,0,0,0.12)';
+      }}
+    >
+      {/* Thumbnail */}
+      <img
+        src={testimonial.thumbnail}
+        alt={testimonial.name}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+        }}
+      />
+
+      {/* Gradient overlay */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.75) 100%)',
+      }} />
+
+      {/* Play button */}
+      <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 56,
+        height: 56,
+        borderRadius: '50%',
+        background: 'rgba(255,255,255,0.18)',
+        backdropFilter: 'blur(8px)',
+        border: '1.5px solid rgba(255,255,255,0.3)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'background 0.25s ease, transform 0.25s ease',
+      }}>
+        <Play size={22} fill="white" color="white" style={{ marginLeft: 3 }} />
       </div>
 
-      {/* Info */}
-      <div style={{ padding: '20px 20px 4px' }}>
-        <div style={{ fontWeight: 700, fontSize: 17, color: '#222' }}>{testimonial.name}</div>
-      </div>
-      <div style={{ padding: '0 20px 20px' }}>
-        <div style={{ fontSize: 13, color: '#FFBC3B', letterSpacing: '0.06em' }}>{testimonial.program}</div>
+      {/* Info at bottom */}
+      <div style={{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        padding: '24px 20px',
+      }}>
+        <div style={{
+          fontWeight: 700,
+          fontSize: 17,
+          color: 'white',
+          marginBottom: 4,
+        }}>
+          {testimonial.name}
+        </div>
+        <div style={{
+          fontSize: 12,
+          fontWeight: 600,
+          color: 'var(--forge-yellow)',
+          letterSpacing: 0.5,
+        }}>
+          {testimonial.program}
+        </div>
       </div>
     </div>
   );
