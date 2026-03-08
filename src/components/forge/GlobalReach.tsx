@@ -343,7 +343,7 @@ export default function GlobalReach() {
           <div style={{
             fontSize: isMobile ? 'clamp(20px, 5vw, 28px)' : 'clamp(24px, 3.5vw, 36px)',
             fontWeight: 700,
-            color: '#1a1a1a',
+            color: '#FFFFFF',
             marginBottom: 12,
             fontFamily: "'Open Sauce One', sans-serif",
           }}>
