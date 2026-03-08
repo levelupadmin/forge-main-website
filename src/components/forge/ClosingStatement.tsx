@@ -27,7 +27,7 @@ export default function ClosingStatement() {
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }}
       >
-        Apply Now
+        Request an Invite
       </button>
     </section>
   );
