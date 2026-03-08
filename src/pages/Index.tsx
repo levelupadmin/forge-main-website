@@ -27,7 +27,6 @@ const Index = () => {
       <Navigation />
       <Hero />
       <ImpactNumbers />
-      <GlobalReach />
       <WhatIsForge />
       <LearnDoBecome />
       <Experiences />
@@ -36,6 +35,7 @@ const Index = () => {
       <PeopleOfForge />
       <BrandPartners />
       <Community />
+      <GlobalReach />
       <Gallery />
       <Testimonials />
       <ClosingStatement />
