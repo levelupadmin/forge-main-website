@@ -51,7 +51,7 @@ export default function LearnersFrom() {
   return (
     <section
       ref={ref}
-      className="bg-black overflow-hidden"
+      className="bg-white overflow-hidden"
       style={{ padding: isMobile ? '40px 0' : '48px 0' }}
     >
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
@@ -60,7 +60,7 @@ export default function LearnersFrom() {
           fontWeight: 600,
           letterSpacing: '0.15em',
           textTransform: 'uppercase',
-          color: 'rgba(255,255,255,0.4)',
+          color: 'rgba(0,0,0,0.35)',
         }}>
           Our learners are from
         </p>
