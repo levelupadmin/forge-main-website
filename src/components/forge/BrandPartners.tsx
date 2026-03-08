@@ -12,8 +12,8 @@ export default function BrandPartners() {
     }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: 64 }}>
-        <div style={{ fontSize: 18, opacity: 0.5, marginBottom: 8 }}>Backed by</div>
-        <div style={{ fontWeight: 700, fontSize: 'clamp(40px, 6vw, 56px)', letterSpacing: -1 }}>the best.</div>
+        <div style={{ fontSize: 18, opacity: 0.5, marginBottom: 12, color: '#222' }}>Backed by</div>
+        <div style={{ fontWeight: 800, fontSize: 'clamp(48px, 7vw, 72px)', letterSpacing: -2, color: '#1a1a1a', lineHeight: 1 }}>the best.</div>
       </div>
 
       {/* Main layout */}
