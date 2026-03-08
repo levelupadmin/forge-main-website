@@ -23,6 +23,7 @@ export const partners: Partner[] = [
     description: "Learn Filmmaking with Industry Leading Netflix Grade equipment from Sony.",
     discount: "20% discount on Cinema line cameras and lenses",
     image: "/images/partners/cinema-cameras.jpg",
+    invertLogo: true, // Black/dark background, make it black on white
   },
   {
     name: "Digitek",
@@ -31,6 +32,7 @@ export const partners: Partner[] = [
     description: "India's Largest Creator Tech brand, of course we had to partner with them.",
     discount: "10% discount on creator equipment",
     image: "/images/partners/creator-tech.jpg",
+    invertLogo: true, // Black background, invert to make background white then multiply
   },
   {
     name: "Indie Press & Westland Books",
@@ -39,6 +41,7 @@ export const partners: Partner[] = [
     description: "One of India's Largest Self Publishers backed by a legendary traditional publishing house powering our writing retreat.",
     discount: "Top writers get funded",
     image: "/images/partners/publishing.jpg",
+    invertLogo: false, // White background
   },
   {
     name: "Sandcastles.ai",
@@ -47,5 +50,6 @@ export const partners: Partner[] = [
     description: "AI writing software built by Kallaway, global content creator with 1B+ Views and 1M+ followers.",
     discount: "50% for the first 3 months",
     image: "/images/partners/scripting.png",
+    invertLogo: true, // Dark blue background
   },
 ];
