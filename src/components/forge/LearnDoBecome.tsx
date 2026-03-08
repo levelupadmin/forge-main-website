@@ -39,7 +39,7 @@ export default function LearnDoBecome() {
 
   return (
     <section ref={ref} style={{
-      background: '#FFFFFF',
+      background: 'var(--forge-cream)',
       padding: 'clamp(32px, 5vw, 64px) clamp(24px, 5vw, 80px)',
       maxWidth: 1280,
       margin: '0 auto',
