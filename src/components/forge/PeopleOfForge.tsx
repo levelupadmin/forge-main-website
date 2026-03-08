@@ -9,6 +9,7 @@ export default function PeopleOfForge() {
   const { ref, isVisible } = useScrollAnimation(0.15);
   const row1 = people.slice(0, 5);
   const row2 = people.slice(5, 9);
+  const mobilepeople = people.slice(0, 6);
 
   return (
     <section ref={ref} style={{
@@ -18,26 +19,57 @@ export default function PeopleOfForge() {
       <div style={{
         background: '#222',
         borderRadius: 24,
-        padding: 'clamp(48px, 6vw, 80px)',
+        padding: isMobile ? 'clamp(36px, 6vw, 80px) 20px' : 'clamp(48px, 6vw, 80px)',
         textAlign: 'center',
       }}>
         <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
           <div className="forge-subheading forge-subheading--light">People of</div>
           <div className="forge-heading forge-heading--light" style={{ marginBottom: 8 }}>the Forge</div>
-          <p style={{ fontSize: 17, color: 'white', opacity: 0.6, marginBottom: 48 }}>
+          <p style={{ fontSize: 17, color: 'white', opacity: 0.6, marginBottom: isMobile ? 32 : 48 }}>
             Meet and collaborate with <span style={{ color: '#FFBC3B', fontWeight: 700 }}>Dreamers</span> like you.
           </p>
         </div>
 
         {isMobile ? (
-          <div ref={scrollRef} className="forge-scroll" style={{ display: 'flex', gap: 16 }}>
-            {people.map((person, i) => (
+          /* Mobile: 3x2 grid, no polaroid boxes */
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: 16,
+            maxWidth: 360,
+            margin: '0 auto',
+          }}>
+            {mobilepeople.map((person, i) => (
               <div
                 key={i}
                 className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-                style={{ transitionDelay: `${200 + i * 100}ms` }}
+                style={{ transitionDelay: `${200 + i * 100}ms`, textAlign: 'center' }}
               >
-                <PersonCard person={person} />
+                <div style={{
+                  borderRadius: 14,
+                  overflow: 'hidden',
+                  marginBottom: 8,
+                }}>
+                  <img
+                    src={person.photo}
+                    alt={person.name}
+                    style={{
+                      width: '100%',
+                      aspectRatio: '1',
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                  />
+                </div>
+                <div style={{ fontWeight: 700, fontSize: 13, color: 'white' }}>{person.name}</div>
+                <div style={{
+                  width: 16,
+                  height: 2,
+                  background: '#FFBC3B',
+                  margin: '4px auto',
+                  borderRadius: 1,
+                }} />
+                <div style={{ fontSize: 11, color: 'white', opacity: 0.5, fontStyle: 'italic' }}>{person.designation}</div>
               </div>
             ))}
           </div>

@@ -1,4 +1,5 @@
 import { Instagram, Youtube, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const navLinks = [
   { label: 'Experiences', href: '#experiences' },
@@ -21,6 +22,8 @@ const steps = [
 ];
 
 export default function Footer() {
+  const isMobile = useIsMobile();
+
   const scrollTo = (href: string) => {
     if (href.startsWith('#')) {
       const el = document.querySelector(href);
@@ -70,19 +73,21 @@ export default function Footer() {
       }}>
         <div className="forge-footer-grid" style={{
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr 1fr 1fr',
-          gap: 'clamp(32px, 4vw, 64px)',
+          gridTemplateColumns: isMobile ? '1fr' : '2fr 1fr 1fr 1fr',
+          gap: isMobile ? 40 : 'clamp(32px, 4vw, 64px)',
           marginBottom: 48,
         }}>
           {/* Brand Column */}
-          <div>
+          <div style={{ textAlign: isMobile ? 'center' : 'left' }}>
             <img
               src="/images/forge-logo.png"
               alt="the Forge"
               style={{
-                height: 56,
+                height: isMobile ? 72 : 56,
                 marginBottom: 20,
                 filter: 'brightness(0) invert(1)',
+                display: 'block',
+                ...(isMobile ? { margin: '0 auto 20px' } : {}),
               }}
             />
             <p style={{
@@ -90,11 +95,11 @@ export default function Footer() {
               color: 'rgba(255,255,255,0.4)',
               lineHeight: 1.8,
               maxWidth: 320,
-              margin: '0 0 32px',
+              margin: isMobile ? '0 auto 32px' : '0 0 32px',
             }}>
               India's most immersive creative education experience. Where practitioners teach, creators build, and artists find their voice.
             </p>
-            <div style={{ display: 'flex', gap: 12 }}>
+            <div style={{ display: 'flex', gap: 12, justifyContent: isMobile ? 'center' : 'flex-start' }}>
               {[
                 { icon: <Instagram size={18} />, label: 'Instagram', href: 'https://www.instagram.com/forgebylevelup/' },
                 { icon: <Youtube size={18} />, label: 'YouTube', href: 'https://www.youtube.com/@LevelUpLearning' },
@@ -301,10 +306,11 @@ export default function Footer() {
           borderTop: '1px solid rgba(255,255,255,0.06)',
           paddingTop: 32,
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: isMobile ? 'center' : 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
           gap: 16,
+          textAlign: isMobile ? 'center' : undefined,
         }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>
             &copy; 2025 the Forge by LevelUp Learning. All rights reserved.

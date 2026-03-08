@@ -54,7 +54,7 @@ export default function Hero() {
       }}>
         <h1 style={{
           fontWeight: 700,
-          fontSize: 'clamp(44px, 6vw, 80px)',
+          fontSize: 'clamp(36px, 9vw, 80px)',
           color: 'white',
           letterSpacing: -1,
           lineHeight: 1.05,

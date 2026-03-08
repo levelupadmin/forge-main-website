@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useIsMobile } from '@/hooks/use-mobile';
 
-const photos = [
+const allPhotos = [
   { src: '/images/gallery/gallery-1.png', alt: 'Forge moment 1', height: 320 },
   { src: '/images/programs/creators-hero.jpg', alt: 'Creators at work', height: 260 },
   { src: '/images/gallery/gallery-3.png', alt: 'Forge moment 3', height: 340 },
@@ -21,8 +22,11 @@ const boldWords = new Set([
 
 export default function WhatIsForge() {
   const { ref, isVisible } = useScrollAnimation(0.15);
+  const isMobile = useIsMobile();
   const textRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const photos = isMobile ? allPhotos.slice(0, 3) : allPhotos;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +52,7 @@ export default function WhatIsForge() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* Heading — standardized */}
+      {/* Heading */}
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
         textAlign: 'center',
         marginBottom: 48,
@@ -82,7 +86,7 @@ export default function WhatIsForge() {
       <div style={{ position: 'relative', margin: '0 auto', maxWidth: 1400 }}>
         <div className="forge-photo-strip" style={{
           display: 'flex',
-          gap: 16,
+          gap: isMobile ? 10 : 16,
           justifyContent: 'center',
           alignItems: 'center',
           padding: '0 clamp(16px, 3vw, 40px)',
@@ -92,8 +96,8 @@ export default function WhatIsForge() {
               key={i}
               className={`forge-photo-item${isVisible ? ' visible' : ''}`}
               style={{
-                flex: '0 0 auto',
-                width: 'clamp(140px, 18vw, 260px)',
+                flex: isMobile ? '1 1 0' : '0 0 auto',
+                width: isMobile ? undefined : 'clamp(140px, 18vw, 260px)',
                 transitionDelay: `${150 + i * 120}ms`,
               }}
             >
@@ -103,7 +107,7 @@ export default function WhatIsForge() {
                 loading="lazy"
                 style={{
                   width: '100%',
-                  height: photo.height,
+                  height: isMobile ? 200 : photo.height,
                   objectFit: 'cover',
                   borderRadius: 16,
                   filter: 'grayscale(30%) sepia(10%)',
@@ -142,7 +146,7 @@ export default function WhatIsForge() {
         }}>
           <p style={{
             fontWeight: 700,
-            fontSize: 'clamp(32px, 5vw, 56px)',
+            fontSize: 'clamp(28px, 5vw, 56px)',
             color: '#222',
             lineHeight: 1.1,
             maxWidth: 800,
@@ -171,7 +175,7 @@ export default function WhatIsForge() {
         }} />
 
         <p style={{
-          fontSize: 'clamp(22px, 3vw, 32px)',
+          fontSize: 'clamp(20px, 3vw, 32px)',
           lineHeight: 1.6,
           maxWidth: 800,
           margin: '0 auto',

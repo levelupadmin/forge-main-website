@@ -481,12 +481,6 @@ body {
 
 /* === Responsive === */
 @media (max-width: 767px) {
-  .forge-desktop-nav { display: none !important; }
-  .forge-mobile-hamburger { display: flex !important; }
-  .forge-footer-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
   .forge-panels {
     flex-direction: column;
     height: auto;
@@ -497,25 +491,10 @@ body {
   }
   .forge-panel-label { opacity: 1; }
   .forge-masonry { columns: 2; }
-  .forge-photo-strip {
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  .forge-photo-item {
-    width: clamp(100px, 40vw, 160px) !important;
-  }
-  .forge-photo-item img {
-    height: 160px !important;
-  }
   .forge-floating-cta {
     bottom: 20px;
     right: 20px;
   }
-}
-
-@media (min-width: 768px) {
-  .forge-mobile-hamburger { display: none !important; }
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
