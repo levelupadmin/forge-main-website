@@ -8,7 +8,7 @@ export default function Testimonials() {
 
   return (
     <section id="stories" style={{
-      background: '#FCF7EF',
+      background: '#FFFFFF',
       padding: 'clamp(64px, 10vw, 120px) 0',
     }}>
       <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 24px' }}>

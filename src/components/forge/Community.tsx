@@ -13,7 +13,7 @@ export default function Community() {
 
   return (
     <section id="community" style={{
-      background: '#FCF7EF',
+      background: '#FFFFFF',
       padding: 'clamp(64px, 10vw, 120px) 0 0',
     }}>
       <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: 48 }}>

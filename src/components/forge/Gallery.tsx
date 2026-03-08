@@ -13,7 +13,7 @@ const galleryImages = [
 export default function Gallery() {
   return (
     <section style={{
-      background: '#FCF7EF',
+      background: '#FFFFFF',
       padding: 'clamp(64px, 10vw, 120px) clamp(24px, 5vw, 80px)',
     }}>
       <div style={{ textAlign: 'center', marginBottom: 48 }}>
