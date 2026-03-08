@@ -156,15 +156,12 @@ export default function WhatIsForge() {
             lineHeight: 1.1,
             maxWidth: 800,
             textAlign: 'center',
-            fontStyle: 'italic',
           }}>
-            <span style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: '#FFBC3B', fontFamily: 'Georgia, serif' }}>&ldquo;</span>
             Every next level of your life demands a{' '}
             <span style={{
               background: 'linear-gradient(180deg, transparent 60%, rgba(255,188,59,0.35) 60%)',
               padding: '0 4px',
             }}>different you</span>.
-            <span style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: '#FFBC3B', fontFamily: 'Georgia, serif' }}>&rdquo;</span>
           </p>
         </div>
       </div>
