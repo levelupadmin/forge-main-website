@@ -3,11 +3,19 @@ import { useCountUp } from '@/hooks/useCountUp';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const stats = [
-  { number: 600, suffix: '+', label: 'Alumni' },
-  { number: 250, suffix: '+', label: 'Shortfilms' },
-  { number: 85, suffix: '+', label: 'Creators Built' },
-  { number: 60, suffix: '+', label: 'Scripts' },
-  { number: 200, suffix: '+', label: 'Collaborations Enabled' },
+  { number: 600, suffix: '+', label: 'Alumni', image: '/images/gallery/gallery-1.png' },
+  { number: 250, suffix: '+', label: 'Shortfilms', image: '/images/gallery/gallery-2.png' },
+  { number: 85, suffix: '+', label: 'Creators Built', image: '/images/gallery/gallery-3.png' },
+  { number: 60, suffix: '+', label: 'Scripts', image: '/images/gallery/gallery-4.png' },
+  { number: 200, suffix: '+', label: 'Collaborations Enabled', image: '/images/gallery/gallery-5.png' },
+];
+
+const gridAreas = [
+  { gridColumn: '1', gridRow: '1' },
+  { gridColumn: '2', gridRow: '1' },
+  { gridColumn: '3 / 5', gridRow: '1' },
+  { gridColumn: '1 / 3', gridRow: '2' },
+  { gridColumn: '3 / 5', gridRow: '2' },
 ];
 
 export default function ImpactNumbers() {
@@ -15,11 +23,11 @@ export default function ImpactNumbers() {
   const isMobile = useIsMobile();
 
   return (
-    <section ref={ref} className="bg-black" style={{
-      padding: isMobile ? 'clamp(48px, 6vw, 80px) 20px' : 'clamp(48px, 6vw, 80px) 80px',
+    <section ref={ref} style={{
+      backgroundColor: '#000',
+      padding: isMobile ? '48px 20px' : 'clamp(48px, 6vw, 80px) 80px',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-        {/* Subheading */}
         <p className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
           fontSize: 15,
           fontWeight: 600,
@@ -32,28 +40,34 @@ export default function ImpactNumbers() {
           The Numbers
         </p>
 
-        {/* Main heading */}
         <h2 className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
           fontSize: 'clamp(40px, 6vw, 64px)',
           fontWeight: 700,
           color: '#FFFFFF',
           letterSpacing: -1.5,
           lineHeight: 1.05,
-          marginBottom: isMobile ? 48 : 64,
+          marginBottom: isMobile ? 36 : 56,
           textAlign: isMobile ? 'center' : 'left',
           transitionDelay: '100ms',
         }}>
           Good Vibes.<br />Greater Impact.
         </h2>
 
-        {/* Stats grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(5, 1fr)',
-          gap: isMobile ? 32 : 16,
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
+          gridTemplateRows: isMobile ? 'auto' : 'repeat(2, 220px)',
+          gap: 16,
         }}>
           {stats.map((stat, i) => (
-            <StatItem key={i} stat={stat} isVisible={isVisible} index={i} isMobile={isMobile} />
+            <BentoCard
+              key={i}
+              stat={stat}
+              isVisible={isVisible}
+              index={i}
+              isMobile={isMobile}
+              gridStyle={isMobile ? {} : gridAreas[i]}
+            />
           ))}
         </div>
       </div>
@@ -61,43 +75,72 @@ export default function ImpactNumbers() {
   );
 }
 
-function StatItem({ stat, isVisible, index, isMobile }: {
+function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
   stat: typeof stats[0];
   isVisible: boolean;
   index: number;
   isMobile: boolean;
+  gridStyle: React.CSSProperties;
 }) {
   const count = useCountUp(stat.number, 1800, isVisible);
 
   return (
     <div
-      className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+      className={`forge-card-glow forge-fade-up${isVisible ? ' visible' : ''}`}
       style={{
-        textAlign: 'center',
+        ...gridStyle,
+        position: 'relative',
+        overflow: 'hidden',
+        borderRadius: 16,
+        minHeight: isMobile ? 180 : undefined,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        padding: isMobile ? '24px' : '28px 32px',
         transitionDelay: `${200 + index * 120}ms`,
-        borderLeft: !isMobile && index > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none',
-        paddingLeft: !isMobile && index > 0 ? 16 : 0,
+        cursor: 'default',
       }}
     >
+      {/* Background image */}
       <div style={{
-        fontWeight: 700,
-        fontSize: 'clamp(40px, 5vw, 72px)',
-        color: '#FFBC3B',
-        letterSpacing: -2,
-        lineHeight: 1,
-        fontFamily: "'Open Sauce One', sans-serif",
-      }}>
-        {count}{stat.suffix}
-      </div>
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: `url(${stat.image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.25,
+        transition: 'opacity 0.4s ease, transform 0.6s ease',
+      }} className="bento-bg" />
+
+      {/* Dark overlay */}
       <div style={{
-        fontSize: isMobile ? 13 : 15,
-        color: 'rgba(255,255,255,0.5)',
-        marginTop: 8,
-        fontWeight: 500,
-        letterSpacing: 0.5,
-        textTransform: 'uppercase',
-      }}>
-        {stat.label}
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(26,26,26,0.6) 100%)',
+      }} />
+
+      {/* Content */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <div style={{
+          fontWeight: 700,
+          fontSize: 'clamp(44px, 5vw, 72px)',
+          color: '#FFBC3B',
+          letterSpacing: -2,
+          lineHeight: 1,
+          fontFamily: "'Open Sauce One', sans-serif",
+        }}>
+          {count}{stat.suffix}
+        </div>
+        <div style={{
+          fontSize: isMobile ? 13 : 15,
+          color: 'rgba(255,255,255,0.55)',
+          marginTop: 8,
+          fontWeight: 500,
+          letterSpacing: 0.5,
+          textTransform: 'uppercase',
+        }}>
+          {stat.label}
+        </div>
       </div>
     </div>
   );
