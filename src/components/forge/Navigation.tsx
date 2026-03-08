@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { X } from 'lucide-react';
 
-const leftLinks = [
+interface NavLink { label: string; href: string; isRoute?: boolean; }
+
+const leftLinks: NavLink[] = [
   { label: 'Experiences', href: '#experiences' },
   { label: 'About', href: '#about' },
 ];
