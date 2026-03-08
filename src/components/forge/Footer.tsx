@@ -111,9 +111,9 @@ export default function Footer() {
             </p>
             <div style={{ display: 'flex', gap: 12 }}>
               {[
-                { icon: <Instagram size={18} />, label: 'Instagram' },
-                { icon: <Youtube size={18} />, label: 'YouTube' },
-                { icon: <MessageCircle size={18} />, label: 'WhatsApp' },
+                { icon: <Instagram size={18} />, label: 'Instagram', href: 'https://www.instagram.com/forgebylevelup/' },
+                { icon: <Youtube size={18} />, label: 'YouTube', href: 'https://www.youtube.com/@LevelUpLearning' },
+                { icon: <MessageCircle size={18} />, label: 'WhatsApp', href: 'https://wa.me/919791520177' },
               ].map(social => (
                 <a
                   key={social.label}
