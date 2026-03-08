@@ -68,12 +68,12 @@ export const mentors: Mentor[] = [
   },
   {
     name: "Prakriti Madan",
-    designation: "Actor | Creator | Storyteller",
+    designation: "Social Media Growth Coach",
     photo: "/images/mentors/prakriti.jpg",
     highlights: [
-      "Popular actor and content creator with a massive social media following",
-      "Known for authentic storytelling and engaging digital content",
-      "Inspires thousands of aspiring creators through workshops and mentoring",
+      "95K followers | 20M+ reach",
+      "Drove 4M+ organic followers for clients",
+      "Coached 600+ Founders and Business owners to build their personal brand",
     ],
   },
 ];
