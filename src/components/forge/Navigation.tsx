@@ -59,7 +59,7 @@ export default function Navigation() {
             {leftLinks.map(link => (
               <button
                 key={link.href}
-                onClick={() => scrollTo(link.href)}
+                onClick={() => handleNav(link)}
                 className="forge-nav-link"
                 style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
               >
