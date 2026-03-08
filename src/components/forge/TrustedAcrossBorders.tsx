@@ -107,9 +107,9 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const isMobile = useIsMobile();
 
-  const globeScale = isMobile ? 240 : 300;
-  const svgW = 700;
-  const svgH = 700;
+  const globeScale = isMobile ? 340 : 450;
+  const svgW = 800;
+  const svgH = 600;
   const cx = svgW / 2;
   const cy = svgH / 2;
 
@@ -119,15 +119,17 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
       style={{
         position: 'relative',
         transitionDelay: '500ms',
-        maxWidth: 600,
+        maxWidth: 900,
         margin: '0 auto',
         marginTop: 40,
+        overflow: 'hidden',
+        borderRadius: 16,
       }}
     >
       <ComposableMap
         projection="geoOrthographic"
         projectionConfig={{
-          rotate: [-78, -20, 0],
+          rotate: [-78, -18, 0],
           scale: globeScale,
         }}
         width={svgW}
