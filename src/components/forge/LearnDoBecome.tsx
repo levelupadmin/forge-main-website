@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const WaveIcon = ({ color }: { color: string }) => (
   <svg viewBox="0 0 48 24" style={{ width: 40, height: 20, flexShrink: 0 }}>
@@ -36,15 +37,17 @@ const steps = [
 
 export default function LearnDoBecome() {
   const { ref, isVisible } = useScrollAnimation(0.15);
+  const isMobile = useIsMobile();
 
   return (
     <section ref={ref} style={{
       background: 'var(--forge-cream)',
-      padding: 'clamp(32px, 5vw, 64px) clamp(24px, 5vw, 80px)',
+      padding: isMobile
+        ? '32px 20px'
+        : 'clamp(32px, 5vw, 64px) clamp(24px, 5vw, 80px)',
       maxWidth: 1280,
       margin: '0 auto',
     }}>
-      {/* Header — standardized */}
       <div
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
         style={{ textAlign: 'center', marginBottom: 16 }}
@@ -68,7 +71,7 @@ export default function LearnDoBecome() {
           fontSize: 'clamp(15px, 1.4vw, 18px)',
           opacity: 0.55,
           maxWidth: 520,
-          margin: '0 auto 48px',
+          margin: isMobile ? '0 auto 32px' : '0 auto 48px',
           lineHeight: 1.6,
           transitionDelay: '100ms',
         }}
@@ -76,10 +79,9 @@ export default function LearnDoBecome() {
         A process scientifically designed to help simulate 6 months in 12 days.
       </p>
 
-      {/* Horizontal dark bento boxes */}
       <div style={{
         display: 'flex',
-        gap: 20,
+        gap: isMobile ? 12 : 20,
         flexWrap: 'wrap',
       }}>
         {steps.map((step, i) => (
@@ -90,8 +92,8 @@ export default function LearnDoBecome() {
               flex: '1 1 280px',
               minWidth: 260,
               background: '#1a1a1a',
-              borderRadius: 20,
-              padding: 'clamp(28px, 3vw, 40px)',
+              borderRadius: isMobile ? 16 : 20,
+              padding: isMobile ? '20px' : 'clamp(28px, 3vw, 40px)',
               position: 'relative',
               overflow: 'hidden',
               transitionDelay: `${200 + i * 200}ms`,
@@ -101,12 +103,12 @@ export default function LearnDoBecome() {
               display: 'flex',
               alignItems: 'center',
               gap: 12,
-              marginBottom: 24,
+              marginBottom: isMobile ? 16 : 24,
             }}>
               <WaveIcon color={step.color} />
               <div style={{
                 fontWeight: 700,
-                fontSize: 'clamp(36px, 4vw, 52px)',
+                fontSize: isMobile ? 'clamp(28px, 7vw, 36px)' : 'clamp(36px, 4vw, 52px)',
                 color: step.color,
                 lineHeight: 1,
               }}>
@@ -115,7 +117,7 @@ export default function LearnDoBecome() {
             </div>
 
             <p style={{
-              fontSize: 'clamp(14px, 1.1vw, 16px)',
+              fontSize: isMobile ? 13 : 'clamp(14px, 1.1vw, 16px)',
               color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.7,
               margin: 0,

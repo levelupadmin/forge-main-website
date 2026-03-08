@@ -1,4 +1,8 @@
+import { useIsMobile } from '@/hooks/use-mobile';
+
 export default function Hero() {
+  const isMobile = useIsMobile();
+
   const scrollToExperiences = () => {
     const el = document.querySelector('#experiences');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -8,7 +12,7 @@ export default function Hero() {
     <section style={{
       position: 'relative',
       width: '100%',
-      height: '100vh',
+      height: '100svh',
       overflow: 'hidden',
       borderRadius: '0 0 32px 32px',
     }}>
@@ -36,6 +40,15 @@ export default function Hero() {
         zIndex: -1,
       }} />
 
+      {/* Animated shimmer overlay for visual richness */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(135deg, rgba(255,188,59,0.03) 0%, transparent 40%, rgba(255,188,59,0.05) 70%, transparent 100%)',
+        animation: 'hero-shimmer 8s ease-in-out infinite alternate',
+        pointerEvents: 'none',
+      }} />
+
       {/* Dark gradient overlay at bottom */}
       <div style={{
         position: 'absolute',
@@ -46,7 +59,7 @@ export default function Hero() {
       {/* Content — centered */}
       <div style={{
         position: 'absolute',
-        bottom: 64,
+        bottom: isMobile ? 100 : 64,
         left: 0,
         right: 0,
         textAlign: 'center',
@@ -58,14 +71,31 @@ export default function Hero() {
           color: 'white',
           letterSpacing: -1,
           lineHeight: 1.05,
-          margin: '0 0 32px',
+          margin: '0 0 24px',
         }}>
           Where Dreamers<br />Become Doers.
         </h1>
         <button className="forge-cta-light" onClick={scrollToExperiences}>
           Explore Experiences
         </button>
+        <p style={{
+          fontSize: isMobile ? 10 : 12,
+          fontWeight: 600,
+          textTransform: 'uppercase',
+          letterSpacing: isMobile ? 2 : 3,
+          color: 'rgba(255,255,255,0.4)',
+          marginTop: 20,
+        }}>
+          India's most immersive creative education experience
+        </p>
       </div>
+
+      <style>{`
+        @keyframes hero-shimmer {
+          0% { opacity: 0.3; }
+          100% { opacity: 1; }
+        }
+      `}</style>
     </section>
   );
 }

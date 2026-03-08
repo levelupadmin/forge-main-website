@@ -175,7 +175,7 @@ export default function WhatIsForge() {
         }} />
 
         <p style={{
-          fontSize: 'clamp(20px, 3vw, 32px)',
+          fontSize: isMobile ? 'clamp(17px, 4.5vw, 24px)' : 'clamp(20px, 3vw, 32px)',
           lineHeight: 1.6,
           maxWidth: 800,
           margin: '0 auto',

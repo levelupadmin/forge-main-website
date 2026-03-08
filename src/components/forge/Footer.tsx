@@ -43,24 +43,15 @@ export default function Footer() {
         padding: 'clamp(28px, 4vw, 48px) clamp(24px, 5vw, 80px)',
       }}>
         <div style={{
-          maxWidth: 1280,
-          margin: '0 auto',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 'clamp(16px, 3vw, 40px)',
-          flexWrap: 'wrap',
+          maxWidth: 1280, margin: '0 auto',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          gap: 'clamp(16px, 3vw, 40px)', flexWrap: 'wrap',
         }}>
           {steps.map((step) => (
             <span key={step.word} style={{
-              fontWeight: 800,
-              fontSize: 'clamp(28px, 4vw, 48px)',
-              color: step.color,
-              lineHeight: 1,
-              letterSpacing: -1,
-            }}>
-              {step.word}
-            </span>
+              fontWeight: 800, fontSize: 'clamp(28px, 4vw, 48px)',
+              color: step.color, lineHeight: 1, letterSpacing: -1,
+            }}>{step.word}</span>
           ))}
         </div>
       </div>
@@ -68,17 +59,17 @@ export default function Footer() {
       {/* Main footer content */}
       <div style={{
         padding: 'clamp(40px, 5vw, 64px) clamp(24px, 5vw, 80px) 32px',
-        maxWidth: 1280,
-        margin: '0 auto',
+        maxWidth: 1280, margin: '0 auto',
       }}>
-        <div className="forge-footer-grid" style={{
+        <div style={{
           display: 'grid',
           gridTemplateColumns: isMobile ? '1fr' : '2fr 1fr 1fr 1fr',
-          gap: isMobile ? 40 : 'clamp(32px, 4vw, 64px)',
+          gap: isMobile ? 32 : 'clamp(32px, 4vw, 64px)',
           marginBottom: 48,
+          textAlign: isMobile ? 'center' : 'left',
         }}>
           {/* Brand Column */}
-          <div style={{ textAlign: isMobile ? 'center' : 'left' }}>
+          <div>
             <img
               src="/images/forge-logo.png"
               alt="the Forge"
@@ -91,11 +82,8 @@ export default function Footer() {
               }}
             />
             <p style={{
-              fontSize: 15,
-              color: 'rgba(255,255,255,0.4)',
-              lineHeight: 1.8,
-              maxWidth: 320,
-              margin: isMobile ? '0 auto 32px' : '0 0 32px',
+              fontSize: 15, color: 'rgba(255,255,255,0.4)', lineHeight: 1.8,
+              maxWidth: 320, margin: isMobile ? '0 auto 32px' : '0 0 32px',
             }}>
               India's most immersive creative education experience. Where practitioners teach, creators build, and artists find their voice.
             </p>
@@ -112,15 +100,10 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={social.label}
                   style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: '50%',
+                    width: 40, height: 40, borderRadius: '50%',
                     border: '1px solid rgba(255,255,255,0.1)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'rgba(255,255,255,0.4)',
-                    textDecoration: 'none',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: 'rgba(255,255,255,0.4)', textDecoration: 'none',
                     transition: 'all 0.25s ease',
                   }}
                   onMouseEnter={e => {
@@ -133,9 +116,7 @@ export default function Footer() {
                     (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.4)';
                     (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
                   }}
-                >
-                  {social.icon}
-                </a>
+                >{social.icon}</a>
               ))}
             </div>
           </div>
@@ -143,39 +124,22 @@ export default function Footer() {
           {/* Navigate */}
           <div>
             <div style={{
-              fontSize: 11,
-              fontWeight: 700,
-              color: 'rgba(255,255,255,0.2)',
-              letterSpacing: 2,
-              textTransform: 'uppercase' as const,
-              marginBottom: 24,
-            }}>
-              Navigate
-            </div>
+              fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.2)',
+              letterSpacing: 2, textTransform: 'uppercase' as const, marginBottom: 24,
+            }}>Navigate</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {navLinks.map(link => (
                 <a
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
                   style={{
-                    color: 'rgba(255,255,255,0.5)',
-                    textDecoration: 'none',
-                    fontSize: 14,
-                    cursor: 'pointer',
-                    transition: 'color 0.2s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 4,
+                    color: 'rgba(255,255,255,0.5)', textDecoration: 'none',
+                    fontSize: 14, cursor: 'pointer', transition: 'color 0.2s ease',
+                    display: isMobile ? 'block' : 'flex', alignItems: 'center', gap: 4,
                   }}
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.color = 'white';
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
-                  }}
-                >
-                  {link.label}
-                </a>
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'white'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; }}
+                >{link.label}</a>
               ))}
             </div>
           </div>
@@ -183,35 +147,23 @@ export default function Footer() {
           {/* Programs */}
           <div>
             <div style={{
-              fontSize: 11,
-              fontWeight: 700,
-              color: 'rgba(255,255,255,0.2)',
-              letterSpacing: 2,
-              textTransform: 'uppercase' as const,
-              marginBottom: 24,
-            }}>
-              Programs
-            </div>
+              fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.2)',
+              letterSpacing: 2, textTransform: 'uppercase' as const, marginBottom: 24,
+            }}>Programs</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {programLinks.map(link => (
                 <a
                   key={link.href}
                   href={link.href}
                   style={{
-                    color: 'rgba(255,255,255,0.5)',
-                    textDecoration: 'none',
-                    fontSize: 14,
-                    transition: 'color 0.2s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 4,
+                    color: 'rgba(255,255,255,0.5)', textDecoration: 'none',
+                    fontSize: 14, transition: 'color 0.2s ease',
+                    display: isMobile ? 'inline-flex' : 'flex',
+                    alignItems: 'center', gap: 4,
+                    justifyContent: isMobile ? 'center' : undefined,
                   }}
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.color = 'white';
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
-                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'white'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; }}
                 >
                   {link.label}
                   <ArrowUpRight size={12} style={{ opacity: 0.4 }} />
@@ -220,71 +172,39 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Contact / CTA */}
+          {/* Contact */}
           <div>
             <div style={{
-              fontSize: 11,
-              fontWeight: 700,
-              color: 'rgba(255,255,255,0.2)',
-              letterSpacing: 2,
-              textTransform: 'uppercase' as const,
-              marginBottom: 24,
-            }}>
-              Get in touch
-            </div>
+              fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.2)',
+              letterSpacing: 2, textTransform: 'uppercase' as const, marginBottom: 24,
+            }}>Get in touch</div>
             <a
               href="mailto:forge@leveluplearning.in"
               style={{
-                color: 'rgba(255,255,255,0.5)',
-                textDecoration: 'none',
-                fontSize: 14,
-                display: 'block',
-                marginBottom: 12,
-                transition: 'color 0.2s ease',
+                color: 'rgba(255,255,255,0.5)', textDecoration: 'none',
+                fontSize: 14, display: 'block', marginBottom: 12, transition: 'color 0.2s ease',
               }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = 'var(--forge-yellow)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
-              }}
-            >
-              forge@leveluplearning.in
-            </a>
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--forge-yellow)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; }}
+            >forge@leveluplearning.in</a>
             <a
               href="https://wa.me/919791520177"
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                color: 'rgba(255,255,255,0.5)',
-                textDecoration: 'none',
-                fontSize: 14,
-                display: 'block',
-                marginBottom: 12,
-                transition: 'color 0.2s ease',
+                color: 'rgba(255,255,255,0.5)', textDecoration: 'none',
+                fontSize: 14, display: 'block', marginBottom: 12, transition: 'color 0.2s ease',
               }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = 'var(--forge-yellow)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
-              }}
-            >
-              +91 97915 20177
-            </a>
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--forge-yellow)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; }}
+            >+91 97915 20177</a>
             <button
               onClick={scrollToTop}
               style={{
-                marginTop: 24,
-                padding: '12px 28px',
-                borderRadius: 100,
-                border: '1px solid rgba(255,255,255,0.12)',
-                background: 'transparent',
-                color: 'rgba(255,255,255,0.6)',
-                fontSize: 13,
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'all 0.25s ease',
+                marginTop: 24, padding: '12px 28px', borderRadius: 100,
+                border: '1px solid rgba(255,255,255,0.12)', background: 'transparent',
+                color: 'rgba(255,255,255,0.6)', fontSize: 13, fontWeight: 600,
+                cursor: 'pointer', transition: 'all 0.25s ease',
                 fontFamily: "'Open Sauce One', sans-serif",
               }}
               onMouseEnter={e => {
@@ -295,21 +215,15 @@ export default function Footer() {
                 (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.12)';
                 (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.6)';
               }}
-            >
-              Back to top ↑
-            </button>
+            >Back to top ↑</button>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div style={{
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-          paddingTop: 32,
-          display: 'flex',
-          justifyContent: isMobile ? 'center' : 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 16,
+          borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 32,
+          display: 'flex', justifyContent: isMobile ? 'center' : 'space-between',
+          alignItems: 'center', flexWrap: 'wrap', gap: 16,
           textAlign: isMobile ? 'center' : undefined,
         }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>
@@ -318,23 +232,14 @@ export default function Footer() {
           <div style={{ display: 'flex', gap: 24 }}>
             {['Privacy Policy', 'Terms of Service'].map(label => (
               <a
-                key={label}
-                href="#"
+                key={label} href="#"
                 style={{
-                  fontSize: 12,
-                  color: 'rgba(255,255,255,0.2)',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s ease',
+                  fontSize: 12, color: 'rgba(255,255,255,0.2)',
+                  textDecoration: 'none', transition: 'color 0.2s ease',
                 }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)';
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.2)';
-                }}
-              >
-                {label}
-              </a>
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.2)'; }}
+              >{label}</a>
             ))}
           </div>
         </div>

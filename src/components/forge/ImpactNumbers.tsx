@@ -25,28 +25,26 @@ export default function ImpactNumbers() {
   return (
     <section ref={ref} style={{
       backgroundColor: '#FFFFFF',
-      padding: isMobile ? '48px 20px' : 'clamp(48px, 6vw, 80px) 80px',
+      padding: isMobile ? '48px 16px' : 'clamp(48px, 6vw, 80px) 80px',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <p className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
-          fontSize: 15,
+          fontSize: isMobile ? 13 : 15,
           fontWeight: 600,
           textTransform: 'uppercase',
           letterSpacing: '3px',
           color: '#DD6F15',
           marginBottom: 12,
           textAlign: 'center',
-        }}>
-          The Numbers
-        </p>
+        }}>The Numbers</p>
 
         <h2 className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
-          fontSize: 'clamp(40px, 6vw, 64px)',
+          fontSize: isMobile ? 'clamp(28px, 7vw, 40px)' : 'clamp(40px, 6vw, 64px)',
           fontWeight: 700,
           color: '#222222',
           letterSpacing: -1.5,
           lineHeight: 1.05,
-          marginBottom: isMobile ? 36 : 56,
+          marginBottom: isMobile ? 28 : 56,
           textAlign: 'center',
           transitionDelay: '100ms',
         }}>
@@ -55,9 +53,9 @@ export default function ImpactNumbers() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
+          gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(4, 1fr)',
           gridTemplateRows: isMobile ? 'auto' : 'repeat(2, 220px)',
-          gap: 16,
+          gap: isMobile ? 8 : 16,
         }}>
           {stats.map((stat, i) => (
             <BentoCard
@@ -91,39 +89,31 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
         ...gridStyle,
         position: 'relative',
         overflow: 'hidden',
-        borderRadius: 16,
-        minHeight: isMobile ? 180 : undefined,
+        borderRadius: isMobile ? 12 : 16,
+        minHeight: isMobile ? 120 : undefined,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        padding: isMobile ? '24px' : '28px 32px',
+        padding: isMobile ? '12px' : '28px 32px',
         transitionDelay: `${200 + index * 120}ms`,
         cursor: 'default',
       }}
     >
-      {/* Background image */}
       <div style={{
-        position: 'absolute',
-        inset: 0,
+        position: 'absolute', inset: 0,
         backgroundImage: `url(${stat.image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: 'cover', backgroundPosition: 'center',
         opacity: 0.25,
         transition: 'opacity 0.4s ease, transform 0.6s ease',
       }} className="bento-bg" />
-
-      {/* Dark overlay */}
       <div style={{
-        position: 'absolute',
-        inset: 0,
+        position: 'absolute', inset: 0,
         background: 'linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(26,26,26,0.6) 100%)',
       }} />
-
-      {/* Content */}
       <div style={{ position: 'relative', zIndex: 1 }}>
         <div style={{
           fontWeight: 700,
-          fontSize: 'clamp(44px, 5vw, 72px)',
+          fontSize: isMobile ? 'clamp(28px, 8vw, 40px)' : 'clamp(44px, 5vw, 72px)',
           color: '#FFBC3B',
           letterSpacing: -2,
           lineHeight: 1,
@@ -132,12 +122,13 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
           {count}{stat.suffix}
         </div>
         <div style={{
-          fontSize: isMobile ? 13 : 15,
+          fontSize: isMobile ? 9 : 15,
           color: 'rgba(255,255,255,0.55)',
-          marginTop: 8,
+          marginTop: isMobile ? 4 : 8,
           fontWeight: 500,
           letterSpacing: 0.5,
           textTransform: 'uppercase',
+          lineHeight: 1.3,
         }}>
           {stat.label}
         </div>
