@@ -108,7 +108,7 @@ export default function Ethos() {
         {/* SVG Venn Diagram — bigger circles */}
         <svg viewBox="0 0 500 500" style={{
           width: 'clamp(360px, 50vw, 560px)', height: 'auto',
-          marginBottom: 'clamp(8px, 1.5vw, 16px)',
+          marginBottom: 0,
         }}>
           <defs>
             <radialGradient id="forge-glow-ethos" cx="50%" cy="50%" r="50%">
