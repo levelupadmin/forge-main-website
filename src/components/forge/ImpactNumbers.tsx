@@ -24,7 +24,7 @@ export default function ImpactNumbers() {
 
   return (
     <section ref={ref} style={{
-      backgroundColor: '#FCF7EF',
+      backgroundColor: '#FFFFFF',
       padding: isMobile ? '48px 20px' : 'clamp(48px, 6vw, 80px) 80px',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
