@@ -61,9 +61,10 @@ export default function LearnersFrom() {
           fontWeight: 600,
           letterSpacing: '0.15em',
           textTransform: 'uppercase',
-          color: 'rgba(0,0,0,0.35)',
+          color: '#000000',
+          fontFamily: "'Open Sauce One', sans-serif",
         }}>
-          Our Students are from
+          Our Students Are From
         </p>
 
         <div className="flex flex-col gap-2">
