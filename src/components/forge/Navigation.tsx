@@ -45,7 +45,7 @@ export default function Navigation() {
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 className="forge-nav-link"
-                style={{ color: '#999', fontSize: 15, fontWeight: 400 }}
+                style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
               >
                 {link.label}
               </button>
@@ -65,13 +65,13 @@ export default function Navigation() {
           </button>
 
           {/* Right links + CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1.4, justifyContent: 'flex-start' }}>
             {rightLinks.map(link => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 className="forge-nav-link"
-                style={{ color: '#999', fontSize: 15, fontWeight: 400 }}
+                style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
               >
                 {link.label}
               </button>
