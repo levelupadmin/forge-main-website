@@ -85,11 +85,11 @@ export default function Navigation() {
               </button>
             ))}
             <button
-              onClick={() => scrollTo('#experiences')}
+              onClick={() => scrollTo('#mentors')}
               className="forge-cta-dark"
               style={{ padding: '10px 24px', fontSize: 14, margin: 0, whiteSpace: 'nowrap', borderRadius: 100 }}
             >
-              Request an Invite
+              Be a Mentor
             </button>
           </div>
         </div>
