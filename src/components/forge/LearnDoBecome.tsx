@@ -1,26 +1,36 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
+const WaveIcon = ({ color }: { color: string }) => (
+  <svg viewBox="0 0 48 24" style={{ width: 40, height: 20, flexShrink: 0 }}>
+    {[0, 6, 12].map((yOff, i) => (
+      <path
+        key={i}
+        d={`M0 ${6 + yOff} Q6 ${2 + yOff} 12 ${6 + yOff} T24 ${6 + yOff} T36 ${6 + yOff} T48 ${6 + yOff}`}
+        fill="none"
+        stroke={color}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        opacity={1 - i * 0.25}
+      />
+    ))}
+  </svg>
+);
+
 const steps = [
   {
     word: 'Learn.',
-    lead: 'Every master was once a student.',
-    text: 'Everything starts with understanding your craft. The fundamentals, the process, the tools. Taught by people who are still out there doing it.',
-    icon: '📖',
-    accent: '#FFBC3B',
+    text: 'Scene-setting, finding the theme, character development, script-writing, storyboarding and pre-production. These initial learnings lay the foundation for your short film and your filmmaking dreams.',
+    color: '#FFBC3B',
   },
   {
     word: 'Do.',
-    lead: 'Knowledge without action is just theory.',
-    text: "You don't just study the craft. You practice it. Every session, every day, you're creating something real. No theory without action.",
-    icon: '🎬',
-    accent: '#FFA800',
+    text: "Express your passion through the process of production of your own film. Call your own shots, frame your frames, direct your actors, set up the scene and find your unique voice as a filmmaker.",
+    color: '#FFA800',
   },
   {
     word: 'Become.',
-    lead: 'This is where it all comes together.',
-    text: "You leave the Forge having made something that's yours. A short film. A reel. A manuscript. You're not a creator if you aren't creating something, right?",
-    icon: '🌟',
-    accent: '#DD6F15',
+    text: "Finally, the grand screening, a recognition of your creative storytelling where each film is not just screened, but celebrated; concluding with a farewell that's not an end, but a new beginning in your creative path.",
+    color: '#DD6F15',
   },
 ];
 
@@ -37,20 +47,47 @@ export default function LearnDoBecome() {
       {/* Header */}
       <div
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-        style={{ textAlign: 'center', marginBottom: 56 }}
+        style={{ textAlign: 'center', marginBottom: 16 }}
       >
-        <h2 style={{
-          fontWeight: 700,
-          fontSize: 'clamp(40px, 5vw, 64px)',
-          color: '#222',
-          letterSpacing: '0.04em',
-          margin: 0,
+        <div style={{
+          fontSize: 'clamp(18px, 2vw, 24px)',
+          fontStyle: 'italic',
+          opacity: 0.5,
+          marginBottom: 4,
+        }}>the science behind</div>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 'clamp(8px, 1.5vw, 16px)',
         }}>
-          Learn. Do. Become.
-        </h2>
+          <WaveIcon color="#FFBC3B" />
+          <span style={{
+            fontWeight: 700,
+            fontSize: 'clamp(48px, 7vw, 80px)',
+            color: '#222',
+            letterSpacing: -2,
+            lineHeight: 1,
+          }}>the Forge</span>
+        </div>
       </div>
 
-      {/* Horizontal bento boxes */}
+      <p
+        className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+        style={{
+          textAlign: 'center',
+          fontSize: 'clamp(15px, 1.4vw, 18px)',
+          opacity: 0.55,
+          maxWidth: 520,
+          margin: '0 auto 48px',
+          lineHeight: 1.6,
+          transitionDelay: '100ms',
+        }}
+      >
+        A process scientifically designed to help simulate 6 months in 12 days.
+      </p>
+
+      {/* Horizontal dark bento boxes */}
       <div style={{
         display: 'flex',
         gap: 20,
@@ -62,60 +99,37 @@ export default function LearnDoBecome() {
             className={`forge-fade-up${isVisible ? ' visible' : ''}`}
             style={{
               flex: '1 1 280px',
-              minWidth: 280,
-              background: '#FFFFFF',
+              minWidth: 260,
+              background: '#1a1a1a',
               borderRadius: 20,
               padding: 'clamp(28px, 3vw, 40px)',
-              boxShadow: '0 2px 24px rgba(0,0,0,0.05)',
               position: 'relative',
               overflow: 'hidden',
               transitionDelay: `${200 + i * 200}ms`,
             }}
           >
-            {/* Accent top bar */}
+            {/* Wave + Word */}
             <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              height: 4,
-              background: `linear-gradient(90deg, ${step.accent}, ${step.accent}88)`,
-            }} />
-
-            {/* Icon */}
-            <div style={{
-              fontSize: 36,
-              marginBottom: 16,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              marginBottom: 24,
             }}>
-              {step.icon}
+              <WaveIcon color={step.color} />
+              <div style={{
+                fontWeight: 700,
+                fontSize: 'clamp(36px, 4vw, 52px)',
+                color: step.color,
+                lineHeight: 1,
+              }}>
+                {step.word.replace('.', '').toLowerCase()}
+              </div>
             </div>
-
-            {/* Word */}
-            <div style={{
-              fontWeight: 700,
-              fontSize: 'clamp(32px, 3.5vw, 44px)',
-              color: '#222',
-              marginBottom: 12,
-              lineHeight: 1,
-            }}>
-              {step.word}
-            </div>
-
-            {/* Lead */}
-            <p style={{
-              fontSize: 15,
-              fontWeight: 600,
-              color: step.accent,
-              margin: '0 0 12px 0',
-              lineHeight: 1.4,
-            }}>
-              {step.lead}
-            </p>
 
             {/* Description */}
             <p style={{
-              fontSize: 14,
-              opacity: 0.6,
+              fontSize: 'clamp(14px, 1.1vw, 16px)',
+              color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.7,
               margin: 0,
             }}>
