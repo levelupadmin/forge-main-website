@@ -7,35 +7,37 @@ import {
   Geographies,
   Geography,
   Marker,
+  Graticule,
 } from 'react-simple-maps';
 import { useState } from 'react';
 
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
 const METRICS = [
-  { label: 'FOUNDED IN', value: 2012, icon: Rocket, hasPlus: false },
-  { label: 'NETWORK CLIENTS', value: 100, icon: Eye, hasPlus: true },
-  { label: 'MARKETS SERVED', value: 10, icon: ClipboardList, hasPlus: true },
-  { label: 'CERTIFICATION MARKS', value: 4, icon: ShieldCheck, hasPlus: true },
+  { label: 'FOUNDED IN', value: 2012, startFrom: 2000, icon: Rocket, hasPlus: false },
+  { label: 'NETWORK CLIENTS', value: 100, startFrom: 0, icon: Eye, hasPlus: true },
+  { label: 'MARKETS SERVED', value: 10, startFrom: 0, icon: ClipboardList, hasPlus: true },
+  { label: 'CERTIFICATION MARKS', value: 4, startFrom: 0, icon: ShieldCheck, hasPlus: true },
 ];
 
 const HIGHLIGHTED_COUNTRIES = [
-  'Germany', 'Poland', 'Austria', 'Croatia', 'Czech Republic', 'Czechia',
-  'Estonia', 'Hungary', 'Italy', 'Latvia', 'Lithuania', 'Netherlands',
-  'Portugal', 'Slovakia', 'Slovenia', 'Spain', 'Ukraine', 'India',
+  'India', 'Sri Lanka', 'Nepal', 'Bangladesh', 'Myanmar', 'Thailand',
+  'Malaysia', 'Singapore', 'Indonesia', 'Vietnam',
+  'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Oman',
+  'Kenya', 'South Africa',
 ];
 
 const PRESENCE_MARKERS = [
-  { name: 'Germany', coordinates: [10.4515, 51.1657] as [number, number] },
-  { name: 'Poland', coordinates: [19.1451, 51.9194] as [number, number] },
-  { name: 'India', coordinates: [78.9629, 20.5937] as [number, number] },
+  { name: 'Chennai', coordinates: [80.27, 13.08] as [number, number] },
+  { name: 'Mumbai', coordinates: [72.87, 19.07] as [number, number] },
+  { name: 'Delhi', coordinates: [77.21, 28.61] as [number, number] },
 ];
 
 const COUNTRY_GRID = [
-  ['Germany ○', 'Poland ○', 'Austria', 'Croatia'],
-  ['Czech Republic', 'Estonia', 'Hungary', 'Italy'],
-  ['Latvia', 'Lithuania', 'Netherlands', 'Portugal'],
-  ['Slovakia', 'Slovenia', 'Spain', 'India ○'],
+  ['India ○', 'Sri Lanka', 'Nepal', 'Bangladesh'],
+  ['Myanmar', 'Thailand', 'Malaysia', 'Singapore'],
+  ['Indonesia', 'Vietnam', 'UAE', 'Saudi Arabia'],
+  ['Qatar', 'Oman', 'Kenya ○', 'South Africa ○'],
 ];
 
 function MetricCard({ metric, isVisible, index }: {
@@ -50,18 +52,19 @@ function MetricCard({ metric, isVisible, index }: {
     <div
       className={`forge-fade-up${isVisible ? ' visible' : ''}`}
       style={{
-        background: '#F0F0F0',
+        background: '#F5F5F0',
         borderRadius: 12,
-        padding: 24,
-        position: 'relative',
+        padding: '20px 24px',
+        minHeight: 120,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         transition: 'box-shadow 0.3s ease, transform 0.3s ease',
         cursor: 'default',
         transitionDelay: `${200 + index * 100}ms`,
-        flex: '1 1 0',
-        minWidth: 0,
       }}
       onMouseEnter={e => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)';
         (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)';
       }}
       onMouseLeave={e => {
@@ -69,29 +72,30 @@ function MetricCard({ metric, isVisible, index }: {
         (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
       }}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{
-          fontSize: 11,
-          fontWeight: 600,
+          fontSize: 10.5,
+          fontWeight: 500,
           textTransform: 'uppercase',
           letterSpacing: '1.5px',
-          color: '#999',
+          color: '#888',
         }}>
           {metric.label}
         </span>
-        <Icon size={18} color="#999" strokeWidth={1.8} />
+        <Icon size={17} color="#AAA" strokeWidth={1.6} />
       </div>
       <div style={{
-        fontSize: 'clamp(42px, 4vw, 60px)',
+        fontSize: 'clamp(48px, 5vw, 64px)',
         fontWeight: 700,
-        color: '#222',
+        color: '#1A1A1A',
         lineHeight: 1,
         fontFamily: "'Open Sauce One', sans-serif",
         letterSpacing: -2,
+        marginTop: 8,
       }}>
         {count}
         {metric.hasPlus && (
-          <span style={{ fontSize: '0.45em', verticalAlign: 'super', marginLeft: 2 }}>+</span>
+          <sup style={{ fontSize: '0.4em', fontWeight: 600, marginLeft: 1 }}>+</sup>
         )}
       </div>
     </div>
@@ -103,29 +107,53 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const isMobile = useIsMobile();
 
+  const globeScale = isMobile ? 240 : 300;
+  const svgW = 700;
+  const svgH = 700;
+  const cx = svgW / 2;
+  const cy = svgH / 2;
+
   return (
     <div
       className={`forge-fade-up${isVisible ? ' visible' : ''}`}
       style={{
         position: 'relative',
         transitionDelay: '500ms',
-        maxWidth: 1000,
+        maxWidth: 600,
         margin: '0 auto',
-        overflow: 'hidden',
-        borderRadius: 16,
-        background: 'linear-gradient(180deg, #E8ECF0 0%, #D5DBE1 100%)',
+        marginTop: 40,
       }}
     >
       <ComposableMap
-        projection="geoMercator"
+        projection="geoOrthographic"
         projectionConfig={{
-          center: [40, 45],
-          scale: isMobile ? 280 : 450,
+          rotate: [-78, -20, 0],
+          scale: globeScale,
         }}
-        width={900}
-        height={isMobile ? 400 : 500}
+        width={svgW}
+        height={svgH}
         style={{ width: '100%', height: 'auto' }}
       >
+        <defs>
+          <linearGradient id="globe-ocean" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#D8DCE3" />
+            <stop offset="100%" stopColor="#C4C8D0" />
+          </linearGradient>
+          <radialGradient id="globe-vignette" cx="50%" cy="50%" r="50%">
+            <stop offset="70%" stopColor="transparent" />
+            <stop offset="100%" stopColor="rgba(0,0,0,0.12)" />
+          </radialGradient>
+          <filter id="globe-shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="4" stdDeviation="12" floodColor="rgba(0,0,0,0.15)" />
+          </filter>
+        </defs>
+
+        {/* Globe sphere */}
+        <circle cx={cx} cy={cy} r={globeScale} fill="url(#globe-ocean)" filter="url(#globe-shadow)" />
+
+        {/* Grid lines */}
+        <Graticule stroke="#CCC" strokeWidth={0.3} strokeDasharray="2,3" />
+
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map((geo) => {
@@ -135,14 +163,14 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={isHighlighted ? '#DC2626' : '#C8CDD3'}
-                  stroke="#B0B8C1"
-                  strokeWidth={0.4}
+                  fill={isHighlighted ? '#DC2626' : '#E8E8E8'}
+                  stroke="#FFF"
+                  strokeWidth={0.5}
                   style={{
-                    default: { outline: 'none' },
+                    default: { outline: 'none', transition: 'fill 0.2s ease' },
                     hover: {
                       outline: 'none',
-                      fill: isHighlighted ? '#B91C1C' : '#B8BFC7',
+                      fill: isHighlighted ? '#EF4444' : '#DFDFDF',
                     },
                     pressed: { outline: 'none' },
                   }}
@@ -153,7 +181,7 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
                       if (rect) {
                         setTooltipPos({
                           x: e.clientX - rect.left,
-                          y: e.clientY - rect.top - 10,
+                          y: e.clientY - rect.top - 12,
                         });
                       }
                     }
@@ -164,10 +192,15 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
             })
           }
         </Geographies>
+
+        {/* Vignette overlay for 3D depth */}
+        <circle cx={cx} cy={cy} r={globeScale} fill="url(#globe-vignette)" pointerEvents="none" />
+
+        {/* Presence markers with pulse */}
         {PRESENCE_MARKERS.map((marker) => (
           <Marker key={marker.name} coordinates={marker.coordinates}>
-            <circle r={7} fill="#fff" opacity={0.6} />
-            <circle r={5} fill="#fff" stroke="#999" strokeWidth={1.5} />
+            <circle r={8} fill="white" opacity={0.3} className="pulse-marker" />
+            <circle r={5} fill="#FFF" stroke="#999" strokeWidth={1} />
           </Marker>
         ))}
       </ComposableMap>
@@ -181,9 +214,9 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
           transform: 'translate(-50%, -100%)',
           background: '#222',
           color: '#fff',
-          padding: '6px 12px',
+          padding: '5px 12px',
           borderRadius: 6,
-          fontSize: 13,
+          fontSize: 12,
           fontWeight: 500,
           pointerEvents: 'none',
           whiteSpace: 'nowrap',
@@ -196,21 +229,19 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
       {/* Legend */}
       <div style={{
         position: 'absolute',
-        bottom: isMobile ? 8 : 16,
-        right: isMobile ? 8 : 16,
+        bottom: 12,
+        right: 12,
         display: 'flex',
-        gap: 16,
+        gap: 20,
+        alignItems: 'center',
       }}>
         {[
           { color: '#DC2626', label: 'Sales Regions' },
           { color: '#999', label: 'Company Presence' },
         ].map((item) => (
-          <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <div style={{
-              width: 8, height: 8, borderRadius: '50%',
-              background: item.color,
-            }} />
-            <span style={{ fontSize: 10, color: '#666', fontWeight: 500 }}>{item.label}</span>
+          <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: item.color }} />
+            <span style={{ fontSize: 11, color: '#666', fontWeight: 500 }}>{item.label}</span>
           </div>
         ))}
       </div>
@@ -225,18 +256,20 @@ function CountryGrid({ isVisible, isMobile }: { isVisible: boolean; isMobile: bo
     <div
       className={`forge-fade-up${isVisible ? ' visible' : ''}`}
       style={{
-        background: '#fff',
-        borderRadius: 16,
-        padding: isMobile ? '24px 20px' : '36px 40px',
-        boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+        background: '#FFF',
+        border: '1px solid #E5E5E5',
+        borderRadius: 12,
+        padding: isMobile ? '24px 20px' : 32,
+        boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
         transitionDelay: '700ms',
+        marginTop: 40,
       }}
     >
       <h3 style={{
-        fontSize: 'clamp(22px, 3vw, 28px)',
+        fontSize: 24,
         fontWeight: 700,
-        color: '#222',
-        marginBottom: 24,
+        color: '#1A1A1A',
+        marginBottom: 20,
         fontFamily: "'Open Sauce One', sans-serif",
       }}>
         We are worldwide
@@ -244,7 +277,7 @@ function CountryGrid({ isVisible, isMobile }: { isVisible: boolean; isMobile: bo
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
-        gap: isMobile ? '10px 16px' : '10px 24px',
+        gap: '0 24px',
       }}>
         {allCountries.map((country) => {
           const isPresence = country.includes('○');
@@ -254,13 +287,14 @@ function CountryGrid({ isVisible, isMobile }: { isVisible: boolean; isMobile: bo
               display: 'flex',
               alignItems: 'center',
               gap: 8,
-              fontSize: isMobile ? 13 : 15,
+              fontSize: 14,
               color: '#444',
+              lineHeight: 2,
             }}>
               {isPresence && (
                 <span style={{
                   width: 10, height: 10, borderRadius: '50%',
-                  border: '2px solid #888',
+                  border: '1.5px solid #999',
                   display: 'inline-block',
                   flexShrink: 0,
                 }} />
@@ -283,16 +317,22 @@ export default function TrustedAcrossBorders() {
       backgroundColor: '#FFFFFF',
       padding: isMobile ? '60px 20px' : '100px 80px',
     }}>
+      <style>{`
+        @keyframes pulse-dot {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.7; transform: scale(1.4); }
+        }
+        .pulse-marker { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; }
+      `}</style>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        {/* Heading */}
         <h2
           className={`forge-fade-up${isVisible ? ' visible' : ''}`}
           style={{
             fontSize: 'clamp(36px, 5vw, 48px)',
             fontWeight: 700,
-            color: '#222',
+            color: '#1A1A1A',
             lineHeight: 1.1,
-            marginBottom: isMobile ? 32 : 48,
+            marginBottom: 32,
             textAlign: 'left',
             fontFamily: "'Open Sauce One', sans-serif",
             letterSpacing: -1,
@@ -301,24 +341,17 @@ export default function TrustedAcrossBorders() {
           Trusted across borders
         </h2>
 
-        {/* Metrics Cards */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
           gap: 16,
-          marginBottom: isMobile ? 40 : 56,
         }}>
           {METRICS.map((m, i) => (
             <MetricCard key={i} metric={m} isVisible={isVisible} index={i} />
           ))}
         </div>
 
-        {/* Globe Map */}
-        <div style={{ marginBottom: isMobile ? 40 : 56 }}>
-          <GlobeMap isVisible={isVisible} />
-        </div>
-
-        {/* Country Grid */}
+        <GlobeMap isVisible={isVisible} />
         <CountryGrid isVisible={isVisible} isMobile={isMobile} />
       </div>
     </section>
