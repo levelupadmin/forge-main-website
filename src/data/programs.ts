@@ -32,6 +32,10 @@ export const programs: Program[] = [
       "/images/programs/creators-1.jpg",
       "/images/programs/creators-2.jpg",
       "/images/programs/creators-3.jpg",
+      "/images/programs/creators-5.jpg",
+      "/images/programs/creators-6.jpg",
+      "/images/programs/creators-7.jpg",
+      "/images/programs/creators-8.jpg",
     ],
   },
   {

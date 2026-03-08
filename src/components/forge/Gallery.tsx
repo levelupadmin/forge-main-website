@@ -4,14 +4,17 @@ import { X } from 'lucide-react';
 
 const galleryImages = [
   { src: '/images/programs/filmmaking-5.jpg', alt: 'Filmmaking bootcamp — cinematic lighting setup' },
-  { src: '/images/gallery/gallery-1.png', alt: 'Behind the scenes 1' },
+  { src: '/images/programs/creators-1.jpg', alt: 'Creator Residency — content recording session' },
   { src: '/images/programs/filmmaking-8.jpg', alt: 'Filmmaking bootcamp — outdoor shoot' },
-  { src: '/images/gallery/gallery-3.png', alt: 'Behind the scenes 3' },
+  { src: '/images/programs/creators-2.jpg', alt: 'Creator Residency — group photo by the pool' },
+  { src: '/images/programs/creators-5.jpg', alt: 'Creator Residency — lighting workshop' },
   { src: '/images/programs/filmmaking-7.jpg', alt: 'Filmmaking bootcamp — hands-on camera work' },
-  { src: '/images/gallery/gallery-5.png', alt: 'Behind the scenes 5' },
+  { src: '/images/programs/creators-6.jpg', alt: 'Creator Residency — vlogging in Ubud' },
+  { src: '/images/programs/creators-7.jpg', alt: 'Creator Residency — presentation session' },
+  { src: '/images/programs/creators-8.jpg', alt: 'Creator Residency — group selfie' },
   { src: '/images/programs/filmmaking-6.jpg', alt: 'Filmmaking bootcamp — group photo' },
-  { src: '/images/gallery/gallery-7.png', alt: 'Behind the scenes 7' },
-  { src: '/images/gallery/gallery-9.png', alt: 'Behind the scenes 9' },
+  { src: '/images/programs/creators-3.jpg', alt: 'Creator Residency — exploring nature' },
+  { src: '/images/programs/creators-4.jpg', alt: 'Creator Residency — outdoor mentoring' },
 ];
 
 export default function Gallery() {
