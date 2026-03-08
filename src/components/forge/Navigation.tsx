@@ -9,18 +9,10 @@ const leftLinks = [
 const rightLinks = [
   { label: 'Community', href: '#community' },
   { label: 'Stories', href: '#stories' },
-  { label: 'Careers', href: '#careers' },
 ];
 
 export default function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   const scrollTo = (href: string) => {
     setMenuOpen(false);
@@ -36,50 +28,62 @@ export default function Navigation() {
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 100,
-        transition: 'all 300ms ease',
       }}>
         <div className="forge-desktop-nav" style={{
           background: 'white',
           borderRadius: 16,
-          padding: '10px 32px',
+          padding: '8px 12px 8px 28px',
           boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
           display: 'flex',
           alignItems: 'center',
-          gap: 32,
+          gap: 0,
         }}>
-          {leftLinks.map(link => (
-            <button
-              key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className="forge-nav-link"
-              style={{ color: '#222', fontSize: 14, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-            >
-              {link.label}
-            </button>
-          ))}
+          {/* Left links */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-end' }}>
+            {leftLinks.map(link => (
+              <button
+                key={link.href}
+                onClick={() => scrollTo(link.href)}
+                className="forge-nav-link"
+                style={{ color: '#222', fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
 
           {/* Center logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 8px', display: 'flex', alignItems: 'center' }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 28px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
             <img
               src="/images/forge-logo.png"
               alt="the Forge"
-              style={{ height: 40, width: 'auto' }}
+              style={{ height: 44, width: 'auto', display: 'block' }}
             />
           </button>
 
-          {rightLinks.map(link => (
+          {/* Right links + CTA */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
+            {rightLinks.map(link => (
+              <button
+                key={link.href}
+                onClick={() => scrollTo(link.href)}
+                className="forge-nav-link"
+                style={{ color: '#222', fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}
+              >
+                {link.label}
+              </button>
+            ))}
             <button
-              key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className="forge-nav-link"
-              style={{ color: '#222', fontSize: 14, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+              onClick={() => scrollTo('#experiences')}
+              className="forge-cta-dark"
+              style={{ padding: '10px 20px', fontSize: 12, margin: 0, whiteSpace: 'nowrap' }}
             >
-              {link.label}
+              Request an Invite
             </button>
-          ))}
+          </div>
         </div>
 
         {/* Mobile hamburger */}
