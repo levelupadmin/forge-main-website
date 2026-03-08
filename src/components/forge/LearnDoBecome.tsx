@@ -1,170 +1,128 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const steps = [
   {
-    word: 'learn',
+    word: 'Learn.',
     lead: 'Every master was once a student.',
     text: 'Everything starts with understanding your craft. The fundamentals, the process, the tools. Taught by people who are still out there doing it.',
+    icon: '📖',
+    accent: '#FFBC3B',
   },
   {
-    word: 'do',
+    word: 'Do.',
     lead: 'Knowledge without action is just theory.',
     text: "You don't just study the craft. You practice it. Every session, every day, you're creating something real. No theory without action.",
+    icon: '🎬',
+    accent: '#FFA800',
   },
   {
-    word: 'become',
-    lead: 'This is where you transform.',
-    text: "You leave the Forge having made something that's yours. A short film. A Reel. A manuscript. You're not a creator if you aren't creating something right?",
+    word: 'Become.',
+    lead: 'This is where it all comes together.',
+    text: "You leave the Forge having made something that's yours. A short film. A reel. A manuscript. You're not a creator if you aren't creating something, right?",
+    icon: '🌟',
+    accent: '#DD6F15',
   },
 ];
 
 export default function LearnDoBecome() {
   const { ref, isVisible } = useScrollAnimation(0.15);
-  const isMobile = useIsMobile();
-
-  const lineHeight = 600;
-  const nodePositions = [80, 300, 520];
 
   return (
     <section ref={ref} style={{
       background: '#FCF7EF',
-      padding: 'clamp(64px, 10vw, 120px) clamp(24px, 5vw, 80px)',
-      maxWidth: 960,
+      padding: 'clamp(32px, 5vw, 64px) clamp(24px, 5vw, 80px)',
+      maxWidth: 1280,
       margin: '0 auto',
     }}>
       {/* Header */}
       <div
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-        style={{ textAlign: 'center', marginBottom: 80 }}
+        style={{ textAlign: 'center', marginBottom: 56 }}
       >
         <h2 style={{
           fontWeight: 700,
           fontSize: 'clamp(40px, 5vw, 64px)',
           color: '#222',
-          letterSpacing: '0.08em',
+          letterSpacing: '0.04em',
           margin: 0,
         }}>
-          learn. do. become.
+          Learn. Do. Become.
         </h2>
       </div>
 
-      {/* Timeline */}
+      {/* Horizontal bento boxes */}
       <div style={{
-        position: 'relative',
-        maxWidth: 800,
-        margin: '0 auto',
+        display: 'flex',
+        gap: 20,
+        flexWrap: 'wrap',
       }}>
-        {/* SVG vertical line + dots */}
-        <svg
-          style={{
-            position: 'absolute',
-            left: isMobile ? 16 : '50%',
-            top: 0,
-            transform: isMobile ? 'none' : 'translateX(-50%)',
-            width: 4,
-            height: lineHeight,
-            overflow: 'visible',
-            zIndex: 1,
-          }}
-          viewBox={`0 0 4 ${lineHeight}`}
-          preserveAspectRatio="none"
-        >
-          {/* Golden line */}
-          <line
-            x1="2" y1="0" x2="2" y2={lineHeight}
-            stroke="#FFBC3B"
-            strokeWidth="2"
-            strokeDasharray={lineHeight}
-            strokeDashoffset={isVisible ? 0 : lineHeight}
-            style={{ transition: `stroke-dashoffset 1.8s ease` }}
-          />
-          {/* Dots at each node */}
-          {nodePositions.map((y, i) => (
-            <circle
-              key={i}
-              cx="2" cy={y} r="6"
-              fill="#FFBC3B"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'scale(1)' : 'scale(0)',
-                transformOrigin: `2px ${y}px`,
-                transition: `opacity 400ms ease ${400 + i * 500}ms, transform 400ms ease ${400 + i * 500}ms`,
-              }}
-            />
-          ))}
-        </svg>
+        {steps.map((step, i) => (
+          <div
+            key={step.word}
+            className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+            style={{
+              flex: '1 1 280px',
+              minWidth: 280,
+              background: '#FFFFFF',
+              borderRadius: 20,
+              padding: 'clamp(28px, 3vw, 40px)',
+              boxShadow: '0 2px 24px rgba(0,0,0,0.05)',
+              position: 'relative',
+              overflow: 'hidden',
+              transitionDelay: `${200 + i * 200}ms`,
+            }}
+          >
+            {/* Accent top bar */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 4,
+              background: `linear-gradient(90deg, ${step.accent}, ${step.accent}88)`,
+            }} />
 
-        {/* Steps */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 0,
-          position: 'relative',
-          minHeight: lineHeight,
-        }}>
-          {steps.map((step, i) => {
-            const isLeft = !isMobile && i % 2 === 0;
-            const isRight = !isMobile && i % 2 === 1;
-            const topOffset = nodePositions[i] - 30;
+            {/* Icon */}
+            <div style={{
+              fontSize: 36,
+              marginBottom: 16,
+            }}>
+              {step.icon}
+            </div>
 
-            return (
-              <div
-                key={step.word}
-                className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-                style={{
-                  position: 'absolute',
-                  top: topOffset,
-                  transitionDelay: `${600 + i * 500}ms`,
-                  ...(isMobile
-                    ? {
-                        left: 44,
-                        right: 0,
-                        textAlign: 'left',
-                      }
-                    : isLeft
-                    ? {
-                        right: 'calc(50% + 32px)',
-                        left: 0,
-                        textAlign: 'right',
-                      }
-                    : {
-                        left: 'calc(50% + 32px)',
-                        right: 0,
-                        textAlign: 'left',
-                      }),
-                }}
-              >
-                <div style={{
-                  fontWeight: 700,
-                  fontSize: 'clamp(32px, 4vw, 48px)',
-                  color: '#222',
-                  marginBottom: 8,
-                }}>
-                  {step.word}
-                </div>
-                <p style={{
-                  fontSize: 14,
-                  fontStyle: 'italic',
-                  color: '#FFBC3B',
-                  margin: '0 0 8px 0',
-                  fontWeight: 600,
-                }}>
-                  {step.lead}
-                </p>
-                <p style={{
-                  fontSize: 'clamp(14px, 1.1vw, 16px)',
-                  opacity: 0.6,
-                  maxWidth: 340,
-                  margin: isRight || isMobile ? '0' : '0 0 0 auto',
-                  lineHeight: 1.7,
-                }}>
-                  {step.text}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+            {/* Word */}
+            <div style={{
+              fontWeight: 700,
+              fontSize: 'clamp(32px, 3.5vw, 44px)',
+              color: '#222',
+              marginBottom: 12,
+              lineHeight: 1,
+            }}>
+              {step.word}
+            </div>
+
+            {/* Lead */}
+            <p style={{
+              fontSize: 15,
+              fontWeight: 600,
+              color: step.accent,
+              margin: '0 0 12px 0',
+              lineHeight: 1.4,
+            }}>
+              {step.lead}
+            </p>
+
+            {/* Description */}
+            <p style={{
+              fontSize: 14,
+              opacity: 0.6,
+              lineHeight: 1.7,
+              margin: 0,
+            }}>
+              {step.text}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

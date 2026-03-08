@@ -22,11 +22,11 @@ export const programs: Program[] = [
     ],
   },
   {
-    tag: "Creator Residency",
+    tag: "Content Creation",
     title: "the Forge Creator Residency",
     description: "A 7-day invite-only residency where handpicked individuals learn to create viral content and build their personal brand on Instagram, TikTok or YouTube.",
     href: "https://creators.forgebylevelup.com",
-    nextEdition: "Manali · Jun 2025",
+    nextEdition: "Goa · May 2025",
     photos: [
       "/images/programs/creators-hero.jpg",
       "/images/programs/creators-1.jpg",
@@ -35,11 +35,11 @@ export const programs: Program[] = [
     ],
   },
   {
-    tag: "Writing",
+    tag: "Screenwriting and Authoring",
     title: "the Forge Writing Retreat",
-    description: "Give us 6 days, and we'll help you forge a freshly minted book manuscript, screenplay or film treatment — with 20 overcaffeinated writers by your side.",
+    description: "Give us 6 days, and we'll help you forge a freshly minted book manuscript, screenplay or film treatment with 20 overcaffeinated writers by your side.",
     href: "https://creators.forgebylevelup.com/writing",
-    nextEdition: null,
+    nextEdition: "Dehradun · Mar 2025",
     photos: [
       "/images/programs/writing-hero.png",
       "/images/programs/creators-4.jpg",

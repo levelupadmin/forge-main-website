@@ -90,17 +90,32 @@ function ProgramCard({ program }: { program: typeof programs[0] }) {
           color: '#FFBC3B',
           letterSpacing: '0.08em',
           marginBottom: 8,
+          textTransform: 'uppercase',
         }}>
           {program.tag}
         </div>
         <div style={{ fontWeight: 700, fontSize: 20, color: '#222', marginBottom: 8 }}>
           {program.title}
         </div>
-        <p style={{ fontSize: 14, opacity: 0.6, lineHeight: 1.6, marginBottom: 16 }}>
+        <p style={{ fontSize: 14, opacity: 0.6, lineHeight: 1.6, marginBottom: 20 }}>
           {program.description}
         </p>
-        <a href={program.href} className="forge-learn-more">
-          Learn More &rarr;
+        <a href={program.href} style={{
+          display: 'inline-block',
+          background: '#222',
+          color: 'white',
+          borderRadius: 100,
+          padding: '10px 24px',
+          fontSize: 13,
+          fontWeight: 700,
+          textDecoration: 'none',
+          transition: 'background 200ms ease',
+          fontFamily: "'Open Sauce One', sans-serif",
+        }}
+        onMouseEnter={e => (e.target as HTMLElement).style.background = '#FFBC3B'}
+        onMouseLeave={e => (e.target as HTMLElement).style.background = '#222'}
+        >
+          Learn More
         </a>
       </div>
     </div>
