@@ -101,7 +101,6 @@ function StoryCard({ story }: { story: typeof successStories[0] }) {
             position: 'absolute',
             bottom: 12,
             left: 16,
-            color: 'white',
             fontSize: 12,
             fontWeight: 600,
             background: 'var(--forge-yellow)',

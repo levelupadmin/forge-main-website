@@ -7,7 +7,7 @@ const leftLinks = [
 ];
 
 const rightLinks = [
-  { label: 'Community', href: '#community' },
+  { label: 'Community', href: '/community', isRoute: true },
   { label: 'Careers', href: '#careers' },
   { label: 'Be a Mentor', href: '#mentors' },
 ];
