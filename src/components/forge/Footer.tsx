@@ -64,7 +64,7 @@ export default function Footer() {
 
       {/* Main footer content */}
       <div style={{
-        padding: 'clamp(60px, 8vw, 100px) clamp(24px, 5vw, 80px) 40px',
+        padding: 'clamp(40px, 5vw, 64px) clamp(24px, 5vw, 80px) 32px',
         maxWidth: 1280,
         margin: '0 auto',
       }}>
@@ -72,7 +72,7 @@ export default function Footer() {
           display: 'grid',
           gridTemplateColumns: '2fr 1fr 1fr 1fr',
           gap: 'clamp(32px, 4vw, 64px)',
-          marginBottom: 80,
+          marginBottom: 48,
         }}>
           {/* Brand Column */}
           <div>
