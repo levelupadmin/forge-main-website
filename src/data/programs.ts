@@ -15,10 +15,10 @@ export const programs: Program[] = [
     href: "/filmmaking",
     nextEdition: "Goa · Apr 2025",
     photos: [
-      "/images/programs/filmmaking-1.png",
-      "/images/programs/filmmaking-2.png",
-      "/images/programs/filmmaking-3.png",
-      "/images/programs/filmmaking-4.png",
+      "/images/programs/filmmaking-5.jpg",
+      "/images/programs/filmmaking-8.jpg",
+      "/images/programs/filmmaking-7.jpg",
+      "/images/programs/filmmaking-6.jpg",
     ],
   },
   {
