@@ -122,7 +122,7 @@ export default function LearnDoBecome() {
                 color: step.color,
                 lineHeight: 1,
               }}>
-                {step.word.replace('.', '').toLowerCase()}
+                {step.word.charAt(0).toUpperCase() + step.word.slice(1).replace('.', '').toLowerCase()}
               </div>
             </div>
 
