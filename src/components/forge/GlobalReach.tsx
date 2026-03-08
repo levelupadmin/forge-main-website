@@ -236,7 +236,7 @@ export default function GlobalReach() {
 
   return (
     <section ref={ref} style={{
-      background: '#dcdcdc',
+      background: '#000000',
       position: 'relative',
       overflow: 'hidden',
       minHeight: isMobile ? 500 : 700,
