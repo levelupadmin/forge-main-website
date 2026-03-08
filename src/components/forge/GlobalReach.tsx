@@ -343,7 +343,7 @@ export default function GlobalReach() {
             marginBottom: 16,
             fontFamily: "'Open Sauce One', sans-serif",
           }}>
-            We are worldwide
+            A global Community
           </div>
           <div style={{
             display: 'grid',
