@@ -270,14 +270,26 @@ export default function GlobalReach() {
         flexDirection: 'column',
         minHeight: 700,
       }}>
+        <div className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{ marginBottom: 8 }}>
+          <span style={{
+            fontSize: 15,
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: 3,
+            color: '#DD6F15',
+          }}>
+            Global Reach
+          </span>
+        </div>
         <h2
           className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
           style={{
-            fontSize: 'clamp(40px, 6vw, 72px)',
+            fontSize: 'clamp(40px, 6vw, 64px)',
             fontWeight: 700,
             color: '#1a1a1a',
             marginBottom: 24,
-            lineHeight: 1.0,
+            lineHeight: 1.05,
+            letterSpacing: -1,
             fontFamily: "'Open Sauce One', sans-serif",
           }}
         >

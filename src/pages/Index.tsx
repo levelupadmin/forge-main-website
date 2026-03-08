@@ -15,10 +15,7 @@ import BrandPartners from '@/components/forge/BrandPartners';
 import Community from '@/components/forge/Community';
 import Gallery from '@/components/forge/Gallery';
 import Testimonials from '@/components/forge/Testimonials';
-import ClosingStatement from '@/components/forge/ClosingStatement';
 import Footer from '@/components/forge/Footer';
-import FloatingCTA from '@/components/forge/FloatingCTA';
-import SectionNudge from '@/components/forge/SectionNudge';
 
 const Index = () => {
   return (
@@ -33,17 +30,13 @@ const Index = () => {
       <Experiences />
       <Ethos />
       <Mentors />
-      <SectionNudge text="Ready to join them?" />
       <PeopleOfForge />
       <BrandPartners />
       <Community />
       <GlobalReach />
       <Gallery />
       <Testimonials />
-      <SectionNudge text="Start your journey →" />
-      <ClosingStatement />
       <Footer />
-      <FloatingCTA />
     </div>
   );
 };
