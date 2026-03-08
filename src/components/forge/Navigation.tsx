@@ -32,14 +32,14 @@ export default function Navigation() {
         <div className="forge-desktop-nav" style={{
           background: 'white',
           borderRadius: 100,
-          padding: '6px 6px 6px 28px',
+          padding: '6px 6px 6px 24px',
           boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
           display: 'flex',
           alignItems: 'center',
           gap: 0,
         }}>
           {/* Left links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-end' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, justifyContent: 'flex-end' }}>
             {leftLinks.map(link => (
               <button
                 key={link.href}
@@ -55,17 +55,17 @@ export default function Navigation() {
           {/* Center logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 28px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 20px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
             <img
               src="/images/forge-logo.png"
               alt="the Forge"
-              style={{ height: 58, width: 'auto', display: 'block' }}
+              style={{ height: 72, width: 'auto', display: 'block' }}
             />
           </button>
 
           {/* Right links + CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1, justifyContent: 'flex-start' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, justifyContent: 'flex-start' }}>
             {rightLinks.map(link => (
               <button
                 key={link.href}
