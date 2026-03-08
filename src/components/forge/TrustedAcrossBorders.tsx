@@ -168,14 +168,14 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={isHighlighted ? '#DC2626' : '#E8E8E8'}
+                  fill={isHighlighted ? '#DC2626' : '#E2E4E8'}
                   stroke="#FFF"
-                  strokeWidth={0.5}
+                  strokeWidth={0.4}
                   style={{
                     default: { outline: 'none', transition: 'fill 0.2s ease' },
                     hover: {
                       outline: 'none',
-                      fill: isHighlighted ? '#EF4444' : '#DFDFDF',
+                      fill: isHighlighted ? '#EF4444' : '#D4D6DA',
                     },
                     pressed: { outline: 'none' },
                   }}
