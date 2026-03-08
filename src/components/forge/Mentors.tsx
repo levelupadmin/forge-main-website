@@ -1,15 +1,6 @@
 import { mentors } from '@/data/mentors';
 import { useDragScroll } from '@/hooks/useDragScroll';
 
-const cardColors = [
-  '#F2A0C4', // pink
-  '#C8E66A', // lime green
-  '#FFBC3B', // yellow/amber
-  '#B8B0E8', // lavender
-  '#7ECBC4', // teal
-  '#F4C87A', // warm gold
-];
-
 const cardHeights = [420, 360, 440, 380, 400, 430];
 
 export default function Mentors() {
@@ -18,7 +9,7 @@ export default function Mentors() {
   return (
     <section style={{
       background: '#1a1a1a',
-      padding: 'clamp(64px, 10vw, 120px) 0 0',
+      padding: 'clamp(64px, 10vw, 120px) 0 clamp(80px, 12vw, 160px)',
     }}>
       <div style={{
         textAlign: 'center',
@@ -35,35 +26,37 @@ export default function Mentors() {
 
       <div ref={scrollRef} className="forge-scroll" style={{
         display: 'flex',
-        gap: 0,
+        gap: 20,
         alignItems: 'flex-end',
+        padding: '0 clamp(24px, 4vw, 60px)',
       }}>
         {mentors.map((mentor, i) => {
-          const bgColor = cardColors[i % cardColors.length];
           const height = cardHeights[i % cardHeights.length];
 
           return (
             <div key={i} style={{
-              minWidth: 240,
-              flex: '1 0 240px',
+              minWidth: 220,
+              flex: '0 0 220px',
               height,
-              background: bgColor,
-              borderRadius: '140px 140px 0 0',
+              background: '#FCF7EF',
+              borderRadius: 20,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               position: 'relative',
               overflow: 'hidden',
               transition: 'transform 0.3s ease',
+              padding: '16px 16px 0',
             }}
             className="forge-mentor-pill"
             >
-              {/* Photo — oval filling the top */}
+              {/* Photo — oval frame inside the card */}
               <div style={{
                 width: '100%',
                 flex: 1,
                 overflow: 'hidden',
-                borderRadius: '140px 140px 0 0',
+                borderRadius: '120px 120px 120px 120px',
+                background: '#e8e2d8',
               }}>
                 <img
                   src={mentor.photo}
@@ -80,21 +73,20 @@ export default function Mentors() {
               <div style={{
                 width: '100%',
                 textAlign: 'center',
-                padding: '20px 16px 28px',
-                background: bgColor,
+                padding: '16px 8px 22px',
               }}>
                 <div style={{
                   fontWeight: 700,
-                  fontSize: 22,
+                  fontSize: 18,
                   color: '#1a1a1a',
-                  marginBottom: 4,
+                  marginBottom: 2,
                 }}>
                   {mentor.name}
                 </div>
                 <div style={{
-                  fontSize: 14,
+                  fontSize: 13,
                   color: '#1a1a1a',
-                  opacity: 0.7,
+                  opacity: 0.5,
                 }}>
                   {mentor.designation}
                 </div>
