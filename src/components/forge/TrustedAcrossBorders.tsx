@@ -22,9 +22,9 @@ const METRICS = [
 
 const HIGHLIGHTED_COUNTRIES = [
   'India', 'Sri Lanka', 'Nepal', 'Bangladesh', 'Myanmar', 'Thailand',
-  'Malaysia', 'Singapore', 'Indonesia', 'Vietnam',
-  'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Oman',
-  'Kenya', 'South Africa',
+  'Malaysia', 'Singapore', 'Indonesia', 'Vietnam', 'Philippines', 'Cambodia', 'Laos',
+  'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Oman', 'Pakistan',
+  'Kenya', 'South Africa', 'China', 'South Korea',
 ];
 
 const PRESENCE_MARKERS = [
@@ -107,9 +107,9 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const isMobile = useIsMobile();
 
-  const globeScale = isMobile ? 240 : 300;
-  const svgW = 700;
-  const svgH = 700;
+  const globeScale = isMobile ? 340 : 450;
+  const svgW = 800;
+  const svgH = 600;
   const cx = svgW / 2;
   const cy = svgH / 2;
 
@@ -119,15 +119,17 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
       style={{
         position: 'relative',
         transitionDelay: '500ms',
-        maxWidth: 600,
+        maxWidth: 900,
         margin: '0 auto',
         marginTop: 40,
+        overflow: 'hidden',
+        borderRadius: 16,
       }}
     >
       <ComposableMap
         projection="geoOrthographic"
         projectionConfig={{
-          rotate: [-78, -20, 0],
+          rotate: [-78, -18, 0],
           scale: globeScale,
         }}
         width={svgW}
@@ -135,16 +137,19 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
         style={{ width: '100%', height: 'auto' }}
       >
         <defs>
-          <linearGradient id="globe-ocean" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#D8DCE3" />
-            <stop offset="100%" stopColor="#C4C8D0" />
-          </linearGradient>
-          <radialGradient id="globe-vignette" cx="50%" cy="50%" r="50%">
-            <stop offset="70%" stopColor="transparent" />
-            <stop offset="100%" stopColor="rgba(0,0,0,0.12)" />
+          <radialGradient id="globe-ocean" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stopColor="#E8ECF2" />
+            <stop offset="40%" stopColor="#DEE2E8" />
+            <stop offset="80%" stopColor="#CDD2D9" />
+            <stop offset="100%" stopColor="#B8BEC7" />
           </radialGradient>
-          <filter id="globe-shadow" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="4" stdDeviation="12" floodColor="rgba(0,0,0,0.15)" />
+          <radialGradient id="globe-vignette" cx="50%" cy="50%" r="50%">
+            <stop offset="60%" stopColor="transparent" />
+            <stop offset="85%" stopColor="rgba(0,0,0,0.08)" />
+            <stop offset="100%" stopColor="rgba(0,0,0,0.2)" />
+          </radialGradient>
+          <filter id="globe-shadow" x="-15%" y="-15%" width="130%" height="130%">
+            <feDropShadow dx="0" dy="6" stdDeviation="16" floodColor="rgba(0,0,0,0.18)" />
           </filter>
         </defs>
 
@@ -163,14 +168,14 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={isHighlighted ? '#DC2626' : '#E8E8E8'}
+                  fill={isHighlighted ? '#DC2626' : '#E2E4E8'}
                   stroke="#FFF"
-                  strokeWidth={0.5}
+                  strokeWidth={0.4}
                   style={{
                     default: { outline: 'none', transition: 'fill 0.2s ease' },
                     hover: {
                       outline: 'none',
-                      fill: isHighlighted ? '#EF4444' : '#DFDFDF',
+                      fill: isHighlighted ? '#EF4444' : '#D4D6DA',
                     },
                     pressed: { outline: 'none' },
                   }}
@@ -199,8 +204,8 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
         {/* Presence markers with pulse */}
         {PRESENCE_MARKERS.map((marker) => (
           <Marker key={marker.name} coordinates={marker.coordinates}>
-            <circle r={8} fill="white" opacity={0.3} className="pulse-marker" />
-            <circle r={5} fill="#FFF" stroke="#999" strokeWidth={1} />
+            <circle r={12} fill="white" opacity={0.3} className="pulse-ring" />
+            <circle r={6} fill="#FFF" stroke="#999" strokeWidth={1.5} />
           </Marker>
         ))}
       </ComposableMap>
@@ -226,14 +231,12 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
         </div>
       )}
 
-      {/* Legend */}
+      {/* Legend centered below globe */}
       <div style={{
-        position: 'absolute',
-        bottom: 12,
-        right: 12,
         display: 'flex',
-        gap: 20,
-        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 24,
+        marginTop: 16,
       }}>
         {[
           { color: '#DC2626', label: 'Sales Regions' },
@@ -319,10 +322,11 @@ export default function TrustedAcrossBorders() {
     }}>
       <style>{`
         @keyframes pulse-dot {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 0.7; transform: scale(1.4); }
+          0% { transform: scale(1); opacity: 0.6; }
+          50% { transform: scale(1.6); opacity: 0; }
+          100% { transform: scale(1); opacity: 0; }
         }
-        .pulse-marker { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; }
+        .pulse-ring { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; }
       `}</style>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <h2
