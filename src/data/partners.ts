@@ -4,10 +4,10 @@ export interface Partner {
 }
 
 export const partners: Partner[] = [
-  { name: "Sony", logo: "/placeholder.svg" }, /* REPLACE: Sony logo SVG */
-  { name: "Partner 2", logo: "/placeholder.svg" }, /* REPLACE: Real partner logo */
-  { name: "Partner 3", logo: "/placeholder.svg" }, /* REPLACE: Real partner logo */
-  { name: "Partner 4", logo: "/placeholder.svg" }, /* REPLACE: Real partner logo */
-  { name: "Partner 5", logo: "/placeholder.svg" }, /* REPLACE: Real partner logo */
-  { name: "Partner 6", logo: "/placeholder.svg" }, /* REPLACE: Real partner logo */
+  { name: "Partner 1", logo: "/images/partners/partner-1.png" },
+  { name: "Partner 2", logo: "/images/partners/partner-2.png" },
+  { name: "Partner 3", logo: "/images/partners/partner-3.png" },
+  { name: "Partner 4", logo: "/images/partners/partner-4.png" },
+  { name: "Partner 5", logo: "/images/partners/partner-5.png" },
+  { name: "Partner 6", logo: "/images/partners/partner-6.png" },
 ];

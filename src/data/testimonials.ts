@@ -6,11 +6,10 @@ export interface Testimonial {
 }
 
 export const testimonials: Testimonial[] = [
-  { thumbnail: "/placeholder.svg", vimeoId: "123456789", name: "Alumni 1", program: "the Forge Filmmaking Bootcamp" },
-  { thumbnail: "/placeholder.svg", vimeoId: "123456789", name: "Alumni 2", program: "the Forge Creator Residency" },
-  { thumbnail: "/placeholder.svg", vimeoId: "123456789", name: "Alumni 3", program: "the Forge Writing Retreat" },
-  { thumbnail: "/placeholder.svg", vimeoId: "123456789", name: "Alumni 4", program: "the Forge Filmmaking Bootcamp" },
-  { thumbnail: "/placeholder.svg", vimeoId: "123456789", name: "Alumni 5", program: "the Forge Creator Residency" },
-  { thumbnail: "/placeholder.svg", vimeoId: "123456789", name: "Alumni 6", program: "the Forge Writing Retreat" },
+  { thumbnail: "/images/alumni/chetan.png", vimeoId: "123456789", name: "Chetan Choudhary", program: "the Forge Filmmaking Bootcamp" },
+  { thumbnail: "/images/alumni/devansh.jpg", vimeoId: "123456789", name: "Devansh", program: "the Forge Filmmaking Bootcamp" },
+  { thumbnail: "/images/alumni/karmal.png", vimeoId: "123456789", name: "Karmal", program: "the Forge Filmmaking Bootcamp" },
+  { thumbnail: "/images/people/person-1.png", vimeoId: "123456789", name: "Alumni 4", program: "the Forge Creator Residency" },
+  { thumbnail: "/images/people/person-2.png", vimeoId: "123456789", name: "Alumni 5", program: "the Forge Creator Residency" },
+  { thumbnail: "/images/people/person-3.png", vimeoId: "123456789", name: "Alumni 6", program: "the Forge Writing Retreat" },
 ];
-/* REPLACE: All thumbnails with real alumni photos, all vimeoIds with real Vimeo video IDs */
