@@ -22,19 +22,20 @@ const METRICS = [
 const HIGHLIGHTED_COUNTRIES = [
   'Germany', 'Poland', 'Austria', 'Croatia', 'Czech Republic', 'Czechia',
   'Estonia', 'Hungary', 'Italy', 'Latvia', 'Lithuania', 'Netherlands',
-  'Portugal', 'Slovakia', 'Slovenia', 'Spain', 'Ukraine',
+  'Portugal', 'Slovakia', 'Slovenia', 'Spain', 'Ukraine', 'India',
 ];
 
 const PRESENCE_MARKERS = [
   { name: 'Germany', coordinates: [10.4515, 51.1657] as [number, number] },
   { name: 'Poland', coordinates: [19.1451, 51.9194] as [number, number] },
+  { name: 'India', coordinates: [78.9629, 20.5937] as [number, number] },
 ];
 
 const COUNTRY_GRID = [
   ['Germany ○', 'Poland ○', 'Austria', 'Croatia'],
   ['Czech Republic', 'Estonia', 'Hungary', 'Italy'],
   ['Latvia', 'Lithuania', 'Netherlands', 'Portugal'],
-  ['Slovakia', 'Slovenia', 'Spain', 'Ukraine'],
+  ['Slovakia', 'Slovenia', 'Spain', 'India ○'],
 ];
 
 function MetricCard({ metric, isVisible, index }: {
