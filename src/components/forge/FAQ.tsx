@@ -25,7 +25,7 @@ const faqs = [
   {
     question: 'How do I apply?',
     answer:
-      'Click the "Apply Now" button on any program page to fill out a short application form. Our team reviews applications on a rolling basis, and you'll hear back within 5–7 business days. Early applications are encouraged as seats are limited.',
+      'Click the "Apply Now" button on any program page to fill out a short application form. Our team reviews applications on a rolling basis, and you will hear back within 5-7 business days. Early applications are encouraged as seats are limited.',
   },
   {
     question: 'Is financial aid or scholarships available?',
