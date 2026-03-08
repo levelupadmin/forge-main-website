@@ -68,7 +68,7 @@ export default function BrandPartners() {
             <div style={{
               borderRadius: 16,
               overflow: 'hidden',
-              aspectRatio: '4 / 5',
+              aspectRatio: '16 / 10',
             }}>
               <img
                 src={activePartner.image}

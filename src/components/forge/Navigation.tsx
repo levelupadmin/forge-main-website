@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Menu } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -41,7 +41,6 @@ export default function Navigation() {
         zIndex: 100,
       }}>
         {isMobile ? (
-          /* Mobile pill nav */
           <div style={{
             background: 'white',
             borderRadius: 100,
@@ -55,11 +54,7 @@ export default function Navigation() {
               onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
             >
-              <img
-                src="/images/forge-logo.png"
-                alt="the Forge"
-                style={{ height: 36, width: 'auto', display: 'block' }}
-              />
+              <img src="/images/forge-logo.png" alt="the Forge" style={{ height: 36, width: 'auto', display: 'block' }} />
             </button>
             <button
               onClick={() => setMenuOpen(true)}
@@ -80,7 +75,6 @@ export default function Navigation() {
             </button>
           </div>
         ) : (
-          /* Desktop pill nav */
           <div style={{
             background: 'white',
             borderRadius: 100,
@@ -102,18 +96,12 @@ export default function Navigation() {
                 </button>
               ))}
             </div>
-
             <button
               onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
             >
-              <img
-                src="/images/forge-logo.png"
-                alt="the Forge"
-                style={{ height: 52, width: 'auto', display: 'block' }}
-              />
+              <img src="/images/forge-logo.png" alt="the Forge" style={{ height: 52, width: 'auto', display: 'block' }} />
             </button>
-
             <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
               {rightLinks.map(link => (
                 <button
@@ -130,8 +118,36 @@ export default function Navigation() {
         )}
       </nav>
 
+      {/* Premium mobile menu with animations */}
       {menuOpen && (
-        <div className="forge-mobile-menu">
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          background: 'rgba(0,0,0,0.95)',
+          zIndex: 200,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 0,
+          animation: 'menu-fade-in 0.3s ease forwards',
+        }}>
+          {/* Logo at top */}
+          <img
+            src="/images/forge-logo.png"
+            alt="the Forge"
+            style={{
+              height: 48,
+              filter: 'brightness(0) invert(1)',
+              position: 'absolute',
+              top: 32,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              animation: 'menu-item-in 0.4s ease forwards',
+              opacity: 0,
+            }}
+          />
+
           <button
             onClick={() => setMenuOpen(false)}
             style={{
@@ -142,17 +158,45 @@ export default function Navigation() {
               border: 'none',
               color: 'white',
               cursor: 'pointer',
+              animation: 'menu-item-in 0.3s ease forwards',
+              opacity: 0,
             }}
           >
             <X size={28} />
           </button>
-          {[...leftLinks, ...rightLinks].map(link => (
-            <a key={link.href} onClick={() => handleNav(link)} style={{ cursor: 'pointer' }}>
+
+          {[...leftLinks, ...rightLinks].map((link, i) => (
+            <a
+              key={link.href}
+              onClick={() => handleNav(link)}
+              style={{
+                cursor: 'pointer',
+                color: 'white',
+                fontSize: 28,
+                fontWeight: 700,
+                letterSpacing: -0.5,
+                padding: '16px 0',
+                textDecoration: 'none',
+                opacity: 0,
+                animation: `menu-item-in 0.4s ease ${150 + i * 80}ms forwards`,
+              }}
+            >
               {link.label}
             </a>
           ))}
         </div>
       )}
+
+      <style>{`
+        @keyframes menu-fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes menu-item-in {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </>
   );
 }

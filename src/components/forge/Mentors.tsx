@@ -9,6 +9,7 @@ export default function Mentors() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const pausedRef = useRef(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const navigate = useCallback((direction: 'prev' | 'next') => {
     if (isTransitioning) return;
@@ -66,40 +67,50 @@ export default function Mentors() {
         <div style={{
           textAlign: 'center',
           maxWidth: 600,
-          margin: '0 auto 40px',
+          margin: '0 auto 32px',
           padding: '0 24px',
         }}>
-        <div className="forge-subheading">Learn from</div>
-        <div className="forge-heading">the Best</div>
+          <div className="forge-subheading">Learn from</div>
+          <div className="forge-heading">the Best</div>
           <p style={{
-            fontSize: 15,
+            fontSize: 14,
             opacity: 0.55,
             lineHeight: 1.7,
             color: 'var(--forge-black)',
             maxWidth: 400,
-            margin: '16px auto 0',
+            margin: '12px auto 0',
           }}>
             Your mentors aren't professors. They're creators who've grossed 100M+ views, taught 7,000+ students, and monetized their content.
           </p>
         </div>
 
-        {/* Mobile: Stacked cards */}
-        <div style={{ padding: '0 20px', display: 'flex', flexDirection: 'column', gap: 24 }}>
+        {/* Mobile: Horizontal scroll-snap carousel */}
+        <div
+          ref={scrollRef}
+          style={{
+            display: 'flex',
+            gap: 16,
+            overflowX: 'auto',
+            scrollSnapType: 'x mandatory',
+            scrollbarWidth: 'none',
+            WebkitOverflowScrolling: 'touch',
+            padding: '0 20px',
+          }}
+        >
           {mentors.map((mentor, i) => (
             <div key={i} style={{
               background: '#1a1a1a',
               borderRadius: 20,
               overflow: 'hidden',
               display: 'flex',
-              flexDirection: 'row',
-              gap: 0,
+              flexDirection: 'column',
+              scrollSnapAlign: 'center',
+              minWidth: 'calc(100vw - 56px)',
+              maxWidth: 340,
+              flexShrink: 0,
             }}>
               {/* Photo */}
-              <div style={{
-                width: '40%',
-                minHeight: 200,
-                flexShrink: 0,
-              }}>
+              <div style={{ width: '100%', height: 220 }}>
                 <img
                   src={mentor.photo}
                   alt={mentor.name}
@@ -114,15 +125,13 @@ export default function Mentors() {
 
               {/* Info */}
               <div style={{
-                flex: 1,
-                padding: '16px 16px 16px 14px',
+                padding: '16px 20px 20px',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
               }}>
                 <div style={{
                   fontWeight: 800,
-                  fontSize: 17,
+                  fontSize: 18,
                   color: 'white',
                   marginBottom: 3,
                   letterSpacing: -0.2,
@@ -135,7 +144,7 @@ export default function Mentors() {
                   fontWeight: 700,
                   textTransform: 'uppercase',
                   letterSpacing: 0.8,
-                  marginBottom: 10,
+                  marginBottom: 12,
                 }}>
                   {mentor.designation}
                 </div>
@@ -156,7 +165,7 @@ export default function Mentors() {
                         flexShrink: 0,
                       }} />
                       <span style={{
-                        fontSize: 11,
+                        fontSize: 12,
                         color: 'rgba(255,255,255,0.75)',
                         lineHeight: 1.45,
                       }}>
@@ -167,6 +176,23 @@ export default function Mentors() {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Dot indicators */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 8,
+          marginTop: 20,
+        }}>
+          {mentors.map((_, i) => (
+            <div key={i} style={{
+              width: 6,
+              height: 6,
+              borderRadius: '50%',
+              background: 'rgba(34,34,34,0.15)',
+            }} />
           ))}
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const narrativeSteps = [
   'It starts with a dream.',
@@ -18,6 +19,7 @@ const circleConfigs = [
 export default function Ethos() {
   const { ref, isVisible } = useScrollAnimation(0.2);
   const [stage, setStage] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (!isVisible) return;
@@ -54,7 +56,7 @@ export default function Ethos() {
   return (
     <section ref={ref} style={{
       position: 'relative',
-      minHeight: 750,
+      minHeight: isMobile ? 600 : 750,
       overflow: 'hidden',
     }}>
       <div style={{
@@ -70,7 +72,7 @@ export default function Ethos() {
 
       <div style={{
         position: 'relative', zIndex: 1,
-        padding: 'clamp(40px, 6vw, 72px) clamp(24px, 5vw, 80px)',
+        padding: isMobile ? '40px 20px' : 'clamp(40px, 6vw, 72px) clamp(24px, 5vw, 80px)',
         textAlign: 'center',
         display: 'flex', flexDirection: 'column', alignItems: 'center',
       }}>
@@ -79,7 +81,7 @@ export default function Ethos() {
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
           transition: 'opacity 1s ease, transform 1s ease',
-          marginBottom: 'clamp(16px, 2vw, 32px)',
+          marginBottom: isMobile ? 12 : 'clamp(16px, 2vw, 32px)',
         }}>
           <div className="forge-subheading forge-subheading--light">Our</div>
           <div className="forge-heading forge-heading--light" style={{ color: '#FFBC3B' }}>Ethos</div>
@@ -87,7 +89,8 @@ export default function Ethos() {
 
         {/* SVG Venn Diagram */}
         <svg viewBox="0 0 800 800" style={{
-          width: 'clamp(360px, 55vw, 620px)', height: 'auto',
+          width: isMobile ? 'min(300px, 80vw)' : 'clamp(360px, 55vw, 620px)',
+          height: 'auto',
           marginBottom: 16,
         }}>
           <defs>
@@ -128,7 +131,7 @@ export default function Ethos() {
                   dominantBaseline="middle"
                   fill="white"
                   fontWeight="600"
-                  fontSize="20"
+                  fontSize={isMobile ? '18' : '20'}
                   letterSpacing="0.04em"
                   style={{ opacity: 0.9, transition: 'opacity 0.8s ease' }}
                 >{c.label}</text>
@@ -136,29 +139,28 @@ export default function Ethos() {
             );
           })}
 
-          {/* Center "the Forge" text */}
           <text
-            x={cx}
-            y={cy}
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fill="#FFBC3B"
-            fontWeight="700"
-            fontSize="22"
+            x={cx} y={cy}
+            textAnchor="middle" dominantBaseline="middle"
+            fill="#FFBC3B" fontWeight="700"
+            fontSize={isMobile ? '20' : '22'}
             letterSpacing="0.05em"
-            style={{
-              opacity: centerLabelOpacity,
-              transition: 'opacity 1s ease-in-out',
-            }}
+            style={{ opacity: centerLabelOpacity, transition: 'opacity 1s ease-in-out' }}
           >the Forge</text>
         </svg>
 
         {/* Narrative text */}
-        <div style={{ position: 'relative', height: 56, maxWidth: 640, width: '100%', marginBottom: 12 }}>
+        <div style={{
+          position: 'relative',
+          height: isMobile ? 72 : 56,
+          maxWidth: 640,
+          width: '100%',
+          marginBottom: 12,
+        }}>
           {narrativeSteps.map((text, i) => (
             <p key={i} style={{
               position: 'absolute', top: 0, left: 0, right: 0,
-              fontSize: 'clamp(17px, 2.2vw, 22px)',
+              fontSize: isMobile ? 'clamp(15px, 4vw, 18px)' : 'clamp(17px, 2.2vw, 22px)',
               color: 'white',
               opacity: narrativeIdx === i ? 0.8 : 0,
               transform: `translateY(${narrativeIdx === i ? 0 : 10}px)`,
@@ -175,7 +177,7 @@ export default function Ethos() {
         {/* Final statement */}
         <p style={{
           maxWidth: 560,
-          fontSize: 'clamp(16px, 1.8vw, 20px)',
+          fontSize: isMobile ? 'clamp(14px, 3.8vw, 17px)' : 'clamp(16px, 1.8vw, 20px)',
           color: 'white',
           opacity: finalOpacity ? 0.85 : 0,
           transform: `translateY(${finalOpacity ? 0 : 20}px)`,
