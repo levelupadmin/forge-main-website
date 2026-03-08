@@ -39,7 +39,7 @@ export const mentors: Mentor[] = [
   {
     name: "Sai Sethu",
     designation: "Creator & Storytelling Educator",
-    photo: "/images/mentors/mentor-4.png",
+    photo: "/images/mentors/saisethu.jpg",
     highlights: [
       "420K+ followers, 100M+ views across content platforms",
       "3,000+ students taught globally across 70+ countries",
@@ -64,6 +64,16 @@ export const mentors: Mentor[] = [
       "Runs India's largest and fastest-growing filmmaking community",
       "Founder of LevelUp Learning, an online educational platform",
       "Directed and produced masterclasses of Karthik Subbaraj, G Venket Ram, Anthony Gonsalvez",
+    ],
+  },
+  {
+    name: "Prakriti Madan",
+    designation: "Actor | Creator | Storyteller",
+    photo: "/images/mentors/prakriti.jpg",
+    highlights: [
+      "Popular actor and content creator with a massive social media following",
+      "Known for authentic storytelling and engaging digital content",
+      "Inspires thousands of aspiring creators through workshops and mentoring",
     ],
   },
 ];
