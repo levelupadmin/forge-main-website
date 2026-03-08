@@ -234,6 +234,15 @@ body {
 .forge-venn-circle.animate:nth-of-type(2) { transition-delay: 200ms; }
 .forge-venn-circle.animate:nth-of-type(3) { transition-delay: 400ms; }
 
+/* === Ethos Glow Pulse === */
+@keyframes forge-glow-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+.forge-glow-active {
+  animation: forge-glow-pulse 2.5s ease-in-out infinite;
+}
+
 /* === Play Button === */
 .forge-play-btn {
   width: 56px;
