@@ -15,6 +15,7 @@ import BrandPartners from '@/components/forge/BrandPartners';
 import Community from '@/components/forge/Community';
 import Gallery from '@/components/forge/Gallery';
 import Testimonials from '@/components/forge/Testimonials';
+import FAQ from '@/components/forge/FAQ';
 import Footer from '@/components/forge/Footer';
 
 const Index = () => {
@@ -36,6 +37,7 @@ const Index = () => {
       <GlobalReach />
       <Gallery />
       <Testimonials />
+      <FAQ />
       <Footer />
     </div>
   );
