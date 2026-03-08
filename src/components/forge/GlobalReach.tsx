@@ -12,7 +12,6 @@ function Globe() {
   const meshRef = useRef<THREE.Mesh>(null);
   const texture = useTexture('/textures/earth.jpg');
 
-  // Desaturate the texture
   texture.colorSpace = THREE.SRGBColorSpace;
 
   useFrame(() => {
@@ -22,13 +21,13 @@ function Globe() {
   });
 
   return (
-    <mesh ref={meshRef} rotation={[0.2, INITIAL_Y_ROTATION, 0]} position={[0.8, -0.8, 0]}>
-      <sphereGeometry args={[3.2, 64, 64]} />
+    <mesh ref={meshRef} rotation={[0.3, INITIAL_Y_ROTATION, 0]} position={[0, -1.8, 0]}>
+      <sphereGeometry args={[4, 64, 64]} />
       <meshStandardMaterial
         map={texture}
-        metalness={0.0}
-        roughness={1}
-        color="#9a9a9a"
+        metalness={0.1}
+        roughness={0.8}
+        color="#d0d0d0"
       />
     </mesh>
   );
@@ -114,13 +113,14 @@ export default function GlobalReach() {
       }}>
         <Suspense fallback={null}>
           <Canvas
-            camera={{ position: [0, 0, 5], fov: 50 }}
+            camera={{ position: [0, 1, 5], fov: 45 }}
             style={{ background: 'transparent' }}
             gl={{ alpha: true, antialias: true }}
           >
-            <ambientLight intensity={0.8} />
-            <directionalLight position={[5, 3, 5]} intensity={0.5} />
-            <directionalLight position={[-3, 2, -3]} intensity={0.2} />
+            <ambientLight intensity={1.2} />
+            <directionalLight position={[5, 5, 5]} intensity={0.8} />
+            <directionalLight position={[-5, 3, -2]} intensity={0.4} />
+            <directionalLight position={[0, -3, 5]} intensity={0.2} />
             <Globe />
           </Canvas>
         </Suspense>
