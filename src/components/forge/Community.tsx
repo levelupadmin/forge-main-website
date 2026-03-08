@@ -1,6 +1,5 @@
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useCountUp } from '@/hooks/useCountUp';
 
 const panels = [
   { label: 'Offline Meet-ups', photo: '/images/community/community-meetups.png' },
@@ -8,12 +7,6 @@ const panels = [
   { label: 'Our Productions', photo: '/images/community/productions.png' },
   { label: 'Guest Lectures', photo: '/images/community/guest-lectures.png' },
   { label: 'A Community that Celebrates You', photo: '/images/community/celebrates-you.png' },
-];
-
-const communityStats = [
-  { number: 1200, suffix: '+', label: 'Community Members' },
-  { number: 45, suffix: '', label: 'Cities' },
-  { number: 8, suffix: '', label: 'Countries Active' },
 ];
 
 export default function Community() {
@@ -28,7 +21,7 @@ export default function Community() {
       background: 'var(--forge-cream)',
       padding: isMobile ? 'clamp(32px, 5vw, 48px) 0 0' : 'clamp(48px, 6vw, 80px) 0 0',
     }}>
-      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', padding: '0 24px', marginBottom: 24 }}>
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', padding: '0 24px', marginBottom: 48 }}>
         <div className="forge-heading">
           Come for the Learning.<br />
           Stay for the{' '}
@@ -44,20 +37,6 @@ export default function Community() {
         <p style={{ fontSize: 17, opacity: 0.6, marginTop: 16 }}>
           Your network is your networth.
         </p>
-      </div>
-
-      {/* Pulse stat strip */}
-      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
-        display: 'flex',
-        justifyContent: 'center',
-        gap: isMobile ? 20 : 48,
-        padding: '0 24px',
-        marginBottom: isMobile ? 32 : 48,
-        transitionDelay: '150ms',
-      }}>
-        {communityStats.map((stat, i) => (
-          <PulseStat key={i} stat={stat} isVisible={isVisible} />
-        ))}
       </div>
 
       {/* Bento Grid */}
@@ -106,43 +85,6 @@ export default function Community() {
         </a>
       </div>
     </section>
-  );
-}
-
-function PulseStat({ stat, isVisible }: { stat: typeof communityStats[0]; isVisible: boolean }) {
-  const count = useCountUp(stat.number, 1600, isVisible);
-
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
-        <span style={{
-          width: 6,
-          height: 6,
-          borderRadius: '50%',
-          background: '#FFBC3B',
-          display: 'inline-block',
-          animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        }} />
-        <span style={{
-          fontWeight: 700,
-          fontSize: 'clamp(22px, 3vw, 32px)',
-          color: '#222',
-          letterSpacing: -1,
-        }}>
-          {count}{stat.suffix}
-        </span>
-      </div>
-      <div style={{
-        fontSize: 12,
-        fontWeight: 500,
-        color: 'rgba(34,34,34,0.45)',
-        textTransform: 'uppercase',
-        letterSpacing: '1.5px',
-        marginTop: 4,
-      }}>
-        {stat.label}
-      </div>
-    </div>
   );
 }
 

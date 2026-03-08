@@ -64,6 +64,7 @@ export default function BrandPartners() {
 
           {/* Partner content stacked */}
           <div key={activeCategory} className="forge-partner-content" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            {/* Image */}
             <div style={{
               borderRadius: 16,
               overflow: 'hidden',
@@ -80,6 +81,7 @@ export default function BrandPartners() {
               />
             </div>
 
+            {/* Logo */}
             <div style={{
               display: 'flex',
               justifyContent: 'center',
@@ -98,6 +100,7 @@ export default function BrandPartners() {
               />
             </div>
 
+            {/* Description */}
             <p style={{
               fontSize: 14,
               lineHeight: 1.7,
@@ -108,45 +111,6 @@ export default function BrandPartners() {
               {activePartner.description}
             </p>
 
-            {/* Partner quote */}
-            {activePartner.quote && (
-              <div style={{
-                borderLeft: '2px solid #FFBC3B',
-                paddingLeft: 16,
-                marginTop: 4,
-              }}>
-                <p style={{
-                  fontSize: 13,
-                  fontStyle: 'italic',
-                  color: '#222',
-                  opacity: 0.5,
-                  lineHeight: 1.6,
-                  margin: '0 0 6px',
-                }}>
-                  "{activePartner.quote}"
-                </p>
-                <span style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: '#222',
-                  opacity: 0.35,
-                }}>
-                  — {activePartner.quoteAuthor}
-                </span>
-              </div>
-            )}
-
-            {activePartner.partnerSince && (
-              <span style={{
-                fontSize: 11,
-                fontWeight: 500,
-                color: 'rgba(34,34,34,0.3)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase',
-              }}>
-                In partnership since {activePartner.partnerSince}
-              </span>
-            )}
           </div>
         </div>
       ) : (
@@ -235,62 +199,20 @@ export default function BrandPartners() {
                 {activePartner.description}
               </p>
 
-              {/* Partner quote */}
-              {activePartner.quote && (
-                <div style={{
-                  borderLeft: '2px solid #FFBC3B',
-                  paddingLeft: 20,
-                }}>
-                  <p style={{
-                    fontSize: 14,
-                    fontStyle: 'italic',
-                    color: '#222',
-                    opacity: 0.5,
-                    lineHeight: 1.6,
-                    margin: '0 0 8px',
-                  }}>
-                    "{activePartner.quote}"
-                  </p>
-                  <span style={{
-                    fontSize: 12,
-                    fontWeight: 600,
-                    color: '#222',
-                    opacity: 0.35,
-                  }}>
-                    — {activePartner.quoteAuthor}
-                  </span>
-                </div>
-              )}
-
               <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
+                padding: '8px 0',
               }}>
-                <div style={{ padding: '8px 0' }}>
-                  <img
-                    src={activePartner.logo}
-                    alt={activePartner.name}
-                    style={{
-                      maxWidth: 160,
-                      maxHeight: 64,
-                      objectFit: 'contain',
-                      filter: activePartner.invertLogo ? 'invert(1) grayscale(100%) contrast(1.5)' : 'grayscale(100%) contrast(1.2)',
-                      mixBlendMode: 'multiply',
-                    }}
-                  />
-                </div>
-                {activePartner.partnerSince && (
-                  <span style={{
-                    fontSize: 11,
-                    fontWeight: 500,
-                    color: 'rgba(34,34,34,0.3)',
-                    letterSpacing: '1px',
-                    textTransform: 'uppercase',
-                  }}>
-                    In partnership since {activePartner.partnerSince}
-                  </span>
-                )}
+                <img
+                  src={activePartner.logo}
+                  alt={activePartner.name}
+                  style={{
+                    maxWidth: 160,
+                    maxHeight: 64,
+                    objectFit: 'contain',
+                    filter: activePartner.invertLogo ? 'invert(1) grayscale(100%) contrast(1.5)' : 'grayscale(100%) contrast(1.2)',
+                    mixBlendMode: 'multiply',
+                  }}
+                />
               </div>
             </div>
           </div>
