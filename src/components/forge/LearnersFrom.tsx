@@ -63,7 +63,7 @@ export default function LearnersFrom() {
           textTransform: 'uppercase',
           color: 'rgba(0,0,0,0.35)',
         }}>
-          Our learners are from
+          Our Students are from
         </p>
 
         <div className="flex flex-col gap-2">
