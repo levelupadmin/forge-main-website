@@ -11,6 +11,7 @@ const row1 = [
   { name: 'Swiggy', logo: '/images/learners/swiggy.png' },
   { name: 'Zomato', logo: '/images/learners/zomato.png' },
   { name: 'American Express', logo: '/images/learners/amex.png' },
+  { name: 'Ashoka University', logo: '/images/learners/ashoka.png' },
 ];
 
 const row2 = [
@@ -34,7 +35,7 @@ function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left
             <img
               src={item.logo}
               alt={item.name}
-              className="h-20 md:h-32 w-auto object-contain brightness-0"
+              className="h-20 md:h-32 w-auto object-contain opacity-40 grayscale"
               loading="lazy"
             />
           </div>
@@ -62,7 +63,7 @@ export default function LearnersFrom() {
           textTransform: 'uppercase',
           color: 'rgba(0,0,0,0.35)',
         }}>
-          Our learners are from
+          Our Students are from
         </p>
 
         <div className="flex flex-col gap-2">
