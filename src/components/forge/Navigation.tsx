@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { X } from 'lucide-react';
 
-const leftLinks = [
+interface NavLink { label: string; href: string; isRoute?: boolean; }
+
+const leftLinks: NavLink[] = [
   { label: 'Experiences', href: '#experiences' },
   { label: 'About', href: '#about' },
 ];
 
-const rightLinks = [
-  { label: 'Community', href: '#community' },
+const rightLinks: NavLink[] = [
+  { label: 'Community', href: '/community', isRoute: true },
   { label: 'Careers', href: '#careers' },
   { label: 'Be a Mentor', href: '#mentors' },
 ];
@@ -22,10 +25,17 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollTo = (href: string) => {
+  const navigate = useNavigate();
+
+  const handleNav = (link: { href: string; isRoute?: boolean }) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (link.isRoute) {
+      navigate(link.href);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const el = document.querySelector(link.href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -51,7 +61,7 @@ export default function Navigation() {
             {leftLinks.map(link => (
               <button
                 key={link.href}
-                onClick={() => scrollTo(link.href)}
+                onClick={() => handleNav(link)}
                 className="forge-nav-link"
                 style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
               >
@@ -77,7 +87,7 @@ export default function Navigation() {
             {rightLinks.map(link => (
               <button
                 key={link.href}
-                onClick={() => scrollTo(link.href)}
+                onClick={() => handleNav(link)}
                 className="forge-nav-link"
                 style={{ color: '#222', fontSize: 15, fontWeight: 400, whiteSpace: 'nowrap' }}
               >
@@ -132,7 +142,7 @@ export default function Navigation() {
             <X size={28} />
           </button>
           {[...leftLinks, ...rightLinks].map(link => (
-            <a key={link.href} onClick={() => scrollTo(link.href)} style={{ cursor: 'pointer' }}>
+            <a key={link.href} onClick={() => handleNav(link)} style={{ cursor: 'pointer' }}>
               {link.label}
             </a>
           ))}
