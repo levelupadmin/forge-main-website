@@ -9,6 +9,7 @@ const leftLinks = [
 const rightLinks = [
   { label: 'Community', href: '#community' },
   { label: 'Careers', href: '#careers' },
+  { label: 'Be a Mentor', href: '#mentors' },
 ];
 
 export default function Navigation() {
