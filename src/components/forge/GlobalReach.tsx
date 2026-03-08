@@ -198,7 +198,7 @@ function StatCard({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boole
         fontSize: 9,
         fontWeight: 600,
         letterSpacing: '0.12em',
-        color: '#888888',
+        color: 'rgba(255,255,255,0.5)',
         fontFamily: "'Open Sauce One', sans-serif",
         textTransform: 'uppercase',
         marginBottom: 6,
