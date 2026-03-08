@@ -12,7 +12,6 @@ const leftLinks: NavLink[] = [
 const rightLinks: NavLink[] = [
   { label: 'Community', href: '/community', isRoute: true },
   { label: 'Careers', href: '#careers' },
-  { label: 'Be a Mentor', href: '#mentors' },
 ];
 
 export default function Navigation() {
