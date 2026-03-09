@@ -223,6 +223,31 @@ function CountryGrid({ isVisible, isMobile }: { isVisible: boolean; isMobile: bo
   );
 }
 
+function StudentStatCard({ stat, isVisible }: { stat: { label: string; number: number }; isVisible: boolean }) {
+  const count = useCountUp(stat.number, 1800, isVisible);
+  return (
+    <div style={{
+      background: '#F5F5F0',
+      borderRadius: 6,
+      padding: '14px 18px',
+      flex: '1 1 0',
+      minWidth: 130,
+    }}>
+      <div style={{
+        fontSize: 9, fontWeight: 600, letterSpacing: '0.12em',
+        color: 'rgba(0,0,0,0.5)', fontFamily: "'Open Sauce One', sans-serif",
+        textTransform: 'uppercase', marginBottom: 6,
+      }}>{stat.label}</div>
+      <div style={{
+        fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#1A1A1A',
+        lineHeight: 1, letterSpacing: -2, fontFamily: "'Open Sauce One', sans-serif",
+      }}>
+        {count}
+      </div>
+    </div>
+  );
+}
+
 export default function TrustedAcrossBorders() {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const isMobile = useIsMobile();
@@ -263,6 +288,80 @@ export default function TrustedAcrossBorders() {
         {!isMobile && <GlobeMap isVisible={isVisible} />}
 
         <CountryGrid isVisible={isVisible} isMobile={isMobile} />
+
+        {/* Our Students Are Everywhere - merged from GlobalReach */}
+        <div style={{ marginTop: isMobile ? 48 : 80 }}>
+          <div style={{ textAlign: 'center', marginBottom: isMobile ? 24 : 32 }}>
+            <div className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{ marginBottom: 8, transitionDelay: '800ms' }}>
+              <span style={{
+                fontSize: isMobile ? 13 : 15, fontWeight: 600,
+                textTransform: 'uppercase', letterSpacing: 3, color: '#DD6F15',
+              }}>Global Reach</span>
+            </div>
+            <h2
+              className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
+              style={{
+                fontSize: isMobile ? 'clamp(28px, 7vw, 40px)' : 'clamp(40px, 6vw, 64px)',
+                fontWeight: 700, color: '#1A1A1A', marginBottom: 12,
+                lineHeight: 1.05, letterSpacing: -1, fontFamily: "'Open Sauce One', sans-serif",
+                transitionDelay: '900ms',
+              }}
+            >Our Students are Everywhere</h2>
+            <p className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{
+              fontSize: isMobile ? 14 : 17, opacity: 0.55,
+              maxWidth: 520, margin: '0 auto', lineHeight: 1.6,
+              transitionDelay: '1000ms',
+            }}>
+              From India to across the globe, the Forge community spans 13 countries and 128 cities.
+            </p>
+          </div>
+
+          <div
+            className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
+            style={{
+              display: 'flex', gap: 10, flexWrap: 'wrap', transitionDelay: '1100ms',
+              marginBottom: isMobile ? 24 : 32,
+            }}
+          >
+            {[
+              { label: 'Dreamt in', number: 2023 },
+              { label: 'Countries', number: 13 },
+              { label: 'Cities', number: 128 },
+            ].map((stat, i) => (
+              <StudentStatCard key={i} stat={stat} isVisible={isVisible} />
+            ))}
+          </div>
+
+          <div
+            className={`forge-fade-up ${isVisible ? 'visible' : ''}`}
+            style={{
+              background: '#F5F5F0',
+              borderRadius: 10,
+              padding: isMobile ? '16px' : 'clamp(20px, 3vw, 36px)',
+              transitionDelay: '1200ms',
+            }}
+          >
+            <div style={{
+              fontSize: isMobile ? 'clamp(20px, 5vw, 28px)' : 'clamp(24px, 3.5vw, 36px)',
+              fontWeight: 700, color: '#1A1A1A', marginBottom: 12,
+              fontFamily: "'Open Sauce One', sans-serif",
+            }}>A Global Community</div>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
+              gap: '4px 0',
+            }}>
+              {['India', 'United Kingdom', 'Malaysia', 'Indonesia', 'United States of America', 'Sri Lanka', 'Dubai', 'South Africa'].map((loc) => (
+                <span key={loc} style={{
+                  fontSize: isMobile ? 12 : 14,
+                  color: 'rgba(0,0,0,0.5)',
+                  fontFamily: "'Open Sauce One', sans-serif",
+                  lineHeight: 2,
+                }}>● {loc}</span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
