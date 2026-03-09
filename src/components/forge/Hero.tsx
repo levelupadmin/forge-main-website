@@ -73,7 +73,7 @@ export default function Hero() {
           lineHeight: 1.05,
           margin: '0 0 24px',
         }}>
-          Where Dreamers<br />Become Doers.
+          Where <span className="forge-gradient-text">Dreamers</span><br />Become <span className="forge-gradient-text">Doers</span>.
         </h1>
         <button className="forge-cta-light" onClick={scrollToExperiences}>
           Explore Experiences

@@ -96,22 +96,15 @@ export default function TransformationStories() {
 
 function TransformationCard({ transformation }: { transformation: typeof transformations[0] }) {
   return (
-    <div style={{
-      background: '#111111',
-      borderRadius: 20,
-      overflow: 'hidden',
-      border: '1px solid rgba(255,255,255,0.06)',
-      height: '100%',
-      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    }}
-    onMouseEnter={e => {
-      (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-6px)';
-      (e.currentTarget as HTMLDivElement).style.boxShadow = '0 16px 48px rgba(255,188,59,0.1)';
-    }}
-    onMouseLeave={e => {
-      (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
-      (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
-    }}
+    <div 
+      className="forge-premium-hover"
+      style={{
+        background: '#111111',
+        borderRadius: 20,
+        overflow: 'hidden',
+        border: '1px solid rgba(255,255,255,0.06)',
+        height: '100%',
+      }}
     >
       {/* Photo */}
       <div style={{ position: 'relative', height: 240, overflow: 'hidden' }}>

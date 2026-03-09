@@ -168,6 +168,7 @@ function TestimonialCard({ testimonial, onPlay }: { testimonial: typeof import('
         }}>
           {testimonial.program}
         </div>
+        </div>
       </div>
     </div>
   );

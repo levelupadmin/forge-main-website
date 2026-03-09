@@ -555,8 +555,8 @@ body {
   100% { transform: translateX(0); }
 }
 .marquee-scroll-left {
-  animation: marquee-left 30s linear infinite;
+  animation: marquee-left 40s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 }
 .marquee-scroll-right {
-  animation: marquee-right 30s linear infinite;
+  animation: marquee-right 40s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 }
