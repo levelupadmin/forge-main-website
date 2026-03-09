@@ -91,7 +91,7 @@ export default function Ethos() {
         <svg viewBox="0 0 800 800" style={{
           width: isMobile ? 'min(300px, 80vw)' : 'clamp(360px, 55vw, 620px)',
           height: 'auto',
-          marginBottom: 16,
+          marginBottom: 8,
         }}>
           <defs>
             <radialGradient id="forge-glow-ethos" cx="50%" cy="50%" r="50%">
