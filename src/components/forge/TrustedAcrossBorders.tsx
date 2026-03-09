@@ -223,6 +223,31 @@ function CountryGrid({ isVisible, isMobile }: { isVisible: boolean; isMobile: bo
   );
 }
 
+function StudentStatCard({ stat, isVisible }: { stat: { label: string; number: number }; isVisible: boolean }) {
+  const count = useCountUp(stat.number, 1800, isVisible);
+  return (
+    <div style={{
+      background: '#F5F5F0',
+      borderRadius: 6,
+      padding: '14px 18px',
+      flex: '1 1 0',
+      minWidth: 130,
+    }}>
+      <div style={{
+        fontSize: 9, fontWeight: 600, letterSpacing: '0.12em',
+        color: 'rgba(0,0,0,0.5)', fontFamily: "'Open Sauce One', sans-serif",
+        textTransform: 'uppercase', marginBottom: 6,
+      }}>{stat.label}</div>
+      <div style={{
+        fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#1A1A1A',
+        lineHeight: 1, letterSpacing: -2, fontFamily: "'Open Sauce One', sans-serif",
+      }}>
+        {count}
+      </div>
+    </div>
+  );
+}
+
 export default function TrustedAcrossBorders() {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const isMobile = useIsMobile();
