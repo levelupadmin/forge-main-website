@@ -184,20 +184,30 @@ export default function TrustedAcrossBorders() {
         }
         .pulse-marker { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; }
       `}</style>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
+        <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ marginBottom: 12 }}>
+          <div className="forge-subheading">Global Reach</div>
+        </div>
         <h2
-          className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+          className={`forge-fade-up${isVisible ? ' visible' : ''} forge-heading`}
           style={{
-            fontSize: 'clamp(36px, 5vw, 48px)', fontWeight: 700, color: '#1A1A1A',
-            lineHeight: 1.1, marginBottom: 32, textAlign: 'left',
-            fontFamily: "'Open Sauce One', sans-serif", letterSpacing: -1,
+            marginBottom: 16,
+            transitionDelay: '100ms',
           }}
         >Our Students are Everywhere</h2>
+        <p className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{
+          fontSize: 17, opacity: 0.55,
+          maxWidth: 520, margin: '0 auto 48px', lineHeight: 1.6,
+          transitionDelay: '200ms',
+        }}>
+          From India to across the globe, the Forge community spans 13 countries and 128 cities.
+        </p>
 
         <div style={{
           display: 'flex',
           gap: 16,
           flexWrap: 'wrap',
+          justifyContent: 'center',
         }}>
           {STUDENT_STATS.map((stat, i) => (
             <StudentStatCard key={i} stat={stat} isVisible={isVisible} index={i} />
