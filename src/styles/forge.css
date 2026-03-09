@@ -138,6 +138,16 @@ body {
   filter: blur(8px);
 }
 
+/* === Testimonial Card Glow === */
+.forge-testimonial-card {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.forge-testimonial-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 24px rgba(255,188,59,0.15);
+}
+
 /* === Floating CTA === */
 .forge-floating-cta {
   position: fixed;
