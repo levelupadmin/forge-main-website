@@ -76,4 +76,24 @@ export const mentors: Mentor[] = [
       "Coached 600+ Founders and Business owners to build their personal brand",
     ],
   },
+  {
+    name: "Praveena Shivram",
+    designation: "Author | Screenwriter | Mentor",
+    photo: "/images/mentors/praveena.jpg",
+    highlights: [
+      "15+ years writing for The Hindu, TOI, and other national publications",
+      "Master's from University of Leeds, UK; Certified screenwriter with award-winning short story Neer",
+      "Former mentor at LevelUp, coaching over 500 aspiring writers on storytelling craft",
+    ],
+  },
+  {
+    name: "Deepthi Govindrajan",
+    designation: "Writer | Creative Director",
+    photo: "/images/mentors/deepthi.jpg",
+    highlights: [
+      "Screenwriter for Arrambam (2013), July Kaatril (2019), and Appatha (2023)",
+      "Script consultant helping aspiring writers structure compelling stories",
+      "Heads Sandcastles, a video and content creation agency",
+    ],
+  },
 ];
