@@ -93,27 +93,24 @@ function TestimonialCard({ testimonial, onPlay }: { testimonial: typeof import('
   return (
     <div
       onClick={onPlay}
+      className="forge-testimonial-card"
       style={{
         minWidth: 240,
         flex: '0 0 240px',
         borderRadius: 20,
-        overflow: 'hidden',
+        overflow: 'visible',
         position: 'relative',
         aspectRatio: '9/16',
         cursor: 'pointer',
         background: '#1a1a1a',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-      }}
-      onMouseEnter={e => {
-        (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-6px) scale(1.02)';
-        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 16px 48px rgba(0,0,0,0.2)';
-      }}
-      onMouseLeave={e => {
-        (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0) scale(1)';
-        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 32px rgba(0,0,0,0.12)';
       }}
     >
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        borderRadius: 20,
+        overflow: 'hidden',
+      }}>
       <img
         src={testimonial.thumbnail}
         alt={testimonial.name}
