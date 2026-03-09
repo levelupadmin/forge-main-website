@@ -12,7 +12,6 @@ import Experiences from '@/components/forge/Experiences';
 import Ethos from '@/components/forge/Ethos';
 import Mentors from '@/components/forge/Mentors';
 import TrustedAcrossBorders from '@/components/forge/TrustedAcrossBorders';
-import PeopleOfForge from '@/components/forge/PeopleOfForge';
 import BrandPartners from '@/components/forge/BrandPartners';
 import Community from '@/components/forge/Community';
 import Gallery from '@/components/forge/Gallery';
@@ -37,14 +36,13 @@ const Index = () => {
       <Ethos />
       <Mentors />
       <TrustedAcrossBorders />
-      <PeopleOfForge />
+      <TransformationStories />
       <ImpactNumbers />
       <BrandPartners />
       <Community />
       <GlobalReach />
       <Gallery />
       <Testimonials />
-      <TransformationStories />
       <NotSureCTA />
       <FAQ />
       <Footer />
