@@ -2,8 +2,8 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const ForgeWaves = ({ size = 40 }: { size?: number }) => (
-  <div style={{ width: size * 0.85, height: size, overflow: 'hidden', flexShrink: 0 }}>
-    <img src="/images/forge-waves.png" alt="" style={{ height: '100%', width: 'auto', objectFit: 'contain', objectPosition: 'left center' }} />
+  <div style={{ width: size, height: size * 0.7, overflow: 'hidden', flexShrink: 0 }}>
+    <img src="/images/forge-waves.png" alt="" style={{ height: '100%', objectFit: 'cover', objectPosition: 'left center' }} />
   </div>
 );
 
