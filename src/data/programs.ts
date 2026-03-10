@@ -13,7 +13,7 @@ export const programs: Program[] = [
   {
     tabLabel: "Filmmaking",
     title: "the Forge Filmmaking Bootcamp",
-    description: "An intensive no bullsh*t filmmaking bootcamp where you learn by writing, directing, shooting your own short film in 15 days flat with the guidance of mentors who have been nominated for the Emmys and created Netflix originals.",
+    description: "An intensive no bullsh*t filmmaking bootcamp where you learn by writing, directing, shooting your own short film in 15 days flat with the guidance of mentors who have been nominated for the Emmys, created Netflix originals while living with like minded filmmakers and storytellers.",
     href: "/filmmaking",
     nextEditions: ["Goa · Apr 2026"],
     durationPills: ["7 Days Online", "8 Days Offline"],
@@ -33,7 +33,7 @@ export const programs: Program[] = [
   {
     tabLabel: "Content Creation",
     title: "the Forge Creator Residency",
-    description: "An invite-only 12-day residency for founders and creators who want to build a real personal brand through content on social media by learning directly from top creators and making real content every day.",
+    description: "An invite-only 12-day residency for founders and creators who want to build a real personal brand through content on social media by learning directly from top creators, making real content every day, and living with a like minded community of builders.",
     href: "https://creators.forgebylevelup.com",
     nextEditions: ["Goa · May 2026", "Bali · Jun 2026"],
     durationPills: ["5 Days Online", "7 Days Offline"],
@@ -57,7 +57,7 @@ export const programs: Program[] = [
   {
     tabLabel: "Writing",
     title: "the Forge Writing Retreat",
-    description: "A 6-day writing retreat for screenwriters and authors, designed to help you step away from the noise of daily life and fully immerse yourself in your story with bestselling authors and produced screenwriters.",
+    description: "A 6-day writing retreat for screenwriters and authors, designed to help you step away from the noise of daily life and fully immerse yourself in your story, set in a scenic destination where you learn from bestselling authors and produced screenwriters while living alongside a like-minded community of storytellers.",
     href: "https://creators.forgebylevelup.com/writing",
     nextEditions: ["Coorg · Jul 2026"],
     durationPills: ["6 Days", "Residential"],
