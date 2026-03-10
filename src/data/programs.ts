@@ -33,7 +33,7 @@ export const programs: Program[] = [
   {
     tabLabel: "Content Creation",
     title: "the Forge Creator Residency",
-    description: "An invite-only 12-day residency for founders and creators who want to build a real personal brand through content on social media by learning directly from top creators and making real content every day.",
+    description: "An invite-only 12-day residency for founders and creators who want to build a real personal brand through content on social media by learning directly from top creators, making real content every day, and living with a like minded community of builders.",
     href: "https://creators.forgebylevelup.com",
     nextEditions: ["Goa · May 2026", "Bali · Jun 2026"],
     durationPills: ["5 Days Online", "7 Days Offline"],
