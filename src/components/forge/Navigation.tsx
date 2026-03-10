@@ -45,20 +45,25 @@ export default function Navigation() {
     <>
       <nav style={{
         position: 'fixed',
-        top: isMobile ? 16 : 24,
+        ...(isMobile
+          ? { bottom: `max(24px, env(safe-area-inset-bottom, 24px))`, top: 'auto' }
+          : { top: 24 }),
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 100,
       }}>
         {isMobile ? (
           <div style={{
-            background: 'white',
+            background: scrolled ? 'rgba(255,255,255,0.75)' : 'white',
+            backdropFilter: scrolled ? 'blur(20px)' : 'none',
+            WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
             borderRadius: 100,
             padding: '6px 8px 6px 16px',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+            boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.08)' : '0 4px 24px rgba(0,0,0,0.10)',
             display: 'flex',
             alignItems: 'center',
             gap: 12,
+            transition: 'all 0.3s ease',
           }}>
             <button
               onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
