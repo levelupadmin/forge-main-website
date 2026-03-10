@@ -679,8 +679,8 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-bottom: 20px;
 }
 .experiences-powered-by-label {
   font-size: 11px;
