@@ -95,7 +95,7 @@ export default function LearnDoBecome() {
               gap: 12,
               marginBottom: isMobile ? 16 : 24,
             }}>
-              <WaveIcon color={step.color} />
+              <ForgeWaves size={32} />
               <div style={{
                 fontWeight: 700,
                 fontSize: isMobile ? 'clamp(28px, 7vw, 36px)' : 'clamp(36px, 4vw, 52px)',
