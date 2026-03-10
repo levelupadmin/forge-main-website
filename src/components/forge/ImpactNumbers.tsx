@@ -33,7 +33,7 @@ export default function ImpactNumbers() {
           fontWeight: 600,
           textTransform: 'uppercase',
           letterSpacing: '3px',
-          color: '#DD6F15',
+          color: 'var(--forge-yellow)',
           marginBottom: 12,
           textAlign: 'center',
         }}>The Numbers</p>
