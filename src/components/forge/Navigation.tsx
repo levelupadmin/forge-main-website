@@ -64,7 +64,7 @@ export default function Navigation() {
               onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
             >
-              <img src="/images/forge-logo.png" alt="the Forge" style={{ height: 36, width: 'auto', display: 'block' }} />
+              <img src="/images/forge-logo-transparent.png" alt="the Forge" style={{ height: 36, width: 'auto', display: 'block' }} />
             </button>
             <button
               onClick={() => setMenuOpen(true)}
