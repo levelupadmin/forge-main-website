@@ -704,6 +704,17 @@ body {
   opacity: 0.9;
 }
 
+.gallery-marquee-left {
+  animation: marquee-left 35s linear infinite;
+}
+.gallery-marquee-right {
+  animation: marquee-right 35s linear infinite;
+}
+.gallery-marquee-left:hover,
+.gallery-marquee-right:hover {
+  animation-play-state: paused;
+}
+
 
 .experiences-title {
   font-family: 'Open Sauce One', sans-serif;
