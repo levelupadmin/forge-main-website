@@ -36,11 +36,11 @@ const Index = () => {
       <Experiences />
       <Ethos />
       <Mentors />
-      <TrustedAcrossBorders />
+      <Community />
       <TransformationStories />
       <ImpactNumbers />
       
-      <Community />
+      <TrustedAcrossBorders />
       <Gallery />
       <Testimonials />
       <NotSureCTA />
