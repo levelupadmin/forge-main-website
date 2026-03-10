@@ -67,13 +67,13 @@ export default function Hero() {
       }}>
         <h1 style={{
           fontWeight: 700,
-          fontSize: 'clamp(36px, 9vw, 80px)',
+          fontSize: 'clamp(30px, 7vw, 64px)',
           color: 'white',
           letterSpacing: -1,
           lineHeight: 1.05,
           margin: '0 0 24px',
         }}>
-          India's Most <span className="forge-gradient-text">Immersive</span><br />Creative Education Experience
+          The World's Most <span className="forge-gradient-text">Immersive</span><br />Creative Education Experience
         </h1>
         <button className="forge-cta-light" onClick={scrollToExperiences}>
           Explore Experiences
