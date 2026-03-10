@@ -39,13 +39,24 @@ function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direct
             className="flex-shrink-0 flex items-center"
             style={{ gap: isMobile ? 10 : 14, paddingLeft: itemGap / 2, paddingRight: itemGap / 2 }}
           >
-            <img
-              src={item.logo}
-              alt={item.name}
-              style={{ height: logoH, width: 'auto' }}
-              className="object-contain"
-              loading="lazy"
-            />
+            <div
+              className="flex items-center justify-center flex-shrink-0"
+              style={{
+                width: isMobile ? 36 : 48,
+                height: isMobile ? 36 : 48,
+                borderRadius: isMobile ? 8 : 10,
+                backgroundColor: '#f5f5f5',
+                border: '1px solid #e5e5e5',
+              }}
+            >
+              <img
+                src={item.logo}
+                alt={item.name}
+                style={{ height: isMobile ? 22 : 30, width: 'auto', maxWidth: isMobile ? 28 : 38 }}
+                className="object-contain"
+                loading="lazy"
+              />
+            </div>
             <span
               style={{
                 fontSize,
