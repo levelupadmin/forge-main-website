@@ -1,10 +1,20 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-const ForgeWaves = ({ size = 40 }: { size?: number }) => (
-  <div style={{ width: size, height: size * 0.7, overflow: 'hidden', flexShrink: 0 }}>
-    <img src="/images/forge-waves.png" alt="" style={{ height: '100%', objectFit: 'cover', objectPosition: 'left center' }} />
-  </div>
+const WaveIcon = ({ color }: { color: string }) => (
+  <svg viewBox="0 0 48 24" style={{ width: 40, height: 20, flexShrink: 0 }}>
+    {[0, 6, 12].map((yOff, i) => (
+      <path
+        key={i}
+        d={`M0 ${6 + yOff} Q6 ${2 + yOff} 12 ${6 + yOff} T24 ${6 + yOff} T36 ${6 + yOff} T48 ${6 + yOff}`}
+        fill="none"
+        stroke={color}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        opacity={1 - i * 0.25}
+      />
+    ))}
+  </svg>
 );
 
 const steps = [
@@ -49,7 +59,7 @@ export default function LearnDoBecome() {
           justifyContent: 'center',
           gap: 'clamp(8px, 1.5vw, 16px)',
         }}>
-          <ForgeWaves size={40} />
+          <WaveIcon color="#FFBC3B" />
           <span>the Forge</span>
         </div>
       </div>
@@ -95,7 +105,7 @@ export default function LearnDoBecome() {
               gap: 12,
               marginBottom: isMobile ? 16 : 24,
             }}>
-              <ForgeWaves size={32} />
+              <WaveIcon color={step.color} />
               <div style={{
                 fontWeight: 700,
                 fontSize: isMobile ? 'clamp(28px, 7vw, 36px)' : 'clamp(36px, 4vw, 52px)',

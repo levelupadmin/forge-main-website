@@ -71,9 +71,19 @@ export default function WhatIsForge() {
           justifyContent: 'center',
           gap: 'clamp(8px, 1.5vw, 16px)',
         }}>
-          <div style={{ width: 'clamp(40px, 5vw, 60px)', height: 'clamp(28px, 3.5vw, 42px)', overflow: 'hidden', flexShrink: 0 }}>
-            <img src="/images/forge-waves.png" alt="" style={{ height: '100%', objectFit: 'cover', objectPosition: 'left center' }} />
-          </div>
+          <svg viewBox="0 0 80 50" style={{ width: 'clamp(40px, 5vw, 60px)', height: 'auto', flexShrink: 0 }}>
+            {[0, 10, 20, 30].map((yOff, i) => (
+              <path
+                key={i}
+                d={`M0 ${12 + yOff} Q10 ${6 + yOff} 20 ${12 + yOff} T40 ${12 + yOff} T60 ${12 + yOff} T80 ${12 + yOff}`}
+                fill="none"
+                stroke="#FFBC3B"
+                strokeWidth="4"
+                strokeLinecap="round"
+                opacity={1 - i * 0.2}
+              />
+            ))}
+          </svg>
           <span>the Forge?</span>
         </div>
       </div>
