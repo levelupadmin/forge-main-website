@@ -28,7 +28,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--forge-dark-amber);
+  color: var(--forge-yellow);
   margin-bottom: 12px;
 }
 .forge-subheading--light {
