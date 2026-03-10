@@ -86,16 +86,18 @@ export default function Navigation() {
           </div>
         ) : (
           <div
-            onMouseLeave={() => setHoveredIndex(null)}
+          onMouseLeave={() => setHoveredIndex(null)}
             style={{
-              background: scrolled ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,1)',
+              background: scrolled ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,1)',
+              backdropFilter: scrolled ? 'blur(20px)' : 'none',
+              WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
               borderRadius: 100,
               padding: '8px 32px',
-              boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.05)' : '0 4px 24px rgba(0,0,0,0.10)',
+              boxShadow: scrolled ? '0 2px 12px rgba(255,255,255,0.1)' : '0 4px 24px rgba(0,0,0,0.10)',
               display: 'flex',
               alignItems: 'center',
               gap: 0,
-              transition: 'background 0.3s ease, box-shadow 0.3s ease',
+              transition: 'all 0.3s ease',
             }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
               {leftLinks.map((link, i) => (
