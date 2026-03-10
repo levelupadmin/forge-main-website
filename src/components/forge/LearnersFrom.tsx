@@ -35,7 +35,7 @@ function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direct
             <img
               src={item.logo}
               alt={item.name}
-              className={`${isMobile ? 'h-12' : 'h-20 md:h-32'} w-auto object-contain opacity-40 grayscale`}
+              className={`${isMobile ? 'h-16' : 'h-20 md:h-32'} w-auto object-contain opacity-40 grayscale`}
               loading="lazy"
             />
           </div>
