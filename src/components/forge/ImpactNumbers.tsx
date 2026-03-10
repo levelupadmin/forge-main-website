@@ -31,7 +31,7 @@ export default function ImpactNumbers() {
           backgroundImage: `url(${stat.image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: hoveredIndex === i ? 0.08 : 0,
+          opacity: hoveredIndex === i ? 0.15 : 0,
           transition: 'opacity 0.6s ease',
           pointerEvents: 'none',
         }} />
@@ -44,16 +44,18 @@ export default function ImpactNumbers() {
           textTransform: 'uppercase',
           letterSpacing: '3px',
           color: '#FFBC3B',
-          marginBottom: 10,
+          marginBottom: 12,
+          textAlign: 'center',
         }}>The Numbers</p>
 
         <h2 className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
-          fontSize: isMobile ? 32 : 'clamp(40px, 5vw, 56px)',
+          fontSize: 'clamp(40px, 6vw, 64px)',
           fontWeight: 700,
           color: '#FFFFFF',
           letterSpacing: -1.5,
-          lineHeight: 1.1,
+          lineHeight: 1.05,
           marginBottom: isMobile ? 36 : 56,
+          textAlign: 'center',
           transitionDelay: '100ms',
         }}>
           Good Vibes.<br />Greater Impact.
