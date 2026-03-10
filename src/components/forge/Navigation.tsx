@@ -107,7 +107,7 @@ export default function Navigation() {
                   onMouseEnter={() => setHoveredIndex(i)}
                   className="forge-nav-link"
                   style={{
-                    color: scrolled ? '#fff' : '#222',
+                    color: '#222',
                     fontSize: 15,
                     fontWeight: 400,
                     opacity: hoveredIndex === null || hoveredIndex === i ? 1 : 0.4,
