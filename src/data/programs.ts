@@ -41,7 +41,7 @@ export const programs: Program[] = [
   {
     tag: "Screenwriting and Authoring",
     title: "the Forge Writing Retreat",
-    description: "Give us 6 days, and we'll help you forge a freshly minted book manuscript, screenplay or film treatment with 20 overcaffeinated writers by your side.",
+    description: "A 6-day writing retreat for screenwriters and authors, designed to help you step away from the noise of daily life and fully immerse yourself in your story, set in a scenic destination where you learn from bestselling authors and produced screenwriters while living alongside a like-minded community of storytellers.",
     href: "https://creators.forgebylevelup.com/writing",
     nextEdition: "Dehradun · Mar 2025",
     photos: [
