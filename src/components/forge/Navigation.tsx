@@ -88,15 +88,14 @@ export default function Navigation() {
           <div
             onMouseLeave={() => setHoveredIndex(null)}
             style={{
-              background: 'white',
+              background: scrolled ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,1)',
               borderRadius: 100,
               padding: '8px 32px',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+              boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.05)' : '0 4px 24px rgba(0,0,0,0.10)',
               display: 'flex',
               alignItems: 'center',
               gap: 0,
-              opacity: scrolled ? 0.5 : 1,
-              transition: 'opacity 0.3s ease',
+              transition: 'background 0.3s ease, box-shadow 0.3s ease',
             }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
               {leftLinks.map((link, i) => (
