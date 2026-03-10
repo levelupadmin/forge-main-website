@@ -64,7 +64,7 @@ export default function TransformationStories() {
             <div
               key={i}
               className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-              style={{ transitionDelay: `${i * 100}ms`, scrollSnapAlign: 'start', minWidth: 300, flexShrink: 0 }}
+              style={{ transitionDelay: `${i * 100}ms`, scrollSnapAlign: 'start', minWidth: '85vw', maxWidth: 320, flexShrink: 0 }}
             >
               <TransformationCard transformation={t} />
             </div>
