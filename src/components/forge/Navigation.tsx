@@ -162,7 +162,7 @@ export default function Navigation() {
         }}>
           {/* Logo at top */}
           <img
-            src="/images/forge-logo.png"
+            src="/images/forge-logo-transparent.png"
             alt="the Forge"
             style={{
               height: 48,
