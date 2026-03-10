@@ -76,7 +76,7 @@ export default function LearnDoBecome() {
           transitionDelay: '100ms',
         }}
       >
-        A process scientifically designed to help simulate 6 months in 12 days.
+        How the Forge helps you transform from Dreamer to Doer through a once in a lifetime experience.
       </p>
 
       <div style={{
