@@ -11,7 +11,7 @@ export const programs: Program[] = [
   {
     tag: "Filmmaking",
     title: "the Forge Filmmaking Bootcamp",
-    description: "Learn filmmaking by creating your own short film in an intensive bootcamp.",
+    description: "An intensive no bullsh*t filmmaking bootcamp where you learn by writing, directing, shooting you own shortfilm in 15 days flat with the guidance of mentors who have been nominated for the emmys, created netflix orginals while living with like minded filmmakers and storytellers.",
     href: "/filmmaking",
     nextEdition: "Goa · Apr 2025",
     photos: [
@@ -24,7 +24,7 @@ export const programs: Program[] = [
   {
     tag: "Content Creation",
     title: "the Forge Creator Residency",
-    description: "A 7-day invite-only residency where handpicked individuals learn to create viral content and build their personal brand on Instagram, TikTok or YouTube.",
+    description: "An invite-only 12-day residency for founders and creators who want to build a real personal brand through content on social media by learning directly from top creators, making real content every day, and living with like minded community of builder.",
     href: "https://creators.forgebylevelup.com",
     nextEdition: "Goa · May 2025",
     photos: [
@@ -41,7 +41,7 @@ export const programs: Program[] = [
   {
     tag: "Screenwriting and Authoring",
     title: "the Forge Writing Retreat",
-    description: "Give us 6 days, and we'll help you forge a freshly minted book manuscript, screenplay or film treatment with 20 overcaffeinated writers by your side.",
+    description: "A 6-day writing retreat for screenwriters and authors, designed to help you step away from the noise of daily life and fully immerse yourself in your story, set in a scenic destination where you learn from bestselling authors and produced screenwriters while living alongside a like-minded community of storytellers.",
     href: "https://creators.forgebylevelup.com/writing",
     nextEdition: "Dehradun · Mar 2025",
     photos: [
