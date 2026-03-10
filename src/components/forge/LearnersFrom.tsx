@@ -68,7 +68,7 @@ export default function LearnersFrom() {
     <section
       ref={ref}
       className="overflow-hidden"
-      style={{ padding: '32px 0 20px', backgroundColor: '#FCF7EF' }}
+      style={{ padding: '32px 0 20px', backgroundColor: '#FFFFFF' }}
     >
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
         <p className="text-center mb-4" style={{
