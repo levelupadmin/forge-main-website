@@ -20,7 +20,7 @@ const row2 = [
   { name: 'Christ University', logo: '/images/learners/christ.png' },
   { name: 'Government of India', logo: '/images/learners/govt-india.png' },
   { name: 'NIFT', logo: '/images/learners/nift.png' },
-  { name: 'NID', logo: '/images/learners/nid.png' },
+  { name: 'Loyola', logo: '/images/learners/loyola.png' },
 ];
 
 function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left' | 'right' }) {
