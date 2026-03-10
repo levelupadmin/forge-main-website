@@ -1,20 +1,10 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-const WaveIcon = ({ color }: { color: string }) => (
-  <svg viewBox="0 0 48 24" style={{ width: 40, height: 20, flexShrink: 0 }}>
-    {[0, 6, 12].map((yOff, i) => (
-      <path
-        key={i}
-        d={`M0 ${6 + yOff} Q6 ${2 + yOff} 12 ${6 + yOff} T24 ${6 + yOff} T36 ${6 + yOff} T48 ${6 + yOff}`}
-        fill="none"
-        stroke={color}
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        opacity={1 - i * 0.25}
-      />
-    ))}
-  </svg>
+const ForgeWaves = ({ size = 40 }: { size?: number }) => (
+  <div style={{ width: size, height: size * 0.7, overflow: 'hidden', flexShrink: 0 }}>
+    <img src="/images/forge-waves.png" alt="" style={{ height: '100%', objectFit: 'cover', objectPosition: 'left center' }} />
+  </div>
 );
 
 const steps = [
