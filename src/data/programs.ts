@@ -57,7 +57,7 @@ export const programs: Program[] = [
   {
     tabLabel: "Writing",
     title: "the Forge Writing Retreat",
-    description: "A 6-day writing retreat for screenwriters and authors, designed to help you step away from the noise of daily life and fully immerse yourself in your story with bestselling authors and produced screenwriters.",
+    description: "A 6-day writing retreat for screenwriters and authors, designed to help you step away from the noise of daily life and fully immerse yourself in your story, set in a scenic destination where you learn from bestselling authors and produced screenwriters while living alongside a like-minded community of storytellers.",
     href: "https://creators.forgebylevelup.com/writing",
     nextEditions: ["Coorg · Jul 2026"],
     durationPills: ["6 Days", "Residential"],
