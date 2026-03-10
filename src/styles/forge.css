@@ -603,9 +603,9 @@ body {
   color: #fff;
 }
 .experiences-toggle-pill.active {
-  background: #DD6F15;
-  border-color: #DD6F15;
-  color: #fff;
+  background: #FFBC3B;
+  border-color: #FFBC3B;
+  color: #222;
 }
 
 .experiences-bento-card {
@@ -619,13 +619,11 @@ body {
 
 .experiences-photo-side {
   position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
 .experiences-photo-container {
   position: relative;
-  flex: 1;
+  height: 100%;
   min-height: 380px;
 }
 
@@ -639,11 +637,35 @@ body {
 }
 
 .experiences-photo-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 5px;
   justify-content: center;
-  padding: 14px 0;
-  background: rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+.experiences-location-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.experiences-location-overlay span {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Open Sauce One', sans-serif;
+  padding: 6px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
 }
 
 .experiences-info-side {
@@ -653,14 +675,6 @@ body {
   justify-content: center;
 }
 
-.experiences-tag {
-  font-size: 12px;
-  font-weight: 600;
-  color: #DD6F15;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
 
 .experiences-title {
   font-family: 'Open Sauce One', sans-serif;

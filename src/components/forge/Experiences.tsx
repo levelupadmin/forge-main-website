@@ -10,12 +10,10 @@ export default function Experiences() {
 
   const program = programs[activeProgram];
 
-  // Reset photo when switching programs
   useEffect(() => {
     setCurrentPhoto(0);
   }, [activeProgram]);
 
-  // Auto-advance photos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPhoto(prev => (prev + 1) % program.photos.length);
@@ -28,13 +26,11 @@ export default function Experiences() {
 
   return (
     <section id="experiences" ref={ref} className="experiences-section">
-      {/* Header */}
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: 32 }}>
         <div className="forge-subheading">Explore</div>
         <div className="forge-heading">The Forge Experiences</div>
       </div>
 
-      {/* Toggle pills */}
       <div className={`forge-fade-up${isVisible ? ' visible' : ''} experiences-toggle-row`} style={{ transitionDelay: '200ms' }}>
         {programs.map((p, i) => (
           <button
@@ -47,9 +43,7 @@ export default function Experiences() {
         ))}
       </div>
 
-      {/* Bento card */}
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ transitionDelay: '400ms', maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
-        {/* Desktop prev/next arrows */}
         <button className="experiences-arrow experiences-arrow-left" onClick={goToPrev} aria-label="Previous program">
           <ChevronLeft size={20} />
         </button>
@@ -58,7 +52,6 @@ export default function Experiences() {
         </button>
 
         <div className="experiences-bento-card">
-          {/* Left: Photo carousel */}
           <div className="experiences-photo-side">
             <div className="experiences-photo-container">
               {program.photos.map((photo, i) => (
@@ -70,34 +63,36 @@ export default function Experiences() {
                   style={{ opacity: i === currentPhoto ? 1 : 0 }}
                 />
               ))}
-            </div>
-            {/* Dots */}
-            <div className="experiences-photo-dots">
-              {program.photos.map((_, i) => (
-                <button
-                  key={i}
-                  className={`forge-dot${i === currentPhoto ? ' active' : ''}`}
-                  onClick={() => setCurrentPhoto(i)}
-                  aria-label={`Go to photo ${i + 1}`}
-                />
-              ))}
+              {/* Location overlay */}
+              <div className="experiences-location-overlay">
+                {program.nextEditions.map((edition, i) => (
+                  <span key={i}>{edition}</span>
+                ))}
+              </div>
+              {/* Photo dots overlaid on image */}
+              <div className="experiences-photo-dots">
+                {program.photos.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`forge-dot${i === currentPhoto ? ' active' : ''}`}
+                    onClick={() => setCurrentPhoto(i)}
+                    aria-label={`Go to photo ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right: Info */}
           <div className="experiences-info-side">
-            <div className="experiences-tag">{program.tag}</div>
             <div className="experiences-title">{program.title}</div>
             <p className="experiences-description">{program.description}</p>
 
-            {/* Metadata badges */}
             <div className="experiences-meta-row">
-              {program.duration && <span className="experiences-meta-badge">{program.duration}</span>}
-              {program.format && <span className="experiences-meta-badge">{program.format}</span>}
-              {program.nextEdition && <span className="experiences-meta-badge">{program.nextEdition}</span>}
+              {program.durationPills.map((pill, i) => (
+                <span key={i} className="experiences-meta-badge">{pill}</span>
+              ))}
             </div>
 
-            {/* Highlights */}
             <ul className="experiences-highlights">
               {program.highlights.map((h, i) => (
                 <li key={i}>
@@ -107,14 +102,12 @@ export default function Experiences() {
               ))}
             </ul>
 
-            {/* CTA */}
             <a href={program.href} className="experiences-cta">
               Request an Invite <ArrowRight size={16} />
             </a>
           </div>
         </div>
 
-        {/* Bottom program dots */}
         <div className="experiences-program-dots">
           {programs.map((_, i) => (
             <button

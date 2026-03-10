@@ -1,26 +1,22 @@
 export interface Program {
-  tag: string;
   tabLabel: string;
   title: string;
   description: string;
   href: string;
-  nextEdition: string | null;
+  nextEditions: string[];
   photos: string[];
-  duration: string;
-  format: string;
+  durationPills: string[];
   highlights: string[];
 }
 
 export const programs: Program[] = [
   {
-    tag: "Filmmaking",
-    tabLabel: "Make Films",
+    tabLabel: "Filmmaking",
     title: "the Forge Filmmaking Bootcamp",
     description: "An intensive no bullsh*t filmmaking bootcamp where you learn by writing, directing, shooting your own short film in 15 days flat with the guidance of mentors who have been nominated for the Emmys and created Netflix originals.",
     href: "/filmmaking",
-    nextEdition: "Goa · Apr 2025",
-    duration: "15 Days",
-    format: "Residential",
+    nextEditions: ["Goa · Apr 2026"],
+    durationPills: ["7 Days Online", "8 Days Offline"],
     highlights: [
       "Full pipeline — screenwriting, directing, cinematography, editing",
       "Mentored by Emmy-nominated & Netflix original creators",
@@ -35,14 +31,12 @@ export const programs: Program[] = [
     ],
   },
   {
-    tag: "Content Creation",
-    tabLabel: "Create Content",
+    tabLabel: "Content Creation",
     title: "the Forge Creator Residency",
     description: "An invite-only 12-day residency for founders and creators who want to build a real personal brand through content on social media by learning directly from top creators and making real content every day.",
     href: "https://creators.forgebylevelup.com",
-    nextEdition: "Goa · May 2025",
-    duration: "12 Days",
-    format: "Application-Only",
+    nextEditions: ["Goa · May 2026", "Bali · Jun 2026"],
+    durationPills: ["5 Days Online", "7 Days Offline"],
     highlights: [
       "Learn directly from top creators with millions of followers",
       "Create real content every single day",
@@ -61,14 +55,12 @@ export const programs: Program[] = [
     ],
   },
   {
-    tag: "Screenwriting & Authoring",
-    tabLabel: "Write Stories",
+    tabLabel: "Writing",
     title: "the Forge Writing Retreat",
     description: "A 6-day writing retreat for screenwriters and authors, designed to help you step away from the noise of daily life and fully immerse yourself in your story with bestselling authors and produced screenwriters.",
     href: "https://creators.forgebylevelup.com/writing",
-    nextEdition: "Dehradun · Mar 2025",
-    duration: "6 Days",
-    format: "Residential",
+    nextEditions: ["Coorg · Jul 2026"],
+    durationPills: ["6 Days", "Residential"],
     highlights: [
       "Immerse yourself in your story in a scenic destination",
       "Learn from bestselling authors & produced screenwriters",
