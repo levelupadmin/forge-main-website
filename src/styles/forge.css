@@ -619,8 +619,6 @@ body {
 
 .experiences-photo-side {
   position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
 .experiences-photo-container {
