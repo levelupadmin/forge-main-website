@@ -52,7 +52,7 @@ export default function LearnDoBecome() {
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
         style={{ textAlign: 'center', marginBottom: 16 }}
       >
-        <div className="forge-subheading" style={{ fontStyle: 'italic' }}>the science behind</div>
+        <div className="forge-subheading">the science behind</div>
         <div className="forge-heading" style={{
           display: 'flex',
           alignItems: 'center',
@@ -76,7 +76,7 @@ export default function LearnDoBecome() {
           transitionDelay: '100ms',
         }}
       >
-        A process scientifically designed to help simulate 6 months in 12 days.
+        How the Forge helps you transform from Dreamer to Doer through a once in a lifetime experience.
       </p>
 
       <div style={{
