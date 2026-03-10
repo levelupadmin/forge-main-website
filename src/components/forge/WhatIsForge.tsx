@@ -71,8 +71,8 @@ export default function WhatIsForge() {
           justifyContent: 'center',
           gap: 'clamp(8px, 1.5vw, 16px)',
         }}>
-          <div style={{ width: 'clamp(40px, 5vw, 60px)', height: 'clamp(28px, 3.5vw, 42px)', overflow: 'hidden', flexShrink: 0 }}>
-            <img src="/images/forge-waves.png" alt="" style={{ height: '100%', objectFit: 'cover', objectPosition: 'left center' }} />
+          <div style={{ width: 'clamp(36px, 5vw, 56px)', height: 'clamp(40px, 6vw, 64px)', overflow: 'hidden', flexShrink: 0 }}>
+            <img src="/images/forge-waves.png" alt="" style={{ height: '100%', width: 'auto', objectFit: 'contain', objectPosition: 'left center' }} />
           </div>
           <span>the Forge?</span>
         </div>
