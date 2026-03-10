@@ -10,11 +10,11 @@ const row1 = [
   { name: 'Microsoft', logo: '/images/learners/microsoft.png' },
   { name: 'Swiggy', logo: '/images/learners/swiggy.png' },
   { name: 'Zomato', logo: '/images/learners/zomato.png' },
-  { name: 'American Express', logo: '/images/learners/amex.png' },
-  { name: 'Ashoka University', logo: '/images/learners/ashoka.png' },
 ];
 
 const row2 = [
+  { name: 'American Express', logo: '/images/learners/amex.png' },
+  { name: 'Ashoka University', logo: '/images/learners/ashoka.png' },
   { name: 'IIM', logo: '/images/learners/iim.png' },
   { name: 'Symbiosis', logo: '/images/learners/symbiosis.png' },
   { name: 'Christ University', logo: '/images/learners/christ.png' },
@@ -26,18 +26,37 @@ const row2 = [
 function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direction: 'left' | 'right'; isMobile: boolean }) {
   const duplicated = [...items, ...items, ...items, ...items];
   const animClass = direction === 'left' ? 'marquee-scroll-left' : 'marquee-scroll-right';
+  const logoH = isMobile ? 28 : 40;
+  const fontSize = isMobile ? 20 : 28;
+  const itemGap = isMobile ? 32 : 56;
 
   return (
     <div className="overflow-hidden w-full">
-      <div className={`flex items-center ${animClass}`} style={{ width: 'max-content', gap: 0 }}>
+      <div className={`flex items-center ${animClass}`} style={{ width: 'max-content' }}>
         {duplicated.map((item, i) => (
-          <div key={`${item.name}-${i}`} className="flex-shrink-0 flex items-center justify-center px-4" style={{ height: isMobile ? 80 : 100 }}>
+          <div
+            key={`${item.name}-${i}`}
+            className="flex-shrink-0 flex items-center"
+            style={{ gap: isMobile ? 10 : 14, paddingLeft: itemGap / 2, paddingRight: itemGap / 2 }}
+          >
             <img
               src={item.logo}
               alt={item.name}
-              className={`${isMobile ? 'h-16' : 'h-20 md:h-32'} w-auto object-contain opacity-40 grayscale`}
+              style={{ height: logoH, width: 'auto' }}
+              className="object-contain"
               loading="lazy"
             />
+            <span
+              style={{
+                fontSize,
+                fontWeight: 700,
+                color: '#1a1a1a',
+                whiteSpace: 'nowrap',
+                fontFamily: "'Open Sauce One', sans-serif",
+              }}
+            >
+              {item.name}
+            </span>
           </div>
         ))}
       </div>
@@ -67,7 +86,7 @@ export default function LearnersFrom() {
           Our Students Are From
         </p>
 
-        <div className="flex flex-col" style={{ gap: isMobile ? 3 : 8 }}>
+        <div className="flex flex-col" style={{ gap: isMobile ? 6 : 12 }}>
           <MarqueeRow items={row1} direction="left" isMobile={isMobile} />
           <MarqueeRow items={row2} direction="right" isMobile={isMobile} />
         </div>
