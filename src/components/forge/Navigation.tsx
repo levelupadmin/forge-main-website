@@ -21,14 +21,27 @@ export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [navVisible, setNavVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 50);
+      if (isMobile) {
+        if (currentY > 100 && currentY > lastScrollY.current) {
+          setNavVisible(false);
+        } else if (currentY < lastScrollY.current) {
+          setNavVisible(true);
+        }
+      }
+      lastScrollY.current = currentY;
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [isMobile]);
 
   const handleNav = (link: { href: string; isRoute?: boolean }) => {
     setMenuOpen(false);
