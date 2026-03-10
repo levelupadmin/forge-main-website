@@ -47,7 +47,9 @@ export default function WhatIsForge() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const highlightedCount = Math.floor(scrollProgress * descriptionWords.length);
+  const highlightedCount = Math.floor(scrollProgress * (descriptionWords.length + descriptionWords2.length));
+  const highlightedCount1 = Math.min(highlightedCount, descriptionWords.length);
+  const highlightedCount2 = Math.max(0, highlightedCount - descriptionWords.length);
 
   return (
     <section id="about" ref={ref} style={{
