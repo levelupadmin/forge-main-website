@@ -39,7 +39,7 @@ const Index = () => {
       <TrustedAcrossBorders />
       <TransformationStories />
       <ImpactNumbers />
-      <BrandPartners />
+      
       <Community />
       <Gallery />
       <Testimonials />
