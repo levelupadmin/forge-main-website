@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Menu } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -15,10 +15,20 @@ const rightLinks: NavLink[] = [
   { label: 'Careers', href: '#careers' },
 ];
 
+const allDesktopLinks = [...leftLinks, ...rightLinks];
+
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const handleNav = (link: { href: string; isRoute?: boolean }) => {
     setMenuOpen(false);
