@@ -24,7 +24,7 @@ export const programs: Program[] = [
   {
     tag: "Content Creation",
     title: "the Forge Creator Residency",
-    description: "A 7-day invite-only residency where handpicked individuals learn to create viral content and build their personal brand on Instagram, TikTok or YouTube.",
+    description: "An invite-only 12-day residency for founders and creators who want to build a real personal brand through content on social media by learning directly from top creators, making real content every day, and living with like minded community of builder.",
     href: "https://creators.forgebylevelup.com",
     nextEdition: "Goa · May 2025",
     photos: [
