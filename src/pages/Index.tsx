@@ -30,8 +30,8 @@ const Index = () => {
       <Hero />
       <HeroBar />
       <LearnersFrom />
-      <WhyBuilt />
       <WhatIsForge />
+      <WhyBuilt />
       <LearnDoBecome />
       <Experiences />
       <Ethos />
