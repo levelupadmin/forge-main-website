@@ -32,11 +32,11 @@ const Index = () => {
       <LearnersFrom />
       <WhatIsForge />
       <WhyBuilt />
-      <TrustedAcrossBorders />
+      <LearnDoBecome />
       <Experiences />
       <Ethos />
       <Mentors />
-      <LearnDoBecome />
+      <TrustedAcrossBorders />
       <TransformationStories />
       <ImpactNumbers />
       
