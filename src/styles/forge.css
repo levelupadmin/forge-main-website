@@ -623,7 +623,7 @@ body {
 
 .experiences-photo-container {
   position: relative;
-  flex: 1;
+  height: 100%;
   min-height: 380px;
 }
 
