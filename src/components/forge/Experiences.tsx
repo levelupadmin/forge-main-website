@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { programs } from '@/data/programs';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { ArrowRight, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Experiences() {
   const { ref, isVisible } = useScrollAnimation(0.1);
