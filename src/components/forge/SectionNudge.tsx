@@ -13,7 +13,6 @@ export default function SectionNudge({ text = 'Ready to join them?' }: { text?: 
       <a href="#experiences" onClick={e => { e.preventDefault(); scrollToExperiences(); }}>
         {text}
       </a>
-      </a>
     </div>
   );
 }
