@@ -53,20 +53,26 @@ export default function ImpactNumbers() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(4, 1fr)',
+          gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
           gridTemplateRows: isMobile ? 'auto' : 'repeat(2, 220px)',
-          gap: isMobile ? 8 : 16,
+          gap: isMobile ? 10 : 16,
         }}>
-          {stats.map((stat, i) => (
-            <BentoCard
-              key={i}
-              stat={stat}
-              isVisible={isVisible}
-              index={i}
-              isMobile={isMobile}
-              gridStyle={isMobile ? {} : gridAreas[i]}
-            />
-          ))}
+          {stats.map((stat, i) => {
+            const mobileGridStyle: React.CSSProperties = {};
+            if (isMobile && i === 2) {
+              mobileGridStyle.gridColumn = '1 / -1';
+            }
+            return (
+              <BentoCard
+                key={i}
+                stat={stat}
+                isVisible={isVisible}
+                index={i}
+                isMobile={isMobile}
+                gridStyle={isMobile ? mobileGridStyle : gridAreas[i]}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
