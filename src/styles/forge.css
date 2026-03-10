@@ -698,9 +698,10 @@ body {
   display: block;
   height: 24px;
   width: auto;
+  max-width: 120px;
   object-fit: contain;
-  opacity: 1;
-  background: transparent;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 
 

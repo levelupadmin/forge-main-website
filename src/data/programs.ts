@@ -85,8 +85,8 @@ export const programs: Program[] = [
       "/images/programs/writing-8.jpg",
     ],
     poweredBy: [
-      { name: "Indie Press", logo: "/images/partners/indiepress-logo-white.png" },
-      { name: "Westland Books", logo: "/images/partners/westland-logo-white.png" },
+      { name: "Indie Press", logo: "/images/partners/indiepress-logo.png" },
+      { name: "Westland Books", logo: "/images/partners/westland-logo.png" },
     ],
   },
 ];
