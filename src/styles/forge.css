@@ -695,10 +695,12 @@ body {
   gap: 16px;
 }
 .experiences-powered-by-logo {
+  display: block;
   height: 24px;
   width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  object-fit: contain;
+  opacity: 1;
+  background: transparent;
 }
 
 
