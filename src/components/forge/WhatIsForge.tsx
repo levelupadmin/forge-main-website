@@ -11,13 +11,17 @@ const allPhotos = [
 ];
 
 const descriptionWords = (
-  'The Forge is an experiential learning residency that brings together travel, hands-on creation, and a like-minded community. Built for filmmakers, writers, founders, builders, artists, and creators. You learn by doing, collaborate with your peers, and leave with something you actually made.'
+  'The Forge is an experiential learning residency that brings together travel, hands-on creation, and a like-minded community.'
+).split(' ');
+
+const descriptionWords2 = (
+  'Built for filmmakers, writers, founders, builders, artists, and creators where you learn by doing, collaborating, and creating something you can call your own.'
 ).split(' ');
 
 const boldWords = new Set([
   'experiential', 'learning', 'residency', 'travel,', 'hands-on', 'creation,',
   'community.', 'filmmakers,', 'writers,', 'founders,', 'builders,', 'artists,',
-  'creators.', 'doing,', 'peers,', 'made.'
+  'creators', 'doing,', 'collaborating,', 'own.'
 ]);
 
 export default function WhatIsForge() {
@@ -43,7 +47,9 @@ export default function WhatIsForge() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const highlightedCount = Math.floor(scrollProgress * descriptionWords.length);
+  const highlightedCount = Math.floor(scrollProgress * (descriptionWords.length + descriptionWords2.length));
+  const highlightedCount1 = Math.min(highlightedCount, descriptionWords.length);
+  const highlightedCount2 = Math.max(0, highlightedCount - descriptionWords.length);
 
   return (
     <section id="about" ref={ref} style={{
@@ -167,22 +173,40 @@ export default function WhatIsForge() {
         padding: '0 clamp(24px, 5vw, 80px)',
         transitionDelay: '600ms',
       }}>
-        <div style={{
-          width: 48,
-          height: 2,
-          background: '#FFBC3B',
-          margin: '48px auto 40px',
-        }} />
+        <p style={{
+          fontSize: isMobile ? 'clamp(17px, 4.5vw, 24px)' : 'clamp(20px, 3vw, 32px)',
+          lineHeight: 1.6,
+          maxWidth: 800,
+          margin: '48px auto 0',
+          fontWeight: 400,
+        }}>
+          {descriptionWords.map((word, i) => {
+            const isHighlighted = i < highlightedCount1;
+            const isBold = boldWords.has(word) || boldWords.has(word.replace(/[,.]$/, ''));
+            return (
+              <span
+                key={i}
+                style={{
+                  color: isHighlighted ? '#222' : 'rgba(34,34,34,0.25)',
+                  fontWeight: isHighlighted && isBold ? 700 : 400,
+                  transition: 'color 0.3s ease, font-weight 0.3s ease',
+                }}
+              >
+                {word}{' '}
+              </span>
+            );
+          })}
+        </p>
 
         <p style={{
           fontSize: isMobile ? 'clamp(17px, 4.5vw, 24px)' : 'clamp(20px, 3vw, 32px)',
           lineHeight: 1.6,
           maxWidth: 800,
-          margin: '0 auto',
+          margin: '24px auto 0',
           fontWeight: 400,
         }}>
-          {descriptionWords.map((word, i) => {
-            const isHighlighted = i < highlightedCount;
+          {descriptionWords2.map((word, i) => {
+            const isHighlighted = i < highlightedCount2;
             const isBold = boldWords.has(word) || boldWords.has(word.replace(/[,.]$/, ''));
             return (
               <span
