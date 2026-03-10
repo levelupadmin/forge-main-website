@@ -36,9 +36,9 @@ const Index = () => {
       <Experiences />
       <Ethos />
       <Mentors />
-      <TrustedAcrossBorders />
-      <TransformationStories />
       <ImpactNumbers />
+      <TransformationStories />
+      <TrustedAcrossBorders />
       
       <Community />
       <Gallery />
