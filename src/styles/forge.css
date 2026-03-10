@@ -637,11 +637,35 @@ body {
 }
 
 .experiences-photo-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 5px;
   justify-content: center;
-  padding: 14px 0;
-  background: rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+.experiences-location-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.experiences-location-overlay span {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Open Sauce One', sans-serif;
+  padding: 6px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
 }
 
 .experiences-info-side {
