@@ -9,6 +9,7 @@ const row1 = [
   { name: 'Microsoft', logo: '/images/learners/microsoft.png' },
   { name: 'Swiggy', logo: '/images/learners/swiggy.png' },
   { name: 'Zomato', logo: '/images/learners/zomato.png' },
+  { name: 'CRED', logo: '/images/learners/cred.png' },
 ];
 
 const row2 = [
