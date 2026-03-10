@@ -10,9 +10,9 @@ const navLinks = [
 ];
 
 const programLinks = [
-  { label: 'Filmmaking Bootcamp', href: '/filmmaking' },
-  { label: 'Creator Residency', href: '/creator-residency' },
-  { label: 'Writing Retreat', href: '/writing-retreat' },
+  { label: 'Filmmaking Bootcamp', href: 'https://creators.forgebylevelup.com/filmmaking' },
+  { label: 'Creator Residency', href: 'https://creators.forgebylevelup.com/' },
+  { label: 'Writing Retreat', href: 'https://creators.forgebylevelup.com/writing' },
 ];
 
 export default function Footer() {
