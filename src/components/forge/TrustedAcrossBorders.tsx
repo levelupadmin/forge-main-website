@@ -214,8 +214,10 @@ export default function TrustedAcrossBorders() {
           ))}
         </div>
 
-        {/* Hide globe on mobile */}
-        {!isMobile && <GlobeMap isVisible={isVisible} />}
+        {/* Globe - scaled down on mobile */}
+        <div style={isMobile ? { maxWidth: 280, margin: '0 auto' } : {}}>
+          <GlobeMap isVisible={isVisible} />
+        </div>
 
         {/* Global Community locations */}
         <div

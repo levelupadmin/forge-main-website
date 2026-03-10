@@ -53,20 +53,26 @@ export default function ImpactNumbers() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(4, 1fr)',
+          gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
           gridTemplateRows: isMobile ? 'auto' : 'repeat(2, 220px)',
-          gap: isMobile ? 8 : 16,
+          gap: isMobile ? 10 : 16,
         }}>
-          {stats.map((stat, i) => (
-            <BentoCard
-              key={i}
-              stat={stat}
-              isVisible={isVisible}
-              index={i}
-              isMobile={isMobile}
-              gridStyle={isMobile ? {} : gridAreas[i]}
-            />
-          ))}
+          {stats.map((stat, i) => {
+            const mobileGridStyle: React.CSSProperties = {};
+            if (isMobile && i === 2) {
+              mobileGridStyle.gridColumn = '1 / -1';
+            }
+            return (
+              <BentoCard
+                key={i}
+                stat={stat}
+                isVisible={isVisible}
+                index={i}
+                isMobile={isMobile}
+                gridStyle={isMobile ? mobileGridStyle : gridAreas[i]}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
@@ -90,7 +96,7 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
         position: 'relative',
         overflow: 'hidden',
         borderRadius: isMobile ? 12 : 16,
-        minHeight: isMobile ? 120 : undefined,
+        minHeight: isMobile ? 160 : undefined,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
@@ -113,7 +119,7 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
       <div style={{ position: 'relative', zIndex: 1 }}>
         <div style={{
           fontWeight: 700,
-          fontSize: isMobile ? 'clamp(28px, 8vw, 40px)' : 'clamp(44px, 5vw, 72px)',
+          fontSize: isMobile ? 'clamp(32px, 9vw, 44px)' : 'clamp(44px, 5vw, 72px)',
           color: '#FFBC3B',
           letterSpacing: -2,
           lineHeight: 1,
@@ -122,7 +128,7 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
           {count}{stat.suffix}
         </div>
         <div style={{
-          fontSize: isMobile ? 9 : 15,
+          fontSize: isMobile ? 11 : 15,
           color: 'rgba(255,255,255,0.55)',
           marginTop: isMobile ? 4 : 8,
           fontWeight: 500,

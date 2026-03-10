@@ -23,7 +23,7 @@ const row2 = [
   { name: 'NID', logo: '/images/learners/nid.png' },
 ];
 
-function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left' | 'right' }) {
+function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direction: 'left' | 'right'; isMobile: boolean }) {
   const duplicated = [...items, ...items, ...items, ...items];
   const animClass = direction === 'left' ? 'marquee-scroll-left' : 'marquee-scroll-right';
 
@@ -31,11 +31,11 @@ function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left
     <div className="overflow-hidden w-full">
       <div className={`flex items-center ${animClass}`} style={{ width: 'max-content', gap: 0 }}>
         {duplicated.map((item, i) => (
-          <div key={`${item.name}-${i}`} className="flex-shrink-0 flex items-center justify-center px-4" style={{ height: 100 }}>
+          <div key={`${item.name}-${i}`} className="flex-shrink-0 flex items-center justify-center px-4" style={{ height: isMobile ? 60 : 100 }}>
             <img
               src={item.logo}
               alt={item.name}
-              className="h-20 md:h-32 w-auto object-contain opacity-40 grayscale"
+              className={`${isMobile ? 'h-12' : 'h-20 md:h-32'} w-auto object-contain opacity-40 grayscale`}
               loading="lazy"
             />
           </div>
@@ -67,9 +67,9 @@ export default function LearnersFrom() {
           Our Students Are From
         </p>
 
-        <div className="flex flex-col gap-2">
-          <MarqueeRow items={row1} direction="left" />
-          <MarqueeRow items={row2} direction="right" />
+        <div className="flex flex-col" style={{ gap: isMobile ? 3 : 8 }}>
+          <MarqueeRow items={row1} direction="left" isMobile={isMobile} />
+          <MarqueeRow items={row2} direction="right" isMobile={isMobile} />
         </div>
       </div>
     </section>
