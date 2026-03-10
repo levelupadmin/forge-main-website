@@ -73,7 +73,7 @@ export default function Hero() {
           lineHeight: 1.05,
           margin: '0 0 24px',
         }}>
-          India's Most <span className="forge-gradient-text">Immersive</span><br />Creative Education Experience
+          The World's Most <span className="forge-gradient-text">Immersive</span><br />Creative Education Experience
         </h1>
         <button className="forge-cta-light" onClick={scrollToExperiences}>
           Explore Experiences
