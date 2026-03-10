@@ -222,7 +222,7 @@ export default function Mentors() {
           maxWidth: 480,
           margin: '20px auto 0',
         }}>
-          Your mentors aren't professors. They're creators who've grossed 100M+ views, taught 7,000+ students, and monetized their content.
+          Every mentor at the Forge is a practitioner of their craft. A working filmmaker, a published author, a full-time creator. Not a professor.
         </p>
       </div>
 
