@@ -31,7 +31,7 @@ export default function ImpactNumbers() {
           backgroundImage: `url(${stat.image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: hoveredIndex === i ? 0.08 : 0,
+          opacity: hoveredIndex === i ? 0.15 : 0,
           transition: 'opacity 0.6s ease',
           pointerEvents: 'none',
         }} />
