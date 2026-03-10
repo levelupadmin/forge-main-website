@@ -15,7 +15,7 @@ export const programs: Program[] = [
     tabLabel: "Filmmaking",
     title: "the Forge Filmmaking Bootcamp",
     description: "An intensive no bullsh*t filmmaking bootcamp where you learn by writing, directing, shooting your own short film in 15 days flat with the guidance of mentors who have been nominated for the Emmys, created Netflix originals while living with like minded filmmakers and storytellers.",
-    href: "/filmmaking",
+    href: "https://creators.forgebylevelup.com/filmmaking",
     nextEditions: ["Goa · Apr 2026"],
     durationPills: ["7 Days Online", "8 Days Offline"],
     highlights: [
