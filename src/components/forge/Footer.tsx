@@ -71,12 +71,11 @@ export default function Footer() {
           {/* Brand Column */}
           <div>
             <img
-              src="/images/forge-logo.png"
+              src="/images/forge-logo-lines.png"
               alt="the Forge"
               style={{
                 height: isMobile ? 72 : 56,
                 marginBottom: 20,
-                filter: 'brightness(0) invert(1)',
                 display: 'block',
                 ...(isMobile ? { margin: '0 auto 20px' } : {}),
               }}
