@@ -44,9 +44,9 @@ function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direct
               style={{
                 width: isMobile ? 36 : 48,
                 height: isMobile ? 36 : 48,
-                borderRadius: isMobile ? 8 : 10,
-                backgroundColor: '#f5f5f5',
-                border: '1px solid #e5e5e5',
+                borderRadius: isMobile ? 10 : 12,
+                backgroundColor: item.bgColor,
+                border: item.bgColor === '#ffffff' ? '1px solid #e5e5e5' : 'none',
               }}
             >
               <img
