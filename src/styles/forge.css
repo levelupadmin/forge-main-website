@@ -675,14 +675,6 @@ body {
   justify-content: center;
 }
 
-.experiences-tag {
-  font-size: 12px;
-  font-weight: 600;
-  color: #DD6F15;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
 
 .experiences-title {
   font-family: 'Open Sauce One', sans-serif;
