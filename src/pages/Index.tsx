@@ -4,6 +4,7 @@ import HeroBar from '@/components/forge/HeroBar';
 import SmoothScroll from '@/components/forge/SmoothScroll';
 import FilmGrain from '@/components/forge/FilmGrain';
 import LearnersFrom from '@/components/forge/LearnersFrom';
+import WhyBuilt from '@/components/forge/WhyBuilt';
 import ImpactNumbers from '@/components/forge/ImpactNumbers';
 import WhatIsForge from '@/components/forge/WhatIsForge';
 import LearnDoBecome from '@/components/forge/LearnDoBecome';
@@ -29,6 +30,7 @@ const Index = () => {
       <Hero />
       <HeroBar />
       <LearnersFrom />
+      <WhyBuilt />
       <WhatIsForge />
       <LearnDoBecome />
       <Experiences />
