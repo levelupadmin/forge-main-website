@@ -85,22 +85,33 @@ export default function Navigation() {
             </button>
           </div>
         ) : (
-          <div style={{
-            background: 'white',
-            borderRadius: 100,
-            padding: '8px 32px',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 0,
-          }}>
+          <div
+            onMouseLeave={() => setHoveredIndex(null)}
+            style={{
+              background: 'white',
+              borderRadius: 100,
+              padding: '8px 32px',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 0,
+              opacity: scrolled ? 0.5 : 1,
+              transition: 'opacity 0.3s ease',
+            }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-              {leftLinks.map(link => (
+              {leftLinks.map((link, i) => (
                 <button
                   key={link.href}
                   onClick={() => handleNav(link)}
+                  onMouseEnter={() => setHoveredIndex(i)}
                   className="forge-nav-link"
-                  style={{ color: '#222', fontSize: 15, fontWeight: 400 }}
+                  style={{
+                    color: '#222',
+                    fontSize: 15,
+                    fontWeight: 400,
+                    opacity: hoveredIndex === null || hoveredIndex === i ? 1 : 0.4,
+                    transition: 'opacity 0.2s ease',
+                  }}
                 >
                   {link.label}
                 </button>
@@ -113,12 +124,20 @@ export default function Navigation() {
               <img src="/images/forge-logo.png" alt="the Forge" style={{ height: 52, width: 'auto', display: 'block' }} />
             </button>
             <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-              {rightLinks.map(link => (
+              {rightLinks.map((link, i) => (
                 <button
                   key={link.href}
                   onClick={() => handleNav(link)}
+                  onMouseEnter={() => setHoveredIndex(leftLinks.length + i)}
                   className="forge-nav-link"
-                  style={{ color: '#222', fontSize: 15, fontWeight: 400, whiteSpace: 'nowrap' }}
+                  style={{
+                    color: '#222',
+                    fontSize: 15,
+                    fontWeight: 400,
+                    whiteSpace: 'nowrap',
+                    opacity: hoveredIndex === null || hoveredIndex === leftLinks.length + i ? 1 : 0.4,
+                    transition: 'opacity 0.2s ease',
+                  }}
                 >
                   {link.label}
                 </button>
