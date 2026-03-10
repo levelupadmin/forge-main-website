@@ -88,12 +88,12 @@ export default function Navigation() {
           <div
           onMouseLeave={() => setHoveredIndex(null)}
             style={{
-              background: scrolled ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,1)',
+              background: scrolled ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,1)',
               backdropFilter: scrolled ? 'blur(20px)' : 'none',
               WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
               borderRadius: 100,
               padding: '8px 32px',
-              boxShadow: scrolled ? '0 2px 12px rgba(255,255,255,0.1)' : '0 4px 24px rgba(0,0,0,0.10)',
+              boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.08)' : '0 4px 24px rgba(0,0,0,0.10)',
               display: 'flex',
               alignItems: 'center',
               gap: 0,
