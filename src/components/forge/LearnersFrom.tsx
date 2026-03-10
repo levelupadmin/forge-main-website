@@ -23,7 +23,7 @@ const row2 = [
   { name: 'NID', logo: '/images/learners/nid.png' },
 ];
 
-function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left' | 'right' }) {
+function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direction: 'left' | 'right'; isMobile: boolean }) {
   const duplicated = [...items, ...items, ...items, ...items];
   const animClass = direction === 'left' ? 'marquee-scroll-left' : 'marquee-scroll-right';
 
