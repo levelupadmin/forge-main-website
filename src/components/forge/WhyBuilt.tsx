@@ -1,180 +1,126 @@
 import { useEffect, useRef, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-interface ManifestoRow {
+interface ManifestoBeat {
   text: string;
   image: string;
-  imageAlt: string;
-  rotation: number;
+  align: 'left' | 'right';
 }
 
-const rows: ManifestoRow[] = [
+const beats: ManifestoBeat[] = [
   {
     text: 'We were tired of watching creative people not create.',
     image: '/images/programs/filmmaking-5.jpg',
-    imageAlt: 'Filmmakers collaborating on set',
-    rotation: -2.5,
+    align: 'left',
   },
   {
     text: 'There were hundreds of courses. There was knowledge all over the internet. But they went back to their lives, back to the routine, and nothing changed.',
     image: '/images/programs/creators-1.jpg',
-    imageAlt: 'Creator working on content',
-    rotation: 2.8,
+    align: 'right',
   },
   {
     text: 'We knew the missing piece was not more learning. It was a place designed to create, with the right people around you, where not creating was simply not an option.',
     image: '/images/programs/writing-1.jpg',
-    imageAlt: 'Writers gathered at retreat',
-    rotation: -1.8,
+    align: 'left',
   },
 ];
 
-function useRowAnimation(threshold = 0.25) {
+function useReveal(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const observer = new IntersectionObserver(
+    const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.unobserve(el);
+          obs.unobserve(el);
         }
       },
       { threshold }
     );
-    observer.observe(el);
-    return () => observer.disconnect();
+    obs.observe(el);
+    return () => obs.disconnect();
   }, [threshold]);
 
   return { ref, visible };
 }
 
-function ManifestoRow({ row, index, isMobile }: { row: ManifestoRow; index: number; isMobile: boolean }) {
-  const { ref, visible } = useRowAnimation(0.2);
-  const imageFirst = index % 2 === 0;
-
-  const imageEl = (
-    <div
-      style={{
-        width: isMobile ? 140 : 200,
-        height: isMobile ? 105 : 150,
-        flexShrink: 0,
-        borderRadius: 6,
-        overflow: 'hidden',
-        transform: `rotate(${row.rotation}deg)`,
-        border: '1px solid rgba(255,255,255,0.08)',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
-        opacity: visible ? 1 : 0,
-        transition: 'opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s',
-      }}
-    >
-      <img
-        src={row.image}
-        alt={row.imageAlt}
-        loading="lazy"
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-      />
-    </div>
-  );
-
-  const textEl = (
-    <p
-      style={{
-        fontSize: isMobile ? 'clamp(16px, 4.2vw, 20px)' : 'clamp(18px, 2vw, 22px)',
-        lineHeight: 1.7,
-        fontWeight: 400,
-        color: 'rgba(255,255,255,0.75)',
-        maxWidth: isMobile ? '100%' : 440,
-        textAlign: isMobile ? 'center' : (imageFirst ? 'left' : 'right'),
-        margin: 0,
-        opacity: visible ? 1 : 0,
-        transform: `translateY(${visible ? 0 : 24}px)`,
-        transition: 'opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s',
-      }}
-    >
-      {index === 0 && (
-        <span style={{ fontWeight: 700, color: '#FFFFFF', fontSize: isMobile ? 'clamp(20px, 5vw, 28px)' : 'clamp(24px, 2.8vw, 32px)', display: 'block', marginBottom: 12, lineHeight: 1.2 }}>
-          {row.text}
-        </span>
-      )}
-      {index !== 0 && row.text}
-    </p>
-  );
+function BeatCard({ beat, isMobile }: { beat: ManifestoBeat; isMobile: boolean }) {
+  const { ref, visible } = useReveal(0.15);
+  const textAlign = isMobile ? 'center' : beat.align;
 
   return (
-    <div ref={ref}>
+    <div
+      ref={ref}
+      style={{
+        position: 'relative',
+        height: isMobile ? '50vh' : '60vh',
+        minHeight: isMobile ? 320 : 420,
+        borderRadius: 12,
+        overflow: 'hidden',
+        opacity: visible ? 1 : 0,
+        transform: `translateY(${visible ? 0 : 40}px) scale(${visible ? 1 : 0.97})`,
+        transition: 'opacity 0.9s ease, transform 0.9s ease',
+      }}
+    >
+      {/* Background image */}
+      <img
+        src={beat.image}
+        alt=""
+        loading="lazy"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+        }}
+      />
+
+      {/* Dark overlay */}
       <div
         style={{
-          display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: isMobile ? 24 : 48,
-          maxWidth: 800,
-          margin: '0 auto',
-          padding: isMobile ? '0 8px' : 0,
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%)',
+        }}
+      />
+
+      {/* Text */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: isMobile ? '32px 24px' : '48px 56px',
+          textAlign,
         }}
       >
-        {isMobile ? (
-          <>
-            {imageEl}
-            {textEl}
-          </>
-        ) : imageFirst ? (
-          <>
-            {imageEl}
-            {textEl}
-          </>
-        ) : (
-          <>
-            {textEl}
-            {imageEl}
-          </>
-        )}
+        <p
+          style={{
+            fontSize: isMobile ? 'clamp(16px, 4.5vw, 20px)' : 'clamp(18px, 2.2vw, 24px)',
+            lineHeight: 1.7,
+            fontWeight: 400,
+            color: 'rgba(255,255,255,0.9)',
+            maxWidth: isMobile ? '100%' : 560,
+            margin: textAlign === 'right' ? '0 0 0 auto' : 0,
+          }}
+        >
+          {beat.text}
+        </p>
       </div>
     </div>
   );
 }
 
-function AmberDivider({ isMobile }: { isMobile: boolean }) {
-  if (isMobile) return null;
-  return (
-    <div
-      style={{
-        width: isMobile ? '60%' : '40%',
-        maxWidth: 320,
-        height: 1,
-        margin: '0 auto',
-        background: 'linear-gradient(90deg, transparent, rgba(255,188,59,0.3), transparent)',
-      }}
-    />
-  );
-}
-
 export default function WhyBuilt() {
-  const titleRef = useRef<HTMLDivElement>(null);
-  const closingRef = useRef<HTMLDivElement>(null);
-  const [titleVisible, setTitleVisible] = useState(false);
-  const [closingVisible, setClosingVisible] = useState(false);
+  const { ref: titleRef, visible: titleVisible } = useReveal(0.2);
+  const { ref: closingRef, visible: closingVisible } = useReveal(0.2);
   const isMobile = useIsMobile();
-
-  useEffect(() => {
-    const observeEl = (el: HTMLElement | null, setter: (v: boolean) => void) => {
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) { setter(true); obs.unobserve(el); } },
-        { threshold: 0.2 }
-      );
-      obs.observe(el);
-      return () => obs.disconnect();
-    };
-    const c1 = observeEl(titleRef.current, setTitleVisible);
-    const c2 = observeEl(closingRef.current, setClosingVisible);
-    return () => { c1?.(); c2?.(); };
-  }, []);
 
   return (
     <section
@@ -199,31 +145,40 @@ export default function WhyBuilt() {
         style={{
           position: 'relative',
           zIndex: 1,
-          padding: isMobile ? '64px 24px' : 'clamp(80px, 10vw, 120px) clamp(24px, 8vw, 200px)',
+          padding: isMobile ? '64px 16px' : 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: isMobile ? 48 : 64,
+          gap: isMobile ? 24 : 32,
         }}
       >
-        {/* Title */}
+        {/* Standard heading */}
         <div
           ref={titleRef}
           style={{
             textAlign: 'center',
+            marginBottom: isMobile ? 16 : 32,
             opacity: titleVisible ? 1 : 0,
             transform: `translateY(${titleVisible ? 0 : 30}px)`,
             transition: 'opacity 0.8s ease, transform 0.8s ease',
           }}
         >
           <div className="forge-subheading forge-subheading--light">Why It Was Built</div>
+          <h2
+            style={{
+              fontWeight: 700,
+              fontSize: isMobile ? '40px' : 'clamp(40px, 6vw, 64px)',
+              lineHeight: 1.15,
+              color: '#FFFFFF',
+              marginTop: 12,
+            }}
+          >
+            Why It Was Built
+          </h2>
         </div>
 
-        {/* Manifesto rows */}
-        {rows.map((row, i) => (
-          <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 48 : 64 }}>
-            <ManifestoRow row={row} index={i} isMobile={isMobile} />
-            {i < rows.length - 1 && <AmberDivider isMobile={isMobile} />}
-          </div>
+        {/* Beat cards */}
+        {beats.map((beat, i) => (
+          <BeatCard key={i} beat={beat} isMobile={isMobile} />
         ))}
 
         {/* Closing statement */}
@@ -233,7 +188,7 @@ export default function WhyBuilt() {
             textAlign: 'center',
             maxWidth: 800,
             margin: '0 auto',
-            paddingTop: isMobile ? 16 : 32,
+            paddingTop: isMobile ? 24 : 48,
           }}
         >
           <div
@@ -250,12 +205,7 @@ export default function WhyBuilt() {
             <div>The Forge was not created to dream.</div>
             <div style={{ marginTop: isMobile ? 8 : 12 }}>
               It was built to help you{' '}
-              <span
-                style={{
-                  position: 'relative',
-                  display: 'inline-block',
-                }}
-              >
+              <span style={{ position: 'relative', display: 'inline-block' }}>
                 <span
                   style={{
                     position: 'absolute',
