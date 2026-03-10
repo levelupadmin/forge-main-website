@@ -58,7 +58,7 @@ export const programs: Program[] = [
       "/images/programs/creators-8.jpg",
     ],
     poweredBy: [
-      { name: "Digitek", logo: "/images/partners/digitek-logo-white.png" },
+      { name: "Digitek", logo: "/images/partners/digitek-logo.png" },
     ],
   },
   {
