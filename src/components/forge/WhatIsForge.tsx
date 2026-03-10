@@ -173,22 +173,40 @@ export default function WhatIsForge() {
         padding: '0 clamp(24px, 5vw, 80px)',
         transitionDelay: '600ms',
       }}>
-        <div style={{
-          width: 48,
-          height: 2,
-          background: '#FFBC3B',
-          margin: '48px auto 40px',
-        }} />
+        <p style={{
+          fontSize: isMobile ? 'clamp(17px, 4.5vw, 24px)' : 'clamp(20px, 3vw, 32px)',
+          lineHeight: 1.6,
+          maxWidth: 800,
+          margin: '48px auto 0',
+          fontWeight: 400,
+        }}>
+          {descriptionWords.map((word, i) => {
+            const isHighlighted = i < highlightedCount1;
+            const isBold = boldWords.has(word) || boldWords.has(word.replace(/[,.]$/, ''));
+            return (
+              <span
+                key={i}
+                style={{
+                  color: isHighlighted ? '#222' : 'rgba(34,34,34,0.25)',
+                  fontWeight: isHighlighted && isBold ? 700 : 400,
+                  transition: 'color 0.3s ease, font-weight 0.3s ease',
+                }}
+              >
+                {word}{' '}
+              </span>
+            );
+          })}
+        </p>
 
         <p style={{
           fontSize: isMobile ? 'clamp(17px, 4.5vw, 24px)' : 'clamp(20px, 3vw, 32px)',
           lineHeight: 1.6,
           maxWidth: 800,
-          margin: '0 auto',
+          margin: '24px auto 0',
           fontWeight: 400,
         }}>
-          {descriptionWords.map((word, i) => {
-            const isHighlighted = i < highlightedCount;
+          {descriptionWords2.map((word, i) => {
+            const isHighlighted = i < highlightedCount2;
             const isBold = boldWords.has(word) || boldWords.has(word.replace(/[,.]$/, ''));
             return (
               <span
