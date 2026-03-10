@@ -86,16 +86,18 @@ export default function Navigation() {
           </div>
         ) : (
           <div
-            onMouseLeave={() => setHoveredIndex(null)}
+          onMouseLeave={() => setHoveredIndex(null)}
             style={{
-              background: scrolled ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,1)',
+              background: scrolled ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,1)',
+              backdropFilter: scrolled ? 'blur(20px)' : 'none',
+              WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
               borderRadius: 100,
               padding: '8px 32px',
-              boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.05)' : '0 4px 24px rgba(0,0,0,0.10)',
+              boxShadow: scrolled ? '0 2px 12px rgba(255,255,255,0.1)' : '0 4px 24px rgba(0,0,0,0.10)',
               display: 'flex',
               alignItems: 'center',
               gap: 0,
-              transition: 'background 0.3s ease, box-shadow 0.3s ease',
+              transition: 'all 0.3s ease',
             }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
               {leftLinks.map((link, i) => (
@@ -105,11 +107,11 @@ export default function Navigation() {
                   onMouseEnter={() => setHoveredIndex(i)}
                   className="forge-nav-link"
                   style={{
-                    color: '#222',
+                    color: scrolled ? '#fff' : '#222',
                     fontSize: 15,
                     fontWeight: 400,
                     opacity: hoveredIndex === null || hoveredIndex === i ? 1 : 0.4,
-                    transition: 'opacity 0.2s ease',
+                    transition: 'opacity 0.2s ease, color 0.3s ease',
                   }}
                 >
                   {link.label}
@@ -120,7 +122,7 @@ export default function Navigation() {
               onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0 }}
             >
-              <img src="/images/forge-logo-transparent.png" alt="the Forge" style={{ height: 52, width: 'auto', display: 'block' }} />
+              <img src="/images/forge-logo-transparent.png" alt="the Forge" style={{ height: 52, width: 'auto', display: 'block', filter: scrolled ? 'brightness(0) invert(1)' : 'none', transition: 'filter 0.3s ease' }} />
             </button>
             <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
               {rightLinks.map((link, i) => (
@@ -130,12 +132,12 @@ export default function Navigation() {
                   onMouseEnter={() => setHoveredIndex(leftLinks.length + i)}
                   className="forge-nav-link"
                   style={{
-                    color: '#222',
+                    color: scrolled ? '#fff' : '#222',
                     fontSize: 15,
                     fontWeight: 400,
                     whiteSpace: 'nowrap',
                     opacity: hoveredIndex === null || hoveredIndex === leftLinks.length + i ? 1 : 0.4,
-                    transition: 'opacity 0.2s ease',
+                    transition: 'opacity 0.2s ease, color 0.3s ease',
                   }}
                 >
                   {link.label}
