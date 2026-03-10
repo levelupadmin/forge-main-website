@@ -55,7 +55,6 @@ export default function FAQ() {
         style={{
           textAlign: 'center',
           marginBottom: isMobile ? 40 : 56,
-          fontSize: isMobile ? 28 : 40,
           color: 'hsl(var(--foreground))',
         }}
       >

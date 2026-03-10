@@ -30,7 +30,7 @@ export default function NotSureCTA() {
         </div>
 
         <div className="forge-heading forge-heading--light" style={{
-          fontSize: 'clamp(28px, 5vw, 48px)',
+          fontSize: 'clamp(40px, 6vw, 48px)',
           marginBottom: 16,
         }}>
           Not Sure Which Experience<br />
