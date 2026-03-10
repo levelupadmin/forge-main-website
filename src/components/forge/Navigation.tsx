@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Menu } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -21,14 +21,27 @@ export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [navVisible, setNavVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 50);
+      if (isMobile) {
+        if (currentY > 100 && currentY > lastScrollY.current) {
+          setNavVisible(false);
+        } else if (currentY < lastScrollY.current) {
+          setNavVisible(true);
+        }
+      }
+      lastScrollY.current = currentY;
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [isMobile]);
 
   const handleNav = (link: { href: string; isRoute?: boolean }) => {
     setMenuOpen(false);
@@ -51,6 +64,8 @@ export default function Navigation() {
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 100,
+        transition: isMobile ? 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)' : undefined,
+        ...(isMobile && !navVisible ? { transform: 'translateX(-50%) translateY(calc(100% + 40px))' } : {}),
       }}>
         {isMobile ? (
           <div style={{
