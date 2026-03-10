@@ -829,9 +829,28 @@ body {
   }
   .experiences-photo-container {
     min-height: 260px;
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
   }
   .experiences-info-side {
     padding: 28px 24px 36px;
+    align-items: center;
+    text-align: center;
+  }
+  .experiences-title {
+    text-align: center;
+  }
+  .experiences-description {
+    text-align: center;
+  }
+  .experiences-meta-row {
+    justify-content: center;
+  }
+  .experiences-powered-by {
+    justify-content: center;
+  }
+  .experiences-cta {
+    align-self: center;
   }
   .experiences-arrow {
     display: none;
