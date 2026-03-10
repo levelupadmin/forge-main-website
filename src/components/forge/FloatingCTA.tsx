@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { ArrowDown } from 'lucide-react';
 
 export default function FloatingCTA() {
   const [visible, setVisible] = useState(false);
