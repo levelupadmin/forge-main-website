@@ -21,6 +21,14 @@ export default function Experiences() {
     return () => clearInterval(interval);
   }, [program.photos.length, activeProgram]);
 
+  // Auto-cycle through programs every 8 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveProgram(prev => (prev + 1) % programs.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
   const goToPrev = () => setActiveProgram(prev => (prev - 1 + programs.length) % programs.length);
   const goToNext = () => setActiveProgram(prev => (prev + 1) % programs.length);
 
