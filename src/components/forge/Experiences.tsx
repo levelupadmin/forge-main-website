@@ -1,149 +1,131 @@
 import { useState, useEffect } from 'react';
 import { programs } from '@/data/programs';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Experiences() {
   const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <section id="experiences" ref={ref} style={{
-      background: 'var(--forge-cream)',
-      padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 80px)',
-      position: 'relative',
-    }}>
-
-      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: 64 }}>
-        <div className="forge-subheading">Explore</div>
-        <div className="forge-heading">The Forge Experiences</div>
-        <p style={{ fontSize: 17, opacity: 0.55, marginTop: 16, maxWidth: 520, margin: '16px auto 0' }}>
-          Choose the experience that matches your creative path.
-        </p>
-      </div>
-
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
-        gap: 28,
-        maxWidth: 1280,
-        margin: '0 auto',
-      }}>
-        {programs.map((program, i) => (
-          <div
-            key={program.title}
-            className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-            style={{ transitionDelay: `${200 + i * 150}ms` }}
-          >
-            <ProgramCard program={program} />
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function ProgramCard({ program }: { program: typeof programs[0] }) {
+  const [activeProgram, setActiveProgram] = useState(0);
   const [currentPhoto, setCurrentPhoto] = useState(0);
 
+  const program = programs[activeProgram];
+
+  // Reset photo when switching programs
+  useEffect(() => {
+    setCurrentPhoto(0);
+  }, [activeProgram]);
+
+  // Auto-advance photos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPhoto(prev => (prev + 1) % program.photos.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [program.photos.length]);
+  }, [program.photos.length, activeProgram]);
+
+  const goToPrev = () => setActiveProgram(prev => (prev - 1 + programs.length) % programs.length);
+  const goToNext = () => setActiveProgram(prev => (prev + 1) % programs.length);
 
   return (
-    <div className="forge-card-glow" style={{
-      background: '#FFFFFF',
-      borderRadius: 20,
-      overflow: 'hidden',
-      boxShadow: '0 2px 24px rgba(0,0,0,0.06)',
-    }}>
-      {/* Photo carousel */}
-      <div style={{ position: 'relative', paddingBottom: '75%', overflow: 'hidden' }}>
-        {program.photos.map((photo, i) => (
-          <img
-            key={i}
-            src={photo}
-            alt={`${program.title} photo ${i + 1}`}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              opacity: i === currentPhoto ? 1 : 0,
-              transition: 'opacity 400ms ease',
-            }}
-          />
-        ))}
-        {program.nextEdition && (
-          <div className="forge-badge forge-badge-pulse">
-            <div style={{ fontSize: 11, fontWeight: 400 }}>Next Edition</div>
-            <div style={{ fontSize: 13, fontWeight: 700 }}>{program.nextEdition}</div>
-          </div>
-        )}
+    <section id="experiences" ref={ref} className="experiences-section">
+      {/* Header */}
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: 32 }}>
+        <div className="forge-subheading">Explore</div>
+        <div className="forge-heading">The Forge Experiences</div>
       </div>
 
-      {/* Dots */}
-      <div style={{ display: 'flex', gap: 4, padding: '12px 24px 0', justifyContent: 'center' }}>
-        {program.photos.map((_, i) => (
+      {/* Toggle pills */}
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''} experiences-toggle-row`} style={{ transitionDelay: '200ms' }}>
+        {programs.map((p, i) => (
           <button
-            key={i}
-            className={`forge-dot${i === currentPhoto ? ' active' : ''}`}
-            onClick={() => setCurrentPhoto(i)}
-            aria-label={`Go to photo ${i + 1}`}
-          />
+            key={p.tabLabel}
+            className={`experiences-toggle-pill${i === activeProgram ? ' active' : ''}`}
+            onClick={() => setActiveProgram(i)}
+          >
+            {p.tabLabel}
+          </button>
         ))}
       </div>
 
-      {/* Content */}
-      <div style={{ padding: '20px 24px 28px' }}>
-        <div style={{
-          fontSize: 12,
-          fontWeight: 600,
-          color: '#DD6F15',
-          letterSpacing: '0.12em',
-          marginBottom: 8,
-          textTransform: 'uppercase',
-        }}>
-          {program.tag}
+      {/* Bento card */}
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ transitionDelay: '400ms', maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+        {/* Desktop prev/next arrows */}
+        <button className="experiences-arrow experiences-arrow-left" onClick={goToPrev} aria-label="Previous program">
+          <ChevronLeft size={20} />
+        </button>
+        <button className="experiences-arrow experiences-arrow-right" onClick={goToNext} aria-label="Next program">
+          <ChevronRight size={20} />
+        </button>
+
+        <div className="experiences-bento-card">
+          {/* Left: Photo carousel */}
+          <div className="experiences-photo-side">
+            <div className="experiences-photo-container">
+              {program.photos.map((photo, i) => (
+                <img
+                  key={`${activeProgram}-${i}`}
+                  src={photo}
+                  alt={`${program.title} photo ${i + 1}`}
+                  className="experiences-photo"
+                  style={{ opacity: i === currentPhoto ? 1 : 0 }}
+                />
+              ))}
+            </div>
+            {/* Dots */}
+            <div className="experiences-photo-dots">
+              {program.photos.map((_, i) => (
+                <button
+                  key={i}
+                  className={`forge-dot${i === currentPhoto ? ' active' : ''}`}
+                  onClick={() => setCurrentPhoto(i)}
+                  aria-label={`Go to photo ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Info */}
+          <div className="experiences-info-side">
+            <div className="experiences-tag">{program.tag}</div>
+            <div className="experiences-title">{program.title}</div>
+            <p className="experiences-description">{program.description}</p>
+
+            {/* Metadata badges */}
+            <div className="experiences-meta-row">
+              {program.duration && <span className="experiences-meta-badge">{program.duration}</span>}
+              {program.format && <span className="experiences-meta-badge">{program.format}</span>}
+              {program.nextEdition && <span className="experiences-meta-badge">{program.nextEdition}</span>}
+            </div>
+
+            {/* Highlights */}
+            <ul className="experiences-highlights">
+              {program.highlights.map((h, i) => (
+                <li key={i}>
+                  <Check size={14} strokeWidth={3} />
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA */}
+            <a href={program.href} className="experiences-cta">
+              Request an Invite <ArrowRight size={16} />
+            </a>
+          </div>
         </div>
-        <div style={{ fontWeight: 700, fontSize: 22, color: '#222', marginBottom: 8 }}>
-          {program.title}
+
+        {/* Bottom program dots */}
+        <div className="experiences-program-dots">
+          {programs.map((_, i) => (
+            <button
+              key={i}
+              className={`forge-dot${i === activeProgram ? ' active' : ''}`}
+              onClick={() => setActiveProgram(i)}
+              aria-label={`Go to ${programs[i].tabLabel}`}
+            />
+          ))}
         </div>
-        <p style={{ fontSize: 14, opacity: 0.6, lineHeight: 1.6, marginBottom: 8 }}>
-          {program.description}
-        </p>
-        <div style={{ fontSize: 13, color: '#DD6F15', fontWeight: 600, marginBottom: 20 }}>
-          Limited spots available
-        </div>
-        <a href={program.href} style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 8,
-          background: '#222',
-          color: 'white',
-          borderRadius: 100,
-          padding: '12px 28px',
-          fontSize: 14,
-          fontWeight: 700,
-          textDecoration: 'none',
-          transition: 'background 200ms ease, gap 200ms ease',
-          fontFamily: "'Open Sauce One', sans-serif",
-        }}
-        onMouseEnter={e => {
-          (e.currentTarget as HTMLElement).style.background = '#FFBC3B';
-          (e.currentTarget as HTMLElement).style.gap = '14px';
-        }}
-        onMouseLeave={e => {
-          (e.currentTarget as HTMLElement).style.background = '#222';
-          (e.currentTarget as HTMLElement).style.gap = '8px';
-        }}
-        >
-          Learn More <ArrowRight size={16} />
-        </a>
       </div>
-    </div>
+    </section>
   );
 }
