@@ -11,7 +11,8 @@ export default function SectionNudge({ text = 'Ready to join them?' }: { text?: 
   return (
     <div ref={ref} className={`forge-nudge${isVisible ? ' visible' : ''}`}>
       <a href="#experiences" onClick={e => { e.preventDefault(); scrollToExperiences(); }}>
-        {text} <ArrowDown size={18} />
+        {text}
+      </a>
       </a>
     </div>
   );
