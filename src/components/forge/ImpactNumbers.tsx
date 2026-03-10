@@ -119,7 +119,7 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
       <div style={{ position: 'relative', zIndex: 1 }}>
         <div style={{
           fontWeight: 700,
-          fontSize: isMobile ? 'clamp(28px, 8vw, 40px)' : 'clamp(44px, 5vw, 72px)',
+          fontSize: isMobile ? 'clamp(32px, 9vw, 44px)' : 'clamp(44px, 5vw, 72px)',
           color: '#FFBC3B',
           letterSpacing: -2,
           lineHeight: 1,
