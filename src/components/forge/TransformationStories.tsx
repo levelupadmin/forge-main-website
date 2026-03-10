@@ -46,9 +46,7 @@ export default function TransformationStories() {
         marginBottom: 48,
       }}>
         <div className="forge-subheading forge-subheading--light">Career Outcomes</div>
-        <div className="forge-heading forge-heading--light" style={{
-          fontSize: 'clamp(32px, 5vw, 52px)',
-        }}>
+        <div className="forge-heading forge-heading--light">
           Where They Started.<br />
           Where They Are <span style={{ color: '#FFBC3B' }}>Now</span>.
         </div>

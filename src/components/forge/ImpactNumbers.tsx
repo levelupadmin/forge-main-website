@@ -39,7 +39,7 @@ export default function ImpactNumbers() {
         }}>The Numbers</p>
 
         <h2 className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{
-          fontSize: isMobile ? 'clamp(28px, 7vw, 40px)' : 'clamp(40px, 6vw, 64px)',
+          fontSize: 'clamp(40px, 6vw, 64px)',
           fontWeight: 700,
           color: '#222222',
           letterSpacing: -1.5,
