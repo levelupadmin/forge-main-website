@@ -11,7 +11,11 @@ const allPhotos = [
 ];
 
 const descriptionWords = (
-  'The Forge is an experiential learning residency that brings together travel, hands-on creation, and a like-minded community. Built for filmmakers, writers, founders, builders, artists, and creators. You learn by doing, collaborate with your peers, and leave with something you actually made.'
+  'The Forge is an experiential learning residency that brings together travel, hands-on creation, and a like-minded community.'
+).split(' ');
+
+const descriptionWords2 = (
+  'Built for filmmakers, writers, founders, builders, artists, and creators where you learn by doing, collaborating, and creating something you can call your own.'
 ).split(' ');
 
 const boldWords = new Set([
