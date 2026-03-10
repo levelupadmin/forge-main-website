@@ -12,7 +12,7 @@ import Experiences from '@/components/forge/Experiences';
 import Ethos from '@/components/forge/Ethos';
 import Mentors from '@/components/forge/Mentors';
 import TrustedAcrossBorders from '@/components/forge/TrustedAcrossBorders';
-import BrandPartners from '@/components/forge/BrandPartners';
+
 import Community from '@/components/forge/Community';
 import Gallery from '@/components/forge/Gallery';
 import Testimonials from '@/components/forge/Testimonials';
