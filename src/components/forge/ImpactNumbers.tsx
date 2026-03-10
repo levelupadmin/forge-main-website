@@ -19,7 +19,7 @@ export default function ImpactNumbers() {
   return (
     <section ref={ref} style={{
       backgroundColor: '#0A0A0A',
-      padding: isMobile ? '56px 20px' : 'clamp(64px, 8vw, 100px) clamp(40px, 6vw, 120px)',
+      padding: isMobile ? '72px 20px' : 'clamp(80px, 10vw, 140px) clamp(40px, 6vw, 120px)',
       position: 'relative',
       overflow: 'hidden',
     }}>
