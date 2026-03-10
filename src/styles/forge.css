@@ -32,8 +32,8 @@ body {
   margin-bottom: 12px;
 }
 .forge-subheading--light {
-  color: var(--forge-yellow);
-  opacity: 0.8;
+  color: var(--forge-dark-amber);
+  opacity: 1;
 }
 .forge-heading {
   font-weight: 700;
