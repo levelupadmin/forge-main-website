@@ -79,11 +79,6 @@ export default function Community() {
         </div>
       </div>
 
-      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', padding: '40px 24px', transitionDelay: '700ms' }}>
-        <a href="#" className="forge-cta-dark" style={{ padding: '14px 32px', fontSize: 15 }}>
-          Join the Community
-        </a>
-      </div>
     </section>
   );
 }

@@ -79,7 +79,7 @@ export default function LearnersFrom() {
           color: '#000000',
           fontFamily: "'Open Sauce One', sans-serif",
         }}>
-          Our Students Are From
+          Join 600+ Dreamers from
         </p>
 
         <div className="flex flex-col" style={{ gap: 12 }}>
