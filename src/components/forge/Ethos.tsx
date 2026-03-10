@@ -56,7 +56,7 @@ export default function Ethos() {
   return (
     <section ref={ref} style={{
       position: 'relative',
-      minHeight: isMobile ? 600 : 750,
+      minHeight: isMobile ? 'auto' : 750,
       overflow: 'hidden',
     }}>
       <div style={{
