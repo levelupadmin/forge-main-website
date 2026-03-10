@@ -11,7 +11,7 @@ export const programs: Program[] = [
   {
     tag: "Filmmaking",
     title: "the Forge Filmmaking Bootcamp",
-    description: "Learn filmmaking by creating your own short film in an intensive bootcamp.",
+    description: "An intensive no bullsh*t filmmaking bootcamp where you learn by writing, directing, shooting you own shortfilm in 15 days flat with the guidance of mentors who have been nominated for the emmys, created netflix orginals while living with like minded filmmakers and storytellers.",
     href: "/filmmaking",
     nextEdition: "Goa · Apr 2025",
     photos: [
