@@ -1,5 +1,4 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { ArrowDown } from 'lucide-react';
 
 export default function SectionNudge({ text = 'Ready to join them?' }: { text?: string }) {
   const { ref, isVisible } = useScrollAnimation(0.3);
