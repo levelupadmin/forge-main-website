@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { ArrowDown } from 'lucide-react';
 
 export default function FloatingCTA() {
   const [visible, setVisible] = useState(false);
@@ -59,7 +58,7 @@ export default function FloatingCTA() {
           (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)';
         }}
       >
-        Request an Invite <ArrowDown size={16} />
+        Request an Invite
       </button>
     </div>
   );
