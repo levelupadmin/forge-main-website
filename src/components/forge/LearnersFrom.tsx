@@ -2,25 +2,25 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const row1 = [
-  { name: 'Google', logo: '/images/learners/google.png' },
-  { name: 'McKinsey & Co', logo: '/images/learners/mckinsey.png' },
-  { name: 'Amazon', logo: '/images/learners/amazon.png' },
-  { name: 'Netflix', logo: '/images/learners/netflix.png' },
-  { name: 'Meta', logo: '/images/learners/meta.png' },
-  { name: 'Microsoft', logo: '/images/learners/microsoft.png' },
-  { name: 'Swiggy', logo: '/images/learners/swiggy.png' },
-  { name: 'Zomato', logo: '/images/learners/zomato.png' },
+  { name: 'Google', logo: '/images/learners/google.png', bgColor: '#ffffff' },
+  { name: 'McKinsey & Co', logo: '/images/learners/mckinsey.png', bgColor: '#00205B' },
+  { name: 'Amazon', logo: '/images/learners/amazon.png', bgColor: '#232F3E' },
+  { name: 'Netflix', logo: '/images/learners/netflix.png', bgColor: '#E50914' },
+  { name: 'Meta', logo: '/images/learners/meta.png', bgColor: '#0081FB' },
+  { name: 'Microsoft', logo: '/images/learners/microsoft.png', bgColor: '#ffffff' },
+  { name: 'Swiggy', logo: '/images/learners/swiggy.png', bgColor: '#FC8019' },
+  { name: 'Zomato', logo: '/images/learners/zomato.png', bgColor: '#E23744' },
 ];
 
 const row2 = [
-  { name: 'American Express', logo: '/images/learners/amex.png' },
-  { name: 'Ashoka University', logo: '/images/learners/ashoka.png' },
-  { name: 'IIM', logo: '/images/learners/iim.png' },
-  { name: 'Symbiosis', logo: '/images/learners/symbiosis.png' },
-  { name: 'Christ University', logo: '/images/learners/christ.png' },
-  { name: 'Government of India', logo: '/images/learners/govt-india.png' },
-  { name: 'NIFT', logo: '/images/learners/nift.png' },
-  { name: 'NID', logo: '/images/learners/nid.png' },
+  { name: 'American Express', logo: '/images/learners/amex.png', bgColor: '#006FCF' },
+  { name: 'Ashoka University', logo: '/images/learners/ashoka.png', bgColor: '#ffffff' },
+  { name: 'IIM', logo: '/images/learners/iim.png', bgColor: '#1a1a1a' },
+  { name: 'Symbiosis', logo: '/images/learners/symbiosis.png', bgColor: '#ffffff' },
+  { name: 'Christ University', logo: '/images/learners/christ.png', bgColor: '#8B0000' },
+  { name: 'Government of India', logo: '/images/learners/govt-india.png', bgColor: '#ffffff' },
+  { name: 'NIFT', logo: '/images/learners/nift.png', bgColor: '#ffffff' },
+  { name: 'NID', logo: '/images/learners/nid.png', bgColor: '#E44D26' },
 ];
 
 function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direction: 'left' | 'right'; isMobile: boolean }) {
