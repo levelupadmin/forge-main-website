@@ -23,12 +23,9 @@ const row2 = [
   { name: 'NID', logo: '/images/learners/nid.png', bgColor: '#E44D26' },
 ];
 
-function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direction: 'left' | 'right'; isMobile: boolean }) {
+function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left' | 'right' }) {
   const duplicated = [...items, ...items, ...items, ...items];
   const animClass = direction === 'left' ? 'marquee-scroll-left' : 'marquee-scroll-right';
-  const logoH = isMobile ? 28 : 40;
-  const fontSize = isMobile ? 20 : 28;
-  const itemGap = isMobile ? 32 : 56;
 
   return (
     <div className="overflow-hidden w-full">
@@ -37,32 +34,21 @@ function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direct
           <div
             key={`${item.name}-${i}`}
             className="flex-shrink-0 flex items-center"
-            style={{ gap: isMobile ? 10 : 14, paddingLeft: itemGap / 2, paddingRight: itemGap / 2 }}
+            style={{ gap: 12, marginRight: 56 }}
           >
-            <div
-              className="flex items-center justify-center flex-shrink-0"
-              style={{
-                width: isMobile ? 36 : 48,
-                height: isMobile ? 36 : 48,
-                borderRadius: isMobile ? 10 : 12,
-                backgroundColor: item.bgColor,
-                border: item.bgColor === '#ffffff' ? '1px solid #e5e5e5' : 'none',
-              }}
-            >
-              <img
-                src={item.logo}
-                alt={item.name}
-                style={{ height: isMobile ? 22 : 30, width: 'auto', maxWidth: isMobile ? 28 : 38 }}
-                className="object-contain"
-                loading="lazy"
-              />
-            </div>
+            <img
+              src={item.logo}
+              alt={item.name}
+              style={{ height: 40, width: 'auto', objectFit: 'contain' }}
+              loading="lazy"
+            />
             <span
               style={{
-                fontSize,
-                fontWeight: 700,
-                color: '#1a1a1a',
+                fontSize: 18,
+                fontWeight: 600,
+                color: '#111111',
                 whiteSpace: 'nowrap',
+                letterSpacing: '-0.3px',
                 fontFamily: "'Open Sauce One', sans-serif",
               }}
             >
