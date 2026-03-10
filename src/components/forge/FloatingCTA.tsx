@@ -58,7 +58,7 @@ export default function FloatingCTA() {
           (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)';
         }}
       >
-        Request an Invite
+        REQUEST AN INVITE
       </button>
     </div>
   );
