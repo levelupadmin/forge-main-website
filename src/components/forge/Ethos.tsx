@@ -88,7 +88,7 @@ export default function Ethos() {
         </div>
 
         {/* SVG Venn Diagram */}
-        <svg viewBox="0 0 800 800" style={{
+        <svg viewBox="0 180 800 520" style={{
           width: isMobile ? 'min(300px, 80vw)' : 'clamp(360px, 55vw, 620px)',
           height: 'auto',
           marginBottom: 3,
