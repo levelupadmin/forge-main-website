@@ -49,7 +49,7 @@ export default function LearnDoBecome() {
           justifyContent: 'center',
           gap: 'clamp(8px, 1.5vw, 16px)',
         }}>
-          <WaveIcon color="#FFBC3B" />
+          <ForgeWaves size={40} />
           <span>the Forge</span>
         </div>
       </div>
