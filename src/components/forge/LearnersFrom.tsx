@@ -31,11 +31,11 @@ function MarqueeRow({ items, direction, isMobile }: { items: typeof row1; direct
     <div className="overflow-hidden w-full">
       <div className={`flex items-center ${animClass}`} style={{ width: 'max-content', gap: 0 }}>
         {duplicated.map((item, i) => (
-          <div key={`${item.name}-${i}`} className="flex-shrink-0 flex items-center justify-center px-4" style={{ height: isMobile ? 60 : 100 }}>
+          <div key={`${item.name}-${i}`} className="flex-shrink-0 flex items-center justify-center px-4" style={{ height: isMobile ? 80 : 100 }}>
             <img
               src={item.logo}
               alt={item.name}
-              className={`${isMobile ? 'h-12' : 'h-20 md:h-32'} w-auto object-contain opacity-40 grayscale`}
+              className={`${isMobile ? 'h-16' : 'h-20 md:h-32'} w-auto object-contain opacity-40 grayscale`}
               loading="lazy"
             />
           </div>
