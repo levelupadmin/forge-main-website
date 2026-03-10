@@ -837,14 +837,15 @@ body {
     display: none;
   }
   .experiences-toggle-row {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    padding-bottom: 8px;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 0;
   }
   .experiences-toggle-pill {
     white-space: nowrap;
     flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }

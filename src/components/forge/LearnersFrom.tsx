@@ -67,9 +67,9 @@ export default function LearnersFrom() {
           Our Students Are From
         </p>
 
-        <div className="flex flex-col gap-2">
-          <MarqueeRow items={row1} direction="left" />
-          <MarqueeRow items={row2} direction="right" />
+        <div className="flex flex-col" style={{ gap: isMobile ? 3 : 8 }}>
+          <MarqueeRow items={row1} direction="left" isMobile={isMobile} />
+          <MarqueeRow items={row2} direction="right" isMobile={isMobile} />
         </div>
       </div>
     </section>

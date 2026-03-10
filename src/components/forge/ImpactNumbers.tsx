@@ -128,7 +128,7 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
           {count}{stat.suffix}
         </div>
         <div style={{
-          fontSize: isMobile ? 9 : 15,
+          fontSize: isMobile ? 11 : 15,
           color: 'rgba(255,255,255,0.55)',
           marginTop: isMobile ? 4 : 8,
           fontWeight: 500,

@@ -70,7 +70,7 @@ export default function WhyBuilt() {
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
         style={{
           fontWeight: 700,
-          fontSize: isMobile ? 'clamp(20px, 5vw, 28px)' : 'clamp(24px, 3vw, 32px)',
+          fontSize: isMobile ? 'clamp(16px, 4.2vw, 28px)' : 'clamp(24px, 3vw, 32px)',
           lineHeight: 1.4,
           color: '#FFFFFF',
           maxWidth: 700,

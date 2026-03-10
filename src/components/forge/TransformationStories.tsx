@@ -107,7 +107,7 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
       }}
     >
       {/* Photo */}
-      <div style={{ position: 'relative', height: 240, overflow: 'hidden' }}>
+      <div style={{ position: 'relative', height: 180, overflow: 'hidden' }}>
         <img
           src={transformation.photo}
           alt={transformation.name}
