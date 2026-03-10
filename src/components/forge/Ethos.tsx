@@ -81,7 +81,7 @@ export default function Ethos() {
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
           transition: 'opacity 1s ease, transform 1s ease',
-          marginBottom: isMobile ? 12 : 'clamp(16px, 2vw, 32px)',
+          marginBottom: 0,
         }}>
           <div className="forge-subheading forge-subheading--light">Our</div>
           <div className="forge-heading forge-heading--light" style={{ color: '#FFBC3B' }}>Ethos</div>
