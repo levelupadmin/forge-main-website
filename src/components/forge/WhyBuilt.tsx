@@ -194,7 +194,7 @@ export default function WhyBuilt() {
           <div
             style={{
               fontWeight: 700,
-              fontSize: isMobile ? 'clamp(22px, 6vw, 36px)' : 'clamp(36px, 4.5vw, 64px)',
+              fontSize: isMobile ? 'clamp(20px, 5.5vw, 32px)' : 'clamp(28px, 3.5vw, 48px)',
               lineHeight: 1.15,
               color: '#FFFFFF',
               opacity: closingVisible ? 1 : 0,
