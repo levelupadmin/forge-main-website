@@ -7,6 +7,7 @@ export interface Program {
   photos: string[];
   durationPills: string[];
   highlights: string[];
+  poweredBy: { name: string; logo: string }[];
 }
 
 export const programs: Program[] = [
@@ -28,6 +29,9 @@ export const programs: Program[] = [
       "/images/programs/filmmaking-8.jpg",
       "/images/programs/filmmaking-7.jpg",
       "/images/programs/filmmaking-6.jpg",
+    ],
+    poweredBy: [
+      { name: "Sony", logo: "/images/partners/sony-logo.png" },
     ],
   },
   {
@@ -53,6 +57,9 @@ export const programs: Program[] = [
       "/images/programs/creators-7.jpg",
       "/images/programs/creators-8.jpg",
     ],
+    poweredBy: [
+      { name: "Digitek", logo: "/images/partners/digitek-logo.png" },
+    ],
   },
   {
     tabLabel: "Writing",
@@ -76,6 +83,10 @@ export const programs: Program[] = [
       "/images/programs/writing-6.jpg",
       "/images/programs/writing-7.jpg",
       "/images/programs/writing-8.jpg",
+    ],
+    poweredBy: [
+      { name: "Indie Press", logo: "/images/partners/indiepress-logo.png" },
+      { name: "Westland Books", logo: "/images/partners/westland-logo.png" },
     ],
   },
 ];

@@ -102,6 +102,22 @@ export default function Experiences() {
               ))}
             </ul>
 
+            {program.poweredBy && program.poweredBy.length > 0 && (
+              <div className="experiences-powered-by">
+                <span className="experiences-powered-by-label">Powered by</span>
+                <div className="experiences-powered-by-logos">
+                  {program.poweredBy.map((partner, i) => (
+                    <img
+                      key={i}
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="experiences-powered-by-logo"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
             <a href={program.href} className="experiences-cta">
               Request an Invite <ArrowRight size={16} />
             </a>
