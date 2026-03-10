@@ -65,7 +65,7 @@ export default function Navigation() {
         transform: 'translateX(-50%)',
         zIndex: 100,
         transition: isMobile ? 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)' : undefined,
-        ...(isMobile && !navVisible ? { transform: 'translateX(-50%) translateY(calc(100% + 40px))' } : {}),
+        ...(isMobile && !navVisible ? { transform: 'translateX(-50%) translateY(calc(-100% - 40px))' } : {}),
       }}>
         {isMobile ? (
           <div style={{
