@@ -96,7 +96,7 @@ function BentoCard({ stat, isVisible, index, isMobile, gridStyle }: {
         position: 'relative',
         overflow: 'hidden',
         borderRadius: isMobile ? 12 : 16,
-        minHeight: isMobile ? 120 : undefined,
+        minHeight: isMobile ? 160 : undefined,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
