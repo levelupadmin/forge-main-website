@@ -12,17 +12,6 @@ export default function Experiences() {
       padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 80px)',
       position: 'relative',
     }}>
-      {/* Subtle golden accent line at top */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: 80,
-        height: 3,
-        background: 'linear-gradient(90deg, transparent, #FFBC3B, transparent)',
-        borderRadius: 2,
-      }} />
 
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: 64 }}>
         <div className="forge-subheading">Explore</div>
