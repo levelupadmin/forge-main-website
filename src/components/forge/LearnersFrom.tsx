@@ -63,17 +63,16 @@ function MarqueeRow({ items, direction }: { items: typeof row1; direction: 'left
 
 export default function LearnersFrom() {
   const { ref, isVisible } = useScrollAnimation(0.2);
-  const isMobile = useIsMobile();
 
   return (
     <section
       ref={ref}
-      className="bg-white overflow-hidden"
-      style={{ padding: isMobile ? '24px 0 16px' : '32px 0 20px' }}
+      className="overflow-hidden"
+      style={{ padding: '32px 0 20px', backgroundColor: '#FCF7EF' }}
     >
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
         <p className="text-center mb-4" style={{
-          fontSize: isMobile ? 12 : 14,
+          fontSize: 14,
           fontWeight: 600,
           letterSpacing: '0.15em',
           textTransform: 'uppercase',
@@ -83,9 +82,9 @@ export default function LearnersFrom() {
           Our Students Are From
         </p>
 
-        <div className="flex flex-col" style={{ gap: isMobile ? 6 : 12 }}>
-          <MarqueeRow items={row1} direction="left" isMobile={isMobile} />
-          <MarqueeRow items={row2} direction="right" isMobile={isMobile} />
+        <div className="flex flex-col" style={{ gap: 12 }}>
+          <MarqueeRow items={row1} direction="left" />
+          <MarqueeRow items={row2} direction="right" />
         </div>
       </div>
     </section>
