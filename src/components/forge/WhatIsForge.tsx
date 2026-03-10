@@ -21,7 +21,7 @@ const descriptionWords2 = (
 const boldWords = new Set([
   'experiential', 'learning', 'residency', 'travel,', 'hands-on', 'creation,',
   'community.', 'filmmakers,', 'writers,', 'founders,', 'builders,', 'artists,',
-  'creators.', 'doing,', 'peers,', 'made.'
+  'creators', 'doing,', 'collaborating,', 'own.'
 ]);
 
 export default function WhatIsForge() {
