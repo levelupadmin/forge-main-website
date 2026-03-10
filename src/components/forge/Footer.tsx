@@ -74,7 +74,7 @@ export default function Footer() {
               src="/images/forge-logo-lines.png"
               alt="the Forge"
               style={{
-                height: isMobile ? 72 : 56,
+                height: isMobile ? 120 : 100,
                 marginBottom: 20,
                 display: 'block',
                 ...(isMobile ? { margin: '0 auto 20px' } : {}),
