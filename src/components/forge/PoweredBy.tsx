@@ -12,7 +12,7 @@ const logos = [
 export default function PoweredBy() {
   const { ref, isVisible } = useScrollAnimation(0.2);
   const isMobile = useIsMobile();
-  const baseHeight = isMobile ? 47 : 62;
+  const baseHeight = isMobile ? 70 : 93;
 
   return (
     <section
