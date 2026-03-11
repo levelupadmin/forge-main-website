@@ -54,7 +54,7 @@ export default function WhatIsForge() {
   return (
     <section id="about" ref={ref} style={{
       background: 'var(--forge-cream)',
-      padding: 'clamp(48px, 6vw, 80px) 0 clamp(24px, 4vw, 48px)',
+      padding: isMobile ? '40px 0 clamp(24px, 4vw, 48px)' : 'clamp(48px, 6vw, 80px) 0 clamp(24px, 4vw, 48px)',
       position: 'relative',
       overflow: 'hidden',
     }}>

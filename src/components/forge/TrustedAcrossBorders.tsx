@@ -33,7 +33,7 @@ const PRESENCE_MARKERS = [
 
 const LOCATIONS = [
   'India', 'United Kingdom', 'Malaysia', 'Indonesia',
-  'United States of America', 'Sri Lanka', 'Dubai', 'South Africa',
+  'USA', 'Sri Lanka', 'Dubai', 'South Africa',
 ];
 
 function StudentStatCard({ stat, isVisible, index }: { stat: typeof STUDENT_STATS[0]; isVisible: boolean; index: number }) {
@@ -175,7 +175,7 @@ export default function TrustedAcrossBorders() {
   return (
     <section ref={ref} style={{
       backgroundColor: '#FFFFFF',
-      padding: isMobile ? 'clamp(48px, 6vw, 80px) 20px' : 'clamp(48px, 6vw, 80px) 80px',
+      padding: isMobile ? '40px 20px' : 'clamp(48px, 6vw, 80px) 80px',
     }}>
       <style>{`
         @keyframes pulse-dot {
@@ -197,17 +197,16 @@ export default function TrustedAcrossBorders() {
         >Our Students are Everywhere</h2>
         <p className={`forge-fade-up ${isVisible ? 'visible' : ''}`} style={{
           fontSize: 17, opacity: 0.55,
-          maxWidth: 520, margin: '0 auto 48px', lineHeight: 1.6,
+          maxWidth: 520, margin: isMobile ? '0 auto 32px' : '0 auto 48px', lineHeight: 1.6,
           transitionDelay: '200ms',
         }}>
           From India to across the globe, the Forge community spans 13 countries and 128 cities.
         </p>
 
         <div style={{
-          display: 'flex',
-          gap: 16,
-          flexWrap: 'wrap',
-          justifyContent: 'center',
+          display: 'grid',
+          gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(3, 1fr)',
+          gap: 12,
         }}>
           {STUDENT_STATS.map((stat, i) => (
             <StudentStatCard key={i} stat={stat} isVisible={isVisible} index={i} />

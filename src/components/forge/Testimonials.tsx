@@ -12,7 +12,7 @@ export default function Testimonials() {
       background: 'var(--forge-cream)',
       padding: 'clamp(48px, 6vw, 80px) 0',
     }}>
-      <div style={{ textAlign: 'center', marginBottom: 56, padding: '0 24px' }}>
+      <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 24px' }}>
         <div className="forge-subheading">Hear from</div>
         <div className="forge-heading">our Alumni</div>
       </div>
