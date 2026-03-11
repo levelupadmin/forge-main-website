@@ -57,7 +57,9 @@ export default function PoweredBy() {
                 height: isMobile ? 48 : 72,
                 width: 'auto',
                 objectFit: 'contain',
-                filter: 'grayscale(100%) contrast(1.2)',
+                filter: logo.invertFirst
+                  ? 'invert(1) grayscale(100%) contrast(1.5)'
+                  : 'grayscale(100%) contrast(1.2)',
                 mixBlendMode: 'multiply',
               }}
               loading="lazy"
