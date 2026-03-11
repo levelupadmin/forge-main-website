@@ -37,7 +37,7 @@ export default function FloatingCTA() {
           display: 'flex',
           alignItems: 'center',
           gap: 10,
-          background: '#222',
+          background: '#000000',
           color: 'white',
           border: 'none',
           borderRadius: 100,
@@ -54,7 +54,7 @@ export default function FloatingCTA() {
           (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(-2px)';
         }}
         onMouseLeave={e => {
-          (e.currentTarget as HTMLButtonElement).style.background = '#222';
+          (e.currentTarget as HTMLButtonElement).style.background = '#000000';
           (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)';
         }}
       >

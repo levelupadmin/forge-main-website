@@ -99,7 +99,7 @@ export default function Mentors() {
         >
           {mentors.map((mentor, i) => (
             <div key={i} style={{
-              background: '#1a1a1a',
+              background: '#000000',
               borderRadius: 20,
               overflow: 'hidden',
               display: 'flex',
@@ -266,7 +266,7 @@ export default function Mentors() {
             (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)';
           }}
         >
-          <ChevronLeft size={20} color="#222" />
+          <ChevronLeft size={20} color="#000" />
         </button>
 
         <div style={{
@@ -423,7 +423,7 @@ export default function Mentors() {
             (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)';
           }}
         >
-          <ChevronRight size={20} color="#222" />
+          <ChevronRight size={20} color="#000" />
         </button>
       </div>
 

@@ -4,7 +4,7 @@
   --forge-yellow: #FFBC3B;
   --forge-amber: #FFA800;
   --forge-dark-amber: #DD6F15;
-  --forge-black: #222222;
+  --forge-black: #000000;
   --forge-cream: #FFFFFF;
   --forge-white: #FFFFFF;
 }
@@ -589,23 +589,23 @@ body {
 .experiences-toggle-pill {
   padding: 10px 24px;
   border-radius: 100px;
-  border: 2px solid #222;
+  border: 2px solid #000;
   background: transparent;
   font-family: 'Open Sauce One', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #222;
+  color: #000;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 .experiences-toggle-pill:hover {
-  background: #222;
+  background: #000;
   color: #fff;
 }
 .experiences-toggle-pill.active {
   background: #FFBC3B;
   border-color: #FFBC3B;
-  color: #222;
+  color: #000;
 }
 
 .experiences-bento-card {
@@ -776,7 +776,7 @@ body {
   align-items: center;
   gap: 8px;
   background: #FFBC3B;
-  color: #222;
+  color: #000;
   border-radius: 100px;
   padding: 13px 30px;
   font-size: 14px;
@@ -806,12 +806,12 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  color: #222;
+  color: #000;
 }
 .experiences-arrow:hover {
-  background: #222;
+  background: #000;
   color: #fff;
-  border-color: #222;
+  border-color: #000;
 }
 .experiences-arrow-left { left: -56px; }
 .experiences-arrow-right { right: -56px; }

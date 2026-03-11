@@ -159,7 +159,7 @@ function GlobeMap({ isVisible }: { isVisible: boolean }) {
         <div style={{
           position: 'absolute', left: tooltipPos.x, top: tooltipPos.y,
           transform: 'translate(-50%, -100%)',
-          background: '#222', color: '#fff', padding: '5px 12px',
+          background: '#000', color: '#fff', padding: '5px 12px',
           borderRadius: 6, fontSize: 12, fontWeight: 500,
           pointerEvents: 'none', whiteSpace: 'nowrap', zIndex: 10,
         }}>{tooltip}</div>

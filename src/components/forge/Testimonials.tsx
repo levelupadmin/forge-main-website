@@ -102,7 +102,7 @@ function TestimonialCard({ testimonial, onPlay }: { testimonial: typeof import('
         position: 'relative',
         aspectRatio: '9/16',
         cursor: 'pointer',
-        background: '#1a1a1a',
+        background: '#000000',
       }}
     >
       <div style={{

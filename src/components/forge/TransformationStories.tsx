@@ -97,7 +97,7 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
     <div 
       className="forge-premium-hover"
       style={{
-        background: '#111111',
+        background: '#000000',
         borderRadius: 20,
         overflow: 'hidden',
         border: '1px solid rgba(255,255,255,0.06)',
@@ -117,7 +117,7 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
           left: 0,
           right: 0,
           height: 100,
-          background: 'linear-gradient(transparent, #111111)',
+          background: 'linear-gradient(transparent, #000000)',
         }} />
       </div>
 
