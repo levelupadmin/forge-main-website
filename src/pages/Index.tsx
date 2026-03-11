@@ -3,6 +3,7 @@ import Hero from '@/components/forge/Hero';
 import HeroBar from '@/components/forge/HeroBar';
 import SmoothScroll from '@/components/forge/SmoothScroll';
 import FilmGrain from '@/components/forge/FilmGrain';
+import PoweredBy from '@/components/forge/PoweredBy';
 import LearnersFrom from '@/components/forge/LearnersFrom';
 import WhyBuilt from '@/components/forge/WhyBuilt';
 import ImpactNumbers from '@/components/forge/ImpactNumbers';
@@ -29,7 +30,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <HeroBar />
-      <LearnersFrom />
+      <PoweredBy />
       <WhatIsForge />
       <WhyBuilt />
       <LearnDoBecome />
@@ -37,6 +38,7 @@ const Index = () => {
       <Ethos />
       <Mentors />
       <Community />
+      <LearnersFrom />
       <TransformationStories />
       <ImpactNumbers />
       
