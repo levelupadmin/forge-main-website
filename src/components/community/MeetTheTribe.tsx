@@ -64,7 +64,7 @@ export default function MeetTheTribe() {
             className="forge-scroll"
             style={{
               display: 'flex',
-              gap: isMobile ? 14 : 20,
+              gap: 24,
               overflowX: 'auto',
               scrollSnapType: 'x mandatory',
               paddingBottom: 4,
