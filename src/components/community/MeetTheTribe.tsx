@@ -77,8 +77,8 @@ export default function MeetTheTribe() {
                 style={{
                   transitionDelay: `${200 + (rowIdx * 10 + i) * 60}ms`,
                   scrollSnapAlign: 'start',
-                  minWidth: isMobile ? 150 : 180,
-                  maxWidth: isMobile ? 150 : 180,
+                  minWidth: isMobile ? 210 : 260,
+                  maxWidth: isMobile ? 210 : 260,
                   flexShrink: 0,
                 }}
               >
