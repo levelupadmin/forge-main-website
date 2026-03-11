@@ -594,7 +594,7 @@ body {
   font-family: 'Open Sauce One', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #222;
+  color: #000;
   cursor: pointer;
   transition: all 0.25s ease;
 }
