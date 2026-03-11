@@ -83,7 +83,7 @@ export default function Gallery() {
       padding: isMobile ? '48px 0' : '80px 0',
       overflow: 'hidden',
     }}>
-      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: isMobile ? 24 : 40 }}>
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: isMobile ? 16 : 40 }}>
         <div className="forge-subheading">Behind the scenes</div>
         <div className="forge-heading">at the Forge</div>
       </div>

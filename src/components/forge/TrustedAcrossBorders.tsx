@@ -204,10 +204,9 @@ export default function TrustedAcrossBorders() {
         </p>
 
         <div style={{
-          display: 'flex',
-          gap: 16,
-          flexWrap: 'wrap',
-          justifyContent: 'center',
+          display: 'grid',
+          gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(3, 1fr)',
+          gap: 12,
         }}>
           {STUDENT_STATS.map((stat, i) => (
             <StudentStatCard key={i} stat={stat} isVisible={isVisible} index={i} />
