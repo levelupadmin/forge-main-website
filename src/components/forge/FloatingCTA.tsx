@@ -37,7 +37,7 @@ export default function FloatingCTA() {
           display: 'flex',
           alignItems: 'center',
           gap: 10,
-          background: '#222',
+          background: '#000000',
           color: 'white',
           border: 'none',
           borderRadius: 100,
