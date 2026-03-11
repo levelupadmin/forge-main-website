@@ -90,7 +90,7 @@ export default function Navigation() {
             <button
               onClick={() => setMenuOpen(true)}
               style={{
-                background: '#222',
+                background: '#000000',
                 border: 'none',
                 borderRadius: 100,
                 width: 36,
