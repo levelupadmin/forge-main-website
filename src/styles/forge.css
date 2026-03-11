@@ -611,7 +611,7 @@ body {
 .experiences-bento-card {
   display: grid;
   grid-template-columns: 45% 55%;
-  background: #1A1A1A;
+  background: #000000;
   border-radius: 24px;
   overflow: hidden;
   min-height: 480px;
