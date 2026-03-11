@@ -3,10 +3,10 @@ import Footer from '@/components/forge/Footer';
 import SmoothScroll from '@/components/forge/SmoothScroll';
 import FilmGrain from '@/components/forge/FilmGrain';
 import CommunityHero from '@/components/community/CommunityHero';
-import SuccessStories from '@/components/community/SuccessStories';
-import CommunityMembers from '@/components/community/CommunityMembers';
 import CommunityStats from '@/components/community/CommunityStats';
-import CommunityEvents from '@/components/community/CommunityEvents';
+import MeetTheTribe from '@/components/community/MeetTheTribe';
+import CommunityTestimonials from '@/components/community/CommunityTestimonials';
+import BeyondTheProgram from '@/components/community/BeyondTheProgram';
 
 export default function CommunityPage() {
   return (
@@ -15,10 +15,10 @@ export default function CommunityPage() {
       <FilmGrain />
       <Navigation />
       <CommunityHero />
-      <SuccessStories />
       <CommunityStats />
-      <CommunityMembers />
-      <CommunityEvents />
+      <MeetTheTribe />
+      <CommunityTestimonials />
+      <BeyondTheProgram />
       <Footer />
     </div>
   );

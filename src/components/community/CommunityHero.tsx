@@ -13,12 +13,12 @@ export default function CommunityHero() {
       }}
     >
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
-        <p className="forge-subheading forge-subheading--light">The Forge</p>
+        <p className="forge-subheading forge-subheading--light">The Community</p>
         <h1
           className="forge-heading forge-heading--light"
           style={{ maxWidth: 720, margin: '0 auto' }}
         >
-          Our{' '}
+          The people who make{' '}
           <span
             style={{
               textDecoration: 'underline',
@@ -27,8 +27,9 @@ export default function CommunityHero() {
               textDecorationThickness: 3,
             }}
           >
-            Community
-          </span>
+            the Forge
+          </span>{' '}
+          what it is.
         </h1>
         <p
           style={{
@@ -37,9 +38,10 @@ export default function CommunityHero() {
             marginTop: 16,
             maxWidth: 540,
             margin: '16px auto 0',
+            lineHeight: 1.6,
           }}
         >
-          Meet the dreamers, doers, and creators who make the Forge what it is.
+          Every program becomes a story. And the best stories need the right characters.
         </p>
       </div>
     </section>
