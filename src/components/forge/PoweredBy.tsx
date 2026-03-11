@@ -3,7 +3,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const logos = [
   { name: 'Sony', src: '/images/partners/sony-logo.png', invertFirst: true },
-  { name: 'Digitek', src: '/images/partners/digitek-logo.png', invertFirst: true },
+  { name: 'Digitek', src: '/images/partners/digitek-logo.png', invertFirst: true, scale: 1.5 },
   { name: 'Sandcastles', src: '/images/partners/sandcastles-logo.png', invertFirst: true },
   { name: 'Indie Press', src: '/images/partners/indiepress-logo.png', invertFirst: false },
   { name: 'Westland Books', src: '/images/partners/westland-logo.png', invertFirst: false },
