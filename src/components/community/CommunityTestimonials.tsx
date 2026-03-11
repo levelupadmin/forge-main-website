@@ -25,9 +25,7 @@ export default function CommunityTestimonials() {
           className="forge-heading forge-heading--light"
           style={{ fontSize: 'clamp(32px, 5vw, 52px)' }}
         >
-          Strangers became collaborators.
-          <br />
-          Collaborators became friends.
+          From Strangers to Friends for Life in a week
         </div>
       </div>
 
