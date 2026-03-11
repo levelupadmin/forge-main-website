@@ -12,7 +12,7 @@ export default function ClosingStatement() {
       <h2 style={{
         fontWeight: 700,
         fontSize: 'clamp(48px, 7vw, 88px)',
-        color: '#222',
+        color: '#000000',
         letterSpacing: -1,
         lineHeight: 1,
         marginBottom: 48,

@@ -153,7 +153,7 @@ export default function WhatIsForge() {
           <p style={{
             fontWeight: 700,
             fontSize: 'clamp(28px, 5vw, 56px)',
-            color: '#222',
+            color: '#000000',
             lineHeight: 1.1,
             maxWidth: 800,
             textAlign: 'center',

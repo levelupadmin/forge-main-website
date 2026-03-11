@@ -153,7 +153,7 @@ export default function Navigation() {
                   onMouseEnter={() => setHoveredIndex(leftLinks.length + i)}
                   className="forge-nav-link"
                   style={{
-                    color: '#222',
+                    color: '#000000',
                     fontSize: 15,
                     fontWeight: 400,
                     whiteSpace: 'nowrap',

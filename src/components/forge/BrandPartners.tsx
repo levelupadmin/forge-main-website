@@ -192,7 +192,7 @@ export default function BrandPartners() {
               <p style={{
                 fontSize: 15,
                 lineHeight: 1.7,
-                color: '#222',
+                color: '#000000',
                 opacity: 0.7,
                 margin: 0,
               }}>

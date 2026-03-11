@@ -110,7 +110,7 @@ export default function NotSureCTA() {
               alignItems: 'center',
               gap: 8,
               background: '#FFBC3B',
-              color: '#222',
+              color: '#000000',
               border: 'none',
               borderRadius: 100,
               padding: '16px 36px',
