@@ -2,6 +2,7 @@ import Navigation from '@/components/forge/Navigation';
 import Footer from '@/components/forge/Footer';
 import SmoothScroll from '@/components/forge/SmoothScroll';
 import FilmGrain from '@/components/forge/FilmGrain';
+import TrustedAcrossBorders from '@/components/forge/TrustedAcrossBorders';
 import CommunityHero from '@/components/community/CommunityHero';
 import CommunityStats from '@/components/community/CommunityStats';
 import MeetTheTribe from '@/components/community/MeetTheTribe';
@@ -19,6 +20,7 @@ export default function CommunityPage() {
       <MeetTheTribe />
       <CommunityTestimonials />
       <BeyondTheProgram />
+      <TrustedAcrossBorders />
       <Footer />
     </div>
   );
