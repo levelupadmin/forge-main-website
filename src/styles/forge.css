@@ -599,7 +599,7 @@ body {
   transition: all 0.25s ease;
 }
 .experiences-toggle-pill:hover {
-  background: #222;
+  background: #000;
   color: #fff;
 }
 .experiences-toggle-pill.active {
