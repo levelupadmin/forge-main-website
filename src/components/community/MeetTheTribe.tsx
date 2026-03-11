@@ -120,7 +120,7 @@ export default function MeetTheTribe() {
                     <div
                       style={{
                         fontWeight: 700,
-                        fontSize: 14,
+                        fontSize: 16,
                         color: 'var(--forge-white)',
                         lineHeight: 1.3,
                       }}
