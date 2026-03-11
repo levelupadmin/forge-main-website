@@ -2,6 +2,7 @@ export interface TribeMember {
   name: string;
   photo: string;
   descriptor: string;
+  instagram?: string;
 }
 
 export interface Testimonial {
