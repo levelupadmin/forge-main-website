@@ -19,7 +19,7 @@ export default function PoweredBy() {
       ref={ref}
       style={{
         backgroundColor: '#FFFFFF',
-        padding: isMobile ? '32px 0' : '48px 0',
+        padding: isMobile ? '16px 0' : '24px 0',
       }}
     >
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
