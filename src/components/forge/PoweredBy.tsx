@@ -2,7 +2,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const logos = [
-  { name: 'Sony', src: '/images/partners/sony-logo.png', invertFirst: true },
+  { name: 'Sony', src: '/images/partners/sony-logo.png', invertFirst: true, scale: 1.5 },
   { name: 'Digitek', src: '/images/partners/digitek-logo.png', invertFirst: true },
   { name: 'Sandcastles', src: '/images/partners/sandcastles-logo.png', invertFirst: true },
   { name: 'Indie Press', src: '/images/partners/indiepress-logo.png', invertFirst: false },
@@ -54,7 +54,7 @@ export default function PoweredBy() {
               src={logo.src}
               alt={logo.name}
               style={{
-                height: isMobile ? 48 : 72,
+                height: (isMobile ? 48 : 72) * ((logo as any).scale || 1),
                 width: 'auto',
                 objectFit: 'contain',
                 filter: logo.invertFirst
