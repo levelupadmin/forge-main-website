@@ -175,7 +175,7 @@ export default function TrustedAcrossBorders() {
   return (
     <section ref={ref} style={{
       backgroundColor: '#FFFFFF',
-      padding: isMobile ? 'clamp(48px, 6vw, 80px) 20px' : 'clamp(48px, 6vw, 80px) 80px',
+      padding: isMobile ? '40px 20px' : 'clamp(48px, 6vw, 80px) 80px',
     }}>
       <style>{`
         @keyframes pulse-dot {
