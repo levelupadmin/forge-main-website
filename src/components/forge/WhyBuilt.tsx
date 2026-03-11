@@ -50,7 +50,7 @@ function useReveal(threshold = 0.15) {
 
 function BeatCard({ beat, isMobile }: { beat: ManifestoBeat; isMobile: boolean }) {
   const { ref, visible } = useReveal(0.15);
-  const textAlign = isMobile ? 'center' : beat.align;
+  const textAlign = isMobile ? 'left' : beat.align;
 
   return (
     <div
@@ -102,7 +102,7 @@ function BeatCard({ beat, isMobile }: { beat: ManifestoBeat; isMobile: boolean }
       >
         <p
           style={{
-            fontSize: isMobile ? 'clamp(16px, 4.5vw, 20px)' : 'clamp(18px, 2.2vw, 24px)',
+            fontSize: isMobile ? 'clamp(14px, 3.8vw, 17px)' : 'clamp(18px, 2.2vw, 24px)',
             lineHeight: 1.7,
             fontWeight: 400,
             color: 'rgba(255,255,255,0.9)',
@@ -162,7 +162,7 @@ export default function WhyBuilt() {
             transition: 'opacity 0.8s ease, transform 0.8s ease',
           }}
         >
-          <div className="forge-subheading forge-subheading--light">Why It Was Built</div>
+          <div className="forge-subheading forge-subheading--light">Our Beginning</div>
           <h2
             style={{
               fontWeight: 700,
@@ -172,7 +172,7 @@ export default function WhyBuilt() {
               marginTop: 12,
             }}
           >
-            Why It Was Built
+            Why it was Built
           </h2>
         </div>
 
