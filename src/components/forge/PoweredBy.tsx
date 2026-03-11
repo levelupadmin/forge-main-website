@@ -31,7 +31,7 @@ export default function PoweredBy() {
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
             color: '#000000',
-            marginBottom: isMobile ? 12 : 20,
+            marginBottom: isMobile ? 8 : 12,
             fontFamily: "'Open Sauce One', sans-serif",
           }}
         >
