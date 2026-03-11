@@ -102,7 +102,7 @@ function BeatCard({ beat, isMobile }: { beat: ManifestoBeat; isMobile: boolean }
       >
         <p
           style={{
-            fontSize: isMobile ? 'clamp(16px, 4.5vw, 20px)' : 'clamp(18px, 2.2vw, 24px)',
+            fontSize: isMobile ? 'clamp(14px, 3.8vw, 17px)' : 'clamp(18px, 2.2vw, 24px)',
             lineHeight: 1.7,
             fontWeight: 400,
             color: 'rgba(255,255,255,0.9)',
