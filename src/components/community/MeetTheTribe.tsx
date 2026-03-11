@@ -27,6 +27,9 @@ export default function MeetTheTribe() {
         style={{ textAlign: 'center', padding: '0 24px', marginBottom: 12 }}
       >
         <p className="forge-subheading">Our Alma Mater</p>
+        <div className="forge-heading" style={{ fontSize: 'clamp(40px, 6vw, 64px)' }}>
+          Meet your friends for life
+        </div>
       </div>
       <p
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
