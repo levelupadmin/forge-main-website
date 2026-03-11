@@ -605,7 +605,7 @@ body {
 .experiences-toggle-pill.active {
   background: #FFBC3B;
   border-color: #FFBC3B;
-  color: #222;
+  color: #000;
 }
 
 .experiences-bento-card {
