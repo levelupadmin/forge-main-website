@@ -41,9 +41,7 @@ const Index = () => {
       <LearnersFrom />
       <TransformationStories />
       <ImpactNumbers />
-      
-      <TrustedAcrossBorders />
-      <Gallery />
+      <FAQ />
       <Testimonials />
       <NotSureCTA />
       <FAQ />
