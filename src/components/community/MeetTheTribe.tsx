@@ -129,7 +129,7 @@ export default function MeetTheTribe() {
                     </div>
                     <div
                       style={{
-                        fontSize: 11,
+                        fontSize: 13,
                         color: 'rgba(255,255,255,0.5)',
                         marginBottom: 8,
                       }}
