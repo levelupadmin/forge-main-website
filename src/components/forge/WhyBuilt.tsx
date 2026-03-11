@@ -50,7 +50,7 @@ function useReveal(threshold = 0.15) {
 
 function BeatCard({ beat, isMobile }: { beat: ManifestoBeat; isMobile: boolean }) {
   const { ref, visible } = useReveal(0.15);
-  const textAlign = 'left';
+  const textAlign = isMobile ? 'left' : beat.align;
 
   return (
     <div
