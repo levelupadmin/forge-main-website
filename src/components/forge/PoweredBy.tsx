@@ -40,7 +40,7 @@ export default function PoweredBy() {
         <div
           style={{
             display: 'flex',
-            flexWrap: 'wrap',
+            flexWrap: 'nowrap',
             justifyContent: 'center',
             alignItems: 'center',
             gap: isMobile ? 28 : 48,
