@@ -54,7 +54,7 @@ export default function PoweredBy() {
               src={logo.src}
               alt={logo.name}
               style={{
-                height: (isMobile ? 48 : 72) * ((logo as any).scale || 1),
+                height: isMobile ? 36 : 48,
                 width: 'auto',
                 objectFit: 'contain',
                 filter: logo.invertFirst
