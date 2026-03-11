@@ -42,8 +42,8 @@ export default function BrandPartners() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   style={{
-                    background: isActive ? '#1a1a1a' : '#fff',
-                    color: isActive ? '#fff' : '#1a1a1a',
+                    background: isActive ? '#000000' : '#fff',
+                    color: isActive ? '#fff' : '#000000',
                     border: '1.5px solid rgba(34,34,34,0.12)',
                     borderRadius: 100,
                     padding: '10px 18px',
