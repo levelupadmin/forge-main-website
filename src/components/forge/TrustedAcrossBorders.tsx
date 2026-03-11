@@ -33,7 +33,7 @@ const PRESENCE_MARKERS = [
 
 const LOCATIONS = [
   'India', 'United Kingdom', 'Malaysia', 'Indonesia',
-  'United States of America', 'Sri Lanka', 'Dubai', 'South Africa',
+  'USA', 'Sri Lanka', 'Dubai', 'South Africa',
 ];
 
 function StudentStatCard({ stat, isVisible, index }: { stat: typeof STUDENT_STATS[0]; isVisible: boolean; index: number }) {
