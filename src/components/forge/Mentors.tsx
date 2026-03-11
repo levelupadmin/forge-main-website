@@ -266,7 +266,7 @@ export default function Mentors() {
             (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)';
           }}
         >
-          <ChevronLeft size={20} color="#222" />
+          <ChevronLeft size={20} color="#000" />
         </button>
 
         <div style={{
