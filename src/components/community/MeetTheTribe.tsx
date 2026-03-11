@@ -64,7 +64,7 @@ export default function MeetTheTribe() {
             className="forge-scroll"
             style={{
               display: 'flex',
-              gap: isMobile ? 14 : 20,
+              gap: 24,
               overflowX: 'auto',
               scrollSnapType: 'x mandatory',
               paddingBottom: 4,
@@ -77,8 +77,8 @@ export default function MeetTheTribe() {
                 style={{
                   transitionDelay: `${200 + (rowIdx * 10 + i) * 60}ms`,
                   scrollSnapAlign: 'start',
-                  minWidth: isMobile ? 150 : 180,
-                  maxWidth: isMobile ? 150 : 180,
+                  minWidth: isMobile ? 210 : 260,
+                  maxWidth: isMobile ? 210 : 260,
                   flexShrink: 0,
                 }}
               >
@@ -120,7 +120,7 @@ export default function MeetTheTribe() {
                     <div
                       style={{
                         fontWeight: 700,
-                        fontSize: 14,
+                        fontSize: 16,
                         color: 'var(--forge-white)',
                         lineHeight: 1.3,
                       }}
@@ -129,7 +129,7 @@ export default function MeetTheTribe() {
                     </div>
                     <div
                       style={{
-                        fontSize: 11,
+                        fontSize: 13,
                         color: 'rgba(255,255,255,0.5)',
                         marginBottom: 8,
                       }}
