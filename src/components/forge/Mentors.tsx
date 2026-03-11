@@ -99,7 +99,7 @@ export default function Mentors() {
         >
           {mentors.map((mentor, i) => (
             <div key={i} style={{
-              background: '#1a1a1a',
+              background: '#000000',
               borderRadius: 20,
               overflow: 'hidden',
               display: 'flex',

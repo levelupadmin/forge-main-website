@@ -117,7 +117,7 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
           left: 0,
           right: 0,
           height: 100,
-          background: 'linear-gradient(transparent, #111111)',
+          background: 'linear-gradient(transparent, #000000)',
         }} />
       </div>
 

@@ -91,7 +91,7 @@ export default function LearnDoBecome() {
             style={{
               flex: '1 1 280px',
               minWidth: 260,
-              background: '#1a1a1a',
+              background: '#000000',
               borderRadius: isMobile ? 16 : 20,
               padding: isMobile ? '20px' : 'clamp(28px, 3vw, 40px)',
               position: 'relative',
