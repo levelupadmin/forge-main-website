@@ -162,7 +162,7 @@ export default function WhyBuilt() {
             transition: 'opacity 0.8s ease, transform 0.8s ease',
           }}
         >
-          <div className="forge-subheading forge-subheading--light">Why It Was Built</div>
+          <div className="forge-subheading forge-subheading--light">Our Beginning</div>
           <h2
             style={{
               fontWeight: 700,
@@ -172,7 +172,7 @@ export default function WhyBuilt() {
               marginTop: 12,
             }}
           >
-            Why It Was Built
+            Why it was Built
           </h2>
         </div>
 
