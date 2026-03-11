@@ -24,7 +24,7 @@ import Footer from '@/components/forge/Footer';
 
 const Index = () => {
   return (
-    <div>
+    <div style={{ overflowX: 'hidden' }}>
       <SmoothScroll />
       <FilmGrain />
       <Navigation />
