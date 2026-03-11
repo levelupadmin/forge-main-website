@@ -2,6 +2,7 @@ export interface TribeMember {
   name: string;
   photo: string;
   descriptor: string;
+  instagram?: string;
 }
 
 export interface Testimonial {
@@ -24,18 +25,26 @@ export interface CommunityStat {
 }
 
 export const tribeMembers: TribeMember[] = [
-  { name: 'Chetan Choudhary', photo: '/images/alumni/chetan.png', descriptor: 'Independent Filmmaker' },
-  { name: 'Devansh', photo: '/images/alumni/devansh.jpg', descriptor: 'Product Manager & Creator' },
-  { name: 'Kiruba Shankar', photo: '/images/alumni/kiruba.jpg', descriptor: 'Content Creator' },
-  { name: 'Vishal Paul', photo: '/images/alumni/vishal.jpg', descriptor: 'Writer & Author' },
-  { name: 'Karmal', photo: '/images/alumni/karmal.png', descriptor: 'Freelance Writer' },
-  { name: 'Taj Mola', photo: '/images/people/person-1.png', descriptor: 'Filmmaker & Storyteller' },
-  { name: 'Shoaib', photo: '/images/people/person-2.png', descriptor: 'Science on Beats' },
-  { name: 'Anurag', photo: '/images/people/person-3.png', descriptor: 'Independent Filmmaker' },
-  { name: 'Aanchal Chaturvedi', photo: '/images/people/person-4.png', descriptor: 'Content Creator' },
-  { name: 'Ashwin Venkatesh', photo: '/images/people/person-5.png', descriptor: 'Account Manager' },
-  { name: 'Freddy George', photo: '/images/people/person-6.png', descriptor: 'Podcaster' },
-  { name: 'Ananya Ramprasad', photo: '/images/people/person-7.png', descriptor: 'Actor & Writer' },
+  { name: 'Chetan Choudhary', photo: '/images/alumni/chetan.png', descriptor: 'Independent Filmmaker', instagram: 'https://instagram.com/chetan' },
+  { name: 'Devansh', photo: '/images/alumni/devansh.jpg', descriptor: 'Product Manager & Creator', instagram: 'https://instagram.com/devansh' },
+  { name: 'Kiruba Shankar', photo: '/images/alumni/kiruba.jpg', descriptor: 'Content Creator', instagram: 'https://instagram.com/kiruba' },
+  { name: 'Vishal Paul', photo: '/images/alumni/vishal.jpg', descriptor: 'Writer & Author', instagram: 'https://instagram.com/vishal' },
+  { name: 'Karmal', photo: '/images/alumni/karmal.png', descriptor: 'Freelance Writer', instagram: 'https://instagram.com/karmal' },
+  { name: 'Taj Mola', photo: '/images/people/person-1.png', descriptor: 'Filmmaker & Storyteller', instagram: 'https://instagram.com/tajmola' },
+  { name: 'Shoaib', photo: '/images/people/person-2.png', descriptor: 'Science on Beats', instagram: 'https://instagram.com/shoaib' },
+  { name: 'Anurag', photo: '/images/people/person-3.png', descriptor: 'Independent Filmmaker', instagram: 'https://instagram.com/anurag' },
+  { name: 'Aanchal Chaturvedi', photo: '/images/people/person-4.png', descriptor: 'Content Creator', instagram: 'https://instagram.com/aanchal' },
+  { name: 'Ashwin Venkatesh', photo: '/images/people/person-5.png', descriptor: 'Account Manager', instagram: 'https://instagram.com/ashwin' },
+  { name: 'Freddy George', photo: '/images/people/person-6.png', descriptor: 'Podcaster', instagram: 'https://instagram.com/freddy' },
+  { name: 'Ananya Ramprasad', photo: '/images/people/person-7.png', descriptor: 'Actor & Writer', instagram: 'https://instagram.com/ananya' },
+  { name: 'Priya Sharma', photo: '/images/people/person-8.png', descriptor: 'Documentary Filmmaker', instagram: 'https://instagram.com/priya' },
+  { name: 'Rohit Menon', photo: '/images/people/person-9.png', descriptor: 'Screenwriter', instagram: 'https://instagram.com/rohit' },
+  { name: 'Nisha Kapoor', photo: '/images/people/person-1.png', descriptor: 'Brand Strategist', instagram: 'https://instagram.com/nisha' },
+  { name: 'Arjun Das', photo: '/images/people/person-2.png', descriptor: 'Photographer', instagram: 'https://instagram.com/arjun' },
+  { name: 'Meera Iyer', photo: '/images/people/person-3.png', descriptor: 'Creative Director', instagram: 'https://instagram.com/meera' },
+  { name: 'Siddharth Rao', photo: '/images/people/person-4.png', descriptor: 'Founder & CEO', instagram: 'https://instagram.com/siddharth' },
+  { name: 'Kavya Nair', photo: '/images/people/person-5.png', descriptor: 'Poet & Author', instagram: 'https://instagram.com/kavya' },
+  { name: 'Vikram Joshi', photo: '/images/people/person-6.png', descriptor: 'Music Producer', instagram: 'https://instagram.com/vikram' },
 ];
 
 export const testimonials: Testimonial[] = [

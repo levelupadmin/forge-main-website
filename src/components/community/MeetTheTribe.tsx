@@ -1,10 +1,18 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useDragScroll } from '@/hooks/useDragScroll';
 import { tribeMembers } from '@/data/communityData';
+import { Instagram } from 'lucide-react';
 
 export default function MeetTheTribe() {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const isMobile = useIsMobile();
+  const dragRef = useDragScroll();
+
+  // Split into 2 rows
+  const midpoint = Math.ceil(tribeMembers.length / 2);
+  const row1 = tribeMembers.slice(0, midpoint);
+  const row2 = tribeMembers.slice(midpoint);
 
   return (
     <section
@@ -18,16 +26,13 @@ export default function MeetTheTribe() {
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
         style={{ textAlign: 'center', padding: '0 24px', marginBottom: 12 }}
       >
-        <p className="forge-subheading">Meet Your Friends for Life</p>
-        <div className="forge-heading" style={{ fontSize: 'clamp(32px, 5vw, 52px)' }}>
-          Interesting people, interesting conversations
-        </div>
+        <p className="forge-subheading">Our Alma Mater</p>
       </div>
       <p
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
         style={{
           textAlign: 'center',
-          maxWidth: 640,
+          maxWidth: 700,
           margin: '0 auto 48px',
           padding: '0 24px',
           fontSize: 15,
@@ -36,48 +41,119 @@ export default function MeetTheTribe() {
           transitionDelay: '100ms',
         }}
       >
-        Our members are founders, filmmakers, writers, and creators. The kind of people who make a 6-day residency feel like a lifetime.
+        Our alumni are India's Top Creatives, Founders, Filmmakers, Storytellers and Creators who make you feel like you never want to leave the Forge.
       </p>
 
       <div
+        ref={dragRef}
+        className="forge-scroll"
         style={{
-          display: 'grid',
-          gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
-          gap: isMobile ? 20 : 28,
-          maxWidth: 1000,
-          margin: '0 auto',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 20,
           padding: '0 clamp(16px, 3vw, 48px)',
+          overflow: 'hidden',
         }}
       >
-        {tribeMembers.map((member, i) => (
+        {[row1, row2].map((row, rowIdx) => (
           <div
-            key={member.name}
-            className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+            key={rowIdx}
+            className="forge-scroll"
             style={{
-              textAlign: 'center',
-              transitionDelay: `${200 + i * 80}ms`,
+              display: 'flex',
+              gap: isMobile ? 14 : 20,
+              overflowX: 'auto',
+              scrollSnapType: 'x mandatory',
+              paddingBottom: 4,
             }}
           >
-            <div
-              style={{
-                width: '100%',
-                aspectRatio: '1',
-                borderRadius: '50%',
-                overflow: 'hidden',
-                marginBottom: 14,
-                border: '3px solid white',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-              }}
-            >
-              <img
-                src={member.photo}
-                alt={member.name}
-                className="forge-mentor-photo"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </div>
-            <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 2 }}>{member.name}</div>
-            <div style={{ fontSize: 12, opacity: 0.5 }}>{member.descriptor}</div>
+            {row.map((member, i) => (
+              <div
+                key={member.name}
+                className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+                style={{
+                  transitionDelay: `${200 + (rowIdx * 10 + i) * 60}ms`,
+                  scrollSnapAlign: 'start',
+                  minWidth: isMobile ? 150 : 180,
+                  maxWidth: isMobile ? 150 : 180,
+                  flexShrink: 0,
+                }}
+              >
+                <div
+                  style={{
+                    borderRadius: 16,
+                    overflow: 'hidden',
+                    background: 'var(--forge-black)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '100%',
+                      aspectRatio: '3/4',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block',
+                      }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      padding: '14px 14px 16px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 2,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontWeight: 700,
+                        fontSize: 14,
+                        color: 'var(--forge-white)',
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {member.name}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 11,
+                        color: 'rgba(255,255,255,0.5)',
+                        marginBottom: 8,
+                      }}
+                    >
+                      {member.descriptor}
+                    </div>
+                    {member.instagram && (
+                      <a
+                        href={member.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          color: 'rgba(255,255,255,0.4)',
+                          transition: 'color 0.2s',
+                          display: 'inline-flex',
+                          width: 'fit-content',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--forge-yellow)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+                      >
+                        <Instagram size={16} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         ))}
       </div>
