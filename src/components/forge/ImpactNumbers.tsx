@@ -4,11 +4,11 @@ import { useCountUp } from '@/hooks/useCountUp';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const stats = [
-  { number: 600, suffix: '+', label: 'Alumni', context: 'from 12+ countries', image: '/images/gallery/gallery-1.png' },
-  { number: 250, suffix: '+', label: 'Shortfilms', context: 'produced across editions', image: '/images/gallery/gallery-2.png' },
-  { number: 85, suffix: '+', label: 'Creators Built', context: 'and counting', image: '/images/gallery/gallery-3.png' },
-  { number: 60, suffix: '+', label: 'Scripts', context: 'written & workshopped', image: '/images/gallery/gallery-4.png' },
-  { number: 200, suffix: '+', label: 'Collaborations Enabled', context: 'across disciplines', image: '/images/gallery/gallery-5.png' },
+  { number: 600, suffix: '+', label: 'Alumni', context: 'from 12+ countries', image: '/images/programs/creators-hero.jpg' },
+  { number: 250, suffix: '+', label: 'Shortfilms', context: 'produced across editions', image: '/images/programs/filmmaking-5.jpg' },
+  { number: 85, suffix: '+', label: 'Creators Built', context: 'and counting', image: '/images/programs/creators-3.jpg' },
+  { number: 60, suffix: '+', label: 'Scripts', context: 'written & workshopped', image: '/images/programs/writing-hero.png' },
+  { number: 200, suffix: '+', label: 'Collaborations Enabled', context: 'across disciplines', image: '/images/programs/creators-1.jpg' },
 ];
 
 export default function ImpactNumbers() {
