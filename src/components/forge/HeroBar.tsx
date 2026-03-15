@@ -37,7 +37,7 @@ export default function HeroBar() {
           width: 4,
           height: 4,
           borderRadius: '50%',
-          background: '#1a1a1a',
+          background: '#0D0D0D',
           opacity: 0.4,
           display: 'inline-block',
         }} />
