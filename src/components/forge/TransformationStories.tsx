@@ -109,7 +109,7 @@ function TransformationCard({ transformation }: { transformation: typeof transfo
         <img
           src={transformation.photo}
           alt={transformation.name}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: transformation.name === 'Kiruba Shankar' ? 'center 20%' : 'center center' }}
         />
         <div style={{
           position: 'absolute',

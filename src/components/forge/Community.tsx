@@ -35,7 +35,7 @@ export default function Community() {
           </span>.
         </div>
         <p style={{ fontSize: 17, opacity: 0.6, marginTop: 16 }}>
-          Your network is your networth.
+          Make friends for life with like minded dreamers, builders and creators like you.
         </p>
       </div>
 

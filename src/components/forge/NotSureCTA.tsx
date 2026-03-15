@@ -164,7 +164,7 @@ export default function NotSureCTA() {
         <div
           style={{
             textAlign: 'center',
-            marginTop: isMobile ? 48 : 64,
+            marginTop: isMobile ? 24 : 32,
             opacity: ctaReveal.visible ? 1 : 0,
             transition: 'opacity 1.2s ease 0.6s',
           }}
