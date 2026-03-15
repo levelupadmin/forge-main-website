@@ -1,3 +1,4 @@
+import IntroAnimation from '@/components/forge/IntroAnimation';
 import Navigation from '@/components/forge/Navigation';
 import Hero from '@/components/forge/Hero';
 import HeroBar from '@/components/forge/HeroBar';
