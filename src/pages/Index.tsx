@@ -1,3 +1,4 @@
+import IntroAnimation from '@/components/forge/IntroAnimation';
 import Navigation from '@/components/forge/Navigation';
 import Hero from '@/components/forge/Hero';
 import HeroBar from '@/components/forge/HeroBar';
@@ -25,6 +26,7 @@ import Footer from '@/components/forge/Footer';
 const Index = () => {
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <IntroAnimation />
       <SmoothScroll />
       <FilmGrain />
       <Navigation />
