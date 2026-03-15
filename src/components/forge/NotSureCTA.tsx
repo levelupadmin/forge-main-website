@@ -43,7 +43,7 @@ export default function NotSureCTA() {
         background: '#000000',
         position: 'relative',
         overflow: 'hidden',
-        padding: isMobile ? '80px 24px' : '140px 80px',
+        padding: isMobile ? '48px 24px' : '64px 80px',
       }}
     >
       {/* Ambient glow */}
