@@ -35,7 +35,7 @@ export default function NotSureCTA() {
   const reveals = narrativeLines.map(() => useReveal(0.5));
   const ctaReveal = useReveal(0.3);
 
-  const lineSpacing = isMobile ? 64 : 120;
+  const lineSpacing = isMobile ? 16 : 24;
 
   return (
     <section
