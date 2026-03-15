@@ -19,9 +19,9 @@ export default function HeroBar() {
         padding: '0 16px',
       }}>
         <span style={{
-          fontSize: 'clamp(12px, 1.8vw, 15px)',
-          fontWeight: 500,
-          color: '#1a1a1a',
+          fontSize: 15,
+          fontWeight: 600,
+          color: '#0D0D0D',
         }}>
           From the House of
         </span>
