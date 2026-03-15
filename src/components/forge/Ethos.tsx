@@ -17,7 +17,7 @@ const circleConfigs = [
 ];
 
 export default function Ethos() {
-  const { ref, isVisible } = useScrollAnimation(0.2);
+  const { ref, isVisible } = useScrollAnimation(0.4);
   const [stage, setStage] = useState(0);
   const isMobile = useIsMobile();
 

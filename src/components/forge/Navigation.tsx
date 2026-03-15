@@ -12,7 +12,7 @@ const leftLinks: NavLink[] = [
 
 const rightLinks: NavLink[] = [
   { label: 'Community', href: '/community', isRoute: true },
-  { label: 'Careers', href: '#careers' },
+  { label: 'Careers', href: '/careers', isRoute: true },
 ];
 
 const allDesktopLinks = [...leftLinks, ...rightLinks];
