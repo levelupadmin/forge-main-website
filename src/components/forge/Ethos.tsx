@@ -4,8 +4,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const narrativeSteps = [
   'It starts with a dream.',
-  'You learn the craft. You study the masters.',
-  'Then you step into the world, camera in hand, story in heart.',
+  'You seek knowledge beyond classrooms and textbooks.',
+  'Then you pack your bags and step into the world.',
   'You find your people. The ones who get it.',
   'And at the intersection of all three...',
 ];
