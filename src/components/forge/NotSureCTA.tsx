@@ -35,7 +35,7 @@ export default function NotSureCTA() {
   const reveals = narrativeLines.map(() => useReveal(0.5));
   const ctaReveal = useReveal(0.3);
 
-  const lineSpacing = isMobile ? 64 : 120;
+  const lineSpacing = isMobile ? 16 : 24;
 
   return (
     <section
@@ -43,7 +43,7 @@ export default function NotSureCTA() {
         background: '#000000',
         position: 'relative',
         overflow: 'hidden',
-        padding: isMobile ? '80px 24px' : '140px 80px',
+        padding: isMobile ? '48px 24px' : '64px 80px',
       }}
     >
       {/* Ambient glow */}
@@ -64,7 +64,7 @@ export default function NotSureCTA() {
             ref={reveals[i].ref}
             style={{
               textAlign: 'center',
-              marginBottom: i < narrativeLines.length - 1 ? lineSpacing : (isMobile ? 56 : 80),
+              marginBottom: i < narrativeLines.length - 1 ? lineSpacing : (isMobile ? 32 : 40),
               opacity: reveals[i].visible ? 1 : 0,
               transform: `translateY(${reveals[i].visible ? 0 : 40}px)`,
               transition: 'opacity 1s ease, transform 1s ease',
@@ -164,7 +164,7 @@ export default function NotSureCTA() {
         <div
           style={{
             textAlign: 'center',
-            marginTop: isMobile ? 48 : 64,
+            marginTop: isMobile ? 24 : 32,
             opacity: ctaReveal.visible ? 1 : 0,
             transition: 'opacity 1.2s ease 0.6s',
           }}

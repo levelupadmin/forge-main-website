@@ -80,7 +80,7 @@ export default function Gallery() {
   return (
     <section ref={ref} style={{
       background: 'var(--forge-cream)',
-      padding: isMobile ? '48px 0' : '80px 0',
+      padding: isMobile ? '48px 0' : 'clamp(48px, 6vw, 72px) 0',
       overflow: 'hidden',
     }}>
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: isMobile ? 16 : 40 }}>

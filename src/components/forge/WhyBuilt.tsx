@@ -145,7 +145,7 @@ export default function WhyBuilt() {
         style={{
           position: 'relative',
           zIndex: 1,
-          padding: isMobile ? '64px 16px' : 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
+          padding: isMobile ? '48px 16px' : 'clamp(48px, 6vw, 72px) clamp(24px, 5vw, 80px)',
           display: 'flex',
           flexDirection: 'column',
           gap: isMobile ? 24 : 32,

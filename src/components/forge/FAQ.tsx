@@ -65,7 +65,7 @@ export default function FAQ() {
   return (
     <section
       style={{
-        padding: isMobile ? '64px 20px' : '100px 80px',
+        padding: isMobile ? '48px 20px' : 'clamp(48px, 6vw, 72px) 80px',
         maxWidth: 800,
         margin: '0 auto',
       }}
