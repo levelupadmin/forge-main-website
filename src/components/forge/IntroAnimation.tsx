@@ -35,7 +35,7 @@ export default function IntroAnimation() {
       style={{
         position: 'fixed',
         inset: 0,
-        zIndex: 100,
+        zIndex: 150,
         backgroundColor: '#0D0D0D',
         display: 'flex',
         alignItems: 'center',
