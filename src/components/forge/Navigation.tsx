@@ -129,8 +129,9 @@ export default function Navigation() {
                   className="forge-nav-link"
                   style={{
                     color: '#000000',
+                    fontFamily: "'Open Sauce One', sans-serif",
                     fontSize: 15,
-                    fontWeight: 400,
+                    fontWeight: 500,
                     opacity: hoveredIndex === null || hoveredIndex === i ? 1 : 0.4,
                     transition: 'opacity 0.2s ease, color 0.3s ease',
                   }}
@@ -154,8 +155,9 @@ export default function Navigation() {
                   className="forge-nav-link"
                   style={{
                     color: '#000000',
+                    fontFamily: "'Open Sauce One', sans-serif",
                     fontSize: 15,
-                    fontWeight: 400,
+                    fontWeight: 500,
                     whiteSpace: 'nowrap',
                     opacity: hoveredIndex === null || hoveredIndex === leftLinks.length + i ? 1 : 0.4,
                     transition: 'opacity 0.2s ease, color 0.3s ease',
@@ -222,6 +224,7 @@ export default function Navigation() {
               onClick={() => handleNav(link)}
               style={{
                 cursor: 'pointer',
+                fontFamily: "'Open Sauce One', sans-serif",
                 color: 'white',
                 fontSize: 28,
                 fontWeight: 700,
