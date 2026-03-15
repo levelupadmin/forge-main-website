@@ -26,9 +26,8 @@ function useReveal(threshold = 0.5) {
 }
 
 const narrativeLines = [
-  { text: "You've seen the work.", highlight: false },
-  { text: "You've met the mentors.", highlight: false },
-  { text: "Now it's your turn.", highlight: true },
+  { text: "Not sure which experience is right for you?", highlight: false },
+  { text: "Let us help you get started.", highlight: true },
 ];
 
 export default function NotSureCTA() {
