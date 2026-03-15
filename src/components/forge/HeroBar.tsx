@@ -29,7 +29,7 @@ export default function HeroBar() {
           src="/images/levelup-learning-logo.png"
           alt="LevelUp Learning"
           style={{
-            height: 'clamp(18px, 2.5vw, 26px)',
+            height: 22,
             objectFit: 'contain',
           }}
         />
