@@ -64,7 +64,7 @@ export default function NotSureCTA() {
             ref={reveals[i].ref}
             style={{
               textAlign: 'center',
-              marginBottom: i < narrativeLines.length - 1 ? lineSpacing : (isMobile ? 56 : 80),
+              marginBottom: i < narrativeLines.length - 1 ? lineSpacing : (isMobile ? 32 : 40),
               opacity: reveals[i].visible ? 1 : 0,
               transform: `translateY(${reveals[i].visible ? 0 : 40}px)`,
               transition: 'opacity 1s ease, transform 1s ease',
