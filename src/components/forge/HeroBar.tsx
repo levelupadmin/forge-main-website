@@ -16,7 +16,7 @@ export default function HeroBar() {
         justifyContent: 'center',
         gap: 8,
         flexWrap: 'wrap',
-        padding: '0 24px',
+        padding: '0 16px',
       }}>
         <span style={{
           fontSize: 'clamp(12px, 1.8vw, 15px)',
