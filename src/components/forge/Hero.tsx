@@ -1,7 +1,15 @@
+import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function Hero() {
   const isMobile = useIsMobile();
+  const [introComplete, setIntroComplete] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setIntroComplete(true);
+    window.addEventListener('forge-intro-done', handler);
+    return () => window.removeEventListener('forge-intro-done', handler);
+  }, []);
 
   const scrollToExperiences = () => {
     const el = document.querySelector('#experiences');
