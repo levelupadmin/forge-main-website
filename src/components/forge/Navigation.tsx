@@ -224,6 +224,7 @@ export default function Navigation() {
               onClick={() => handleNav(link)}
               style={{
                 cursor: 'pointer',
+                fontFamily: "'Open Sauce One', sans-serif",
                 color: 'white',
                 fontSize: 28,
                 fontWeight: 700,
