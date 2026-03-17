@@ -124,7 +124,7 @@ export default function CareersHero() {
           Build a <span className="forge-gradient-text">Dream</span>{' '}that outlasts you
         </h1>
         <p style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 400, fontSize: 17, color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, maxWidth: 520, margin: '0 auto 36px' }}>
-          Nothing like the Forge exists in the world. So it takes some crazy people to believe in it. This page is for you if you're crazy enough to dream as big as us.
+          Nothing like the Forge exists anywhere in the world. That means it takes a certain kind of person to believe in it. This page is for you if you are crazy enough to dream as big as we do.
         </p>
         <button onClick={scrollToRoles} className="forge-cta-light">Join the Dream</button>
       </div>
