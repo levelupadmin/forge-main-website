@@ -20,7 +20,7 @@ export const jobs: JobRole[] = [
     title: 'Social Media Content Creator',
     department: 'Marketing',
     location: 'Chennai · In-office · Full-time / Intern',
-    compensation: 'Starts at ₹3.6 LPA — goes up based on portfolio and vibe',
+    compensation: 'Starts at ₹3.6 LPA, goes up based on portfolio and vibe',
     status: 'Open Now',
     neededPills: [
       'Perennially on social media',
@@ -37,13 +37,13 @@ export const jobs: JobRole[] = [
       'Good with people shoots chaos and video content',
     ],
     about: [
-      'You will own our social media pages with over 300,000 followers and one of India\'s largest creative communities — and be responsible for its growth with our creative team. Not posting and scheduling or the follower count. Actual growth. Engagement. Views. Non-follower reach. Brand recall. Better ideas. Better hooks. Better execution.',
+      "You will own our social media pages with over 300,000 followers and one of India's largest creative communities, and be responsible for its growth with our creative team. Not posting and scheduling or the follower count. Actual growth. Engagement. Views. Non-follower reach. Brand recall. Better ideas. Better hooks. Better execution.",
       'You will work closely with videographers, editors, and designers to take content from idea to publish. This role is primarily for Instagram and X. You should know how to spot trends early, pull mind-blowing references, manage and direct creation end to end, and build pages that have a fan following.',
       'No fixed experience required. Zero experience is fine. Bad taste is not.',
     ],
     whatYouWillDo: [
       'Own the content calendar and publish consistently across Instagram and X',
-      'Spot trends early and move fast — before they are everywhere',
+      'Spot trends early and move fast, before they are everywhere',
       'Script, shoot, and direct short-form content end to end',
       'Pull sharp references and bring them into the team before briefings',
       'Write captions, hooks, and copy that stop the scroll',
@@ -53,7 +53,7 @@ export const jobs: JobRole[] = [
     ],
     whoWeAreLookingFor: [
       'You live on Instagram and X and you have a genuine feel for what works',
-      'You have a portfolio — even personal pages count if they show taste',
+      'You have a portfolio, even personal pages count if they show taste',
       'D2C, startup, or education content experience is a big plus',
       'Travel or event coverage experience is a plus',
       'You are not introverted, not cringe, and not looking for a slow, comfy content job',
@@ -64,7 +64,7 @@ export const jobs: JobRole[] = [
     title: 'Business Development Executive',
     department: 'Growth',
     location: 'Chennai · In-office',
-    compensation: 'To be updated — drop your CV and we will discuss',
+    compensation: 'To be updated, drop your CV and we will discuss',
     status: 'Open Now',
     neededPills: [],
     about: [
@@ -78,7 +78,7 @@ export const jobs: JobRole[] = [
       'Work closely with the admissions team to track how partner leads convert',
     ],
     whoWeAreLookingFor: [
-      'You close deals — not just open conversations',
+      'You close deals, not just open conversations',
       'You are comfortable picking up the phone and pitching something you believe in',
       'You understand how creative communities in India think and what they respond to',
     ],
@@ -88,7 +88,7 @@ export const jobs: JobRole[] = [
     title: 'Operations Associate',
     department: 'Admissions and Operations',
     location: 'Chennai · In-office · 6-day work week',
-    compensation: 'Starts at ₹2.4 LPA — goes up based on experience and fit',
+    compensation: 'Starts at ₹2.4 LPA, goes up based on experience and fit',
     status: 'Open Now',
     neededPills: [],
     about: [
@@ -128,7 +128,7 @@ export const jobs: JobRole[] = [
     title: 'Graphic Designer',
     department: 'Marketing',
     location: 'Chennai · On-site or Remote',
-    compensation: 'Starts at ₹2.4 LPA — goes up based on experience and portfolio',
+    compensation: 'Starts at ₹2.4 LPA, goes up based on experience and portfolio',
     status: 'Open Now',
     neededPills: [
       'Great taste',
@@ -144,7 +144,7 @@ export const jobs: JobRole[] = [
       'Knows how to use AI to speed up workflows',
     ],
     about: [
-      'You will work on social media creatives, paid ad creatives, carousels, campaign assets, and brand-led design across our pages with 300K+ followers — building India\'s largest community of creatives.',
+      "You will work on social media creatives, paid ad creatives, carousels, campaign assets, and brand-led design across our pages with 300K+ followers, building India's largest community of creatives.",
       'This is not a role for someone who only knows how to make things look nice. We want someone with taste, visual judgment, storytelling instinct, and a strong understanding of how design works on the internet.',
       'You should know how to work inside an existing brand system, adapt guidelines well, and still keep the output fresh. Experience with Canva or Photoshop is mandatory. Motion design is a plus. Taste is not optional.',
     ],
@@ -158,12 +158,12 @@ export const jobs: JobRole[] = [
       'Use AI tools to speed up your workflow without making the work feel lazy',
     ],
     whoWeAreLookingFor: [
-      'Your portfolio shows real work — not just student projects',
-      'You design with intent — every visual decision has a reason',
+      'Your portfolio shows real work, not just student projects',
+      'You design with intent, every visual decision has a reason',
       'You are fast and can produce at volume without dropping quality',
       'Education, travel, or experience-brand work is a strong advantage',
       'Paid ads experience and carousel-heavy social work is a plus',
-      'You are an artist at heart — design is not just a job to you',
+      'You are an artist at heart, design is not just a job to you',
     ],
   },
   {
@@ -171,7 +171,7 @@ export const jobs: JobRole[] = [
     title: 'Video Editor',
     department: 'Marketing',
     location: 'Chennai · In-office · Full-time',
-    compensation: 'Starts at ₹3 LPA — goes up based on portfolio and experience',
+    compensation: 'Starts at ₹3 LPA, goes up based on portfolio and experience',
     status: 'Open Now',
     neededPills: [
       'Great taste',
@@ -198,10 +198,10 @@ export const jobs: JobRole[] = [
       'Manage an organised asset library so footage is findable and usable',
     ],
     whoWeAreLookingFor: [
-      'Your cuts have a point of view — not just technically clean but emotionally effective',
+      'Your cuts have a point of view, not just technically clean but emotionally effective',
       'You work fast in Premiere Pro or Final Cut and your project files are not a disaster',
       'You understand pacing, music selection, and how to hold attention on mobile',
-      'You have edited content that has actually performed — show us the numbers',
+      'You have edited content that has actually performed, show us the numbers',
       'You are comfortable with high output and tight turnarounds without losing quality',
     ],
   },
