@@ -1,6 +1,6 @@
 import { useIsMobile } from '@/hooks/use-mobile';
 
-const floatingPhotos = [
+const floatingPhotos: { top?: string; bottom?: string; left?: string; right?: string; width: number; height: number; rotate: number }[] = [
   { top: '8%', left: '3%', width: 160, height: 200, rotate: -6 },
   { top: '12%', right: '4%', width: 140, height: 180, rotate: 4 },
   { top: '55%', left: '2%', width: 130, height: 170, rotate: 5 },
