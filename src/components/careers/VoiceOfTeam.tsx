@@ -16,7 +16,7 @@ export default function VoiceOfTeam() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const dragStart = useRef({ x: 0, scrollLeft: 0 });
-  const cardWidth = isMobile ? 320 : 400;
+  const cardWidth = isMobile ? 280 : 400;
   const gap = 20;
 
   useEffect(() => {
