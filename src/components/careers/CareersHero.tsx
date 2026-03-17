@@ -65,7 +65,7 @@ export default function CareersHero() {
             maxWidth: 340,
             margin: '0 auto 28px',
           }}>
-            Nothing like the Forge exists in the world. So it takes some crazy people to believe in it. This page is for you if you're crazy enough to dream as big as us.
+            Nothing like the Forge exists anywhere in the world. That means it takes a certain kind of person to believe in it. This page is for you if you are crazy enough to dream as big as we do.
           </p>
           <button onClick={scrollToRoles} className="forge-cta-light">
             Join the Dream
