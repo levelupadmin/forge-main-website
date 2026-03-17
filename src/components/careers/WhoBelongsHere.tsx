@@ -22,7 +22,7 @@ function BelongCard({ icon, ghost, title, body, delay }: typeof cards[0] & { del
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: hovered ? '#FFBC3B' : '#222222',
+        background: hovered ? '#FFBC3B' : '#000000',
         borderRadius: 20,
         padding: '40px 36px 44px',
         minHeight: 280,
@@ -39,86 +39,27 @@ function BelongCard({ icon, ghost, title, body, delay }: typeof cards[0] & { del
         transitionDuration: '650ms',
       }}
     >
-      {/* Arrow top-right */}
       <div style={{
-        position: 'absolute',
-        top: 24,
-        right: 24,
-        width: 32,
-        height: 32,
-        borderRadius: '50%',
+        position: 'absolute', top: 24, right: 24,
+        width: 32, height: 32, borderRadius: '50%',
         border: `1px solid ${hovered ? 'rgba(34,34,34,0.25)' : 'rgba(255,255,255,0.15)'}`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: 13,
-        color: hovered ? '#222222' : 'rgba(255,255,255,0.4)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        fontSize: 13, color: hovered ? '#222222' : 'rgba(255,255,255,0.4)',
         background: hovered ? 'rgba(34,34,34,0.08)' : 'transparent',
         transition: 'all 250ms ease',
-      }}>
-        ↗
-      </div>
+      }}>↗</div>
 
-      {/* Ghost number */}
       <div style={{
-        position: 'absolute',
-        bottom: -10,
-        right: 16,
-        fontFamily: "'Open Sauce One', sans-serif",
-        fontSize: 140,
-        fontWeight: 800,
+        position: 'absolute', bottom: -10, right: 16,
+        fontFamily: "'Open Sauce One', sans-serif", fontSize: 140, fontWeight: 800,
         color: hovered ? 'rgba(34,34,34,0.07)' : 'rgba(255,255,255,0.04)',
-        lineHeight: 1,
-        pointerEvents: 'none',
-        transition: 'color 250ms ease',
-      }}>
-        {ghost}
-      </div>
+        lineHeight: 1, pointerEvents: 'none', transition: 'color 250ms ease',
+      }}>{ghost}</div>
 
-      {/* Icon */}
-      <div style={{
-        fontSize: 28,
-        marginBottom: 28,
-        transform: hovered ? 'scale(1.1)' : 'scale(1)',
-        transition: 'transform 250ms ease',
-      }}>
-        {icon}
-      </div>
-
-      {/* Short rule */}
-      <div style={{
-        width: hovered ? 36 : 24,
-        height: 2,
-        background: hovered ? 'rgba(34,34,34,0.25)' : 'rgba(255,255,255,0.18)',
-        marginBottom: 20,
-        transition: 'all 250ms ease',
-      }} />
-
-      {/* Title */}
-      <div style={{
-        fontFamily: "'Open Sauce One', sans-serif",
-        fontWeight: 800,
-        fontSize: 22,
-        color: hovered ? '#222222' : '#FFFFFF',
-        lineHeight: 1.25,
-        marginBottom: 12,
-        transition: 'color 250ms ease',
-      }}>
-        {title}
-      </div>
-
-      {/* Body */}
-      <div style={{
-        fontFamily: "'Open Sauce One', sans-serif",
-        fontWeight: 400,
-        fontSize: 14,
-        color: hovered ? 'rgba(34,34,34,0.65)' : 'rgba(255,255,255,0.45)',
-        lineHeight: 1.75,
-        transition: 'color 250ms ease',
-        marginTop: 'auto',
-      }}>
-        {body}
-      </div>
+      <div style={{ fontSize: 28, marginBottom: 28, transform: hovered ? 'scale(1.1)' : 'scale(1)', transition: 'transform 250ms ease' }}>{icon}</div>
+      <div style={{ width: hovered ? 36 : 24, height: 2, background: hovered ? 'rgba(34,34,34,0.25)' : 'rgba(255,255,255,0.18)', marginBottom: 20, transition: 'all 250ms ease' }} />
+      <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 800, fontSize: 22, color: hovered ? '#222222' : '#FFFFFF', lineHeight: 1.25, marginBottom: 12, transition: 'color 250ms ease' }}>{title}</div>
+      <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 400, fontSize: 14, color: hovered ? 'rgba(34,34,34,0.65)' : 'rgba(255,255,255,0.45)', lineHeight: 1.75, transition: 'color 250ms ease', marginTop: 'auto' }}>{body}</div>
     </div>
   );
 }
@@ -129,13 +70,13 @@ export default function WhoBelongsHere() {
   return (
     <section style={{
       background: '#FFFFFF',
-      padding: isMobile ? '64px 24px' : '0 80px 120px',
+      padding: isMobile ? '48px 24px' : '0 80px 80px',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <SectionHeader
           eyebrow="Who We Are Looking For"
-          headline="Level Up is not the right place for everyone."
-          subtext="If you prefer a prescriptive corporate structure and a typical office environment, that is not us. If you want hypergrowth, can solve complex problems, are willing to work weird hours, and can thrive on change and a bit of chaos — then we should talk."
+          headline="LevelUp is not the right place for everyone."
+          subtext="If you prefer a prescriptive corporate structure and a typical office environment, that is not us. If you want hypergrowth, can solve complex problems, are willing to work weird hours, and can thrive on change and a bit of chaos, then we should talk."
         />
 
         <div style={{

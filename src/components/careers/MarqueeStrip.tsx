@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const stats = [
@@ -57,32 +57,21 @@ export default function MarqueeStrip() {
 
   return (
     <section style={{
-      background: '#222222',
+      background: '#000000',
       borderTop: '1px solid rgba(255,255,255,0.06)',
       borderBottom: '1px solid rgba(255,255,255,0.06)',
       overflow: 'hidden',
       position: 'relative',
     }}>
-      {/* Edge fade masks */}
       <div style={{
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        bottom: 0,
-        width: 120,
-        background: 'linear-gradient(to right, #222222, transparent)',
-        zIndex: 2,
-        pointerEvents: 'none',
+        position: 'absolute', left: 0, top: 0, bottom: 0, width: 120,
+        background: 'linear-gradient(to right, #000000, transparent)',
+        zIndex: 2, pointerEvents: 'none',
       }} />
       <div style={{
-        position: 'absolute',
-        right: 0,
-        top: 0,
-        bottom: 0,
-        width: 120,
-        background: 'linear-gradient(to left, #222222, transparent)',
-        zIndex: 2,
-        pointerEvents: 'none',
+        position: 'absolute', right: 0, top: 0, bottom: 0, width: 120,
+        background: 'linear-gradient(to left, #000000, transparent)',
+        zIndex: 2, pointerEvents: 'none',
       }} />
 
       <div

@@ -10,12 +10,12 @@ export default function SectionHeader({ eyebrow, headline, subtext, dark = false
     <div style={{
       textAlign: 'center',
       maxWidth: 640,
-      margin: '0 auto 72px',
+      margin: '0 auto 48px',
     }}>
       <div style={{
         fontFamily: "'Open Sauce One', sans-serif",
         fontWeight: 400,
-        fontSize: 12,
+        fontSize: 15,
         letterSpacing: '0.18em',
         textTransform: 'uppercase',
         color: '#FFBC3B',
@@ -26,11 +26,10 @@ export default function SectionHeader({ eyebrow, headline, subtext, dark = false
       <h2 style={{
         fontFamily: "'Open Sauce One', sans-serif",
         fontWeight: 800,
-        fontSize: 'clamp(34px, 5vw, 52px)',
+        fontSize: 'clamp(40px, 6vw, 64px)',
         letterSpacing: -1.5,
         lineHeight: 1.05,
         color: dark ? '#FFFFFF' : '#222222',
-        marginBottom: 20,
         margin: '0 0 20px',
       }}>
         {headline}
