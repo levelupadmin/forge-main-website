@@ -25,7 +25,7 @@ export default function Experiences() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveProgram(prev => (prev + 1) % programs.length);
-    }, 8000);
+    }, 14000);
     return () => clearInterval(interval);
   }, []);
 
@@ -36,7 +36,7 @@ export default function Experiences() {
     <section id="experiences" ref={ref} className="experiences-section">
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: 32 }}>
         <div className="forge-subheading">Explore</div>
-        <div className="forge-heading">The Forge Experiences</div>
+        <div className="forge-heading">the Forge Experiences</div>
       </div>
 
       <div className={`forge-fade-up${isVisible ? ' visible' : ''} experiences-toggle-row`} style={{ transitionDelay: '200ms' }}>
