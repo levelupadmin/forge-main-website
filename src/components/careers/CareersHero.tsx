@@ -31,31 +31,34 @@ export default function CareersHero() {
       padding: isMobile ? '120px 24px 80px' : '120px 80px',
     }}>
       {/* Floating photo boxes */}
-      {!isMobile && floatingPhotos.map((photo, i) => (
-        <div
-          key={i}
-          style={{
-            position: 'absolute',
-            ...photo,
-            width: photo.width,
-            height: photo.height,
-            borderRadius: 14,
-            background: '#1a1a1a',
-            transform: `rotate(${photo.rotate}deg)`,
-            transition: 'transform 300ms ease, box-shadow 300ms ease',
-            cursor: 'pointer',
-            overflow: 'hidden',
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.transform = `rotate(${photo.rotate}deg) scale(1.05)`;
-            e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.5)';
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.transform = `rotate(${photo.rotate}deg) scale(1)`;
-            e.currentTarget.style.boxShadow = 'none';
-          }}
-        />
-      ))}
+      {!isMobile && floatingPhotos.map((photo, i) => {
+        const { rotate, width, height, ...pos } = photo;
+        return (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              ...pos,
+              width,
+              height,
+              borderRadius: 14,
+              background: '#1a1a1a',
+              transform: `rotate(${rotate}deg)`,
+              transition: 'transform 300ms ease, box-shadow 300ms ease',
+              cursor: 'pointer',
+              overflow: 'hidden',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = `rotate(${rotate}deg) scale(1.05)`;
+              e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.5)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = `rotate(${rotate}deg) scale(1)`;
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          />
+        );
+      })}
 
       {/* Center content */}
       <div style={{
