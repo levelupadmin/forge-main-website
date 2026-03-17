@@ -1,27 +1,26 @@
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const floatingPhotos: { top?: string; bottom?: string; left?: string; right?: string; width: number; height: number; rotate: number }[] = [
-  { top: '8%', left: '3%', width: 160, height: 200, rotate: -6 },
-  { top: '12%', right: '4%', width: 140, height: 180, rotate: 4 },
-  { top: '55%', left: '2%', width: 130, height: 170, rotate: 5 },
-  { top: '60%', right: '3%', width: 150, height: 190, rotate: -4 },
-  { top: '30%', left: '8%', width: 120, height: 150, rotate: -3 },
-  { top: '35%', right: '7%', width: 135, height: 165, rotate: 6 },
-  { bottom: '10%', left: '6%', width: 110, height: 140, rotate: 3 },
-  { bottom: '12%', right: '5%', width: 125, height: 155, rotate: -5 },
-  // New placeholders to fill gaps
-  { top: '5%', left: '35%', width: 100, height: 130, rotate: 2 },
-  { top: '3%', right: '30%', width: 110, height: 140, rotate: -3 },
-  { bottom: '6%', left: '30%', width: 120, height: 150, rotate: -2 },
-  { bottom: '8%', right: '28%', width: 105, height: 135, rotate: 4 },
+  // Left side (3 photos descending)
+  { top: '38%', left: '2%', width: 130, height: 170, rotate: -5 },
+  { top: '55%', left: '4%', width: 140, height: 180, rotate: 4 },
+  { bottom: '8%', left: '3%', width: 120, height: 155, rotate: -3 },
+  // Right side (3 photos descending)
+  { top: '40%', right: '2%', width: 135, height: 175, rotate: 5 },
+  { top: '58%', right: '4%', width: 125, height: 165, rotate: -4 },
+  { bottom: '10%', right: '3%', width: 140, height: 170, rotate: 3 },
+  // Bottom center (3 photos)
+  { bottom: '4%', left: '25%', width: 115, height: 145, rotate: -2 },
+  { bottom: '3%', left: '50%', width: 105, height: 135, rotate: 1 },
+  { bottom: '5%', right: '24%', width: 120, height: 150, rotate: -3 },
 ];
 
 const mobilePhotos: { top?: string; bottom?: string; left?: string; right?: string; width: number; height: number; rotate: number }[] = [
-  { top: '6%', left: '4%', width: 80, height: 100, rotate: -5 },
-  { top: '8%', right: '4%', width: 70, height: 90, rotate: 4 },
-  { bottom: '12%', left: '5%', width: 75, height: 95, rotate: 3 },
-  { bottom: '10%', right: '5%', width: 80, height: 100, rotate: -4 },
-  { top: '40%', left: '2%', width: 65, height: 85, rotate: -3 },
+  { top: '50%', left: '2%', width: 65, height: 85, rotate: -4 },
+  { top: '52%', right: '2%', width: 60, height: 80, rotate: 4 },
+  { bottom: '10%', left: '5%', width: 70, height: 90, rotate: 3 },
+  { bottom: '8%', right: '5%', width: 65, height: 85, rotate: -3 },
+  { bottom: '5%', left: '38%', width: 60, height: 75, rotate: -1 },
 ];
 
 export default function CareersHero() {

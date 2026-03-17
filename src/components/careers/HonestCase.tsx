@@ -45,6 +45,7 @@ function PillarCard({ num, title, body, delay = 0 }: { num: string; title: strin
         transitionProperty: 'opacity, transform, background',
         display: 'flex',
         gap: 20,
+        overflow: 'hidden',
       }}
       onMouseEnter={e => {
         e.currentTarget.style.background = '#F0EDE6';
@@ -55,6 +56,21 @@ function PillarCard({ num, title, body, delay = 0 }: { num: string; title: strin
         e.currentTarget.style.transform = 'translateY(0)';
       }}
     >
+      {/* Ghost watermark number */}
+      <div style={{
+        position: 'absolute',
+        right: 20,
+        top: -10,
+        fontFamily: "'Open Sauce One', sans-serif",
+        fontWeight: 900,
+        fontSize: 120,
+        color: 'rgba(34,34,34,0.04)',
+        lineHeight: 1,
+        pointerEvents: 'none',
+        userSelect: 'none',
+      }}>
+        {num}
+      </div>
       {/* Left amber accent line */}
       <div style={{
         width: 4,
@@ -64,7 +80,7 @@ function PillarCard({ num, title, body, delay = 0 }: { num: string; title: strin
         flexShrink: 0,
         marginTop: 4,
       }} />
-      <div>
+      <div style={{ position: 'relative', zIndex: 1 }}>
         <div style={{
           fontFamily: "'Open Sauce One', sans-serif",
           fontWeight: 700,

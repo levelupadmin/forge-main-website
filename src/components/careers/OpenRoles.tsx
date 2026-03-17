@@ -9,11 +9,34 @@ export default function OpenRoles() {
   const isMobile = useIsMobile();
   const [selectedJobId, setSelectedJobId] = useState<string | null>(null);
   const selectedJob = jobs.find(j => j.id === selectedJobId) || null;
+  const openCount = jobs.filter(j => j.status === 'Open Now').length;
 
   return (
     <section id="roles" style={{ background: '#FFFFFF', padding: isMobile ? '48px 24px' : '80px 80px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <SectionHeader eyebrow="Open Roles" headline="Convert your skills into a high-performance role." subtext="All roles are open right now. Click any role to read the full description and apply." />
+        
+        {/* Urgency count */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 10,
+          marginBottom: 24,
+          fontFamily: "'Open Sauce One', sans-serif",
+        }}>
+          <span style={{
+            width: 8,
+            height: 8,
+            borderRadius: '50%',
+            background: '#22c55e',
+            display: 'inline-block',
+            animation: 'pulseGreen 2s ease-in-out infinite',
+          }} />
+          <span style={{ fontWeight: 600, fontSize: 14, color: '#222222' }}>
+            {openCount} role{openCount !== 1 ? 's' : ''} open right now
+          </span>
+        </div>
+
         <div>
           {jobs.map((job, i) => (
             <RoleRow key={job.id} title={job.title} department={job.department} status={job.status} isLast={i === jobs.length - 1} delay={i * 60} onClick={() => setSelectedJobId(job.id)} isMobile={isMobile} />
@@ -22,6 +45,13 @@ export default function OpenRoles() {
         <WildcardCard isMobile={isMobile} />
         <RoleModal job={selectedJob} onClose={() => setSelectedJobId(null)} />
       </div>
+
+      <style>{`
+        @keyframes pulseGreen {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.3); }
+        }
+      `}</style>
     </section>
   );
 }
@@ -36,7 +66,17 @@ function RoleRow({ title, department, status, isLast, delay, onClick, isMobile }
     >
       <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 800, fontSize: isMobile ? 20 : 24, color: hovered ? '#FFA800' : '#222222', letterSpacing: -0.3, transition: 'color 250ms ease' }}>{title}</div>
       <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 400, fontSize: 13, color: 'rgba(34,34,34,0.38)' }}>{department}</div>
-      <div style={{ borderRadius: 100, padding: '6px 16px', fontFamily: "'Open Sauce One', sans-serif", fontSize: 11, fontWeight: 700, background: 'rgba(255,188,59,0.12)', color: '#b87c00', display: 'inline-block', width: 'fit-content' }}>{status}</div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <span style={{
+          width: 6,
+          height: 6,
+          borderRadius: '50%',
+          background: '#22c55e',
+          display: 'inline-block',
+          animation: 'pulseGreen 2s ease-in-out infinite',
+        }} />
+        <span style={{ borderRadius: 100, padding: '6px 16px', fontFamily: "'Open Sauce One', sans-serif", fontSize: 11, fontWeight: 700, background: 'rgba(255,188,59,0.12)', color: '#b87c00' }}>{status}</span>
+      </div>
       {!isMobile && <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontSize: 20, color: '#FFA800', opacity: hovered ? 1 : 0, transform: hovered ? 'translateX(0)' : 'translateX(-8px)', transition: 'all 250ms ease' }}>→</div>}
     </div>
   );
