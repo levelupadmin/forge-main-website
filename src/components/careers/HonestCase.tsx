@@ -130,7 +130,7 @@ export default function HonestCase() {
         <SectionHeader
           eyebrow="Why the Forge"
           headline="This is not zero-sum work."
-          subtext="We are not just another learning platform. We put people in rooms, give them cameras and blank pages, and make them create real things. Short films. Screenplays. Published work. With their name on it. That takes a team that cares deeply about what they are doing and commits to keep getting better at it."
+          subtext="The Forge was founded in 2023 with one goal. Help people not just learn, but actually do. We started with twenty people and twelve days and one short film. From there we grew into writing retreats, creator residencies, and a community of thousands across India and beyond. Every program we run traces back to that same idea, help someone take action and stop just dreaming."
         />
       </div>
 
