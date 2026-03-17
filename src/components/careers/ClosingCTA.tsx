@@ -15,7 +15,7 @@ export default function ClosingCTA() {
     <section style={{ background: '#FFFFFF', padding: isMobile ? '56px 24px' : '80px 80px', textAlign: 'center' }}>
       <div ref={ref} style={{ maxWidth: 800, margin: '0 auto', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(28px)', transition: 'opacity 650ms ease, transform 650ms ease' }}>
         <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 400, fontSize: 15, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#FFBC3B', marginBottom: 20 }}>Ready?</div>
-        <h2 style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 800, fontSize: isMobile ? 44 : 88, color: '#222222', letterSpacing: -2, lineHeight: 1.0, margin: '0 0 20px' }}>
+        <h2 style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 800, fontSize: isMobile ? 32 : 88, color: '#222222', letterSpacing: isMobile ? -1 : -2, lineHeight: 1.05, margin: '0 0 16px' }}>
           If this is you, hit the link and{' '}
           <span style={{ fontStyle: 'italic', color: '#FFBC3B' }}>let's talk.</span>
         </h2>

@@ -25,7 +25,7 @@ const pillars = [
   },
 ];
 
-function PillarCard({ num, title, body, delay = 0 }: { num: string; title: string; body: string; delay?: number }) {
+function PillarCard({ num, title, body, delay = 0, isMobile = false }: { num: string; title: string; body: string; delay?: number; isMobile?: boolean }) {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
@@ -33,8 +33,8 @@ function PillarCard({ num, title, body, delay = 0 }: { num: string; title: strin
       ref={ref}
       style={{
         background: '#F7F5F0',
-        borderRadius: 20,
-        padding: '40px 36px',
+        borderRadius: isMobile ? 16 : 20,
+        padding: isMobile ? '28px 24px' : '40px 36px',
         position: 'relative',
         cursor: 'pointer',
         transition: 'background 250ms ease, transform 250ms ease',
@@ -44,8 +44,11 @@ function PillarCard({ num, title, body, delay = 0 }: { num: string; title: strin
         transitionDuration: '650ms',
         transitionProperty: 'opacity, transform, background',
         display: 'flex',
-        gap: 20,
+        gap: isMobile ? 14 : 20,
         overflow: 'hidden',
+        width: isMobile ? 280 : undefined,
+        flexShrink: isMobile ? 0 : undefined,
+        scrollSnapAlign: isMobile ? 'start' : undefined,
       }}
       onMouseEnter={e => {
         e.currentTarget.style.background = '#F0EDE6';
@@ -59,11 +62,11 @@ function PillarCard({ num, title, body, delay = 0 }: { num: string; title: strin
       {/* Ghost watermark number */}
       <div style={{
         position: 'absolute',
-        right: 20,
+        right: isMobile ? 12 : 20,
         top: -10,
         fontFamily: "'Open Sauce One', sans-serif",
         fontWeight: 900,
-        fontSize: 120,
+        fontSize: isMobile ? 80 : 120,
         color: 'rgba(34,34,34,0.04)',
         lineHeight: 1,
         pointerEvents: 'none',
@@ -87,24 +90,24 @@ function PillarCard({ num, title, body, delay = 0 }: { num: string; title: strin
           fontSize: 11,
           letterSpacing: '0.1em',
           color: '#FFBC3B',
-          marginBottom: 14,
+          marginBottom: isMobile ? 10 : 14,
         }}>
           {num}
         </div>
         <div style={{
           fontFamily: "'Open Sauce One', sans-serif",
           fontWeight: 800,
-          fontSize: 20,
+          fontSize: isMobile ? 17 : 20,
           color: '#222222',
           lineHeight: 1.3,
-          marginBottom: 12,
+          marginBottom: isMobile ? 8 : 12,
         }}>
           {title}
         </div>
         <div style={{
           fontFamily: "'Open Sauce One', sans-serif",
           fontWeight: 400,
-          fontSize: 14,
+          fontSize: isMobile ? 13 : 14,
           color: 'rgba(34,34,34,0.52)',
           lineHeight: 1.7,
         }}>
@@ -121,25 +124,44 @@ export default function HonestCase() {
   return (
     <section style={{
       background: '#FFFFFF',
-      padding: isMobile ? '48px 24px' : '80px 80px',
+      padding: isMobile ? '40px 0' : '80px 80px',
     }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: isMobile ? '0 20px' : undefined }}>
         <SectionHeader
           eyebrow="Why the Forge"
           headline="This is not zero-sum work."
           subtext="We are not just another learning platform. We put people in rooms, give them cameras and blank pages, and make them create real things. Short films. Screenplays. Published work. With their name on it. That takes a team that cares deeply about what they are doing and commits to keep getting better at it."
         />
+      </div>
 
+      {isMobile ? (
+        <div style={{
+          display: 'flex',
+          gap: 12,
+          overflowX: 'auto',
+          scrollSnapType: 'x mandatory',
+          paddingLeft: 20,
+          paddingRight: 20,
+          paddingBottom: 4,
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}>
+          <style>{`.honest-scroll::-webkit-scrollbar { display: none; }`}</style>
+          {pillars.map((p, i) => (
+            <PillarCard key={p.num} {...p} delay={i * 60} isMobile />
+          ))}
+        </div>
+      ) : (
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           gap: 16,
         }}>
           {pillars.map((p, i) => (
             <PillarCard key={p.num} {...p} delay={i * 60} />
           ))}
         </div>
-      </div>
+      )}
     </section>
   );
 }
