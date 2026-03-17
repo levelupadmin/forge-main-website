@@ -15,24 +15,121 @@ const floatingPhotos: { top?: string; bottom?: string; left?: string; right?: st
   { bottom: '5%', right: '24%', width: 120, height: 150, rotate: -3 },
 ];
 
-const mobilePhotos: { top?: string; bottom?: string; left?: string; right?: string; width: number; height: number; rotate: number }[] = [
-  { bottom: '22%', left: '-4%', width: 72, height: 92, rotate: -5 },
-  { bottom: '10%', left: '2%', width: 68, height: 88, rotate: 4 },
-  { bottom: '20%', right: '-4%', width: 70, height: 90, rotate: 5 },
-  { bottom: '8%', right: '2%', width: 66, height: 86, rotate: -3 },
-  { bottom: '2%', left: '30%', width: 64, height: 80, rotate: -1 },
-  { bottom: '3%', right: '28%', width: 62, height: 78, rotate: 2 },
+/* Mobile: scattered collage photos positioned BELOW the CTA in a natural cluster */
+const mobileCollagePhotos: { left: string; top: string; width: number; height: number; rotate: number; zIndex: number }[] = [
+  // Row 1 - top of collage
+  { left: '-4%', top: '0%', width: 120, height: 150, rotate: -6, zIndex: 1 },
+  { left: '26%', top: '-3%', width: 130, height: 160, rotate: 3, zIndex: 3 },
+  { left: '58%', top: '2%', width: 115, height: 145, rotate: -2, zIndex: 2 },
+  { left: '82%', top: '-5%', width: 100, height: 130, rotate: 7, zIndex: 1 },
+  // Row 2 - middle
+  { left: '4%', top: '38%', width: 110, height: 140, rotate: 5, zIndex: 2 },
+  { left: '32%', top: '35%', width: 135, height: 165, rotate: -4, zIndex: 4 },
+  { left: '65%', top: '40%', width: 120, height: 150, rotate: 3, zIndex: 3 },
+  // Row 3 - bottom
+  { left: '-2%', top: '72%', width: 125, height: 155, rotate: -3, zIndex: 2 },
+  { left: '30%', top: '68%', width: 115, height: 140, rotate: 6, zIndex: 3 },
+  { left: '60%', top: '75%', width: 130, height: 160, rotate: -5, zIndex: 1 },
 ];
 
 export default function CareersHero() {
   const isMobile = useIsMobile();
-  const photos = isMobile ? mobilePhotos : floatingPhotos;
 
   const scrollToRoles = () => {
     const el = document.getElementById('roles');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  if (isMobile) {
+    return (
+      <section style={{
+        background: '#FFFFFF',
+        minHeight: '100svh',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
+        paddingTop: 100,
+      }}>
+        {/* Text content - clean top section */}
+        <div style={{
+          textAlign: 'center',
+          padding: '0 28px',
+          marginBottom: 40,
+        }}>
+          <h1 style={{
+            fontFamily: "'Open Sauce One', sans-serif",
+            fontWeight: 700,
+            fontSize: 'clamp(32px, 9vw, 44px)',
+            color: '#222222',
+            lineHeight: 1.1,
+            letterSpacing: -1,
+            margin: '0 0 20px',
+          }}>
+            Build a <span className="forge-gradient-text">Dream</span>{' '}
+            that outlasts you
+          </h1>
+
+          <p style={{
+            fontFamily: "'Open Sauce One', sans-serif",
+            fontWeight: 400,
+            fontSize: 15,
+            color: 'rgba(34,34,34,0.5)',
+            lineHeight: 1.75,
+            maxWidth: 340,
+            margin: '0 auto 32px',
+          }}>
+            Nothing like the Forge exists in the world. So it takes some crazy people to believe in it. This page is for you if you're crazy enough to dream as big as us.
+          </p>
+
+          <button
+            onClick={scrollToRoles}
+            style={{
+              background: '#222222',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: 100,
+              padding: '14px 36px',
+              fontFamily: "'Open Sauce One', sans-serif",
+              fontSize: 15,
+              fontWeight: 700,
+              cursor: 'pointer',
+            }}
+          >
+            See open positions
+          </button>
+        </div>
+
+        {/* Photo collage - scattered below CTA */}
+        <div style={{
+          position: 'relative',
+          flex: 1,
+          minHeight: 380,
+          margin: '0 -10px',
+        }}>
+          {mobileCollagePhotos.map((photo, i) => (
+            <div
+              key={i}
+              style={{
+                position: 'absolute',
+                left: photo.left,
+                top: photo.top,
+                width: photo.width,
+                height: photo.height,
+                borderRadius: 12,
+                background: '#e8e5de',
+                transform: `rotate(${photo.rotate}deg)`,
+                zIndex: photo.zIndex,
+                overflow: 'hidden',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              }}
+            />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop layout
   return (
     <section style={{
       background: '#000000',
@@ -42,9 +139,9 @@ export default function CareersHero() {
       justifyContent: 'center',
       position: 'relative',
       overflow: 'hidden',
-      padding: isMobile ? '80px 20px 100px' : '120px 80px',
+      padding: '120px 80px',
     }}>
-      {photos.map((photo, i) => {
+      {floatingPhotos.map((photo, i) => {
         const { rotate, width, height, ...pos } = photo;
         return (
           <div
@@ -54,7 +151,7 @@ export default function CareersHero() {
               ...pos,
               width,
               height,
-              borderRadius: isMobile ? 10 : 14,
+              borderRadius: 14,
               background: '#1a1a1a',
               transform: `rotate(${rotate}deg)`,
               transition: 'transform 300ms ease, box-shadow 300ms ease',
@@ -81,7 +178,7 @@ export default function CareersHero() {
       }}>
         <h1 style={{
           fontWeight: 700,
-          fontSize: isMobile ? 'clamp(28px, 8vw, 42px)' : 'clamp(30px, 7vw, 64px)',
+          fontSize: 'clamp(30px, 7vw, 64px)',
           color: '#FFFFFF',
           lineHeight: 1.05,
           letterSpacing: -1,
@@ -94,10 +191,10 @@ export default function CareersHero() {
         <p style={{
           fontFamily: "'Open Sauce One', sans-serif",
           fontWeight: 400,
-          fontSize: isMobile ? 14 : 17,
+          fontSize: 17,
           color: 'rgba(255,255,255,0.45)',
           lineHeight: 1.75,
-          maxWidth: isMobile ? 320 : 520,
+          maxWidth: 520,
           margin: '0 auto 36px',
         }}>
           Nothing like the Forge exists in the world. So it takes some crazy people to believe in it. This page is for you if you're crazy enough to dream as big as us.
