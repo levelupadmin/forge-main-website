@@ -42,7 +42,7 @@ export default function MarqueeStrip() {
         fontFamily: "'Open Sauce One', sans-serif",
         fontWeight: 400,
         fontSize: 13,
-        color: 'rgba(255,255,255,0.4)',
+        color: '#FFFFFF',
         lineHeight: 1.35,
         whiteSpace: 'nowrap',
       }}>
