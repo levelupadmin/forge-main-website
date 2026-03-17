@@ -121,9 +121,9 @@ export default function IntroAnimation() {
             textDecoration: 'none',
           }}
         >
-          <span style={{ color: 'rgba(255,255,255,0.55)' }}>where </span>
+          <span style={{ color: 'rgba(255,255,255,0.55)' }}>Where </span>
           <span className="forge-gradient-text" style={{ animation: 'none', WebkitTextFillColor: 'transparent' }}>Dreamers</span>
-          <span style={{ color: 'rgba(255,255,255,0.55)' }}> become </span>
+          <span style={{ color: 'rgba(255,255,255,0.55)' }}> Become </span>
           <span className="forge-gradient-text" style={{ animation: 'none', WebkitTextFillColor: 'transparent' }}>Doers</span>
         </p>
       </div>
