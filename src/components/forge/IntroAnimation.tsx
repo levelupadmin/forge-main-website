@@ -1,25 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function IntroAnimation() {
   const isMobile = useIsMobile();
   const [stage, setStage] = useState(0);
   const [removed, setRemoved] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
+    // Stage 0: black + video playing
+    // Stage 1 (2.2s): video fading out, logo fading in
+    // Stage 2 (2.8s): video gone
+    // Stage 3 (3.0s): tagline fades in
+    // Stage 4 (4.0s): entire overlay fades out
+    // Stage 5 (4.6s): removed from DOM
+
     const timers = [
-      setTimeout(() => setStage(1), 600),
-      setTimeout(() => setStage(2), 1900),
-      setTimeout(() => setStage(3), 2400),
-      setTimeout(() => setStage(4), 3400),
+      setTimeout(() => setStage(1), 2200),
+      setTimeout(() => setStage(2), 2800),
+      setTimeout(() => setStage(3), 3400),
       setTimeout(() => {
-        setStage(5);
+        setStage(4);
         document.body.style.overflow = '';
         window.dispatchEvent(new Event('forge-intro-done'));
-      }, 4000),
-      setTimeout(() => setRemoved(true), 4800),
+      }, 4400),
+      setTimeout(() => setRemoved(true), 5000),
     ];
 
     return () => {
@@ -28,7 +35,20 @@ export default function IntroAnimation() {
     };
   }, []);
 
+  // Also fade video on ended event (whichever comes first)
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const handleEnded = () => {
+      if (stage < 2) setStage(prev => Math.max(prev, 2));
+    };
+    video.addEventListener('ended', handleEnded);
+    return () => video.removeEventListener('ended', handleEnded);
+  }, [stage]);
+
   if (removed) return null;
+
+  const logoSize = isMobile ? 140 : 200;
 
   return (
     <div
@@ -40,57 +60,71 @@ export default function IntroAnimation() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        opacity: stage >= 5 ? 0 : 1,
-        transition: 'opacity 0.8s ease-out',
-        pointerEvents: stage >= 5 ? 'none' : 'auto',
+        opacity: stage >= 4 ? 0 : 1,
+        transition: 'opacity 0.6s ease-out',
+        pointerEvents: stage >= 4 ? 'none' : 'auto',
       }}
     >
+      {/* Background video */}
+      <video
+        ref={videoRef}
+        src="/videos/forge-intro.mp4"
+        autoPlay
+        muted
+        playsInline
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0,
+          opacity: stage >= 1 ? 0 : 1,
+          transition: 'opacity 0.6s ease-out',
+        }}
+      />
+
+      {/* Logo + Tagline */}
       <div
         style={{
+          position: 'relative',
+          zIndex: 2,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          opacity: stage >= 4 ? 0 : stage >= 1 ? 1 : 0,
-          transform: stage >= 1 ? 'scale(1)' : 'scale(0.96)',
-          transition: stage >= 4
-            ? 'opacity 0.6s ease-out, transform 0.6s ease-out'
-            : 'opacity 1.2s ease-out, transform 1.2s ease-out',
         }}
       >
-        {/* Logo */}
         <img
           src="/images/forge-logo-transparent.png"
           alt="Forge"
           style={{
-            width: isMobile ? 140 : 200,
+            width: logoSize,
             height: 'auto',
             filter: 'brightness(0) invert(1)',
-          }}
-        />
-
-        {/* Amber line */}
-        <div
-          style={{
-            width: stage >= 2 ? 48 : 0,
-            height: 1,
-            backgroundColor: '#F59E0B',
-            marginTop: 16,
-            transition: 'width 0.5s ease-out',
+            opacity: stage >= 1 ? 1 : 0,
+            transform: stage >= 1 ? 'scale(1)' : 'scale(1.06)',
+            transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
           }}
         />
 
         {/* Tagline */}
         <p
           style={{
-            marginTop: 12,
-            fontSize: 14,
-            color: '#888480',
+            marginTop: 16,
+            fontSize: isMobile ? 16 : 22,
+            fontFamily: "'Open Sauce One', sans-serif",
+            fontWeight: 800,
             letterSpacing: '0.08em',
             opacity: stage >= 3 ? 1 : 0,
-            transition: 'opacity 0.4s ease-out',
+            transform: stage >= 3 ? 'translateY(0)' : 'translateY(10px)',
+            transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
+            textDecoration: 'none',
           }}
         >
-          where Dreamers become Doers
+          <span style={{ color: 'rgba(255,255,255,0.55)' }}>where </span>
+          <span className="forge-gradient-text" style={{ animation: 'none', WebkitTextFillColor: 'transparent' }}>Dreamers</span>
+          <span style={{ color: 'rgba(255,255,255,0.55)' }}> become </span>
+          <span className="forge-gradient-text" style={{ animation: 'none', WebkitTextFillColor: 'transparent' }}>Doers</span>
         </p>
       </div>
     </div>
