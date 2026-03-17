@@ -6,8 +6,8 @@ import HonestCase from '@/components/careers/HonestCase';
 import WhoBelongsHere from '@/components/careers/WhoBelongsHere';
 import VoiceOfTeam from '@/components/careers/VoiceOfTeam';
 import OpenRoles from '@/components/careers/OpenRoles';
-import LifeAtForge from '@/components/careers/LifeAtForge';
 import HowWeHire from '@/components/careers/HowWeHire';
+import LifeAtForge from '@/components/careers/LifeAtForge';
 import ClosingCTA from '@/components/careers/ClosingCTA';
 
 export default function Careers() {
@@ -20,8 +20,8 @@ export default function Careers() {
       <WhoBelongsHere />
       <VoiceOfTeam />
       <OpenRoles />
-      <LifeAtForge />
       <HowWeHire />
+      <LifeAtForge />
       <ClosingCTA />
       <Footer />
     </div>
