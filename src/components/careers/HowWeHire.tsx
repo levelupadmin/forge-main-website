@@ -40,7 +40,7 @@ export default function HowWeHire() {
             const stepThreshold = ((i + 0.5) / steps.length) * 100;
             const isActive = fillPercent >= stepThreshold;
             return (
-              <div key={step.num} style={{ display: 'grid', gridTemplateColumns: '44px 1fr', gap: 28, paddingBottom: i < steps.length - 1 ? 52 : 0, zIndex: 2 }}>
+              <div key={step.num} style={{ display: 'grid', gridTemplateColumns: isMobile ? '36px 1fr' : '44px 1fr', gap: isMobile ? 16 : 28, paddingBottom: i < steps.length - 1 ? (isMobile ? 36 : 52) : 0, zIndex: 2 }}>
                 <div style={{ width: 44, height: 44, borderRadius: '50%', background: isActive ? '#FFBC3B' : '#000000', border: `2px solid ${isActive ? '#FFBC3B' : 'rgba(255,255,255,0.12)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Open Sauce One', sans-serif", fontWeight: 800, fontSize: 14, color: isActive ? '#000000' : 'rgba(255,255,255,0.3)', boxShadow: isActive ? '0 0 0 6px rgba(255,188,59,0.15)' : 'none', transition: 'all 500ms ease', flexShrink: 0 }}>{step.num}</div>
                 <div style={{ opacity: isActive ? 1 : 0.4, transform: isActive ? 'translateX(0)' : 'translateX(20px)', transition: 'all 500ms ease' }}>
                   <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 700, fontSize: 11, color: '#FFBC3B', letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 8 }}>Step {step.num}</div>

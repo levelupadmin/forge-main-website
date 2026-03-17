@@ -50,7 +50,7 @@ export default function VoiceOfTeam() {
       >
         <style>{`.voice-scroll::-webkit-scrollbar { display: none; }`}</style>
         {testimonials.map((t, i) => (
-          <div key={i} style={{ background: '#2e2e2e', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 20, width: cardWidth, flexShrink: 0, padding: '40px 36px 44px', scrollSnapAlign: 'start', transition: 'all 250ms ease', display: 'flex', flexDirection: 'column', gap: 20 }}
+          <div key={i} style={{ background: '#2e2e2e', border: '1px solid rgba(255,255,255,0.07)', borderRadius: isMobile ? 16 : 20, width: cardWidth, flexShrink: 0, padding: isMobile ? '28px 24px 32px' : '40px 36px 44px', scrollSnapAlign: 'start', transition: 'all 250ms ease', display: 'flex', flexDirection: 'column', gap: isMobile ? 14 : 20 }}
             onMouseEnter={e => { e.currentTarget.style.background = '#333333'; e.currentTarget.style.borderColor = 'rgba(255,188,59,0.2)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
             onMouseLeave={e => { e.currentTarget.style.background = '#2e2e2e'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >

@@ -1,3 +1,5 @@
+import { useIsMobile } from '@/hooks/use-mobile';
+
 interface SectionHeaderProps {
   eyebrow: string;
   headline: string;
@@ -6,38 +8,40 @@ interface SectionHeaderProps {
 }
 
 export default function SectionHeader({ eyebrow, headline, subtext, dark = false }: SectionHeaderProps) {
+  const isMobile = useIsMobile();
+
   return (
     <div style={{
       textAlign: 'center',
       maxWidth: 640,
-      margin: '0 auto 48px',
+      margin: isMobile ? '0 auto 32px' : '0 auto 48px',
     }}>
       <div style={{
         fontFamily: "'Open Sauce One', sans-serif",
         fontWeight: 400,
-        fontSize: 15,
+        fontSize: isMobile ? 12 : 15,
         letterSpacing: '0.18em',
         textTransform: 'uppercase',
         color: '#FFBC3B',
-        marginBottom: 20,
+        marginBottom: isMobile ? 14 : 20,
       }}>
         {eyebrow}
       </div>
       <h2 style={{
         fontFamily: "'Open Sauce One', sans-serif",
         fontWeight: 800,
-        fontSize: 'clamp(40px, 6vw, 64px)',
+        fontSize: isMobile ? 'clamp(28px, 7vw, 36px)' : 'clamp(40px, 6vw, 64px)',
         letterSpacing: -1.5,
         lineHeight: 1.05,
         color: dark ? '#FFFFFF' : '#222222',
-        margin: '0 0 20px',
+        margin: isMobile ? '0 0 14px' : '0 0 20px',
       }}>
         {headline}
       </h2>
       <p style={{
         fontFamily: "'Open Sauce One', sans-serif",
         fontWeight: 400,
-        fontSize: 17,
+        fontSize: isMobile ? 14 : 17,
         color: dark ? 'rgba(255,255,255,0.42)' : 'rgba(34,34,34,0.5)',
         lineHeight: 1.8,
         maxWidth: 540,

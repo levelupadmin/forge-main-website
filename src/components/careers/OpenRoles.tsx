@@ -62,7 +62,7 @@ function RoleRow({ title, department, status, isLast, delay, onClick, isMobile }
 
   return (
     <div ref={ref} onClick={onClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 160px 130px 40px', gap: isMobile ? 8 : 24, alignItems: 'center', borderTop: '1px solid rgba(34,34,34,0.09)', borderBottom: isLast ? '1px solid rgba(34,34,34,0.09)' : undefined, padding: isMobile ? '20px 0' : '28px 0', paddingLeft: hovered && !isMobile ? 16 : 0, cursor: 'pointer', position: 'relative', transition: 'all 250ms ease', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(28px)', transitionDelay: `${delay}ms`, transitionDuration: '650ms' }}
+      style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 160px 130px 40px', gap: isMobile ? 6 : 24, alignItems: 'center', borderTop: '1px solid rgba(34,34,34,0.09)', borderBottom: isLast ? '1px solid rgba(34,34,34,0.09)' : undefined, padding: isMobile ? '16px 0' : '28px 0', paddingLeft: hovered && !isMobile ? 16 : 0, cursor: 'pointer', position: 'relative', transition: 'all 250ms ease', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(28px)', transitionDelay: `${delay}ms`, transitionDuration: '650ms' }}
     >
       <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 800, fontSize: isMobile ? 20 : 24, color: hovered ? '#FFA800' : '#222222', letterSpacing: -0.3, transition: 'color 250ms ease' }}>{title}</div>
       <div style={{ fontFamily: "'Open Sauce One', sans-serif", fontWeight: 400, fontSize: 13, color: 'rgba(34,34,34,0.38)' }}>{department}</div>
