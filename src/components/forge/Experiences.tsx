@@ -25,7 +25,7 @@ export default function Experiences() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveProgram(prev => (prev + 1) % programs.length);
-    }, 8000);
+    }, 14000);
     return () => clearInterval(interval);
   }, []);
 
