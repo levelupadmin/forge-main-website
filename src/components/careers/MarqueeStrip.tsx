@@ -25,14 +25,17 @@ export default function MarqueeStrip() {
         flexShrink: 0,
       }}
     >
-      <span style={{
-        fontFamily: "'Open Sauce One', sans-serif",
-        fontWeight: 800,
-        fontSize: 32,
-        letterSpacing: -0.5,
-        color: stat.highlight ? '#FFBC3B' : '#FFFFFF',
-        whiteSpace: 'nowrap',
-      }}>
+      <span
+        className={stat.highlight ? 'forge-gradient-text' : undefined}
+        style={{
+          fontFamily: "'Open Sauce One', sans-serif",
+          fontWeight: 800,
+          fontSize: 32,
+          letterSpacing: -0.5,
+          color: stat.highlight ? undefined : '#FFFFFF',
+          whiteSpace: 'nowrap',
+        }}
+      >
         {stat.number}
       </span>
       <span style={{
