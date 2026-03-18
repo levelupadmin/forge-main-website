@@ -182,7 +182,7 @@ export default function Community() {
         <div style={{
           position: 'absolute', left: 0, top: 0, bottom: 0,
           width: isMobile ? 60 : 120, zIndex: 2, pointerEvents: 'none',
-          background: 'linear-gradient(to right, #222222, transparent)',
+          background: 'linear-gradient(to right, #000000, transparent)',
         }} />
         {/* Right fade */}
         <div style={{
