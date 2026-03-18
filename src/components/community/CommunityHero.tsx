@@ -61,6 +61,8 @@ export default function CommunityHero() {
             maxWidth: 540,
             margin: '16px auto 0',
             lineHeight: 1.6,
+            position: 'relative',
+            zIndex: 2,
           }}
         >
           Every program becomes a story. And the best stories need the right characters.
