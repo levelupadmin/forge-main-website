@@ -192,8 +192,8 @@ export default function Community() {
         }} />
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 12 : 16 }}>
-          <MarqueeRow members={communityRow1} duration={50} isMobile={isMobile} />
-          <MarqueeRow members={communityRow2} duration={65} isMobile={isMobile} />
+          <MarqueeRow members={communityRow1} duration={50} isMobile={isMobile} direction="left" />
+          <MarqueeRow members={communityRow2} duration={65} isMobile={isMobile} direction="right" />
         </div>
       </div>
 
