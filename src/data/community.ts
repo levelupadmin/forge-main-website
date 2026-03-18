@@ -7,7 +7,7 @@ export interface CommunityMember {
 }
 
 export const communityRow1: CommunityMember[] = [
-  { name: 'Tuhin Kalia', designation: 'Ex-Creative Head, Coinbase', socialType: 'instagram', socialUrl: 'https://instagram.com/tuhinkalyas', photo: null },
+  { name: 'Tuhin Kalia', designation: 'Ex-Creative Head, Coinbase', socialType: 'instagram', socialUrl: 'https://instagram.com/tuhinkalyas', photo: '/images/community/tuhin-kalia.jpg' },
   { name: 'Aravind Suresh', designation: 'Venture Capitalist', socialType: 'instagram', socialUrl: 'https://instagram.com/aravind_suresh', photo: '/images/community/aravind-suresh.jpg' },
   { name: 'Samya Gupta', designation: 'Corporate Lawyer, American Express', socialType: 'instagram', socialUrl: 'https://instagram.com/Samya.captured.stories', photo: '/images/community/samya-gupta.jpg' },
   { name: 'Iqbal Singh Cheema', designation: 'MD, Punjab Film City', socialType: 'instagram', socialUrl: 'https://instagram.com/Iqbal.cheema', photo: '/images/community/iqbal-cheema.jpg' },
@@ -17,8 +17,8 @@ export const communityRow1: CommunityMember[] = [
   { name: 'Nischala Reddy', designation: 'Founder, Nischala Reddy Label', socialType: 'instagram', socialUrl: 'https://instagram.com/nischala_reddyd', photo: '/images/community/nischala-reddy.jpg' },
   { name: 'Aneesa Ashraf Khan', designation: 'Filmmaker, Kashmir', socialType: 'instagram', socialUrl: 'https://instagram.com/Aneesakhann', photo: '/images/community/aneesa-khan.jpg' },
   { name: 'Shreya Verma', designation: 'Writer and Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/Shreya.pvt567', photo: '/images/community/shreya-verma.jpg' },
-  { name: 'Aanchal Chaturvedi', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/aanchalchaturvedii', photo: null },
-  { name: 'Mangesh Rangnekar', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/mangyaos', photo: null },
+  { name: 'Aanchal Chaturvedi', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/aanchalchaturvedii', photo: '/images/community/aanchal-chaturvedi.jpg' },
+  { name: 'Mangesh Rangnekar', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/mangyaos', photo: '/images/community/mangesh-rangnekar.jpg' },
 ];
 
 export const communityRow2: CommunityMember[] = [
@@ -33,5 +33,5 @@ export const communityRow2: CommunityMember[] = [
   { name: 'Naveen Nagdaune', designation: 'YouTuber', socialType: 'youtube', socialUrl: 'https://www.youtube.com/@NaveenNagdauneVlogs', photo: '/images/community/naveen-nagdaune.jpg' },
   { name: 'Chetan Choudhary', designation: 'Independent Filmmaker', socialType: 'instagram', socialUrl: 'https://instagram.com/chetan.choudhary08', photo: '/images/alumni/chetan.png' },
   { name: 'Mohamed Thajamul', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/thajmola', photo: null },
-  { name: 'Sujoy', designation: 'Content Creator, Mumbai', socialType: 'instagram', socialUrl: 'https://instagram.com/sujoyyy', photo: null },
+  { name: 'Sujoy', designation: 'Content Creator, Mumbai', socialType: 'instagram', socialUrl: 'https://instagram.com/sujoyyy', photo: '/images/community/sujoy.jpg' },
 ];
