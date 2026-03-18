@@ -1,27 +1,27 @@
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const floatingPhotos: { top?: string; bottom?: string; left?: string; right?: string; width: number; height: number; rotate: number; src: string }[] = [
-  { top: '42%', left: '2%', width: 130, height: 170, rotate: -5, src: '/images/careers/goa-beach.jpg' },
+  { top: '42%', left: '2%', width: 130, height: 170, rotate: -5, src: '/images/careers/big-group-beach.jpg' },
   { top: '60%', left: '4%', width: 140, height: 180, rotate: 4, src: '/images/careers/team-selfie.jpg' },
-  { bottom: '8%', left: '3%', width: 120, height: 155, rotate: -3, src: '/images/careers/trophy.jpg' },
+  { bottom: '8%', left: '3%', width: 120, height: 155, rotate: -3, src: '/images/careers/panel-talk.jpg' },
   { top: '44%', right: '2%', width: 135, height: 175, rotate: 5, src: '/images/careers/kl-towers.jpg' },
-  { top: '62%', right: '4%', width: 125, height: 165, rotate: -4, src: '/images/careers/tug-of-war.jpg' },
+  { top: '62%', right: '4%', width: 125, height: 165, rotate: -4, src: '/images/careers/beach-shoot.jpg' },
   { bottom: '10%', right: '3%', width: 140, height: 170, rotate: 3, src: '/images/careers/team-outdoor.jpg' },
-  { bottom: '4%', left: '25%', width: 115, height: 145, rotate: -2, src: '/images/careers/huddle.jpg' },
-  { bottom: '3%', left: '50%', width: 105, height: 135, rotate: 1, src: '/images/careers/film-fest.jpg' },
-  { bottom: '5%', right: '24%', width: 120, height: 150, rotate: -3, src: '/images/careers/beach-vibes.jpg' },
+  { bottom: '4%', left: '25%', width: 115, height: 145, rotate: -2, src: '/images/careers/production-room.jpg' },
+  { bottom: '3%', left: '50%', width: 105, height: 135, rotate: 1, src: '/images/careers/trophy.jpg' },
+  { bottom: '5%', right: '24%', width: 120, height: 150, rotate: -3, src: '/images/careers/goa-beach.jpg' },
 ];
 
 const mobileCollagePhotos: { left: string; top: string; width: number; height: number; rotate: number; zIndex: number; src: string }[] = [
-  { left: '2%', top: '0%', width: 105, height: 135, rotate: -5, zIndex: 1, src: '/images/careers/goa-beach.jpg' },
-  { left: '30%', top: '-6%', width: 115, height: 145, rotate: 3, zIndex: 3, src: '/images/careers/team-selfie.jpg' },
+  { left: '2%', top: '0%', width: 105, height: 135, rotate: -5, zIndex: 1, src: '/images/careers/big-group-beach.jpg' },
+  { left: '30%', top: '-6%', width: 115, height: 145, rotate: 3, zIndex: 3, src: '/images/careers/panel-talk.jpg' },
   { left: '60%', top: '2%', width: 100, height: 130, rotate: -2, zIndex: 2, src: '/images/careers/kl-towers.jpg' },
   { left: '6%', top: '36%', width: 110, height: 140, rotate: 4, zIndex: 2, src: '/images/careers/trophy.jpg' },
-  { left: '36%', top: '32%', width: 120, height: 150, rotate: -3, zIndex: 4, src: '/images/careers/huddle.jpg' },
+  { left: '36%', top: '32%', width: 120, height: 150, rotate: -3, zIndex: 4, src: '/images/careers/beach-shoot.jpg' },
   { left: '68%', top: '38%', width: 105, height: 135, rotate: 5, zIndex: 3, src: '/images/careers/tug-of-war.jpg' },
-  { left: '0%', top: '68%', width: 115, height: 140, rotate: -2, zIndex: 2, src: '/images/careers/beach-vibes.jpg' },
+  { left: '0%', top: '68%', width: 115, height: 140, rotate: -2, zIndex: 2, src: '/images/careers/production-room.jpg' },
   { left: '32%', top: '64%', width: 108, height: 135, rotate: 4, zIndex: 3, src: '/images/careers/team-outdoor.jpg' },
-  { left: '62%', top: '70%', width: 118, height: 145, rotate: -4, zIndex: 1, src: '/images/careers/film-fest.jpg' },
+  { left: '62%', top: '70%', width: 118, height: 145, rotate: -4, zIndex: 1, src: '/images/careers/goa-beach.jpg' },
 ];
 
 export default function CareersHero() {
