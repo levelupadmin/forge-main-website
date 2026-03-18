@@ -5,7 +5,7 @@ import FilmGrain from '@/components/forge/FilmGrain';
 import TrustedAcrossBorders from '@/components/forge/TrustedAcrossBorders';
 import CommunityHero from '@/components/community/CommunityHero';
 import CommunityStats from '@/components/community/CommunityStats';
-import MeetTheTribe from '@/components/community/MeetTheTribe';
+import CommunityMarquee from '@/components/forge/Community';
 import CommunityTestimonials from '@/components/community/CommunityTestimonials';
 import BeyondTheProgram from '@/components/community/BeyondTheProgram';
 
