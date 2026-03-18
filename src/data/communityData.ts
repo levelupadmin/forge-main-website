@@ -123,7 +123,7 @@ export const communityPerks: CommunityPerk[] = [
   },
   {
     title: 'Weekly Community Workshops',
-    description: 'Online sessions every week with fellow Forge alumni and mentors — keep learning, keep creating, keep growing.',
+    description: 'Online sessions every week with fellow Forge alumni and mentors. Keep learning, keep creating, keep growing.',
     icon: 'video',
   },
   {
