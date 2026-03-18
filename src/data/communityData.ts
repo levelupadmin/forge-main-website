@@ -97,7 +97,7 @@ export const testimonials: Testimonial[] = [
     program: 'FILMMAKING BOOTCAMP',
   },
   {
-    quote: 'As a full-time filmmaker, I must commend Forge for successfully condensing the entire process of filmmaking — from ideation to final output — into just seven days. Covering direction, scriptwriting, cinematography, and editing within such a short timeframe is no small feat, yet Forge made it genuinely enjoyable.',
+    quote: 'As a full-time filmmaker, I must commend Forge for successfully condensing the entire process of filmmaking, from ideation to final output, into just seven days. Covering direction, scriptwriting, cinematography, and editing within such a short timeframe is no small feat, yet Forge made it genuinely enjoyable.',
     name: 'Dhanvignesh',
     photo: null as unknown as string,
     program: 'FILMMAKING BOOTCAMP',
