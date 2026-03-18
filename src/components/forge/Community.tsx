@@ -124,8 +124,8 @@ export default function Community() {
       id="community"
       ref={ref}
       style={{
-        background: '#222222',
-        padding: isMobile ? '80px 0' : '120px 0',
+        background: '#000000',
+        padding: isMobile ? '60px 0' : '80px 0',
         overflow: 'hidden',
         position: 'relative',
       }}
