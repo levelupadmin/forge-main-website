@@ -73,7 +73,7 @@ export const testimonials: Testimonial[] = [
     program: 'CREATOR RESIDENCY',
   },
   {
-    quote: 'Fantastic experience. I got my direction in life on what I want to become — and that is a Film Director.',
+    quote: 'Fantastic experience. I got my direction in life on what I want to become, and that is a Film Director.',
     name: 'Dhruv Bhawsar',
     photo: '/images/community/dhruv-bhawsar.png',
     program: 'FILMMAKING BOOTCAMP',
