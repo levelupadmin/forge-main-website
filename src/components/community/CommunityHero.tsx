@@ -1,7 +1,27 @@
+import { useState, useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+const HERO_IMAGES = [
+  '/images/careers/big-group-beach.jpg',
+  '/images/careers/team-outdoor.jpg',
+  '/images/careers/beach-vibes.jpg',
+  '/images/careers/huddle.jpg',
+  '/images/careers/team-selfie.jpg',
+  '/images/programs/creators-2.jpg',
+  '/images/programs/filmmaking-6.jpg',
+  '/images/programs/writing-1.jpg',
+];
 
 export default function CommunityHero() {
   const { ref, isVisible } = useScrollAnimation(0.1);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -14,23 +34,28 @@ export default function CommunityHero() {
         overflow: 'hidden',
       }}
     >
-      {/* Background image */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: 'url(/images/careers/big-group-beach.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: 0,
-        }}
-      />
+      {/* Rotating background images */}
+      {HERO_IMAGES.map((src, i) => (
+        <div
+          key={src}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: `url(${src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0,
+            opacity: i === activeIndex ? 1 : 0,
+            transition: 'opacity 1.5s ease-in-out',
+          }}
+        />
+      ))}
       {/* Dark overlay */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'rgba(0,0,0,0.7)',
+          background: 'rgba(0,0,0,0.55)',
           zIndex: 1,
         }}
       />
