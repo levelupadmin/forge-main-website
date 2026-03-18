@@ -103,7 +103,7 @@ export const testimonials: Testimonial[] = [
     program: 'FILMMAKING BOOTCAMP',
   },
   {
-    quote: 'Forge. Level Up. These are two words I will never forget. In a single line — Forge has forged me to Level Up.',
+    quote: 'Forge. Level Up. These are two words I will never forget. In a single line, Forge has forged me to Level Up.',
     name: 'Subhash',
     photo: null as unknown as string,
     program: 'WRITING RETREAT',
