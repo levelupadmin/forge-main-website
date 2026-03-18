@@ -8,17 +8,39 @@ export default function CommunityHero() {
       ref={ref}
       style={{
         background: 'var(--forge-black)',
-        padding: 'clamp(120px, 16vw, 200px) 24px clamp(48px, 6vw, 80px)',
+        padding: 'clamp(120px, 16vw, 200px) 24px clamp(32px, 4vw, 48px)',
         textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
+      {/* Background image */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'url(/images/careers/big-group-beach.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          zIndex: 0,
+        }}
+      />
+      {/* Dark overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(0,0,0,0.7)',
+          zIndex: 1,
+        }}
+      />
+      <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ position: 'relative', zIndex: 2 }}>
         <p className="forge-subheading forge-subheading--light">The Community</p>
         <h1
           className="forge-heading forge-heading--light"
           style={{ maxWidth: 720, margin: '0 auto' }}
         >
-          The people who make{' '}
+          The People who make{' '}
           <span
             style={{
               textDecoration: 'underline',
