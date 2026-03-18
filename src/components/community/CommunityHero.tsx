@@ -28,7 +28,7 @@ export default function CommunityHero() {
       ref={ref}
       style={{
         background: 'var(--forge-black)',
-        padding: 'clamp(120px, 16vw, 200px) 24px clamp(32px, 4vw, 48px)',
+        padding: 'clamp(160px, 22vw, 280px) 24px clamp(80px, 10vw, 140px)',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
