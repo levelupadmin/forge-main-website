@@ -17,7 +17,7 @@ export default function CommunityPage() {
       <Navigation />
       <CommunityHero />
       <CommunityStats />
-      <MeetTheTribe />
+      <CommunityMarquee />
       <CommunityTestimonials />
       <BeyondTheProgram />
       <TrustedAcrossBorders />

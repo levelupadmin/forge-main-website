@@ -202,6 +202,10 @@ export default function Community() {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
+        @keyframes communityScrollRight {
+          from { transform: translateX(-50%); }
+          to { transform: translateX(0); }
+        }
       `}</style>
     </section>
   );

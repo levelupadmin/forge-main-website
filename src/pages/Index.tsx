@@ -39,7 +39,7 @@ const Index = () => {
       <Experiences />
       <Ethos />
       <Mentors />
-      <Community />
+      
       <Gallery />
       <LearnersFrom />
       <TransformationStories />
