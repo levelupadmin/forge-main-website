@@ -7,7 +7,7 @@ export interface CommunityMember {
 }
 
 export const communityRow1: CommunityMember[] = [
-  { name: 'Tuhin Kalia', designation: 'Ex-Creative Head, Coinbase', socialType: 'instagram', socialUrl: 'https://instagram.com/tuhinkalyas', photo: null },
+  { name: 'Tuhin Kalia', designation: 'Ex-Creative Head, Coinbase', socialType: 'instagram', socialUrl: 'https://instagram.com/tuhinkalyas', photo: '/images/community/tuhin-kalia.jpg' },
   { name: 'Aravind Suresh', designation: 'Venture Capitalist', socialType: 'instagram', socialUrl: 'https://instagram.com/aravind_suresh', photo: '/images/community/aravind-suresh.jpg' },
   { name: 'Samya Gupta', designation: 'Corporate Lawyer, American Express', socialType: 'instagram', socialUrl: 'https://instagram.com/Samya.captured.stories', photo: '/images/community/samya-gupta.jpg' },
   { name: 'Iqbal Singh Cheema', designation: 'MD, Punjab Film City', socialType: 'instagram', socialUrl: 'https://instagram.com/Iqbal.cheema', photo: '/images/community/iqbal-cheema.jpg' },
