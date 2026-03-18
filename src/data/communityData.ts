@@ -133,7 +133,7 @@ export const communityPerks: CommunityPerk[] = [
   },
   {
     title: 'Collaborative Projects',
-    description: 'Find your next co-creator from the Forge network. Films, podcasts, books — the best work happens together.',
+    description: 'Find your next co-creator from the Forge network. Films, podcasts, books. The best work happens together.',
     icon: 'sparkles',
   },
 ];
