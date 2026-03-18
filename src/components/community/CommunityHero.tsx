@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const HERO_IMAGES = [
-  '/images/programs/creators-7.jpg',
+  '/images/community/group-beach.jpg',
   '/images/programs/creators-3.jpg',
   '/images/programs/writing-1.jpg',
   '/images/programs/filmmaking-6.jpg',
@@ -29,7 +29,7 @@ export default function CommunityHero() {
       style={{
         background: 'var(--forge-black)',
         padding: 'clamp(260px, 35vw, 420px) 24px clamp(40px, 5vw, 60px)',
-        textAlign: 'left',
+        textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -62,7 +62,7 @@ export default function CommunityHero() {
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ position: 'relative', zIndex: 2 }}>
         <h1
           className="forge-heading forge-heading--light"
-          style={{ maxWidth: 560, fontSize: 'clamp(24px, 4vw, 38px)', margin: 0 }}
+          style={{ maxWidth: 560, fontSize: 'clamp(24px, 4vw, 38px)', margin: '0 auto' }}
         >
           The People who make{' '}
           <span
@@ -83,6 +83,7 @@ export default function CommunityHero() {
             fontSize: 14,
             marginTop: 12,
             maxWidth: 440,
+            margin: '12px auto 0',
             lineHeight: 1.6,
             position: 'relative',
             zIndex: 2,
