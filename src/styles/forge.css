@@ -715,6 +715,65 @@ body {
   animation-play-state: paused;
 }
 
+/* ── Testimonial Card Masonry ── */
+.testimonials-grid {
+  columns: 3;
+  column-gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 80px);
+}
+.testimonials-grid .testimonial-card {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  display: inline-block;
+  width: 100%;
+  background: #2e2e2e;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 32px 28px 36px;
+  transition: background 250ms ease, border-color 250ms ease, transform 250ms ease, box-shadow 250ms ease;
+  cursor: default;
+}
+.testimonials-grid .testimonial-card:hover {
+  background: #FFBC3B;
+  border-color: #FFBC3B;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 56px rgba(255,188,59,0.2);
+}
+.testimonial-card .tc-quote-mark {
+  color: #FFBC3B;
+  transition: color 250ms ease;
+}
+.testimonial-card:hover .tc-quote-mark { color: #222222; }
+.testimonial-card .tc-quote-text {
+  color: rgba(255,255,255,0.78);
+  transition: color 250ms ease;
+}
+.testimonial-card:hover .tc-quote-text { color: rgba(34,34,34,0.85); }
+.testimonial-card .tc-member-name {
+  color: #FFFFFF;
+  transition: color 250ms ease;
+}
+.testimonial-card:hover .tc-member-name { color: #222222; }
+.testimonial-card .tc-program-tag {
+  color: #FFBC3B;
+  transition: color 250ms ease;
+}
+.testimonial-card:hover .tc-program-tag { color: rgba(34,34,34,0.55); }
+.testimonial-card .tc-member-photo {
+  border: 1.5px solid rgba(255,255,255,0.1);
+  transition: border-color 250ms ease;
+}
+.testimonial-card:hover .tc-member-photo { border-color: rgba(34,34,34,0.2); }
+
+@media (max-width: 1023px) {
+  .testimonials-grid { columns: 2; }
+}
+@media (max-width: 767px) {
+  .testimonials-grid { columns: 1; }
+}
+
 
 .experiences-title {
   font-family: 'Open Sauce One', sans-serif;

@@ -1,24 +1,23 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useIsMobile } from '@/hooks/use-mobile';
-import { useDragScroll } from '@/hooks/useDragScroll';
 import { testimonials } from '@/data/communityData';
+
+const getInitials = (name: string) =>
+  name.trim().split(' ').slice(0, 2).map(n => n[0].toUpperCase()).join('');
 
 export default function CommunityTestimonials() {
   const { ref, isVisible } = useScrollAnimation(0.1);
-  const isMobile = useIsMobile();
-  const dragRef = useDragScroll();
 
   return (
     <section
       ref={ref}
       style={{
-        background: 'var(--forge-black)',
+        background: '#000000',
         padding: 'clamp(32px, 4vw, 56px) 0',
       }}
     >
       <div
         className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-        style={{ textAlign: 'center', padding: '0 24px', marginBottom: 12 }}
+        style={{ textAlign: 'center', padding: '0 24px', marginBottom: 32 }}
       >
         <p className="forge-subheading forge-subheading--light">What They Said</p>
         <div
@@ -29,127 +28,89 @@ export default function CommunityTestimonials() {
         </div>
       </div>
 
-      {isMobile ? (
-        <div
-          ref={dragRef}
-          className="forge-scroll"
-          style={{
-            display: 'flex',
-            gap: 16,
-            padding: '32px 24px 0',
-            scrollSnapType: 'x mandatory',
-          }}
-        >
-          {testimonials.map((t, i) => (
+      <div className={`testimonials-grid forge-fade-up${isVisible ? ' visible' : ''}`} style={{ transitionDelay: '200ms' }}>
+        {testimonials.map((t, i) => (
+          <div key={i} className="testimonial-card">
             <div
-              key={i}
-              className={`forge-fade-up${isVisible ? ' visible' : ''}`}
+              className="tc-quote-mark"
               style={{
-                transitionDelay: `${i * 100}ms`,
-                scrollSnapAlign: 'start',
-                minWidth: 300,
-                flexShrink: 0,
+                fontWeight: 800,
+                fontSize: 48,
+                lineHeight: 0.7,
+                marginBottom: 16,
+                fontFamily: 'Georgia, serif',
               }}
             >
-              <TestimonialCard testimonial={t} />
+              "
             </div>
-          ))}
-        </div>
-      ) : (
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 20,
-            maxWidth: 1200,
-            margin: '32px auto 0',
-            padding: '0 clamp(16px, 3vw, 48px)',
-          }}
-        >
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className={`forge-fade-up${isVisible ? ' visible' : ''}`}
-              style={{ transitionDelay: `${200 + i * 100}ms` }}
+            <p
+              className="tc-quote-text"
+              style={{
+                fontSize: 15,
+                lineHeight: 1.8,
+                fontStyle: 'italic',
+                margin: 0,
+              }}
             >
-              <TestimonialCard testimonial={t} />
+              {t.quote}
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 24 }}>
+              {t.photo ? (
+                <img
+                  className="tc-member-photo"
+                  src={t.photo}
+                  alt={t.name}
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    objectPosition: 'top center',
+                    flexShrink: 0,
+                  }}
+                />
+              ) : (
+                <div
+                  className="tc-member-photo"
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: '50%',
+                    background: '#3a3a3a',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: 'rgba(255,255,255,0.25)',
+                    letterSpacing: '0.05em',
+                    flexShrink: 0,
+                  }}
+                >
+                  {getInitials(t.name)}
+                </div>
+              )}
+              <div>
+                <div className="tc-member-name" style={{ fontWeight: 700, fontSize: 14 }}>
+                  {t.name}
+                </div>
+                <div
+                  className="tc-program-tag"
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    marginTop: 2,
+                  }}
+                >
+                  {t.program}
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
-      )}
+          </div>
+        ))}
+      </div>
     </section>
-  );
-}
-
-function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[0] }) {
-  return (
-    <div
-      style={{
-        background: 'rgba(255,255,255,0.06)',
-        borderRadius: 20,
-        padding: '28px 24px',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        border: '1px solid rgba(255,255,255,0.08)',
-      }}
-    >
-      <div
-        style={{
-          fontSize: 48,
-          lineHeight: 1,
-          color: 'var(--forge-yellow)',
-          fontFamily: 'Georgia, serif',
-          marginBottom: 12,
-        }}
-      >
-        "
-      </div>
-      <p
-        style={{
-          color: 'rgba(255,255,255,0.8)',
-          fontSize: 15,
-          lineHeight: 1.7,
-          flex: 1,
-          marginBottom: 20,
-        }}
-      >
-        {testimonial.quote}
-      </p>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <div
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: '50%',
-            overflow: 'hidden',
-            flexShrink: 0,
-          }}
-        >
-          <img
-            src={testimonial.photo}
-            alt={testimonial.name}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </div>
-        <div>
-          <div style={{ color: 'white', fontWeight: 700, fontSize: 14 }}>
-            {testimonial.name}
-          </div>
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: 'var(--forge-yellow)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              marginTop: 2,
-            }}
-          >
-            {testimonial.program}
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
