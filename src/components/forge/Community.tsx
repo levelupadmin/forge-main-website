@@ -161,7 +161,7 @@ export default function Community() {
           color: '#FFFFFF',
           margin: '0 0 20px',
         }}>
-          Meet the Dreamers.
+          Meet your friends for life
         </h2>
         <p style={{
           fontFamily: "'Open Sauce One', sans-serif",
