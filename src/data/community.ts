@@ -17,6 +17,8 @@ export const communityRow1: CommunityMember[] = [
   { name: 'Nischala Reddy', designation: 'Founder, Nischala Reddy Label', socialType: 'instagram', socialUrl: 'https://instagram.com/nischala_reddyd', photo: '/images/community/nischala-reddy.jpg' },
   { name: 'Aneesa Ashraf Khan', designation: 'Filmmaker, Kashmir', socialType: 'instagram', socialUrl: 'https://instagram.com/Aneesakhann', photo: '/images/community/aneesa-khan.jpg' },
   { name: 'Shreya Verma', designation: 'Writer and Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/Shreya.pvt567', photo: '/images/community/shreya-verma.jpg' },
+  { name: 'Aanchal Chaturvedi', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/aanchalchaturvedii', photo: null },
+  { name: 'Mangesh Rangnekar', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/mangyaos', photo: null },
 ];
 
 export const communityRow2: CommunityMember[] = [
@@ -30,4 +32,6 @@ export const communityRow2: CommunityMember[] = [
   { name: 'Vanmathi Velmurugan', designation: 'Founder, Coconut Sugar Company', socialType: 'instagram', socialUrl: 'https://www.instagram.com/vanmathi_velmurugan/', photo: '/images/community/vanmathi-velmurugan.jpg' },
   { name: 'Naveen Nagdaune', designation: 'YouTuber', socialType: 'youtube', socialUrl: 'https://www.youtube.com/@NaveenNagdauneVlogs', photo: '/images/community/naveen-nagdaune.jpg' },
   { name: 'Chetan Choudhary', designation: 'Independent Filmmaker', socialType: 'instagram', socialUrl: 'https://instagram.com/chetan.choudhary08', photo: '/images/alumni/chetan.png' },
+  { name: 'Mohamed Thajamul', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/thajmola', photo: null },
+  { name: 'Sujoy', designation: 'Content Creator, Mumbai', socialType: 'instagram', socialUrl: 'https://instagram.com/sujoyyy', photo: null },
 ];

@@ -30,7 +30,7 @@ function MemberCard({ member, isMobile }: { member: CommunityMember; isMobile: b
         width: cardW,
         height: cardH,
         borderRadius: 16,
-        background: '#2a2a2a',
+        background: '#1a1a1a',
         border: '1px solid rgba(255,255,255,0.07)',
         display: 'flex',
         flexDirection: 'column',
@@ -124,8 +124,8 @@ export default function Community() {
       id="community"
       ref={ref}
       style={{
-        background: '#222222',
-        padding: isMobile ? '80px 0' : '120px 0',
+        background: '#000000',
+        padding: isMobile ? '60px 0' : '80px 0',
         overflow: 'hidden',
         position: 'relative',
       }}
@@ -138,7 +138,7 @@ export default function Community() {
           padding: isMobile ? '0 24px' : '0 80px',
           maxWidth: 640,
           margin: '0 auto',
-          marginBottom: isMobile ? 48 : 64,
+          marginBottom: isMobile ? 36 : 48,
         }}
       >
         <p style={{
@@ -182,13 +182,13 @@ export default function Community() {
         <div style={{
           position: 'absolute', left: 0, top: 0, bottom: 0,
           width: isMobile ? 60 : 120, zIndex: 2, pointerEvents: 'none',
-          background: 'linear-gradient(to right, #222222, transparent)',
+          background: 'linear-gradient(to right, #000000, transparent)',
         }} />
         {/* Right fade */}
         <div style={{
           position: 'absolute', right: 0, top: 0, bottom: 0,
           width: isMobile ? 60 : 120, zIndex: 2, pointerEvents: 'none',
-          background: 'linear-gradient(to left, #222222, transparent)',
+          background: 'linear-gradient(to left, #000000, transparent)',
         }} />
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 12 : 16 }}>

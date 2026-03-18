@@ -13,7 +13,7 @@ export default function CommunityTestimonials() {
       ref={ref}
       style={{
         background: 'var(--forge-black)',
-        padding: 'clamp(48px, 6vw, 80px) 0',
+        padding: 'clamp(32px, 4vw, 56px) 0',
       }}
     >
       <div

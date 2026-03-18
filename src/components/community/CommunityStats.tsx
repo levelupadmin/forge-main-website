@@ -10,7 +10,7 @@ export default function CommunityStats() {
       ref={ref}
       style={{
         background: 'var(--forge-black)',
-        padding: 'clamp(48px, 6vw, 80px) 24px',
+        padding: 'clamp(32px, 4vw, 56px) 24px',
       }}
     >
       <div
