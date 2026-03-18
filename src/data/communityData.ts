@@ -118,7 +118,7 @@ export const communityPerks: CommunityPerk[] = [
   },
   {
     title: 'City Meetups',
-    description: 'Regular meetups in Mumbai, Delhi, Bangalore, and more — because the best ideas happen over chai and conversation.',
+    description: 'Regular meetups in Mumbai, Delhi, Bangalore, and more. Because the best ideas happen over chai and conversation.',
     icon: 'map-pin',
   },
   {
