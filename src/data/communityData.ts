@@ -61,7 +61,7 @@ export const testimonials: Testimonial[] = [
     program: 'CREATOR RESIDENCY',
   },
   {
-    quote: 'This cohort is like Hogwarts for writers. The location was enchanting, the mentors are visionary sages, and the peers were carefully chosen from diverse backgrounds. Forge truly lives up to its name — I would highly recommend it to everyone looking to literally level up.',
+    quote: 'This cohort is like Hogwarts for writers. The location was enchanting, the mentors are visionary sages, and the peers were carefully chosen from diverse backgrounds. Forge truly lives up to its name. I would highly recommend it to everyone looking to literally level up.',
     name: 'Abhinav Bainslay',
     photo: null as unknown as string,
     program: 'WRITING RETREAT',
