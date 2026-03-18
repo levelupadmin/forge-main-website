@@ -90,9 +90,9 @@ function MemberCard({ member, isMobile }: { member: CommunityMember; isMobile: b
   );
 }
 
-function MarqueeRow({ members, duration, isMobile }: { members: CommunityMember[]; duration: number; isMobile: boolean }) {
+function MarqueeRow({ members, duration, isMobile, direction = 'left' }: { members: CommunityMember[]; duration: number; isMobile: boolean; direction?: 'left' | 'right' }) {
   const doubled = [...members, ...members];
-  const animName = 'communityScrollLeft';
+  const animName = direction === 'left' ? 'communityScrollLeft' : 'communityScrollRight';
 
   return (
     <div style={{ overflow: 'hidden' }}>
@@ -150,7 +150,7 @@ export default function Community() {
           color: '#FFBC3B',
           marginBottom: 16,
         }}>
-          People of the Forge
+          Our Alma Mater
         </p>
         <h2 style={{
           fontFamily: "'Open Sauce One', sans-serif",
@@ -161,7 +161,7 @@ export default function Community() {
           color: '#FFFFFF',
           margin: '0 0 20px',
         }}>
-          Meet the Dreamers.
+          Meet your friends for life
         </h2>
         <p style={{
           fontFamily: "'Open Sauce One', sans-serif",
@@ -172,7 +172,7 @@ export default function Community() {
           maxWidth: 520,
           margin: '0 auto',
         }}>
-          Filmmakers. Founders. Writers. Athletes. Creators. Lawyers. All here because they refused to just talk about it.
+          Our alumni are India's Top Creatives, Founders, Filmmakers, Storytellers and Creators who make you feel like you never want to leave the Forge.
         </p>
       </div>
 
@@ -192,8 +192,8 @@ export default function Community() {
         }} />
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 12 : 16 }}>
-          <MarqueeRow members={communityRow1} duration={50} isMobile={isMobile} />
-          <MarqueeRow members={communityRow2} duration={65} isMobile={isMobile} />
+          <MarqueeRow members={communityRow1} duration={50} isMobile={isMobile} direction="left" />
+          <MarqueeRow members={communityRow2} duration={65} isMobile={isMobile} direction="right" />
         </div>
       </div>
 
@@ -201,6 +201,10 @@ export default function Community() {
         @keyframes communityScrollLeft {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
+        }
+        @keyframes communityScrollRight {
+          from { transform: translateX(-50%); }
+          to { transform: translateX(0); }
         }
       `}</style>
     </section>
