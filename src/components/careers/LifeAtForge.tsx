@@ -2,14 +2,18 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const galleryItems = [
-  { src: '/images/careers/goa-beach.jpg', alt: 'Team at Goa beach', height: 220, mobileHeight: 160 },
+  { src: '/images/careers/big-group-beach.jpg', alt: 'Big group at the beach', height: 220, mobileHeight: 160 },
   { src: '/images/careers/tug-of-war.jpg', alt: 'Tug of war fun', height: 280, mobileHeight: 200 },
-  { src: '/images/careers/film-fest.jpg', alt: 'At a film festival', height: 200, mobileHeight: 150 },
+  { src: '/images/careers/panel-talk.jpg', alt: 'Panel discussion on stage', height: 200, mobileHeight: 150 },
   { src: '/images/careers/trophy.jpg', alt: 'Celebrating with trophy', height: 260, mobileHeight: 190 },
-  { src: '/images/careers/beach-vibes.jpg', alt: 'Beach vibes', height: 190, mobileHeight: 140 },
+  { src: '/images/careers/beach-shoot.jpg', alt: 'Beach photoshoot', height: 190, mobileHeight: 140 },
   { src: '/images/careers/team-outdoor.jpg', alt: 'Team outdoor photo', height: 250, mobileHeight: 180 },
-  { src: '/images/careers/kl-towers.jpg', alt: 'KL Towers trip', height: 210, mobileHeight: 155 },
+  { src: '/images/careers/production-room.jpg', alt: 'Production session', height: 210, mobileHeight: 155 },
   { src: '/images/careers/huddle.jpg', alt: 'Team huddle', height: 270, mobileHeight: 195 },
+  { src: '/images/careers/kl-towers.jpg', alt: 'KL Towers trip', height: 200, mobileHeight: 150 },
+  { src: '/images/careers/film-fest.jpg', alt: 'At a film festival', height: 240, mobileHeight: 175 },
+  { src: '/images/careers/goa-beach.jpg', alt: 'Team at Goa beach', height: 210, mobileHeight: 155 },
+  { src: '/images/careers/group-indoor.jpg', alt: 'Full group indoors', height: 260, mobileHeight: 185 },
   { src: '/images/careers/team-selfie.jpg', alt: 'Team selfie', height: 230, mobileHeight: 165 },
 ];
 
