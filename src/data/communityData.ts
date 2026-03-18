@@ -91,7 +91,7 @@ export const testimonials: Testimonial[] = [
     program: 'CREATOR RESIDENCY',
   },
   {
-    quote: 'It honestly helped boost my confidence. I feel a lot freer when it comes to experimenting and exploring. At no point did the mentors leave us in the process. They made sure we finished our script, our shoot — everything.',
+    quote: 'It honestly helped boost my confidence. I feel a lot freer when it comes to experimenting and exploring. At no point did the mentors leave us in the process. They made sure we finished our script, our shoot, everything.',
     name: 'Prachy Singh',
     photo: null as unknown as string,
     program: 'FILMMAKING BOOTCAMP',
