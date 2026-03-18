@@ -30,7 +30,7 @@ function MemberCard({ member, isMobile }: { member: CommunityMember; isMobile: b
         width: cardW,
         height: cardH,
         borderRadius: 16,
-        background: '#2a2a2a',
+        background: '#1a1a1a',
         border: '1px solid rgba(255,255,255,0.07)',
         display: 'flex',
         flexDirection: 'column',
