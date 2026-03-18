@@ -172,7 +172,7 @@ export default function Community() {
           maxWidth: 520,
           margin: '0 auto',
         }}>
-          Filmmakers. Founders. Writers. Athletes. Creators. Lawyers. All here because they refused to just talk about it.
+          Our alumni are India's Top Creatives, Founders, Filmmakers, Storytellers and Creators who make you feel like you never want to leave the Forge.
         </p>
       </div>
 
