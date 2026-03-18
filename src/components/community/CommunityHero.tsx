@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const HERO_IMAGES = [
-  '/images/careers/group-indoor.jpg',
+  '/images/programs/creators-7.jpg',
   '/images/programs/creators-3.jpg',
   '/images/programs/writing-1.jpg',
   '/images/programs/filmmaking-6.jpg',
