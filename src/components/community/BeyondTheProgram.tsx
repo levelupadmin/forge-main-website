@@ -129,7 +129,7 @@ export default function BeyondTheProgram() {
               }}
             >
               <img
-                src="/images/community/beyond-community.jpg"
+                src="/images/community/group-beach.jpg"
                 alt="Forge community meetup"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
