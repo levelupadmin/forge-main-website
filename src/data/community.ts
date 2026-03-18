@@ -32,6 +32,6 @@ export const communityRow2: CommunityMember[] = [
   { name: 'Vanmathi Velmurugan', designation: 'Founder, Coconut Sugar Company', socialType: 'instagram', socialUrl: 'https://www.instagram.com/vanmathi_velmurugan/', photo: '/images/community/vanmathi-velmurugan.jpg' },
   { name: 'Naveen Nagdaune', designation: 'YouTuber', socialType: 'youtube', socialUrl: 'https://www.youtube.com/@NaveenNagdauneVlogs', photo: '/images/community/naveen-nagdaune.jpg' },
   { name: 'Chetan Choudhary', designation: 'Independent Filmmaker', socialType: 'instagram', socialUrl: 'https://instagram.com/chetan.choudhary08', photo: '/images/alumni/chetan.png' },
-  { name: 'Mohamed Thajamul', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/thajmola', photo: null },
+  { name: 'Mohamed Thajamul', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/thajmola', photo: '/images/community/mohamed-thajamul.jpg' },
   { name: 'Sujoy', designation: 'Content Creator, Mumbai', socialType: 'instagram', socialUrl: 'https://instagram.com/sujoyyy', photo: '/images/community/sujoy.jpg' },
 ];
