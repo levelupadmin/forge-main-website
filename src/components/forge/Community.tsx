@@ -150,7 +150,7 @@ export default function Community() {
           color: '#FFBC3B',
           marginBottom: 16,
         }}>
-          People of the Forge
+          Our Alma Mater
         </p>
         <h2 style={{
           fontFamily: "'Open Sauce One', sans-serif",
