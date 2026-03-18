@@ -60,10 +60,9 @@ export default function CommunityHero() {
         }}
       />
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ position: 'relative', zIndex: 2 }}>
-        <p className="forge-subheading forge-subheading--light">The Community</p>
         <h1
           className="forge-heading forge-heading--light"
-          style={{ maxWidth: 720, margin: '0 auto' }}
+          style={{ maxWidth: 560, fontSize: 'clamp(24px, 4vw, 38px)', margin: 0 }}
         >
           The People who make{' '}
           <span
@@ -81,10 +80,9 @@ export default function CommunityHero() {
         <p
           style={{
             color: 'rgba(255,255,255,0.6)',
-            fontSize: 17,
-            marginTop: 16,
-            maxWidth: 540,
-            margin: '16px auto 0',
+            fontSize: 14,
+            marginTop: 12,
+            maxWidth: 440,
             lineHeight: 1.6,
             position: 'relative',
             zIndex: 2,
