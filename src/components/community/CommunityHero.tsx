@@ -83,6 +83,7 @@ export default function CommunityHero() {
             fontSize: 14,
             marginTop: 12,
             maxWidth: 440,
+            margin: '12px auto 0',
             lineHeight: 1.6,
             position: 'relative',
             zIndex: 2,
