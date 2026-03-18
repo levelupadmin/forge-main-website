@@ -9,7 +9,7 @@ export interface CommunityMember {
 export const communityRow1: CommunityMember[] = [
   { name: 'Tuhin Kalia', designation: 'Ex-Creative Head, Coinbase', socialType: 'instagram', socialUrl: 'https://instagram.com/tuhinkalyas', photo: '/images/community/tuhin-kalia.jpg' },
   { name: 'Aravind Suresh', designation: 'Venture Capitalist', socialType: 'instagram', socialUrl: 'https://instagram.com/aravind_suresh', photo: '/images/community/aravind-suresh.jpg' },
-  { name: 'Samya Gupta', designation: 'Corporate Lawyer, American Express', socialType: 'instagram', socialUrl: 'https://instagram.com/Samya.captured.stories', photo: '/images/community/samya-gupta.jpg' },
+  { name: 'Samya Gupta', designation: 'Corporate Lawyer, American Express', socialType: 'instagram', socialUrl: 'https://instagram.com/Samya.captured.stories', photo: '/images/community/samya-gupta-new.jpg' },
   { name: 'Iqbal Singh Cheema', designation: 'MD, Punjab Film City', socialType: 'instagram', socialUrl: 'https://instagram.com/Iqbal.cheema', photo: '/images/community/iqbal-cheema.jpg' },
   { name: 'Saket Toshniwal', designation: 'CEO, 2care AI', socialType: 'instagram', socialUrl: 'https://instagram.com/Growwithsaket', photo: '/images/community/saket-toshniwal.jpg' },
   { name: 'Rahul Narvekar', designation: 'Founder and TedX Speaker', socialType: 'instagram', socialUrl: 'https://instagram.com/Rahulnarvekar', photo: '/images/community/rahul-narvekar.jpg' },
@@ -32,6 +32,6 @@ export const communityRow2: CommunityMember[] = [
   { name: 'Vanmathi Velmurugan', designation: 'Founder, Coconut Sugar Company', socialType: 'instagram', socialUrl: 'https://www.instagram.com/vanmathi_velmurugan/', photo: '/images/community/vanmathi-velmurugan.jpg' },
   { name: 'Naveen Nagdaune', designation: 'YouTuber', socialType: 'youtube', socialUrl: 'https://www.youtube.com/@NaveenNagdauneVlogs', photo: '/images/community/naveen-nagdaune.jpg' },
   { name: 'Chetan Choudhary', designation: 'Independent Filmmaker', socialType: 'instagram', socialUrl: 'https://instagram.com/chetan.choudhary08', photo: '/images/alumni/chetan.png' },
-  { name: 'Mohamed Thajamul', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/thajmola', photo: null },
+  { name: 'Mohamed Thajamul', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/thajmola', photo: '/images/community/mohamed-thajamul.jpg' },
   { name: 'Sujoy', designation: 'Content Creator, Mumbai', socialType: 'instagram', socialUrl: 'https://instagram.com/sujoyyy', photo: '/images/community/sujoy.jpg' },
 ];
