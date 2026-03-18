@@ -85,7 +85,7 @@ export const testimonials: Testimonial[] = [
     program: 'WRITING RETREAT',
   },
   {
-    quote: 'Forge took me from just posting to actually understanding what is going on behind the screen. It was not content chaos or info overload — just learning that actually lands. Somewhere between reels and realisations, I found a stronger creator voice. And a crew I am definitely keeping for life.',
+    quote: 'Forge took me from just posting to actually understanding what is going on behind the screen. It was not content chaos or info overload, just learning that actually lands. Somewhere between reels and realisations, I found a stronger creator voice. And a crew I am definitely keeping for life.',
     name: 'Sathimaa',
     photo: null as unknown as string,
     program: 'CREATOR RESIDENCY',
