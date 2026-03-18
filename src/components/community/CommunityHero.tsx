@@ -29,7 +29,7 @@ export default function CommunityHero() {
       style={{
         background: 'var(--forge-black)',
         padding: 'clamp(260px, 35vw, 420px) 24px clamp(40px, 5vw, 60px)',
-        textAlign: 'left',
+        textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}
