@@ -5,7 +5,6 @@ const HERO_IMAGES = [
   '/images/community/group-beach.jpg',
   '/images/programs/creators-3.jpg',
   '/images/programs/writing-1.jpg',
-  '/images/programs/filmmaking-6.jpg',
   '/images/programs/creators-5.jpg',
   '/images/programs/creators-4.jpg',
   '/images/programs/writing-3.jpg',
