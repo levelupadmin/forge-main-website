@@ -17,8 +17,8 @@ export const communityRow1: CommunityMember[] = [
   { name: 'Nischala Reddy', designation: 'Founder, Nischala Reddy Label', socialType: 'instagram', socialUrl: 'https://instagram.com/nischala_reddyd', photo: '/images/community/nischala-reddy.jpg' },
   { name: 'Aneesa Ashraf Khan', designation: 'Filmmaker, Kashmir', socialType: 'instagram', socialUrl: 'https://instagram.com/Aneesakhann', photo: '/images/community/aneesa-khan.jpg' },
   { name: 'Shreya Verma', designation: 'Writer and Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/Shreya.pvt567', photo: '/images/community/shreya-verma.jpg' },
-  { name: 'Aanchal Chaturvedi', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/aanchalchaturvedii', photo: null },
-  { name: 'Mangesh Rangnekar', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/mangyaos', photo: null },
+  { name: 'Aanchal Chaturvedi', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/aanchalchaturvedii', photo: '/images/community/aanchal-chaturvedi.jpg' },
+  { name: 'Mangesh Rangnekar', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/mangyaos', photo: '/images/community/mangesh-rangnekar.jpg' },
 ];
 
 export const communityRow2: CommunityMember[] = [
