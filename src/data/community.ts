@@ -9,7 +9,7 @@ export interface CommunityMember {
 export const communityRow1: CommunityMember[] = [
   { name: 'Tuhin Kalia', designation: 'Ex-Creative Head, Coinbase', socialType: 'instagram', socialUrl: 'https://instagram.com/tuhinkalyas', photo: '/images/community/tuhin-kalia.jpg' },
   { name: 'Aravind Suresh', designation: 'Venture Capitalist', socialType: 'instagram', socialUrl: 'https://instagram.com/aravind_suresh', photo: '/images/community/aravind-suresh.jpg' },
-  { name: 'Samya Gupta', designation: 'Corporate Lawyer, American Express', socialType: 'instagram', socialUrl: 'https://instagram.com/Samya.captured.stories', photo: '/images/community/samya-gupta.jpg' },
+  { name: 'Samya Gupta', designation: 'Corporate Lawyer, American Express', socialType: 'instagram', socialUrl: 'https://instagram.com/Samya.captured.stories', photo: '/images/community/samya-gupta-new.jpg' },
   { name: 'Iqbal Singh Cheema', designation: 'MD, Punjab Film City', socialType: 'instagram', socialUrl: 'https://instagram.com/Iqbal.cheema', photo: '/images/community/iqbal-cheema.jpg' },
   { name: 'Saket Toshniwal', designation: 'CEO, 2care AI', socialType: 'instagram', socialUrl: 'https://instagram.com/Growwithsaket', photo: '/images/community/saket-toshniwal.jpg' },
   { name: 'Rahul Narvekar', designation: 'Founder and TedX Speaker', socialType: 'instagram', socialUrl: 'https://instagram.com/Rahulnarvekar', photo: '/images/community/rahul-narvekar.jpg' },
