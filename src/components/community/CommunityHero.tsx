@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const HERO_IMAGES = [
-  '/images/careers/group-indoor.jpg',
+  '/images/programs/creators-7.jpg',
   '/images/programs/creators-3.jpg',
   '/images/programs/writing-1.jpg',
   '/images/programs/filmmaking-6.jpg',
@@ -28,8 +28,8 @@ export default function CommunityHero() {
       ref={ref}
       style={{
         background: 'var(--forge-black)',
-        padding: 'clamp(160px, 22vw, 280px) 24px clamp(80px, 10vw, 140px)',
-        textAlign: 'center',
+        padding: 'clamp(260px, 35vw, 420px) 24px clamp(40px, 5vw, 60px)',
+        textAlign: 'left',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -60,10 +60,9 @@ export default function CommunityHero() {
         }}
       />
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ position: 'relative', zIndex: 2 }}>
-        <p className="forge-subheading forge-subheading--light">The Community</p>
         <h1
           className="forge-heading forge-heading--light"
-          style={{ maxWidth: 720, margin: '0 auto' }}
+          style={{ maxWidth: 560, fontSize: 'clamp(24px, 4vw, 38px)', margin: 0 }}
         >
           The People who make{' '}
           <span
@@ -81,10 +80,9 @@ export default function CommunityHero() {
         <p
           style={{
             color: 'rgba(255,255,255,0.6)',
-            fontSize: 17,
-            marginTop: 16,
-            maxWidth: 540,
-            margin: '16px auto 0',
+            fontSize: 14,
+            marginTop: 12,
+            maxWidth: 440,
             lineHeight: 1.6,
             position: 'relative',
             zIndex: 2,
