@@ -1,27 +1,27 @@
 import { useIsMobile } from '@/hooks/use-mobile';
 
-const floatingPhotos: { top?: string; bottom?: string; left?: string; right?: string; width: number; height: number; rotate: number }[] = [
-  { top: '42%', left: '2%', width: 130, height: 170, rotate: -5 },
-  { top: '60%', left: '4%', width: 140, height: 180, rotate: 4 },
-  { bottom: '8%', left: '3%', width: 120, height: 155, rotate: -3 },
-  { top: '44%', right: '2%', width: 135, height: 175, rotate: 5 },
-  { top: '62%', right: '4%', width: 125, height: 165, rotate: -4 },
-  { bottom: '10%', right: '3%', width: 140, height: 170, rotate: 3 },
-  { bottom: '4%', left: '25%', width: 115, height: 145, rotate: -2 },
-  { bottom: '3%', left: '50%', width: 105, height: 135, rotate: 1 },
-  { bottom: '5%', right: '24%', width: 120, height: 150, rotate: -3 },
+const floatingPhotos: { top?: string; bottom?: string; left?: string; right?: string; width: number; height: number; rotate: number; src: string }[] = [
+  { top: '42%', left: '2%', width: 130, height: 170, rotate: -5, src: '/images/careers/goa-beach.jpg' },
+  { top: '60%', left: '4%', width: 140, height: 180, rotate: 4, src: '/images/careers/team-selfie.jpg' },
+  { bottom: '8%', left: '3%', width: 120, height: 155, rotate: -3, src: '/images/careers/trophy.jpg' },
+  { top: '44%', right: '2%', width: 135, height: 175, rotate: 5, src: '/images/careers/kl-towers.jpg' },
+  { top: '62%', right: '4%', width: 125, height: 165, rotate: -4, src: '/images/careers/tug-of-war.jpg' },
+  { bottom: '10%', right: '3%', width: 140, height: 170, rotate: 3, src: '/images/careers/team-outdoor.jpg' },
+  { bottom: '4%', left: '25%', width: 115, height: 145, rotate: -2, src: '/images/careers/huddle.jpg' },
+  { bottom: '3%', left: '50%', width: 105, height: 135, rotate: 1, src: '/images/careers/film-fest.jpg' },
+  { bottom: '5%', right: '24%', width: 120, height: 150, rotate: -3, src: '/images/careers/beach-vibes.jpg' },
 ];
 
-const mobileCollagePhotos: { left: string; top: string; width: number; height: number; rotate: number; zIndex: number }[] = [
-  { left: '2%', top: '0%', width: 105, height: 135, rotate: -5, zIndex: 1 },
-  { left: '30%', top: '-6%', width: 115, height: 145, rotate: 3, zIndex: 3 },
-  { left: '60%', top: '2%', width: 100, height: 130, rotate: -2, zIndex: 2 },
-  { left: '6%', top: '36%', width: 110, height: 140, rotate: 4, zIndex: 2 },
-  { left: '36%', top: '32%', width: 120, height: 150, rotate: -3, zIndex: 4 },
-  { left: '68%', top: '38%', width: 105, height: 135, rotate: 5, zIndex: 3 },
-  { left: '0%', top: '68%', width: 115, height: 140, rotate: -2, zIndex: 2 },
-  { left: '32%', top: '64%', width: 108, height: 135, rotate: 4, zIndex: 3 },
-  { left: '62%', top: '70%', width: 118, height: 145, rotate: -4, zIndex: 1 },
+const mobileCollagePhotos: { left: string; top: string; width: number; height: number; rotate: number; zIndex: number; src: string }[] = [
+  { left: '2%', top: '0%', width: 105, height: 135, rotate: -5, zIndex: 1, src: '/images/careers/goa-beach.jpg' },
+  { left: '30%', top: '-6%', width: 115, height: 145, rotate: 3, zIndex: 3, src: '/images/careers/team-selfie.jpg' },
+  { left: '60%', top: '2%', width: 100, height: 130, rotate: -2, zIndex: 2, src: '/images/careers/kl-towers.jpg' },
+  { left: '6%', top: '36%', width: 110, height: 140, rotate: 4, zIndex: 2, src: '/images/careers/trophy.jpg' },
+  { left: '36%', top: '32%', width: 120, height: 150, rotate: -3, zIndex: 4, src: '/images/careers/huddle.jpg' },
+  { left: '68%', top: '38%', width: 105, height: 135, rotate: 5, zIndex: 3, src: '/images/careers/tug-of-war.jpg' },
+  { left: '0%', top: '68%', width: 115, height: 140, rotate: -2, zIndex: 2, src: '/images/careers/beach-vibes.jpg' },
+  { left: '32%', top: '64%', width: 108, height: 135, rotate: 4, zIndex: 3, src: '/images/careers/team-outdoor.jpg' },
+  { left: '62%', top: '70%', width: 118, height: 145, rotate: -4, zIndex: 1, src: '/images/careers/film-fest.jpg' },
 ];
 
 export default function CareersHero() {
@@ -86,7 +86,9 @@ export default function CareersHero() {
               zIndex: photo.zIndex,
               overflow: 'hidden',
               boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-            }} />
+            }}>
+              <img src={photo.src} alt="Life at Forge" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            </div>
           ))}
         </div>
       </section>
@@ -105,7 +107,7 @@ export default function CareersHero() {
       padding: '120px 80px',
     }}>
       {floatingPhotos.map((photo, i) => {
-        const { rotate, width, height, ...pos } = photo;
+        const { rotate, width, height, src, ...pos } = photo;
         return (
           <div key={i} style={{
             position: 'absolute', ...pos, width, height,
@@ -116,7 +118,9 @@ export default function CareersHero() {
           }}
             onMouseEnter={e => { e.currentTarget.style.transform = `rotate(${rotate}deg) scale(1.05)`; e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.5)'; }}
             onMouseLeave={e => { e.currentTarget.style.transform = `rotate(${rotate}deg) scale(1)`; e.currentTarget.style.boxShadow = 'none'; }}
-          />
+          >
+            <img src={src} alt="Life at Forge" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
         );
       })}
       <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: 720 }}>

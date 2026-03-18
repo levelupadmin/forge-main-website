@@ -2,15 +2,15 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const galleryItems = [
-  { height: 220, mobileHeight: 160 },
-  { height: 280, mobileHeight: 200 },
-  { height: 200, mobileHeight: 150 },
-  { height: 260, mobileHeight: 190 },
-  { height: 190, mobileHeight: 140 },
-  { height: 250, mobileHeight: 180 },
-  { height: 210, mobileHeight: 155 },
-  { height: 270, mobileHeight: 195 },
-  { height: 230, mobileHeight: 165 },
+  { src: '/images/careers/goa-beach.jpg', alt: 'Team at Goa beach', height: 220, mobileHeight: 160 },
+  { src: '/images/careers/tug-of-war.jpg', alt: 'Tug of war fun', height: 280, mobileHeight: 200 },
+  { src: '/images/careers/film-fest.jpg', alt: 'At a film festival', height: 200, mobileHeight: 150 },
+  { src: '/images/careers/trophy.jpg', alt: 'Celebrating with trophy', height: 260, mobileHeight: 190 },
+  { src: '/images/careers/beach-vibes.jpg', alt: 'Beach vibes', height: 190, mobileHeight: 140 },
+  { src: '/images/careers/team-outdoor.jpg', alt: 'Team outdoor photo', height: 250, mobileHeight: 180 },
+  { src: '/images/careers/kl-towers.jpg', alt: 'KL Towers trip', height: 210, mobileHeight: 155 },
+  { src: '/images/careers/huddle.jpg', alt: 'Team huddle', height: 270, mobileHeight: 195 },
+  { src: '/images/careers/team-selfie.jpg', alt: 'Team selfie', height: 230, mobileHeight: 165 },
 ];
 
 export default function LifeAtForge() {
@@ -52,7 +52,14 @@ export default function LifeAtForge() {
             }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 16px 48px rgba(0,0,0,0.4)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none'; }}
-            />
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
           ))}
         </div>
       </div>
