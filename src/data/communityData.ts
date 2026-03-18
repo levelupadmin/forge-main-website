@@ -128,7 +128,7 @@ export const communityPerks: CommunityPerk[] = [
   },
   {
     title: 'Alumni Perks from Brand Partners',
-    description: 'Exclusive discounts and early access from our partners — gear, software, experiences, and more.',
+    description: 'Exclusive discounts and early access from our partners. Gear, software, experiences, and more.',
     icon: 'gift',
   },
   {
