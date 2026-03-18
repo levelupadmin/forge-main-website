@@ -61,7 +61,7 @@ export const testimonials: Testimonial[] = [
     program: 'CREATOR RESIDENCY',
   },
   {
-    quote: 'This cohort is like Hogwarts for writers. The location was enchanting, the mentors are visionary sages, and the peers were carefully chosen from diverse backgrounds. Forge truly lives up to its name — I would highly recommend it to everyone looking to literally level up.',
+    quote: 'This cohort is like Hogwarts for writers. The location was enchanting, the mentors are visionary sages, and the peers were carefully chosen from diverse backgrounds. Forge truly lives up to its name. I would highly recommend it to everyone looking to literally level up.',
     name: 'Abhinav Bainslay',
     photo: null as unknown as string,
     program: 'WRITING RETREAT',
@@ -73,7 +73,7 @@ export const testimonials: Testimonial[] = [
     program: 'CREATOR RESIDENCY',
   },
   {
-    quote: 'Fantastic experience. I got my direction in life on what I want to become — and that is a Film Director.',
+    quote: 'Fantastic experience. I got my direction in life on what I want to become, and that is a Film Director.',
     name: 'Dhruv Bhawsar',
     photo: '/images/community/dhruv-bhawsar.png',
     program: 'FILMMAKING BOOTCAMP',
@@ -85,25 +85,25 @@ export const testimonials: Testimonial[] = [
     program: 'WRITING RETREAT',
   },
   {
-    quote: 'Forge took me from just posting to actually understanding what is going on behind the screen. It was not content chaos or info overload — just learning that actually lands. Somewhere between reels and realisations, I found a stronger creator voice. And a crew I am definitely keeping for life.',
+    quote: 'Forge took me from just posting to actually understanding what is going on behind the screen. It was not content chaos or info overload, just learning that actually lands. Somewhere between reels and realisations, I found a stronger creator voice. And a crew I am definitely keeping for life.',
     name: 'Sathimaa',
     photo: null as unknown as string,
     program: 'CREATOR RESIDENCY',
   },
   {
-    quote: 'It honestly helped boost my confidence. I feel a lot freer when it comes to experimenting and exploring. At no point did the mentors leave us in the process. They made sure we finished our script, our shoot — everything.',
+    quote: 'It honestly helped boost my confidence. I feel a lot freer when it comes to experimenting and exploring. At no point did the mentors leave us in the process. They made sure we finished our script, our shoot, everything.',
     name: 'Prachy Singh',
     photo: null as unknown as string,
     program: 'FILMMAKING BOOTCAMP',
   },
   {
-    quote: 'As a full-time filmmaker, I must commend Forge for successfully condensing the entire process of filmmaking — from ideation to final output — into just seven days. Covering direction, scriptwriting, cinematography, and editing within such a short timeframe is no small feat, yet Forge made it genuinely enjoyable.',
+    quote: 'As a full-time filmmaker, I must commend Forge for successfully condensing the entire process of filmmaking, from ideation to final output, into just seven days. Covering direction, scriptwriting, cinematography, and editing within such a short timeframe is no small feat, yet Forge made it genuinely enjoyable.',
     name: 'Dhanvignesh',
     photo: null as unknown as string,
     program: 'FILMMAKING BOOTCAMP',
   },
   {
-    quote: 'Forge. Level Up. These are two words I will never forget. In a single line — Forge has forged me to Level Up.',
+    quote: 'Forge. Level Up. These are two words I will never forget. In a single line, Forge has forged me to Level Up.',
     name: 'Subhash',
     photo: null as unknown as string,
     program: 'WRITING RETREAT',
@@ -118,22 +118,22 @@ export const communityPerks: CommunityPerk[] = [
   },
   {
     title: 'City Meetups',
-    description: 'Regular meetups in Mumbai, Delhi, Bangalore, and more — because the best ideas happen over chai and conversation.',
+    description: 'Regular meetups in Mumbai, Delhi, Bangalore, and more. Because the best ideas happen over chai and conversation.',
     icon: 'map-pin',
   },
   {
     title: 'Weekly Community Workshops',
-    description: 'Online sessions every week with fellow Forge alumni and mentors — keep learning, keep creating, keep growing.',
+    description: 'Online sessions every week with fellow Forge alumni and mentors. Keep learning, keep creating, keep growing.',
     icon: 'video',
   },
   {
     title: 'Alumni Perks from Brand Partners',
-    description: 'Exclusive discounts and early access from our partners — gear, software, experiences, and more.',
+    description: 'Exclusive discounts and early access from our partners. Gear, software, experiences, and more.',
     icon: 'gift',
   },
   {
     title: 'Collaborative Projects',
-    description: 'Find your next co-creator from the Forge network. Films, podcasts, books — the best work happens together.',
+    description: 'Find your next co-creator from the Forge network. Films, podcasts, books. The best work happens together.',
     icon: 'sparkles',
   },
 ];
