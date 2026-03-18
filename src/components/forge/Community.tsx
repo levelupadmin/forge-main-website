@@ -90,9 +90,9 @@ function MemberCard({ member, isMobile }: { member: CommunityMember; isMobile: b
   );
 }
 
-function MarqueeRow({ members, duration, isMobile }: { members: CommunityMember[]; duration: number; isMobile: boolean }) {
+function MarqueeRow({ members, duration, isMobile, direction = 'left' }: { members: CommunityMember[]; duration: number; isMobile: boolean; direction?: 'left' | 'right' }) {
   const doubled = [...members, ...members];
-  const animName = 'communityScrollLeft';
+  const animName = direction === 'left' ? 'communityScrollLeft' : 'communityScrollRight';
 
   return (
     <div style={{ overflow: 'hidden' }}>
