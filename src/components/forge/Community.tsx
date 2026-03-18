@@ -138,7 +138,7 @@ export default function Community() {
           padding: isMobile ? '0 24px' : '0 80px',
           maxWidth: 640,
           margin: '0 auto',
-          marginBottom: isMobile ? 48 : 64,
+          marginBottom: isMobile ? 36 : 48,
         }}
       >
         <p style={{
