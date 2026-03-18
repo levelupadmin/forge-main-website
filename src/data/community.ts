@@ -33,5 +33,5 @@ export const communityRow2: CommunityMember[] = [
   { name: 'Naveen Nagdaune', designation: 'YouTuber', socialType: 'youtube', socialUrl: 'https://www.youtube.com/@NaveenNagdauneVlogs', photo: '/images/community/naveen-nagdaune.jpg' },
   { name: 'Chetan Choudhary', designation: 'Independent Filmmaker', socialType: 'instagram', socialUrl: 'https://instagram.com/chetan.choudhary08', photo: '/images/alumni/chetan.png' },
   { name: 'Mohamed Thajamul', designation: 'Content Creator', socialType: 'instagram', socialUrl: 'https://instagram.com/thajmola', photo: null },
-  { name: 'Sujoy', designation: 'Content Creator, Mumbai', socialType: 'instagram', socialUrl: 'https://instagram.com/sujoyyy', photo: null },
+  { name: 'Sujoy', designation: 'Content Creator, Mumbai', socialType: 'instagram', socialUrl: 'https://instagram.com/sujoyyy', photo: '/images/community/sujoy.jpg' },
 ];
