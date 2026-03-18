@@ -28,8 +28,8 @@ export default function CommunityHero() {
       ref={ref}
       style={{
         background: 'var(--forge-black)',
-        padding: 'clamp(160px, 22vw, 280px) 24px clamp(80px, 10vw, 140px)',
-        textAlign: 'center',
+        padding: 'clamp(260px, 35vw, 420px) 24px clamp(40px, 5vw, 60px)',
+        textAlign: 'left',
         position: 'relative',
         overflow: 'hidden',
       }}
