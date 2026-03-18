@@ -3,12 +3,12 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const HERO_IMAGES = [
   '/images/programs/creators-2.jpg',
-  '/images/programs/creators-hero.jpg',
+  '/images/programs/creators-3.jpg',
   '/images/programs/writing-1.jpg',
   '/images/programs/filmmaking-6.jpg',
   '/images/programs/creators-5.jpg',
-  '/images/gallery/gallery-hero.png',
-  '/images/gallery/gallery-1.png',
+  '/images/programs/creators-4.jpg',
+  '/images/programs/writing-3.jpg',
   '/images/community/community-meetups.png',
 ];
 
