@@ -33,7 +33,7 @@ export default function Hero() {
           objectFit: 'cover',
         }}
       >
-        <source src="/videos/forge-hero.mp4" type="video/mp4" />
+        <source src={isMobile ? "/videos/hero-vertical.mp4" : "/videos/hero-landscape.mp4"} type="video/mp4" />
       </video>
       {/* Fallback gradient background */}
       <div style={{
