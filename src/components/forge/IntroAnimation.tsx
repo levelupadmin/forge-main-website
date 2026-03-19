@@ -62,12 +62,11 @@ export default function IntroAnimation() {
         }}
       >
         <img
-          src="/images/forge-logo-transparent.png"
+          src="/images/forge-logo-lines.png"
           alt="Forge"
           style={{
             width: logoSize,
             height: 'auto',
-            filter: 'brightness(0) invert(1)',
             opacity: stage >= 1 ? 1 : 0,
             transform: stage >= 1 ? 'scale(1)' : 'scale(1.06)',
             transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
