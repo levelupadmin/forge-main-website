@@ -34,7 +34,7 @@ export default function IntroAnimation() {
 
   if (removed) return null;
 
-  const logoSize = isMobile ? 140 : 200;
+  const logoSize = isMobile ? 220 : 320;
 
   return (
     <div
