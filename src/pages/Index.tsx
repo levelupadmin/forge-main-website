@@ -26,6 +26,17 @@ import FAQ from '@/components/forge/FAQ';
 import Footer from '@/components/forge/Footer';
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
+    }
+  }, [location.hash]);
+
   return (
     <div style={{ overflowX: 'hidden' }}>
       <IntroAnimation />
