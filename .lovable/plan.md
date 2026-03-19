@@ -1,31 +1,42 @@
 
 
-## Plan: Redesign PoweredBy Section — Stats + Static Logo Grid
+## Plan: Fix PoweredBy, Stats, Intro Animation, and Spacing
 
-Replace the current marquee-based PoweredBy section with a combined section inspired by the GrowthX reference: stats row on top, "Powered By" heading, then static logo grid (3 top, 2 bottom). White background, black text, on-brand styling.
+### Summary
+Multiple changes across a few files: split the current PoweredBy section back into two separate concerns (stats section + scrolling marquee), fix spacing, restore the intro loading screen without the video.
 
-### Layout (top to bottom)
-1. **Stats row** — 3 stats in a horizontal row with star separators between them:
-   - `600+` Dreamers
-   - `25+` Editions across the world  
-   - `11` Cities Explored
-   - Large italic/bold numbers, smaller label text below, star (✦) separators between stats
-   
-2. **"Powered By" heading** — existing uppercase eyebrow style
+---
 
-3. **Static logo grid** — centered, 2 rows:
-   - Row 1: Sony, Digitek, Sandcastles (3 logos)
-   - Row 2: Indie Press, Westland Books (2 logos)
-   - Grayscale logos with existing filter treatment, no animation
+### 1. Split PoweredBy into Stats Section + Scrolling Marquee
 
-### Styling
-- White background (#FFFFFF)
-- Numbers: large clamp size, weight 700, color #222222
-- Labels: smaller, weight 500, color rgba(34,34,34,0.5)
-- Star separators: #222222 with low opacity
-- Logos: static grid with consistent height, grayscale filters as existing
-- Padding: `clamp(48px, 6vw, 72px)` top/bottom
+**Stats section** (new approach in `PoweredBy.tsx`):
+- Remove the static logo grid — logos move back to a scrolling marquee below
+- Keep the stats row (600+, 25+, 11) but fix styling:
+  - Remove `fontStyle: 'italic'` — use normal/straight weight
+  - Replace ✦ star separators with on-brand elements (small golden dot or a thin vertical gold line `|` using the brand color `#FFBC3B`)
+  - Add subtle color: numbers in `#222222`, or accent the numbers with the brand gradient
+  - On mobile: ensure "11 Cities Explored" stays on one line — reduce font sizes or use `whiteSpace: 'nowrap'` and smaller gap
+- Move the stats section closer to HeroBar (reduce top padding)
+- Extend the section slightly (add a bit more horizontal breathing room)
 
-### File Modified
-- `src/components/forge/PoweredBy.tsx` — full rewrite
+**Scrolling marquee** (restore old pattern):
+- Below the stats, restore the "Powered By" heading + single-row infinite scrolling marquee of partner logos (Sony, Digitek, Sandcastles, Indie Press, Westland) using the existing `marquee-scroll-left` CSS animation
+- Logos duplicated 4x for seamless loop, single horizontal line, white background, grayscale filters, edge fade masks
+- Tight spacing between stats and marquee, and between marquee and WhatIsForge
+
+### 2. Tighten WhatIsForge Top Padding
+- In `WhatIsForge.tsx`, reduce the top padding so it sits closer to the PoweredBy/marquee section above
+
+### 3. Restore Intro Animation
+- Add `IntroAnimation` back to `Index.tsx` 
+- In `IntroAnimation.tsx`, remove the `<video>` element entirely — go straight from black screen to logo fade-in
+- Adjust timings: Stage 0 is just black, Stage 1 (at ~800ms) logo fades in, Stage 3 tagline, Stage 4 overlay fades out
+
+---
+
+### Files Modified
+- `src/components/forge/PoweredBy.tsx` — rewrite: stats with fixed styling + scrolling logo marquee
+- `src/components/forge/WhatIsForge.tsx` — reduce top padding
+- `src/components/forge/IntroAnimation.tsx` — remove video, keep logo + tagline animation
+- `src/pages/Index.tsx` — add IntroAnimation import and render
 
