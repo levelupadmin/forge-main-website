@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/forge/Navigation';
 import Hero from '@/components/forge/Hero';
+import IntroAnimation from '@/components/forge/IntroAnimation';
 import HeroBar from '@/components/forge/HeroBar';
 import SmoothScroll from '@/components/forge/SmoothScroll';
 import FilmGrain from '@/components/forge/FilmGrain';
@@ -37,6 +38,7 @@ const Index = () => {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <IntroAnimation />
       <SmoothScroll />
       <FilmGrain />
       <Navigation />
