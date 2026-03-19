@@ -136,7 +136,7 @@ export default function WhatIsForge() {
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse at center, rgba(252,247,239,0.88) 30%, rgba(252,247,239,0.4) 70%, transparent 100%)',
+          background: 'radial-gradient(ellipse at center, rgba(252,247,239,0.65) 20%, rgba(252,247,239,0.25) 60%, transparent 100%)',
           pointerEvents: 'none',
           zIndex: 1,
         }} />
