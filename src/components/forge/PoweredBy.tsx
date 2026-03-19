@@ -18,7 +18,7 @@ const logos = [
 export default function PoweredBy() {
   const { ref, isVisible } = useScrollAnimation(0.2);
   const isMobile = useIsMobile();
-  const baseHeight = isMobile ? 28 : 40;
+  const baseHeight = isMobile ? 36 : 52;
 
   // Duplicate logos 4x for seamless loop
   const loopLogos = [...logos, ...logos, ...logos, ...logos];
@@ -96,7 +96,7 @@ export default function PoweredBy() {
             fontWeight: 600,
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
-            color: 'rgba(34,34,34,0.4)',
+            color: '#222222',
             marginBottom: isMobile ? 12 : 16,
             fontFamily: "'Open Sauce One', sans-serif",
           }}
