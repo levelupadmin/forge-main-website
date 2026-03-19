@@ -98,7 +98,7 @@ export default function PoweredBy() {
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
             color: '#222222',
-            marginBottom: isMobile ? 12 : 16,
+            marginBottom: isMobile ? 6 : 16,
             fontFamily: "'Open Sauce One', sans-serif",
           }}
         >
