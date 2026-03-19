@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import IntroAnimation from '@/components/forge/IntroAnimation';
 import Navigation from '@/components/forge/Navigation';
 import Hero from '@/components/forge/Hero';
