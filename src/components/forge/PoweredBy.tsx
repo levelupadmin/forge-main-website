@@ -7,21 +7,21 @@ const stats = [
   { number: '11', label: 'Cities Explored' },
 ];
 
-const logosRow1 = [
-  { name: 'Sony', src: '/images/partners/sony-logo.png', invert: true, scale: 1.4 },
-  { name: 'Digitek', src: '/images/partners/digitek-logo.png', invert: true, scale: 2 },
-  { name: 'Sandcastles', src: '/images/partners/sandcastles-logo.png', invert: true, scale: 1 },
-];
-
-const logosRow2 = [
-  { name: 'Indie Press', src: '/images/partners/indiepress-logo.png', invert: false, scale: 1.4 },
-  { name: 'Westland Books', src: '/images/partners/westland-logo.png', invert: false, scale: 1.4 },
+const logos = [
+  { name: 'Sony', src: '/images/partners/sony-logo.png', invert: true, scale: 1.5 },
+  { name: 'Digitek', src: '/images/partners/digitek-logo.png', invert: true, scale: 2.25 },
+  { name: 'Sandcastles', src: '/images/partners/sandcastles-logo.png', invert: true, scale: 1.0 },
+  { name: 'Indie Press', src: '/images/partners/indiepress-logo.png', invert: false, scale: 1.5 },
+  { name: 'Westland Books', src: '/images/partners/westland-logo.png', invert: false, scale: 1.5 },
 ];
 
 export default function PoweredBy() {
   const { ref, isVisible } = useScrollAnimation(0.2);
   const isMobile = useIsMobile();
-  const baseHeight = isMobile ? 36 : 48;
+  const baseHeight = isMobile ? 28 : 40;
+
+  // Duplicate logos 4x for seamless loop
+  const loopLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
     <section
@@ -29,8 +29,8 @@ export default function PoweredBy() {
       style={{
         backgroundColor: '#FFFFFF',
         padding: isMobile
-          ? 'clamp(32px, 5vw, 48px) clamp(16px, 4vw, 24px)'
-          : 'clamp(48px, 6vw, 72px) clamp(24px, 5vw, 80px)',
+          ? 'clamp(20px, 4vw, 32px) 0'
+          : 'clamp(28px, 4vw, 44px) 0',
       }}
     >
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`}>
@@ -40,19 +40,19 @@ export default function PoweredBy() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: isMobile ? 16 : 40,
-            flexWrap: 'wrap',
-            marginBottom: isMobile ? 32 : 48,
+            gap: isMobile ? 12 : 32,
+            whiteSpace: 'nowrap',
+            padding: isMobile ? '0 12px' : '0 40px',
+            marginBottom: isMobile ? 24 : 36,
           }}
         >
           {stats.map((stat, i) => (
-            <div key={stat.label} style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 16 : 40 }}>
+            <div key={stat.label} style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 12 : 32 }}>
               <div style={{ textAlign: 'center' }}>
                 <div
                   style={{
-                    fontSize: isMobile ? 'clamp(28px, 7vw, 36px)' : 'clamp(36px, 4vw, 52px)',
+                    fontSize: isMobile ? 'clamp(20px, 5.5vw, 28px)' : 'clamp(32px, 3.5vw, 48px)',
                     fontWeight: 700,
-                    fontStyle: 'italic',
                     color: '#222222',
                     lineHeight: 1.1,
                     fontFamily: "'Open Sauce One', sans-serif",
@@ -62,10 +62,10 @@ export default function PoweredBy() {
                 </div>
                 <div
                   style={{
-                    fontSize: isMobile ? 11 : 13,
+                    fontSize: isMobile ? 9 : 12,
                     fontWeight: 500,
                     color: 'rgba(34,34,34,0.5)',
-                    marginTop: 4,
+                    marginTop: 2,
                     fontFamily: "'Open Sauce One', sans-serif",
                   }}
                 >
@@ -75,13 +75,14 @@ export default function PoweredBy() {
               {i < stats.length - 1 && (
                 <span
                   style={{
-                    fontSize: isMobile ? 10 : 14,
-                    color: 'rgba(34,34,34,0.25)',
-                    userSelect: 'none',
+                    width: isMobile ? 5 : 7,
+                    height: isMobile ? 5 : 7,
+                    borderRadius: '50%',
+                    backgroundColor: '#FFBC3B',
+                    display: 'inline-block',
+                    flexShrink: 0,
                   }}
-                >
-                  ✦
-                </span>
+                />
               )}
             </div>
           ))}
@@ -91,25 +92,64 @@ export default function PoweredBy() {
         <p
           style={{
             textAlign: 'center',
-            fontSize: 12,
+            fontSize: 11,
             fontWeight: 600,
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
-            color: '#222222',
-            marginBottom: isMobile ? 20 : 28,
+            color: 'rgba(34,34,34,0.4)',
+            marginBottom: isMobile ? 12 : 16,
             fontFamily: "'Open Sauce One', sans-serif",
           }}
         >
           Powered By
         </p>
 
-        {/* Logo grid */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? 20 : 28 }}>
-          {/* Row 1 — 3 logos */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: isMobile ? 32 : 56 }}>
-            {logosRow1.map((logo) => (
+        {/* Scrolling marquee */}
+        <div
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            width: '100%',
+          }}
+        >
+          {/* Edge fades */}
+          <div
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              bottom: 0,
+              width: 80,
+              background: 'linear-gradient(to right, #FFFFFF, transparent)',
+              zIndex: 2,
+              pointerEvents: 'none',
+            }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              right: 0,
+              top: 0,
+              bottom: 0,
+              width: 80,
+              background: 'linear-gradient(to left, #FFFFFF, transparent)',
+              zIndex: 2,
+              pointerEvents: 'none',
+            }}
+          />
+
+          <div
+            className="marquee-scroll-left"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: isMobile ? 40 : 64,
+              width: 'max-content',
+            }}
+          >
+            {loopLogos.map((logo, i) => (
               <img
-                key={logo.name}
+                key={`${logo.name}-${i}`}
                 src={logo.src}
                 alt={logo.name}
                 style={{
@@ -120,26 +160,7 @@ export default function PoweredBy() {
                     ? 'invert(1) grayscale(100%) contrast(1.5)'
                     : 'grayscale(100%) contrast(1.2)',
                   mixBlendMode: 'multiply',
-                }}
-                loading="lazy"
-              />
-            ))}
-          </div>
-          {/* Row 2 — 2 logos */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: isMobile ? 32 : 56 }}>
-            {logosRow2.map((logo) => (
-              <img
-                key={logo.name}
-                src={logo.src}
-                alt={logo.name}
-                style={{
-                  height: baseHeight * logo.scale,
-                  width: 'auto',
-                  objectFit: 'contain',
-                  filter: logo.invert
-                    ? 'invert(1) grayscale(100%) contrast(1.5)'
-                    : 'grayscale(100%) contrast(1.2)',
-                  mixBlendMode: 'multiply',
+                  flexShrink: 0,
                 }}
                 loading="lazy"
               />

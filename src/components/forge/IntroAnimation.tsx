@@ -1,32 +1,29 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function IntroAnimation() {
   const isMobile = useIsMobile();
   const [stage, setStage] = useState(0);
   const [removed, setRemoved] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
-    // Stage 0: black + video playing
-    // Stage 1 (2.2s): video fading out, logo fading in
-    // Stage 2 (2.8s): video gone
-    // Stage 3 (3.0s): tagline fades in
-    // Stage 4 (4.0s): entire overlay fades out
-    // Stage 5 (4.6s): removed from DOM
+    // Stage 0: black screen
+    // Stage 1 (800ms): logo fades in
+    // Stage 2 (2000ms): tagline fades in
+    // Stage 3 (3000ms): entire overlay fades out
+    // Stage 4 (3600ms): removed from DOM
 
     const timers = [
-      setTimeout(() => setStage(1), 2200),
-      setTimeout(() => setStage(2), 2800),
-      setTimeout(() => setStage(3), 3400),
+      setTimeout(() => setStage(1), 800),
+      setTimeout(() => setStage(2), 2000),
       setTimeout(() => {
-        setStage(4);
+        setStage(3);
         document.body.style.overflow = '';
         window.dispatchEvent(new Event('forge-intro-done'));
-      }, 4400),
-      setTimeout(() => setRemoved(true), 5000),
+      }, 3000),
+      setTimeout(() => setRemoved(true), 3600),
     ];
 
     return () => {
@@ -34,17 +31,6 @@ export default function IntroAnimation() {
       document.body.style.overflow = '';
     };
   }, []);
-
-  // Also fade video on ended event (whichever comes first)
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const handleEnded = () => {
-      if (stage < 2) setStage(prev => Math.max(prev, 2));
-    };
-    video.addEventListener('ended', handleEnded);
-    return () => video.removeEventListener('ended', handleEnded);
-  }, [stage]);
 
   if (removed) return null;
 
@@ -60,30 +46,11 @@ export default function IntroAnimation() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        opacity: stage >= 4 ? 0 : 1,
+        opacity: stage >= 3 ? 0 : 1,
         transition: 'opacity 0.6s ease-out',
-        pointerEvents: stage >= 4 ? 'none' : 'auto',
+        pointerEvents: stage >= 3 ? 'none' : 'auto',
       }}
     >
-      {/* Background video */}
-      <video
-        ref={videoRef}
-        src="/videos/forge-intro.mp4"
-        autoPlay
-        muted
-        playsInline
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: 0,
-          opacity: stage >= 1 ? 0 : 1,
-          transition: 'opacity 0.6s ease-out',
-        }}
-      />
-
       {/* Logo + Tagline */}
       <div
         style={{
@@ -115,8 +82,8 @@ export default function IntroAnimation() {
             fontFamily: "'Open Sauce One', sans-serif",
             fontWeight: 800,
             letterSpacing: '0.08em',
-            opacity: stage >= 3 ? 1 : 0,
-            transform: stage >= 3 ? 'translateY(0)' : 'translateY(10px)',
+            opacity: stage >= 2 ? 1 : 0,
+            transform: stage >= 2 ? 'translateY(0)' : 'translateY(10px)',
             transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
             textDecoration: 'none',
           }}
