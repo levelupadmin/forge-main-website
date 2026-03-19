@@ -74,11 +74,15 @@ export default function Hero() {
           color: 'white',
           letterSpacing: -1,
           lineHeight: 1.05,
-          margin: '0 0 24px',
+          margin: '0 0 16px',
         }}>
           The World's Most <span className="forge-gradient-text">Immersive</span>{!isMobile && <br />} Creative Education Experience
         </h1>
-        <button className="forge-cta-light" onClick={scrollToExperiences}>
+        <button
+          className="forge-cta-light"
+          onClick={scrollToExperiences}
+          style={isMobile ? { fontSize: 13, padding: '10px 24px' } : undefined}
+        >
           Explore Experiences
         </button>
       </div>
