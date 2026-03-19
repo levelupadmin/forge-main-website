@@ -21,10 +21,12 @@ export default function Hero() {
     }}>
       {/* Hero video background */}
       <video
+        key={isMobile ? 'mobile' : 'desktop'}
         autoPlay
         muted
         loop
         playsInline
+        src={isMobile ? "/videos/hero-vertical.mp4" : "/videos/hero-landscape.mp4"}
         style={{
           position: 'absolute',
           inset: 0,
@@ -32,9 +34,7 @@ export default function Hero() {
           height: '100%',
           objectFit: 'cover',
         }}
-      >
-        <source src={isMobile ? "/videos/hero-vertical.mp4" : "/videos/hero-landscape.mp4"} type="video/mp4" />
-      </video>
+      />
       {/* Fallback gradient background */}
       <div style={{
         position: 'absolute',
