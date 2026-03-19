@@ -18,7 +18,7 @@ const logos = [
 export default function PoweredBy() {
   const { ref, isVisible } = useScrollAnimation(0.2);
   const isMobile = useIsMobile();
-  const baseHeight = isMobile ? 28 : 40;
+  const baseHeight = isMobile ? 36 : 52;
 
   // Duplicate logos 4x for seamless loop
   const loopLogos = [...logos, ...logos, ...logos, ...logos];
