@@ -38,6 +38,7 @@ const Index = () => {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <IntroAnimation />
       <SmoothScroll />
       <FilmGrain />
       <Navigation />
