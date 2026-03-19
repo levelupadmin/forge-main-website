@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import IntroAnimation from '@/components/forge/IntroAnimation';
 import Navigation from '@/components/forge/Navigation';
 import Hero from '@/components/forge/Hero';
@@ -24,6 +26,17 @@ import FAQ from '@/components/forge/FAQ';
 import Footer from '@/components/forge/Footer';
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
+    }
+  }, [location.hash]);
+
   return (
     <div style={{ overflowX: 'hidden' }}>
       <IntroAnimation />

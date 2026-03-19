@@ -49,8 +49,13 @@ export default function Navigation() {
       navigate(link.href);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      const el = document.querySelector(link.href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      // If not on homepage, navigate to homepage with hash
+      if (window.location.pathname !== '/') {
+        navigate('/' + link.href);
+      } else {
+        const el = document.querySelector(link.href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
