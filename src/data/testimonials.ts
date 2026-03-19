@@ -1,15 +1,14 @@
 export interface Testimonial {
-  thumbnail: string;
-  vimeoId: string;
+  videoSrc: string;
   name: string;
   program: string;
 }
 
 export const testimonials: Testimonial[] = [
-  { thumbnail: "https://vumbnail.com/1104689757.jpg", vimeoId: "1104689757", name: "Anurag, Independent Filmmaker", program: "the Forge Filmmaking Bootcamp" },
-  { thumbnail: "https://vumbnail.com/1104689748.jpg", vimeoId: "1104689748", name: "Aanchal Chaturvedi, Content Creator", program: "the Forge Filmmaking Bootcamp" },
-  { thumbnail: "https://vumbnail.com/1104689769.jpg", vimeoId: "1104689769", name: "Ashwin Venkatesh, Account Manager", program: "the Forge Filmmaking Bootcamp" },
-  { thumbnail: "https://vumbnail.com/1106996548.jpg", vimeoId: "1106996548", name: "Freddy George, Podcaster", program: "the Forge Writing Retreat" },
-  { thumbnail: "https://vumbnail.com/1106996517.jpg", vimeoId: "1106996517", name: "Bishal Paul, Founder & Author", program: "the Forge Writing Retreat" },
-  { thumbnail: "https://vumbnail.com/1106996572.jpg", vimeoId: "1106996572", name: "Ananya Ramprasad, Actor", program: "the Forge Writing Retreat" },
+  { videoSrc: "/videos/testimonials/anurag.mp4", name: "Anurag, Independent Filmmaker", program: "the Forge Filmmaking Bootcamp" },
+  { videoSrc: "/videos/testimonials/aanchal.mp4", name: "Aanchal Chaturvedi, Content Creator", program: "the Forge Filmmaking Bootcamp" },
+  { videoSrc: "/videos/testimonials/ashwin.mp4", name: "Ashwin Venkatesh, Account Manager", program: "the Forge Filmmaking Bootcamp" },
+  { videoSrc: "/videos/testimonials/freddy.mp4", name: "Freddy George, Podcaster", program: "the Forge Writing Retreat" },
+  { videoSrc: "/videos/testimonials/bishal.mp4", name: "Bishal Paul, Founder & Author", program: "the Forge Writing Retreat" },
+  { videoSrc: "/videos/testimonials/ananya.mp4", name: "Ananya Ramprasad, Actor", program: "the Forge Writing Retreat" },
 ];
