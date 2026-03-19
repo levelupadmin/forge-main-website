@@ -31,7 +31,7 @@ export const programs: Program[] = [
       "/images/programs/filmmaking-6.jpg",
     ],
     poweredBy: [
-      { name: "Sony", logo: "/images/partners/sony-logo.png" },
+      { name: "Sony", logo: "/images/partners/sony-logo-dark.jpg" },
     ],
   },
   {
@@ -58,7 +58,7 @@ export const programs: Program[] = [
       "/images/programs/creators-8.jpg",
     ],
     poweredBy: [
-      { name: "Digitek", logo: "/images/partners/digitek-logo.png" },
+      { name: "Digitek", logo: "/images/partners/digitek-logo-dark.jpg" },
     ],
   },
   {
