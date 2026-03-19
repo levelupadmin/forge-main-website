@@ -1,30 +1,33 @@
 
 
-## Plan: Fix Navigation Scrolling, Remove Intro Video, Move LearnersFrom to Community
+## Plan: Careers Hero — Full-Bleed Rotating Background (like Community Hero)
 
-### Problem Summary
-1. Clicking "Experiences" or "About" from other pages navigates to homepage but doesn't scroll — the intro animation blocks scrolling for ~5 seconds and `document.body.style.overflow = 'hidden'` prevents it.
-2. The "Made at the Forge" intro video plays every time the homepage loads — user wants it removed.
-3. The "Join 600+ Dreamers from" logo marquee section should also appear on the Community page, placed after the Stats section.
+### What Changes
+Replace the current floating/collage photo layout with a full-bleed rotating background image hero, matching the Community page pattern. The copy and CTA button move to the bottom of the section so the images are visible behind.
 
-### Changes
+### Images Used
+Combine the existing careers hero images plus gallery images from the careers folder:
+`big-group-beach.jpg`, `team-selfie.jpg`, `panel-talk.jpg`, `kl-towers.jpg`, `beach-shoot.jpg`, `team-outdoor.jpg`, `production-room.jpg`, `trophy.jpg`, `goa-beach.jpg`, `tug-of-war.jpg`, `huddle.jpg`, `film-fest.jpg`, `beach-vibes.jpg`, `group-indoor.jpg`
 
-**1. Remove IntroAnimation from homepage (`src/pages/Index.tsx`)**
-- Remove the `IntroAnimation` import and `<IntroAnimation />` from the render.
-- The scroll-to-hash `useEffect` timeout can be reduced from 500ms to 100ms since there's no intro delay anymore.
+### Implementation (`src/components/careers/CareersHero.tsx`)
 
-**2. Fix Hero visibility (`src/components/forge/Hero.tsx`)**
-- The Hero currently waits for a `forge-intro-done` event to become visible (opacity 0 → 1). With the intro removed, it will never appear. Remove the `introComplete` state gating and always render the hero fully visible.
+- Remove all floating photo / mobile collage logic and data arrays
+- Add a `HERO_IMAGES` array with the careers photos listed above
+- Add `useState` for `activeIndex` and `useEffect` with `setInterval` (3s) to cycle through images
+- Render full-bleed rotating backgrounds: each image is an absolutely positioned div with `backgroundSize: cover`, crossfading via opacity transition (1.5s)
+- Add a dark overlay (`rgba(0,0,0,0.55)`) for text legibility
+- Position the copy (headline, subtext, CTA) at the **bottom** of the section using `position: absolute; bottom` — same pattern as CommunityHero
+- Section height: `100svh`, padding top large enough for nav clearance
+- Both desktop and mobile use the same layout (no separate mobile branch needed) — just adjust font sizes responsively as before
 
-**3. Fix cross-page hash navigation (`src/components/forge/Navigation.tsx`)**
-- The current `navigate('/' + link.href)` approach relies on the Index page's `useEffect` to scroll after navigation, but with React Router the hash change may not re-trigger. Ensure the hash scroll works reliably by keeping the current approach but with the reduced timeout (which now works since there's no intro blocking).
-
-**4. Add LearnersFrom to Community page (`src/pages/Community.tsx`)**
-- Import `LearnersFrom` from `@/components/forge/LearnersFrom`.
-- Place `<LearnersFrom />` after `<CommunityStats />` and before `<CommunityMarquee />`.
+### Technical Detail
+```
+section: position relative, 100svh, overflow hidden, black bg
+  → N absolute divs (one per image), opacity 0/1 with 1.5s transition
+  → dark overlay div
+  → bottom-positioned content div (headline + subtext + button)
+```
 
 ### Files Modified
-- `src/pages/Index.tsx` — remove IntroAnimation, reduce scroll timeout
-- `src/components/forge/Hero.tsx` — remove intro-done gating
-- `src/pages/Community.tsx` — add LearnersFrom section
+- `src/components/careers/CareersHero.tsx` — full rewrite
 
