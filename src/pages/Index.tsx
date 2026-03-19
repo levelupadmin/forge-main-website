@@ -32,7 +32,7 @@ const Index = () => {
       setTimeout(() => {
         const el = document.querySelector(location.hash);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 500);
+      }, 100);
     }
   }, [location.hash]);
 
