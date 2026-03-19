@@ -21,10 +21,12 @@ export default function Hero() {
     }}>
       {/* Hero video background */}
       <video
+        key={isMobile ? 'mobile' : 'desktop'}
         autoPlay
         muted
         loop
         playsInline
+        src={isMobile ? "/videos/hero-vertical.mp4" : "/videos/hero-landscape.mp4"}
         style={{
           position: 'absolute',
           inset: 0,
@@ -32,9 +34,7 @@ export default function Hero() {
           height: '100%',
           objectFit: 'cover',
         }}
-      >
-        <source src={isMobile ? "/videos/hero-vertical.mp4" : "/videos/hero-landscape.mp4"} type="video/mp4" />
-      </video>
+      />
       {/* Fallback gradient background */}
       <div style={{
         position: 'absolute',
@@ -74,11 +74,15 @@ export default function Hero() {
           color: 'white',
           letterSpacing: -1,
           lineHeight: 1.05,
-          margin: '0 0 24px',
+          margin: '0 0 16px',
         }}>
           The World's Most <span className="forge-gradient-text">Immersive</span>{!isMobile && <br />} Creative Education Experience
         </h1>
-        <button className="forge-cta-light" onClick={scrollToExperiences}>
+        <button
+          className="forge-cta-light"
+          onClick={scrollToExperiences}
+          style={isMobile ? { fontSize: 13, padding: '10px 24px' } : undefined}
+        >
           Explore Experiences
         </button>
       </div>
