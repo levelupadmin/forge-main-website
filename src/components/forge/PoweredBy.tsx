@@ -39,19 +39,19 @@ export default function PoweredBy() {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
-            gap: isMobile ? 12 : 32,
+            alignItems: isMobile ? 'flex-start' : 'center',
+            gap: isMobile ? 16 : 32,
             whiteSpace: 'nowrap',
-            padding: isMobile ? '0 12px' : '0 40px',
-            marginBottom: isMobile ? 24 : 36,
+            padding: isMobile ? '0 16px' : '0 40px',
+            marginBottom: isMobile ? 20 : 36,
           }}
         >
           {stats.map((stat, i) => (
-            <div key={stat.label} style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 12 : 32 }}>
-              <div style={{ textAlign: 'center' }}>
+            <div key={stat.label} style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 16 : 32 }}>
+              <div style={{ textAlign: 'center', flex: '1 1 0', minWidth: 0 }}>
                 <div
                   style={{
-                    fontSize: isMobile ? 'clamp(20px, 5.5vw, 28px)' : 'clamp(32px, 3.5vw, 48px)',
+                    fontSize: isMobile ? 'clamp(24px, 7vw, 32px)' : 'clamp(32px, 3.5vw, 48px)',
                     fontWeight: 700,
                     color: '#222222',
                     lineHeight: 1.1,
@@ -62,11 +62,12 @@ export default function PoweredBy() {
                 </div>
                 <div
                   style={{
-                    fontSize: isMobile ? 9 : 12,
+                    fontSize: isMobile ? 10 : 12,
                     fontWeight: 500,
                     color: 'rgba(34,34,34,0.5)',
                     marginTop: 2,
                     fontFamily: "'Open Sauce One', sans-serif",
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   {stat.label}
