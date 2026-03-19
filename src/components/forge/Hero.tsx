@@ -15,8 +15,8 @@ export default function Hero() {
       height: '100svh',
       overflow: 'hidden',
       borderRadius: '0 0 32px 32px',
-      opacity: introComplete ? 1 : 0,
-      transform: introComplete ? 'translateY(0)' : 'translateY(20px)',
+      opacity: 1,
+      transform: 'translateY(0)',
       transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
     }}>
       {/* Hero video background */}

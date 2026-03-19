@@ -18,6 +18,7 @@ export default function CommunityPage() {
       <Navigation />
       <CommunityHero />
       <CommunityStats />
+      <LearnersFrom />
       <CommunityMarquee />
       <CommunityTestimonials />
       <BeyondTheProgram />
