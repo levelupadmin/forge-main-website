@@ -163,9 +163,17 @@ function TestimonialCard({ testimonial, onPlay }: { testimonial: typeof import('
             fontWeight: 700,
             fontSize: 17,
             color: 'white',
-            marginBottom: 4,
+            marginBottom: 2,
           }}>
             {testimonial.name}
+          </div>
+          <div style={{
+            fontSize: 13,
+            fontWeight: 500,
+            color: 'rgba(255,255,255,0.8)',
+            marginBottom: 4,
+          }}>
+            {testimonial.designation}
           </div>
           <div style={{
             fontSize: 12,
