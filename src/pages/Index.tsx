@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import IntroAnimation from '@/components/forge/IntroAnimation';
 import Navigation from '@/components/forge/Navigation';
 import Hero from '@/components/forge/Hero';
 import HeroBar from '@/components/forge/HeroBar';
@@ -33,13 +32,12 @@ const Index = () => {
       setTimeout(() => {
         const el = document.querySelector(location.hash);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 500);
+      }, 100);
     }
   }, [location.hash]);
 
   return (
     <div style={{ overflowX: 'hidden' }}>
-      <IntroAnimation />
       <SmoothScroll />
       <FilmGrain />
       <Navigation />

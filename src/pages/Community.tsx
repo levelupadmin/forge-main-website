@@ -3,6 +3,7 @@ import Footer from '@/components/forge/Footer';
 import SmoothScroll from '@/components/forge/SmoothScroll';
 import FilmGrain from '@/components/forge/FilmGrain';
 import TrustedAcrossBorders from '@/components/forge/TrustedAcrossBorders';
+import LearnersFrom from '@/components/forge/LearnersFrom';
 import CommunityHero from '@/components/community/CommunityHero';
 import CommunityStats from '@/components/community/CommunityStats';
 import CommunityMarquee from '@/components/forge/Community';
@@ -17,6 +18,7 @@ export default function CommunityPage() {
       <Navigation />
       <CommunityHero />
       <CommunityStats />
+      <LearnersFrom />
       <CommunityMarquee />
       <CommunityTestimonials />
       <BeyondTheProgram />
