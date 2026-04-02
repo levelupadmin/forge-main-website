@@ -70,8 +70,8 @@ function StudentStatCard({ stat, isVisible, index }: { stat: typeof STUDENT_STAT
         letterSpacing: '1.5px', color: '#888',
       }}>{stat.label}</span>
       <div style={{
-        fontSize: 'clamp(48px, 5vw, 64px)', fontWeight: 700, color: '#1A1A1A',
-        lineHeight: 1, fontFamily: "'Open Sauce One', sans-serif", letterSpacing: -2, marginTop: 8,
+        fontSize: 'clamp(36px, 10vw, 64px)', fontWeight: 700, color: '#1A1A1A',
+        lineHeight: 1, fontFamily: "'Open Sauce One', sans-serif", letterSpacing: -1.5, marginTop: 8,
       }}>
         {count}
       </div>
