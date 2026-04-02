@@ -139,7 +139,7 @@ export const communityPerks: CommunityPerk[] = [
 ];
 
 export const communityStats: CommunityStat[] = [
-  { number: 500, suffix: '+', label: 'Community Members' },
+  { number: 600, suffix: '+', label: 'Community Members' },
   { number: 12, suffix: '', label: 'Countries Represented' },
   { number: 85, suffix: '+', label: 'Projects Launched' },
   { number: 20, suffix: '+', label: 'Editions Completed' },
