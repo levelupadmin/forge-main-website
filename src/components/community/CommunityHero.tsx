@@ -60,7 +60,7 @@ export default function CommunityHero() {
       />
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ position: 'relative', zIndex: 2 }}>
         <h1
-          className="forge-heading forge-heading--light"
+          className="forge-heading forge-heading--light text-3xl"
           style={{ maxWidth: 560, fontSize: 'clamp(24px, 4vw, 38px)', margin: '0 auto' }}
         >
           The People who make{' '}
