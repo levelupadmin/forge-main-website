@@ -28,7 +28,7 @@ export default function BeyondTheProgram() {
         style={{ textAlign: 'center', padding: '0 24px', marginBottom: 12 }}
       >
         <p className="forge-subheading">Beyond the Program</p>
-        <div className="forge-heading" style={{ fontSize: 'clamp(32px, 5vw, 52px)' }}>
+        <div className="forge-heading text-3xl" style={{ fontSize: 'clamp(32px, 5vw, 52px)' }}>
           The program ends.
           <br />
           The community doesn't.
