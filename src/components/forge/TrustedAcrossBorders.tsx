@@ -44,10 +44,11 @@ function StudentStatCard({ stat, isVisible, index }: { stat: typeof STUDENT_STAT
       style={{
         background: '#F5F5F0',
         borderRadius: 12,
-        padding: '20px 24px',
-        minHeight: 120,
+        padding: '16px 12px',
+        minHeight: 100,
         flex: '1 1 0',
-        minWidth: 130,
+        minWidth: 0,
+        overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -69,8 +70,8 @@ function StudentStatCard({ stat, isVisible, index }: { stat: typeof STUDENT_STAT
         letterSpacing: '1.5px', color: '#888',
       }}>{stat.label}</span>
       <div style={{
-        fontSize: 'clamp(48px, 5vw, 64px)', fontWeight: 700, color: '#1A1A1A',
-        lineHeight: 1, fontFamily: "'Open Sauce One', sans-serif", letterSpacing: -2, marginTop: 8,
+        fontSize: 'clamp(36px, 10vw, 64px)', fontWeight: 700, color: '#1A1A1A',
+        lineHeight: 1, fontFamily: "'Open Sauce One', sans-serif", letterSpacing: -1.5, marginTop: 8,
       }}>
         {count}
       </div>
