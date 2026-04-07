@@ -1,7 +1,31 @@
+# forgebylevelup.com — robots.txt
+# We want both classical search engines AND AI assistants
+# (ChatGPT, Claude, Gemini, Perplexity, Copilot, etc.) to find,
+# index, and cite this site, including the /ai subpath.
+
+User-agent: *
+Allow: /
+
+# --- Classical search engines ---
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +34,83 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+# --- AI / LLM crawlers (training + retrieval) ---
+# OpenAI / ChatGPT
+User-agent: GPTBot
 Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Common Crawl (feeds most open-source LLMs)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Bytedance / TikTok
+User-agent: Bytespider
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Sitemaps
+Sitemap: https://forgebylevelup.com/sitemap.xml
+Sitemap: https://forgebylevelup.com/ai/sitemap.xml
