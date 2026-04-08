@@ -60,6 +60,14 @@
     });
   });
 
+  // ---- HERO VIDEO FADE-IN ----
+  var heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    function onVideoReady() { heroVideo.classList.add('loaded'); }
+    if (heroVideo.readyState >= 3) { onVideoReady(); }
+    else { heroVideo.addEventListener('canplay', onVideoReady, { once: true }); }
+  }
+
   // ---- HERO PARALLAX ----
   const heroParallax = document.getElementById('hero-parallax');
   if (heroParallax && window.innerWidth >= 768) {
