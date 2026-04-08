@@ -442,6 +442,42 @@ function initMentorsCarousel() {
   dots.forEach((d, i) => d.addEventListener("click", () => { current = i; update(); }));
   slides.forEach((s, i) => s.addEventListener("click", () => { current = i; update(); }));
 
+  // Touch/swipe support for mobile
+  const swipeArea = track && track.parentElement;
+  if (swipeArea) {
+    let startX = 0;
+    let startY = 0;
+    let startedHorizontal = false;
+    const SWIPE_THRESHOLD = 40; // px
+
+    swipeArea.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      startedHorizontal = false;
+    }, { passive: true });
+
+    swipeArea.addEventListener("touchmove", (e) => {
+      if (startedHorizontal) return;
+      const dx = Math.abs(e.touches[0].clientX - startX);
+      const dy = Math.abs(e.touches[0].clientY - startY);
+      // If the gesture is clearly horizontal, mark it so vertical scroll doesn't fire
+      if (dx > 10 && dx > dy) startedHorizontal = true;
+    }, { passive: true });
+
+    swipeArea.addEventListener("touchend", (e) => {
+      if (!startedHorizontal) return;
+      const endX = e.changedTouches[0].clientX;
+      const dx = endX - startX;
+      if (Math.abs(dx) < SWIPE_THRESHOLD) return;
+      if (dx < 0) {
+        current = (current + 1) % slides.length;
+      } else {
+        current = (current - 1 + slides.length) % slides.length;
+      }
+      update();
+    }, { passive: true });
+  }
+
   update();
 }
 
