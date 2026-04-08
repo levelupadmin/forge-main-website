@@ -82,7 +82,11 @@
     }
   ],
   "redirects": [
-    { "source": "/AI", "destination": "/ai/", "permanent": true },
+    { "source": "/AI", "destination": "/ai", "permanent": true },
     { "source": "/AI/(.*)", "destination": "/ai/$1", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/ai", "destination": "/ai/index.html" },
+    { "source": "/ai/", "destination": "/ai/index.html" }
   ]
 }
