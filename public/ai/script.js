@@ -6,6 +6,29 @@
 (function () {
   'use strict';
 
+  // ---- SCROLL RESTORATION FIX ----
+  // Prevent browser from restoring previous scroll position, which — combined
+  // with async hero video / image loads shifting layout — can land users at
+  // the footer instead of the top on reload/back-nav. Also force top on load
+  // when there is no meaningful hash target.
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+
+  function scrollToTopIfNeeded() {
+    var hash = window.location.hash;
+    if (!hash || hash === '#' || hash.length < 2) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    // Valid hash: let browser handle it, but only if the target exists.
+    try {
+      if (!document.querySelector(hash)) window.scrollTo(0, 0);
+    } catch (err) {
+      window.scrollTo(0, 0);
+    }
+  }
+  scrollToTopIfNeeded();
+  window.addEventListener('load', scrollToTopIfNeeded);
+
   // ---- NAVBAR SCROLL ----
   const navbar = document.getElementById('navbar');
   const navbarPill = document.getElementById('navbar-pill');
@@ -441,7 +464,16 @@
   // ---- SMOOTH SCROLL FOR ANCHOR LINKS ----
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
-      var target = document.querySelector(this.getAttribute('href'));
+      var href = this.getAttribute('href');
+      // Guard against href="#" or empty/invalid — these would throw in querySelector
+      // and leave default browser behavior to scroll unpredictably.
+      if (!href || href === '#' || href.length < 2) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      var target;
+      try { target = document.querySelector(href); } catch (err) { target = null; }
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
