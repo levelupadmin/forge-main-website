@@ -1,5 +1,5 @@
 # Forge AI Residency
-# Website: https://forgebylevelup.com/ai/
+# Website: https://www.forgebylevelup.com/ai
 # Organization: LevelUp Learning
 
 ## WHAT IS THIS
@@ -322,4 +322,4 @@ watching and ready to build.
 Instagram: @forgebylevelup
 Email: forge@leveluplearning.in
 Parent brand: LevelUp Learning
-Website: https://forgebylevelup.com/ai/
+Website: https://www.forgebylevelup.com/ai
