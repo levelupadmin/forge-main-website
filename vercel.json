@@ -87,6 +87,7 @@
   ],
   "rewrites": [
     { "source": "/ai", "destination": "/ai/index.html" },
-    { "source": "/ai/", "destination": "/ai/index.html" }
+    { "source": "/ai/", "destination": "/ai/index.html" },
+    { "source": "/ai/((?!assets/|images/|personas/|pillars/|.*\\.(?:js|css|png|jpg|jpeg|webp|avif|gif|svg|ico|mp4|woff|woff2|ttf|otf|xml|txt|json|map)).*)", "destination": "/ai/index.html" }
   ]
 }
