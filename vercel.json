@@ -86,9 +86,9 @@
     { "source": "/AI/(.*)", "destination": "/ai/$1", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/ai", "destination": "/ai/index.html" },
-    { "source": "/ai/", "destination": "/ai/index.html" },
     { "source": "/ai/thank-you", "destination": "/ai/index.html" },
-    { "source": "/ai/payment-confirmed", "destination": "/ai/index.html" }
+    { "source": "/ai/payment-confirmed", "destination": "/ai/index.html" },
+    { "source": "/ai", "destination": "/ai/index.html" },
+    { "source": "/ai/", "destination": "/ai/index.html" }
   ]
 }
