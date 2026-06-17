@@ -42,13 +42,25 @@
       })(window, document, "clarity", "script", "w8d6qernjo");
     </script>
 
-    <!-- Build: 2026-05-24T14:14:40Z — cache-bust for pixel install propagation -->
+    <!-- Build: 2026-06-17T-x-capi-fix — events + twclid persistence -->
     <!-- X (Twitter) Pixel — Level Up Learning ad account, pixel ID o8b6y -->
     <script>
       !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
       },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
       a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
       twq('config','o8b6y');
+      // -------- twclid persistence for ad-blocker / cross-device matching --------
+      (function() {
+        try {
+          var p = new URLSearchParams(window.location.search);
+          var twclid = p.get('twclid');
+          if (twclid) {
+            document.cookie = 'twclid=' + encodeURIComponent(twclid) + '; path=/; max-age=2592000; samesite=lax; secure';
+            try { sessionStorage.setItem('twclid', twclid); } catch(e) {}
+            try { localStorage.setItem('twclid', twclid); } catch(e) {}
+          }
+        } catch(e) {}
+      })();
     </script>
 
     <script type="application/ld+json">

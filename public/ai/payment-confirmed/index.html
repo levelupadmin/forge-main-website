@@ -48,6 +48,18 @@
       },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
       a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
       twq('config','o8b6y');
+      // -------- Fire Purchase event (Application fee paid, tw-o8b6y-rcfbl) --------
+      (function() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var paymentId = params.get('razorpay_payment_id') || params.get('payment_id') || ('fai_pay_' + Date.now());
+          twq('event','tw-o8b6y-rcfbl',{
+            value: 900.00,
+            currency: 'INR',
+            conversion_id: paymentId
+          });
+        } catch(e) {}
+      })();
     </script>
 
     <script type="application/ld+json">
