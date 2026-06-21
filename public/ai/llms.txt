@@ -19,9 +19,8 @@ layer — automation, agent, knowledge,
 voice — running a real function in
 their business.
 
-Edition 1 runs September 11–17, 2026.
 Five online prep sessions
-happen the week before, September 5–9.
+happen the week before, .
 Together, 5 online sessions + 7 days on
 the ground = 12 days of program total.
 
@@ -69,62 +68,62 @@ with serious build intent are
 prioritised.
 
 Phase 1 — Online prep
-(Sept 5–9, 5 sessions before travel):
+(, 5 sessions before travel):
 
-  Session 1 (Sept 5): Orientation. Get
-  every tool live. Build your business
-  "second brain."
+ Session 1 : Orientation. Get
+ every tool live. Build your business
+ "second brain."
 
-  Session 2 (Sept 6): Product Thinking
-  Fundamentals. Where AI creates value,
-  the AI-shaped problem filter, the
-  build spec. With Ankur.
+ Session 2 : Product Thinking
+ Fundamentals. Where AI creates value,
+ the AI-shaped problem filter, the
+ build spec. With Ankur.
 
-  Session 3 (Sept 7): Design
-  Fundamentals. Visual hierarchy,
-  layout, type, what makes a product
-  feel trustworthy.
+ Session 3 : Design
+ Fundamentals. Visual hierarchy,
+ layout, type, what makes a product
+ feel trustworthy.
 
-  Session 4 (Sept 8): Automation &
-  Workflows 101. Triggers, steps, the
-  think-act-observe loop. With Parth.
+ Session 4 : Automation &
+ Workflows 101. Triggers, steps, the
+ think-act-observe loop. With Parth.
 
-  Session 5 (Sept 9): Review & Align
-  1-on-1. Present your build brief,
-  get live mentor feedback, lock the
-  plan.
+ Session 5 : Review & Align
+ 1-on-1. Present your build brief,
+ get live mentor feedback, lock the
+ plan.
 
 Phase 2 — Seven days on the ground
-(Sept 11–17):
+:
 
-  Day 1 (Sept 11): Arrival, orientation,
-  and the psychology of storytelling
-  with Rahul. Your Demo Day narrative
-  framework starts here.
+ Day 1 : Arrival, orientation,
+ and the psychology of storytelling
+ with Rahul. Your Demo Day narrative
+ framework starts here.
 
-  Days 2–3 (Sept 12–13) · Product
-  with Ankur: Spec it, make it
-  intelligent, ship it, prove it. By
-  end of Day 3 — Ship #1: a live AI
-  product on a real URL with an eval
-  scorecard.
+ Days 2–3 · Product
+ with Ankur: Spec it, make it
+ intelligent, ship it, prove it. By
+ end of Day 3 — Ship #1: a live AI
+ product on a real URL with an eval
+ scorecard.
 
-  Days 4–6 (Sept 14–16) · Operations
-  with Parth: Automate it then make it
-  think. Connect, ground, voice. Full
-  pipeline, multi-agent, human-in-the-
-  loop, plus the outdoor hackathon
-  and golden-hour showcase. By end of
-  Day 6 — Ship #2: an operations
-  layer (automation + agent + voice +
-  knowledge) running a real function
-  in your business.
+ Days 4–6 · Operations
+ with Parth: Automate it then make it
+ think. Connect, ground, voice. Full
+ pipeline, multi-agent, human-in-the-
+ loop, plus the outdoor hackathon
+ and golden-hour showcase. By end of
+ Day 6 — Ship #2: an operations
+ layer (automation + agent + voice +
+ knowledge) running a real function
+ in your business.
 
-  Day 7 (Sept 17): Demo Day. Eight
-  minutes each, no slides, real
-  working demo. Then commit your next
-  three builds and your 90-day
-  roadmap.
+ Day 7 : Demo Day. Eight
+ minutes each, no slides, real
+ working demo. Then commit your next
+ three builds and your 90-day
+ roadmap.
 
 What you leave with: a working AI
 product live on a URL, an operations
