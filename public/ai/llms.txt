@@ -15,8 +15,8 @@ psychology of storytelling. Day 7 is
 Demo Day. Each builder leaves with two
 shipped things: a working AI product
 live on a real URL, and an operations
-layer — automation, agent, knowledge,
-voice — running a real function in
+layer, automation, agent, knowledge,
+voice, running a real function in
 their business.
 
 Five online prep sessions
@@ -30,11 +30,11 @@ are reviewed within 48 hours by the
 admissions team.
 
 Mentors include Ankur Upadhyay
-(Product) — Platform & AI Product
+(Product). Platform & AI Product
 Leader with ML systems for 3M+
 merchants at AB InBev and agentic AI
 for 15,000+ users at o9 Solutions; and
-Parth Bansal (Operations) — AI Staff
+Parth Bansal (Operations). AI Staff
 PM at the AI-healthcare frontier,
 operational AI for multi-billion-dollar
 hospital systems. Rahul Reddy hosts;
@@ -67,7 +67,7 @@ founders, marketers, and operators
 with serious build intent are
 prioritised.
 
-Phase 1 — Online prep
+Phase 1. Online prep
 (, 5 sessions before travel):
 
  Session 1 : Orientation. Get
@@ -93,7 +93,7 @@ Phase 1 — Online prep
  get live mentor feedback, lock the
  plan.
 
-Phase 2 — Seven days on the ground
+Phase 2. Seven days on the ground
 :
 
  Day 1 : Arrival, orientation,
@@ -101,20 +101,20 @@ Phase 2 — Seven days on the ground
  with Rahul. Your Demo Day narrative
  framework starts here.
 
- Days 2–3 · Product
+ Days 2 to 3 · Product
  with Ankur: Spec it, make it
  intelligent, ship it, prove it. By
- end of Day 3 — Ship #1: a live AI
+ end of Day 3. Ship #1: a live AI
  product on a real URL with an eval
  scorecard.
 
- Days 4–6 · Operations
+ Days 4 to 6 · Operations
  with Parth: Automate it then make it
  think. Connect, ground, voice. Full
  pipeline, multi-agent, human-in-the-
  loop, plus the outdoor hackathon
  and golden-hour showcase. By end of
- Day 6 — Ship #2: an operations
+ Day 6. Ship #2: an operations
  layer (automation + agent + voice +
  knowledge) running a real function
  in your business.
@@ -140,10 +140,10 @@ Forge program family run by LevelUp
 Learning. LevelUp has been running
 residential learning programs in India
 for filmmakers, creators, writers, and
-now AI builders. The Forge format —
+now AI builders. The Forge format ,
 mornings teach the concept, afternoons
 build on your own business, mentors
-circulating — is the same teach-then-do
+circulating, is the same teach-then-do
 format used across the residential
 programs LevelUp has shipped.
 
