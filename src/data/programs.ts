@@ -12,6 +12,29 @@ export interface Program {
 
 export const programs: Program[] = [
   {
+    tabLabel: "AI Residency",
+    title: "the Forge AI Residency",
+    description: "An invite-only residency for founders, operators, and business leaders who want to stop watching AI happen and start building with it. Five online sessions then seven days on the ground to ship a real AI product and an operations layer for your business, mentored by practicing builders who run their own businesses with AI every day.",
+    href: "https://forgebylevelup.com/ai",
+    nextEditions: ["Sri Lanka · Sep 2026"],
+    durationPills: ["5 Days Online", "7 Days Offline"],
+    highlights: [
+      "Ship a working AI product live on a real URL",
+      "Build an operations layer with automations and agents",
+      "Learn from practicing builders, not theorists",
+      "Live with a cohort of senior operators and founders",
+    ],
+    photos: [
+      "/images/programs/ai-residency-hero.jpg",
+      "/images/programs/ai-residency-1.jpg",
+      "/images/programs/ai-residency-2.jpg",
+      "/images/programs/ai-residency-3.jpg",
+      "/images/programs/ai-residency-4.jpg",
+      "/images/programs/ai-residency-5.jpg",
+    ],
+    poweredBy: [],
+  },
+  {
     tabLabel: "Filmmaking",
     title: "the Forge Filmmaking Bootcamp",
     description: "An intensive no bullsh*t filmmaking bootcamp where you learn by writing, directing, shooting your own short film in 15 days flat with the guidance of mentors who have been nominated for the Emmys, created Netflix originals while living with like minded filmmakers and storytellers.",
