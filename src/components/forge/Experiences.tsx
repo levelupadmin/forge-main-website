@@ -71,12 +71,6 @@ export default function Experiences() {
                   style={{ opacity: i === currentPhoto ? 1 : 0 }}
                 />
               ))}
-              {/* Location overlay */}
-              <div className="experiences-location-overlay">
-                {program.nextEditions.map((edition, i) => (
-                  <span key={i}>{edition}</span>
-                ))}
-              </div>
               {/* Photo dots overlaid on image */}
               <div className="experiences-photo-dots">
                 {program.photos.map((_, i) => (

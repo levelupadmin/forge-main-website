@@ -16,7 +16,7 @@ export const programs: Program[] = [
     title: "the Forge AI Residency",
     description: "An invite-only residency for founders, operators, and business leaders who want to stop watching AI happen and start building with it. Five online sessions then seven days on the ground to ship a real AI product and an operations layer for your business, mentored by practicing builders who run their own businesses with AI every day.",
     href: "https://forgebylevelup.com/ai",
-    nextEditions: ["Sri Lanka · Sep 2026"],
+    nextEditions: [],
     durationPills: ["5 Days Online", "7 Days Offline"],
     highlights: [
       "Ship a working AI product live on a real URL",
@@ -39,7 +39,7 @@ export const programs: Program[] = [
     title: "the Forge Filmmaking Bootcamp",
     description: "An intensive no bullsh*t filmmaking bootcamp where you learn by writing, directing, shooting your own short film in 15 days flat with the guidance of mentors who have been nominated for the Emmys, created Netflix originals while living with like minded filmmakers and storytellers.",
     href: "https://creators.forgebylevelup.com/filmmaking",
-    nextEditions: ["Goa · Apr 2026"],
+    nextEditions: [],
     durationPills: ["7 Days Online", "8 Days Offline"],
     highlights: [
       "Full pipeline — screenwriting, directing, cinematography, editing",
@@ -62,7 +62,7 @@ export const programs: Program[] = [
     title: "the Forge Creator Residency",
     description: "An invite-only 12-day residency for founders and creators who want to build a real personal brand through content on social media by learning directly from top creators, making real content every day, and living with a like minded community of builders.",
     href: "https://creators.forgebylevelup.com",
-    nextEditions: ["Goa · May 2026", "Bali · Jun 2026"],
+    nextEditions: [],
     durationPills: ["5 Days Online", "7 Days Offline"],
     highlights: [
       "Learn directly from top creators with millions of followers",
@@ -89,7 +89,7 @@ export const programs: Program[] = [
     title: "the Forge Writing Retreat",
     description: "A 6-day writing retreat for screenwriters and authors, designed to help you step away from the noise of daily life and fully immerse yourself in your story, set in a scenic destination where you learn from bestselling authors and produced screenwriters while living alongside a like-minded community of storytellers.",
     href: "https://creators.forgebylevelup.com/writing",
-    nextEditions: ["Coorg · Jul 2026"],
+    nextEditions: [],
     durationPills: ["6 Days", "Residential"],
     highlights: [
       "Immerse yourself in your story in a scenic destination",
