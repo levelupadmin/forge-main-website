@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://forge-build-camp.lovable.app/sitemap.xml
