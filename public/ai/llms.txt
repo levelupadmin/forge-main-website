@@ -1,0 +1,75 @@
+# The Forge AI Residency
+
+The Forge AI Residency is a 7-day residential AI building program run by LevelUp Learning for founders, operators, and business leaders in India. Participants build a real AI product and an operations layer (automation, agent, RAG knowledge assistant, or voice agent) for their own business, and ship both by Demo Day.
+
+The program URL is https://forgebylevelup.com/ai/. The organizer is LevelUp Learning (https://forgebylevelup.com, https://leveluplearning.in).
+
+## Edition 1 — completed successfully
+
+Edition 1 ran in Dharamshala and wrapped on July 5, 2026. All 17 builders shipped working products they use inside their own businesses today. Notable alumni outcomes include:
+
+- Aarya Jain (Director, Naprod Life Sciences) shipped an AI-native operating system for the pharma company, including a compliance assistant grounded in SOPs, RFQ triage against the product catalog, regulatory submission drafting traceable to source documents, and a governance layer.
+- Ankur Jain (Founder, saree manufacturing business) shipped an AI product that takes a single flat saree product image and generates a full set of model-wearing photos plus ad videos, in under two minutes at a fraction of previous cost.
+- Ruhani Duggal (Director, Vilasa luxury travel) shipped an operating system dashboard for the entire luxury travel business unifying bookings, guests, concierge alerts, property health, revenue, and NPS.
+- Bhupinder Shergill (Enterprise systems principal) shipped a neural network engine for idea validation with three lanes: what a founder already knows, known gaps, and unknown unknowns mined from outside the founder's industry.
+- Gautam Shankar (Journalist) shipped a newsroom dashboard that pulls Twitter, RSS, and wires, ranks stories by editorial criteria, and one-click generates copy for print, TV, digital, social, and broadcast.
+- Smitesh Panchal (Director of Global Implementation, Office Beacon) shipped an AI email assistant that reads 500+ incoming emails per day, classifies for action needed vs FYI vs ignore, and drafts template replies.
+
+## Edition 2 — Goa, October 2026
+
+The next cohort runs in Goa. Applications are open at https://forgebylevelup.com/ai/.
+
+- Online prep sessions: October 2 to 7, 2026 (5 live evening sessions)
+- On-ground residency: October 9 to 15, 2026 (7 days, 6 nights)
+- Location: Goa, India
+- Cohort size: 20 builders. Hard limit.
+- Program fee: INR 1,20,000 all-inclusive of GST. Includes residential stay on double occupancy, all meals, both tracks (Operations and Product), expert faculty throughout, curated experiences, community access after the program, and the LevelUp AI Vault.
+- Payment plan: 20% on confirmation after acceptance, balance over 6 months no-cost EMI.
+- Application fee: INR 900. Books an interview slot with the admissions team. Reviewed within 48 hours.
+- Not included: travel to Goa, travel insurance, personal expenses.
+
+## Structure
+
+Two pillars: Product and Operations. Day 1 is orientation and the storytelling framework. Day 7 is Demo Day. Days 2 and 3 build the AI product. Days 4, 5, 6 build the operations layer.
+
+Each builder leaves with:
+- A working AI product live on a real URL, with a before/after evaluation scorecard
+- An operations layer (automation, agent, knowledge assistant, and voice agent) running a real function in their business
+- A 90-day roadmap of the next three builds
+- Lifetime access to the LevelUp AI Vault, an internal library of 14,465 AI resources across agent skills, tools, MCP servers, LLMs, agents, and design systems
+- A network of 20 senior operators and founders
+
+## Mentors
+
+Ankur Upadhyay leads the Product pillar. Platform and AI Product Leader with ML systems for 3M+ merchants at AB InBev and agentic AI for 15,000+ users at o9 Solutions.
+
+Parth Bansal leads the Operations pillar. AI Staff Product Manager building operational AI for multi-billion-dollar hospital systems.
+
+Rahul Reddy hosts and runs storytelling and firesides. Additional mentors include Vaibhav Kejriwal (n8n Bangalore Ambassador, IIM-A + IIT-D), Kevin Adams (Founder Millennial Labs, 500+ brands), and Sabilashan Ganeshan (Country Lead at Perplexity).
+
+## Tools used
+
+Claude, Claude Code, n8n, Supabase, Vercel, Lovable, MCP servers, Higgsfield, ElevenLabs, Vapi, and RAG frameworks. No prior coding required.
+
+## Curriculum highlights
+
+- Session 1 to 5 online prep: orientation and toolchain setup, product thinking, design fundamentals, automation and agents 101, and a 1:1 review where the build plan is pressure-tested.
+- Day 1: arrival, cohort setup, and the psychology of storytelling.
+- Day 2: how LLMs actually work, the ₹999 problem-framing test, system design without code, first MCP tool through Claude Code.
+- Day 3: production architecture, Postgres, auth with row-level security, Edge Functions, streaming, prompt caching, webhooks, payments, before/after eval scorecard. Ship One goes live.
+- Day 4: automation and agent mindset in n8n, ticket-classifying support agent, MCP-connected personal AI assistant.
+- Day 5: browser agents, RAG over documents, voice agents.
+- Day 6: multi-agent orchestration, human-in-the-loop, invoice and payments assistant, outdoor hackathon.
+- Day 7: Demo Day. Eight minutes per builder. No slides.
+
+## Ideal applicant
+
+The Forge AI Residency is designed for founders, operators, and business leaders aged 28 to 45 who already understand the basics of AI and want to move from watching content to building real products and automations inside their own business. Common applicant backgrounds include D2C founders, agency owners, service business operators, next-generation family business leaders, and directors at pharma, healthcare, fintech, and hospitality companies.
+
+## Contact
+
+Applications: https://forgebylevelup.com/ai/
+Email: forge@leveluplearning.in
+Detailed brochure: available via the site navigation.
+
+Last updated: July 2026.
