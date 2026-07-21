@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- No-JS fallback: fires a few seconds after the script-driven redirect,
+     so a blocked or failed bundle still lands the applicant on payment. -->
+<meta http-equiv="refresh" content="9;url=https://calendly.com/levelupedtech/forge-creators-interview">
+<noscript><style>.progress-wrap,.progress-label{display:none;}</style></noscript>
 <meta name="robots" content="noindex, nofollow">
 <title>Payment received — the Forge Creators Residency</title>
 
@@ -250,53 +254,72 @@ p.lede {
   </div>
   <p class="progress-label">Opening scheduler</p>
 
-  <a href="#" id="manualLink" class="manual-link">
+  <a href="https://calendly.com/levelupedtech/forge-creators-interview" id="manualLink" class="manual-link">
     Continue manually <span class="arrow">→</span>
   </a>
 </main>
 
 <script>
 (function() {
-  // -------- Configuration --------
-  // The default Calendly URL for the FC admissions interview.
-  // If a `?next=` param is passed in the URL, it overrides this.
-  // (Update DEFAULT_NEXT to the actual FC Calendly link before hosting.)
+  // Where this page sends the applicant next. Also hardcoded as the href on
+  // #manualLink and in the <meta http-equiv="refresh"> fallback in <head>, so
+  // the escape hatch works even if this script never runs.
   var DEFAULT_NEXT = 'https://calendly.com/levelupedtech/forge-creators-interview';
   var REDIRECT_DELAY_MS = 3500;
 
+  // A `?next=` param may override the destination, but only to a host we have
+  // a relationship with. Without this allowlist the page is an open redirect on
+  // a domain we run paid traffic to, which is a phishing vector.
+  var ALLOWED_HOSTS = ['razorpay.com', 'rzp.io', 'calendly.com', 'forgebylevelup.com'];
+
+  function hostAllowed(host) {
+    for (var i = 0; i < ALLOWED_HOSTS.length; i++) {
+      var h = ALLOWED_HOSTS[i];
+      if (host === h || host.slice(-(h.length + 1)) === '.' + h) return true;
+    }
+    return false;
+  }
+
   function buildNextUrl() {
     var params = new URLSearchParams(window.location.search);
-    var nextParam = params.get('next');
-    var baseUrl = nextParam || DEFAULT_NEXT;
-
-    try {
-      var url = new URL(baseUrl);
-      params.forEach(function(value, key) {
-        if (key !== 'next' && value) {
-          url.searchParams.set(key, value);
-        }
-      });
-      return url.toString();
-    } catch (e) {
-      return baseUrl;
+    var requested = params.get('next');
+    var url = new URL(requested || DEFAULT_NEXT, window.location.href);
+    if (url.protocol !== 'https:' || !hostAllowed(url.hostname)) {
+      url = new URL(DEFAULT_NEXT);
     }
+    params.forEach(function(value, key) {
+      if (key !== 'next' && value) url.searchParams.set(key, value);
+    });
+    return url.toString();
   }
 
-  var nextUrl = buildNextUrl();
-  document.getElementById('manualLink').href = nextUrl;
+  // Never let a resolution failure leave us with no destination.
+  var nextUrl = DEFAULT_NEXT;
+  try { nextUrl = buildNextUrl() || DEFAULT_NEXT; } catch (e) {}
 
-  var fill = document.getElementById('progressFill');
-  var startTime = performance.now();
-  function tick(now) {
-    var pct = Math.min(1, (now - startTime) / REDIRECT_DELAY_MS);
-    fill.style.width = (pct * 100) + '%';
-    if (pct < 1) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
+  // Upgrade the manual link. Markup already carries DEFAULT_NEXT, so this can
+  // only improve the href, never blank it.
+  try {
+    var link = document.getElementById('manualLink');
+    if (link) link.href = nextUrl;
+  } catch (e) {}
 
-  setTimeout(function() {
-    window.location.href = nextUrl;
-  }, REDIRECT_DELAY_MS);
+  // Progress bar is cosmetic and must never be able to block the redirect.
+  try {
+    var fill = document.getElementById('progressFill');
+    if (fill && window.requestAnimationFrame) {
+      var startTime = performance.now();
+      requestAnimationFrame(function tick(now) {
+        var pct = Math.min(1, (now - startTime) / REDIRECT_DELAY_MS);
+        fill.style.width = (pct * 100) + '%';
+        if (pct < 1) requestAnimationFrame(tick);
+      });
+    }
+  } catch (e) {}
+
+  // Fires before the <meta refresh> fallback, so JS-enabled visitors get the
+  // param-preserving URL and the pixels above still have time to send.
+  setTimeout(function() { window.location.href = nextUrl; }, REDIRECT_DELAY_MS);
 })();
 </script>
 
