@@ -183,11 +183,9 @@ export default function Navigation() {
               ))}
             </div>
             {expOpen && (
+              <div style={{ position: 'absolute', top: '100%', left: 0, paddingTop: 10 }}>
               <div
                 style={{
-                  position: 'absolute',
-                  top: 'calc(100% + 10px)',
-                  left: 0,
                   background: 'white',
                   borderRadius: 20,
                   boxShadow: '0 8px 32px rgba(0,0,0,0.14)',
@@ -216,6 +214,7 @@ export default function Navigation() {
                     {p.title}
                   </a>
                 ))}
+              </div>
               </div>
             )}
           </div>
