@@ -10,6 +10,7 @@ const navLinks = [
 ];
 
 const programLinks = [
+  { label: 'AI Residency', href: 'https://forgebylevelup.com/ai' },
   { label: 'Filmmaking Bootcamp', href: 'https://creators.forgebylevelup.com/filmmaking' },
   { label: 'Creator Residency', href: 'https://creators.forgebylevelup.com/' },
   { label: 'Writing Retreat', href: 'https://creators.forgebylevelup.com/writing' },
