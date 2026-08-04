@@ -4,7 +4,8 @@ import { useCountUp } from '@/hooks/useCountUp';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const stats = [
-  { number: 600, suffix: '+', label: 'Alumni', context: 'from 12+ countries', image: '/images/programs/creators-hero.jpg' },
+  { number: 750, suffix: '+', label: 'Alumni', context: 'from 12+ countries', image: '/images/programs/creators-hero.jpg' },
+  { number: 40, suffix: '+', label: 'Builders Enabled', context: 'shipping with AI', image: '/images/programs/ai-residency-hero.jpg' },
   { number: 250, suffix: '+', label: 'Shortfilms', context: 'produced across editions', image: '/images/programs/filmmaking-5.jpg' },
   { number: 85, suffix: '+', label: 'Creators Built', context: 'and counting', image: '/images/programs/creators-3.jpg' },
   { number: 60, suffix: '+', label: 'Scripts', context: 'written & workshopped', image: '/images/programs/writing-hero.png' },

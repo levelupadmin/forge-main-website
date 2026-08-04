@@ -10,6 +10,8 @@ const row1 = [
   { src: '/images/programs/writing-3.jpg', alt: 'Writing Retreat — whiteboard session' },
   { src: '/images/programs/filmmaking-8.jpg', alt: 'Filmmaking bootcamp — outdoor shoot' },
   { src: '/images/programs/creators-2.jpg', alt: 'Creator Residency — group photo by the pool' },
+  { src: '/images/programs/ai-bts-1.jpg', alt: 'AI Residency — night build with live dashboards' },
+  { src: '/images/programs/ai-bts-4.jpg', alt: 'AI Residency — cohort under the glass canopy' },
 ];
 
 const row2 = [
@@ -19,6 +21,8 @@ const row2 = [
   { src: '/images/programs/writing-5.jpg', alt: 'Writing Retreat — indoor discussion' },
   { src: '/images/programs/creators-6.jpg', alt: 'Creator Residency — vlogging in Ubud' },
   { src: '/images/programs/writing-7.jpg', alt: 'Writing Retreat — outdoor workshop' },
+  { src: '/images/programs/ai-bts-2.jpg', alt: 'AI Residency — pods building on the terrace' },
+  { src: '/images/programs/ai-bts-5.jpg', alt: 'AI Residency — cohort at the river' },
 ];
 
 const row3 = [
@@ -28,6 +32,8 @@ const row3 = [
   { src: '/images/programs/creators-3.jpg', alt: 'Creator Residency — exploring nature' },
   { src: '/images/programs/writing-2.jpg', alt: 'Writing Retreat — smiling outdoors' },
   { src: '/images/programs/creators-4.jpg', alt: 'Creator Residency — outdoor mentoring' },
+  { src: '/images/programs/ai-bts-3.jpg', alt: 'AI Residency — building in the mountain mist' },
+  { src: '/images/programs/ai-bts-6.jpg', alt: 'AI Residency — cohort selfie in the mountains' },
 ];
 
 function MarqueeGalleryRow({ 

@@ -2,9 +2,9 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const stats = [
-  { number: '600+', label: 'Dreamers' },
-  { number: '25+', label: 'Editions across the world' },
-  { number: '11', label: 'Cities Explored' },
+  { number: '750+', label: 'Dreamers' },
+  { number: '35+', label: 'Editions across the world' },
+  { number: '12', label: 'Cities Explored' },
 ];
 
 const logos = [
