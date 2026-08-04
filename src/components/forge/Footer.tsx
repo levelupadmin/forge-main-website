@@ -244,9 +244,13 @@ export default function Footer() {
           </div>
 
           <div style={{ display: 'flex', gap: 24 }}>
-            {['Privacy Policy', 'Terms of Service'].map(label => (
+            {[
+              { label: 'Refund & Cancellation Policy', href: '/refund-policy' },
+              { label: 'Terms & Conditions', href: '/terms-and-conditions' },
+              { label: 'Privacy Policy', href: '/privacy-policy' },
+            ].map(({ label, href }) => (
               <a
-                key={label} href="#"
+                key={label} href={href}
                 style={{
                   fontSize: 12, color: 'rgba(255,255,255,0.25)',
                   textDecoration: 'none', transition: 'color 0.2s ease',

@@ -151,6 +151,21 @@
       "source": "/AI/(.*)",
       "destination": "/ai/$1",
       "permanent": true
+    },
+    {
+      "source": "/ai/refund-policy",
+      "destination": "/refund-policy",
+      "permanent": true
+    },
+    {
+      "source": "/ai/terms-and-conditions",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/ai/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
     }
   ],
   "rewrites": [
