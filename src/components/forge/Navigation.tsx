@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, Menu } from 'lucide-react';
+import { X, Menu, ChevronRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { programs } from '@/data/programs';
 import { ChevronDown } from 'lucide-react';
@@ -222,96 +222,146 @@ export default function Navigation() {
         )}
       </nav>
 
-      {/* Premium mobile menu with animations */}
+      {/* Premium mobile menu, option B: big logo, program cards, bottom pill */}
       {menuOpen && (
         <div style={{
           position: 'fixed',
           inset: 0,
-          background: 'rgba(0,0,0,0.95)',
+          background: '#0A0A0A',
           zIndex: 200,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 0,
+          overflowY: 'auto',
           animation: 'menu-fade-in 0.3s ease forwards',
         }}>
-          {/* Logo at top */}
-          <img
-            src="/images/forge-logo-transparent.png"
-            alt="the Forge"
-            style={{
-              height: 48,
-              filter: 'brightness(0) invert(1)',
-              position: 'absolute',
-              top: 32,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              animation: 'menu-item-in 0.4s ease forwards',
-              opacity: 0,
-            }}
-          />
-
           <button
             onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
             style={{
               position: 'absolute',
-              top: 24,
-              right: 24,
+              top: 20,
+              right: 20,
+              width: 38,
+              height: 38,
+              borderRadius: '50%',
               background: 'none',
-              border: 'none',
+              border: '1px solid rgba(255,255,255,0.28)',
               color: 'white',
               cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               animation: 'menu-item-in 0.3s ease forwards',
               opacity: 0,
             }}
           >
-            <X size={28} />
+            <X size={18} />
           </button>
 
-          {[...leftLinks, ...rightLinks].map((link, i) => (
-            <div key={link.href} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <a
-                onClick={() => handleNav(link)}
-                style={{
-                  cursor: 'pointer',
-                  fontFamily: "'Open Sauce One', sans-serif",
-                  color: 'white',
-                  fontSize: 28,
-                  fontWeight: 700,
-                  letterSpacing: -0.5,
-                  padding: '14px 0',
-                  textDecoration: 'none',
-                  opacity: 0,
-                  animation: `menu-item-in 0.4s ease ${150 + i * 80}ms forwards`,
-                }}
-              >
-                {link.label}
-              </a>
-              {link.href === '#experiences' && (
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0, marginBottom: 6 }}>
-                  {programs.map((p, j) => (
-                    <a
-                      key={p.href}
-                      href={p.href}
-                      style={{
-                        fontFamily: "'Open Sauce One', sans-serif",
-                        color: 'rgba(255,255,255,0.75)',
-                        fontSize: 16,
-                        fontWeight: 500,
-                        padding: '7px 0',
-                        textDecoration: 'none',
-                        opacity: 0,
-                        animation: `menu-item-in 0.4s ease ${210 + j * 60}ms forwards`,
-                      }}
-                    >
-                      {p.title}
-                    </a>
-                  ))}
-                </div>
-              )}
+          <div style={{ textAlign: 'center', paddingTop: 44 }}>
+            <img
+              src="/images/forge-logo-transparent.png"
+              alt="the Forge"
+              style={{
+                height: 72,
+                filter: 'brightness(0) invert(1)',
+                animation: 'menu-item-in 0.4s ease forwards',
+                opacity: 0,
+              }}
+            />
+          </div>
+
+          <div style={{ padding: '28px 20px 0', flex: 1, width: '100%', maxWidth: 420, margin: '0 auto', boxSizing: 'border-box' }}>
+            <div style={{
+              fontFamily: "'Open Sauce One', sans-serif",
+              fontSize: 11,
+              letterSpacing: '2.5px',
+              color: 'rgba(255,255,255,0.45)',
+              textAlign: 'center',
+              marginBottom: 12,
+              animation: 'menu-item-in 0.4s ease 100ms forwards',
+              opacity: 0,
+            }}>
+              EXPERIENCES
             </div>
-          ))}
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {programs.map((p, j) => (
+                <a
+                  key={p.href}
+                  href={p.href}
+                  style={{
+                    background: 'rgba(255,255,255,0.07)',
+                    border: '1px solid rgba(255,255,255,0.10)',
+                    borderRadius: 14,
+                    padding: '13px 16px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    textDecoration: 'none',
+                    fontFamily: "'Open Sauce One', sans-serif",
+                    color: 'white',
+                    fontSize: 15.5,
+                    fontWeight: 500,
+                    opacity: 0,
+                    animation: `menu-item-in 0.4s ease ${160 + j * 70}ms forwards`,
+                  }}
+                >
+                  <span>{p.title}</span>
+                  <ChevronRight size={16} color="rgba(255,255,255,0.4)" />
+                </a>
+              ))}
+            </div>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: 28,
+              marginTop: 26,
+              opacity: 0,
+              animation: 'menu-item-in 0.4s ease 480ms forwards',
+            }}>
+              {[leftLinks[1], ...rightLinks].map((link) => (
+                <a
+                  key={link.href}
+                  onClick={() => handleNav(link)}
+                  style={{
+                    cursor: 'pointer',
+                    fontFamily: "'Open Sauce One', sans-serif",
+                    color: 'white',
+                    fontSize: 17,
+                    fontWeight: 500,
+                    textDecoration: 'none',
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ padding: '20px 20px 28px', width: '100%', maxWidth: 420, margin: '0 auto', boxSizing: 'border-box' }}>
+            <button
+              onClick={() => handleNav({ href: '#experiences' })}
+              style={{
+                width: '100%',
+                background: 'white',
+                color: '#000',
+                border: 'none',
+                borderRadius: 100,
+                padding: '15px 0',
+                fontFamily: "'Open Sauce One', sans-serif",
+                fontSize: 13,
+                fontWeight: 500,
+                letterSpacing: '1.5px',
+                cursor: 'pointer',
+                opacity: 0,
+                animation: 'menu-item-in 0.4s ease 560ms forwards',
+              }}
+            >
+              EXPLORE EXPERIENCES
+            </button>
+          </div>
         </div>
       )}
 
