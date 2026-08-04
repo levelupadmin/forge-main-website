@@ -93,5 +93,26 @@
   </div>
   <span class="c">the Forge by LevelUp. All rights reserved.</span>
 </div></div>
+<script>
+(function(){
+  var b=document.querySelector('a.back');
+  if(!b)return;
+  try{
+    var ref=document.referrer;
+    if(!ref)return;
+    var r=new URL(ref);
+    if(r.host===location.host)return;
+    if(!/(^|\.)forgebylevelup\.com$/.test(r.host))return;
+    var label='the Forge';
+    if(r.host.indexOf('creators')===0){
+      if(r.pathname.indexOf('/writing')===0)label='Forge Writing';
+      else if(r.pathname.indexOf('/filmmaking')===0)label='Forge Filmmaking';
+      else label='Forge Creators';
+    }
+    b.href=ref;
+    b.innerHTML='&larr; Back to '+label;
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
