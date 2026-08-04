@@ -96,4 +96,34 @@ export const mentors: Mentor[] = [
       "Heads Sandcastles, a video and content creation agency",
     ],
   },
+  {
+    name: "Vaibhav Kejriwal",
+    designation: "AI Automation Expert | n8n Bangalore Ambassador",
+    photo: "/images/mentors/vaibhav.jpg",
+    highlights: [
+      "Official n8n Ambassador building AI-powered automation workflows",
+      "IIM Ahmedabad and IIT Delhi alumnus, runs the YouTube channel AI with VK",
+      "Leads Human AI Collab, a community of 280+ AI practitioners",
+    ],
+  },
+  {
+    name: "Kevin Adams",
+    designation: "Artist | Founder | Creator",
+    photo: "/images/mentors/kevin.jpg",
+    highlights: [
+      "Founder of creative agency Millennial Labs, 500+ brands served",
+      "LinkedIn Design Top Voice known for AI-powered creative workflows",
+      "Blends Midjourney, AI, and Photoshop for commercial visual campaigns",
+    ],
+  },
+  {
+    name: "Parth Bansal",
+    designation: "AI Product Manager",
+    photo: "/images/mentors/parth.jpg",
+    highlights: [
+      "AI Staff Product Manager building operational AI for multi-billion-dollar hospital systems",
+      "Mentored 500+ professionals across tech, law, CA, and IAS",
+      "Leads the Operations pillar of the Forge AI Residency",
+    ],
+  },
 ];
