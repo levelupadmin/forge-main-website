@@ -264,6 +264,8 @@ export default function Navigation() {
               alt="the Forge"
               style={{
                 height: 72,
+                display: 'block',
+                margin: '0 auto',
                 filter: 'brightness(0) invert(1)',
                 animation: 'menu-item-in 0.4s ease forwards',
                 opacity: 0,
@@ -271,7 +273,7 @@ export default function Navigation() {
             />
           </div>
 
-          <div style={{ padding: '28px 20px 0', flex: 1, width: '100%', maxWidth: 420, margin: '0 auto', boxSizing: 'border-box' }}>
+          <div style={{ padding: '28px 20px 0', flex: 1, width: '100%', maxWidth: 420, margin: '0 auto', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div style={{
               fontFamily: "'Open Sauce One', sans-serif",
               fontSize: 11,
