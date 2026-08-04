@@ -121,7 +121,7 @@ export default function Experiences() {
             )}
 
             <a href={program.href} className="experiences-cta">
-              REQUEST AN INVITE
+              VIEW DETAILS
             </a>
           </div>
         </div>

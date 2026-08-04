@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Menu } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { programs } from '@/data/programs';
+import { ChevronDown } from 'lucide-react';
 
 interface NavLink { label: string; href: string; isRoute?: boolean; }
 
@@ -21,6 +23,7 @@ export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [expOpen, setExpOpen] = useState(false);
   const [navVisible, setNavVisible] = useState(true);
   const lastScrollY = useRef(0);
   const isMobile = useIsMobile();
@@ -112,8 +115,9 @@ export default function Navigation() {
           </div>
         ) : (
           <div
-          onMouseLeave={() => setHoveredIndex(null)}
+          onMouseLeave={() => { setHoveredIndex(null); setExpOpen(false); }}
             style={{
+              position: 'relative',
               background: scrolled ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,1)',
               backdropFilter: scrolled ? 'blur(20px)' : 'none',
               WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
@@ -130,18 +134,24 @@ export default function Navigation() {
                 <button
                   key={link.href}
                   onClick={() => handleNav(link)}
-                  onMouseEnter={() => setHoveredIndex(i)}
+                  onMouseEnter={() => { setHoveredIndex(i); setExpOpen(link.href === '#experiences'); }}
                   className="forge-nav-link"
                   style={{
                     color: '#000000',
                     fontFamily: "'Open Sauce One', sans-serif",
                     fontSize: 15,
                     fontWeight: 500,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 4,
                     opacity: hoveredIndex === null || hoveredIndex === i ? 1 : 0.4,
                     transition: 'opacity 0.2s ease, color 0.3s ease',
                   }}
                 >
                   {link.label}
+                  {link.href === '#experiences' && (
+                    <ChevronDown size={13} style={{ transition: 'transform 0.2s ease', transform: expOpen ? 'rotate(180deg)' : 'none' }} />
+                  )}
                 </button>
               ))}
             </div>
@@ -172,6 +182,42 @@ export default function Navigation() {
                 </button>
               ))}
             </div>
+            {expOpen && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 'calc(100% + 10px)',
+                  left: 0,
+                  background: 'white',
+                  borderRadius: 20,
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.14)',
+                  padding: '10px 8px',
+                  minWidth: 280,
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                {programs.map((p) => (
+                  <a
+                    key={p.href}
+                    href={p.href}
+                    className="forge-nav-dropdown-item"
+                    style={{
+                      fontFamily: "'Open Sauce One', sans-serif",
+                      fontSize: 14.5,
+                      fontWeight: 500,
+                      color: '#000000',
+                      textDecoration: 'none',
+                      padding: '11px 16px',
+                      borderRadius: 14,
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {p.title}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </nav>
@@ -224,24 +270,47 @@ export default function Navigation() {
           </button>
 
           {[...leftLinks, ...rightLinks].map((link, i) => (
-            <a
-              key={link.href}
-              onClick={() => handleNav(link)}
-              style={{
-                cursor: 'pointer',
-                fontFamily: "'Open Sauce One', sans-serif",
-                color: 'white',
-                fontSize: 28,
-                fontWeight: 700,
-                letterSpacing: -0.5,
-                padding: '16px 0',
-                textDecoration: 'none',
-                opacity: 0,
-                animation: `menu-item-in 0.4s ease ${150 + i * 80}ms forwards`,
-              }}
-            >
-              {link.label}
-            </a>
+            <div key={link.href} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <a
+                onClick={() => handleNav(link)}
+                style={{
+                  cursor: 'pointer',
+                  fontFamily: "'Open Sauce One', sans-serif",
+                  color: 'white',
+                  fontSize: 28,
+                  fontWeight: 700,
+                  letterSpacing: -0.5,
+                  padding: '14px 0',
+                  textDecoration: 'none',
+                  opacity: 0,
+                  animation: `menu-item-in 0.4s ease ${150 + i * 80}ms forwards`,
+                }}
+              >
+                {link.label}
+              </a>
+              {link.href === '#experiences' && (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0, marginBottom: 6 }}>
+                  {programs.map((p, j) => (
+                    <a
+                      key={p.href}
+                      href={p.href}
+                      style={{
+                        fontFamily: "'Open Sauce One', sans-serif",
+                        color: 'rgba(255,255,255,0.75)',
+                        fontSize: 16,
+                        fontWeight: 500,
+                        padding: '7px 0',
+                        textDecoration: 'none',
+                        opacity: 0,
+                        animation: `menu-item-in 0.4s ease ${210 + j * 60}ms forwards`,
+                      }}
+                    >
+                      {p.title}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       )}
@@ -251,6 +320,7 @@ export default function Navigation() {
           from { opacity: 0; }
           to { opacity: 1; }
         }
+        .forge-nav-dropdown-item:hover { background: rgba(0,0,0,0.06); }
         @keyframes menu-item-in {
           from { opacity: 0; transform: translateY(12px); }
           to { opacity: 1; transform: translateY(0); }
