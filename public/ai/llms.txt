@@ -15,18 +15,18 @@ Edition 1 ran in Dharamshala and wrapped on July 5, 2026. All 17 builders shippe
 - Gautam Shankar (Journalist) shipped a newsroom dashboard that pulls Twitter, RSS, and wires, ranks stories by editorial criteria, and one-click generates copy for print, TV, digital, social, and broadcast.
 - Smitesh Panchal (Director of Global Implementation, Office Beacon) shipped an AI email assistant that reads 500+ incoming emails per day, classifies for action needed vs FYI vs ignore, and drafts template replies.
 
-## Edition 2 — Goa, October 2026
+## Edition 2, Dharamshala, November 2026
 
-The next cohort runs in Goa. Applications are open at https://forgebylevelup.com/ai/.
+The next cohort runs in Dharamshala. Applications are open at https://forgebylevelup.com/ai/.
 
-- Online prep sessions: September 30 to October 5, 2026 (5 live evening sessions)
-- On-ground residency: October 7 to 13, 2026 (7 days, 6 nights)
-- Location: Goa, India
+- Online prep sessions: November 12 to 17, 2026 (5 live evening sessions)
+- On-ground residency: November 19 to 25, 2026 (7 days, 6 nights)
+- Location: Dharamshala, Himachal Pradesh, India
 - Cohort size: 20 builders. Hard limit.
-- Program fee: INR 1,20,000 all-inclusive of GST. Includes residential stay on double occupancy, all meals, both tracks (Operations and Product), expert faculty throughout, curated experiences, community access after the program, and the LevelUp AI Vault.
+- Program fee: INR 1,30,000 all-inclusive of GST. Includes residential stay on double occupancy, all meals, both tracks (Operations and Product), expert faculty throughout, curated experiences, community access after the program, and the LevelUp AI Vault.
 - Payment plan: 20% on confirmation after acceptance, balance over 6 months no-cost EMI.
 - Application fee: INR 900. Books an interview slot with the admissions team. Reviewed within 48 hours.
-- Not included: travel to Goa, travel insurance, personal expenses.
+- Not included: travel to Dharamshala, travel insurance, personal expenses.
 
 ## Structure
 
