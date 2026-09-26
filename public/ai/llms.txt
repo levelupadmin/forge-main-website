@@ -4,7 +4,7 @@ The Forge AI Residency is a 7-day residential AI building program run by LevelUp
 
 The program URL is https://forgebylevelup.com/ai/. The organizer is LevelUp Learning (https://forgebylevelup.com, https://leveluplearning.in).
 
-## Edition 1 — completed successfully
+## Edition 1, completed successfully
 
 Edition 1 ran in Dharamshala and wrapped on July 5, 2026. All 17 builders shipped working products they use inside their own businesses today. Notable alumni outcomes include:
 
@@ -22,8 +22,9 @@ The next cohort runs in Dharamshala. Applications are open at https://forgebylev
 - Online prep sessions: November 12 to 17, 2026 (5 live evening sessions)
 - On-ground residency: November 19 to 25, 2026 (7 days, 6 nights)
 - Location: Dharamshala, Himachal Pradesh, India
+- Venue: Asia Spa Resort, McLeod Ganj. A property in the hills above McLeod Ganj, with misty mornings and snow-capped peaks. For seven days builders leave their work back home behind and focus completely on building and learning something new.
 - Cohort size: 20 builders. Hard limit.
-- Program fee: INR 1,30,000 all-inclusive of GST. Includes residential stay on double occupancy, all meals, both tracks (Operations and Product), expert faculty throughout, curated experiences, community access after the program, and the LevelUp AI Vault.
+- Program fee: INR 1.3L (1,30,000) all-inclusive of GST. Includes residential stay on double occupancy, all meals, both tracks (Operations and Product), expert faculty throughout, curated experiences, community access after the program, and the LevelUp AI Vault.
 - Payment plan: 20% on confirmation after acceptance, balance over 6 months no-cost EMI.
 - Application fee: INR 900. Books an interview slot with the admissions team. Reviewed within 48 hours.
 - Not included: travel to Dharamshala, travel insurance, personal expenses.
@@ -45,7 +46,9 @@ Ankur Upadhyay leads the Product pillar. Platform and AI Product Leader with ML 
 
 Parth Bansal leads the Operations pillar. AI Staff Product Manager building operational AI for multi-billion-dollar hospital systems.
 
-Rahul Reddy hosts and runs storytelling and firesides. Additional mentors include Vaibhav Kejriwal (n8n Bangalore Ambassador, IIM-A + IIT-D), Kevin Adams (Founder Millennial Labs, 500+ brands), and Sabilashan Ganeshan (Country Lead at Perplexity).
+Rahul Reddy hosts and runs storytelling and firesides. Additional mentors include Vaibhav Kejriwal (n8n Bangalore Ambassador, IIM-A + IIT-D), Kevin Adams (Founder Millennial Labs, 500+ brands), Sabilashan Ganeshan (Country Lead at Perplexity), and Ashwin Goyal (AI Product Manager, IIT Ropar).
+
+This is a mentor pool. Based on availability and requirement, 2 to 3 mentors attend each edition in person, and the lineup is subject to change.
 
 ## Tools used
 
@@ -70,6 +73,6 @@ The Forge AI Residency is designed for founders, operators, and business leaders
 
 Applications: https://forgebylevelup.com/ai/
 Email: forge@leveluplearning.in
-Detailed brochure: available via the site navigation.
+Detailed brochure: https://forgebylevelup.com/ai/forge-ai-residency-brochure.pdf
 
-Last updated: July 2026.
+Last updated: September 2026.

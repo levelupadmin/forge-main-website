@@ -143,6 +143,16 @@
   ],
   "redirects": [
     {
+      "source": "/ai-static-backup-20260429-171212",
+      "destination": "/ai/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-static-backup-20260429-171212/(.*)",
+      "destination": "/ai/",
+      "permanent": true
+    },
+    {
       "source": "/AI",
       "destination": "/ai",
       "permanent": true

@@ -113,4 +113,3 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://forgebylevelup.com/sitemap.xml
-Sitemap: https://forgebylevelup.com/ai/sitemap.xml
