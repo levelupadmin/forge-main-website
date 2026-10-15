@@ -44,11 +44,9 @@ Each builder leaves with:
 
 ## Mentors
 
-Ankur Upadhyay leads the Product pillar. Platform and AI Product Leader with ML systems for 3M+ merchants at AB InBev and agentic AI for 15,000+ users at o9 Solutions.
-
 Parth Bansal leads the Operations pillar. AI Staff Product Manager building operational AI for multi-billion-dollar hospital systems.
 
-Rahul Reddy hosts and runs storytelling and firesides. Additional mentors include Vaibhav Kejriwal (n8n Bangalore Ambassador, IIM-A + IIT-D), Kevin Adams (Founder Millennial Labs, 500+ brands), Sabilashan Ganeshan (Country Lead at Perplexity), and Ashwin Goyal (AI Product Manager, IIT Ropar).
+Rahul Reddy hosts and runs storytelling and firesides. Additional mentors include Vaibhav Kejriwal (n8n Bangalore Ambassador, IIM-A + IIT-D), Kevin Adams (Founder Millennial Labs, 500+ brands), Ashwin Goyal (AI Product Manager, IIT Ropar), Hiresh Nichani (VP, The Forge, LevelUp Learning), and Avinash Balachander (VP, LevelUp Live, LevelUp Learning).
 
 This is a mentor pool. Based on availability and requirement, 2 to 3 mentors attend each edition in person, and the lineup is subject to change.
 
