@@ -194,6 +194,14 @@
     {
       "source": "/ai/",
       "destination": "/ai/index.html"
+    },
+    {
+      "source": "/community",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/index.html"
     }
   ]
 }
