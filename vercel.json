@@ -197,11 +197,11 @@
     },
     {
       "source": "/community",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/careers",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ]
 }
