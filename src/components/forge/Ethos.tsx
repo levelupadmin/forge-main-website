@@ -84,7 +84,7 @@ export default function Ethos() {
           marginBottom: 0,
         }}>
           <div className="forge-subheading forge-subheading--light">Our</div>
-          <div className="forge-heading forge-heading--light" style={{ color: '#FFBC3B' }}>Ethos</div>
+          <h2 className="forge-heading forge-heading--light" style={{ color: '#FFBC3B' }}>Ethos</h2>
         </div>
 
         {/* SVG Venn Diagram */}

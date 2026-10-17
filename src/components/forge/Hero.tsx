@@ -1,7 +1,12 @@
+import { useEffect, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function Hero() {
   const isMobile = useIsMobile();
+  // The video is added after hydration, once we know the screen size, so a
+  // phone does not start downloading the landscape file from the static HTML.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const scrollToExperiences = () => {
     const el = document.querySelector('#experiences');
@@ -20,7 +25,7 @@ export default function Hero() {
       transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
     }}>
       {/* Hero video background */}
-      <video
+      {mounted && <video
         key={isMobile ? 'mobile' : 'desktop'}
         autoPlay
         muted
@@ -34,7 +39,7 @@ export default function Hero() {
           height: '100%',
           objectFit: 'cover',
         }}
-      />
+      />}
       {/* Fallback gradient background */}
       <div style={{
         position: 'absolute',

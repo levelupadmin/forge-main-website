@@ -129,7 +129,8 @@ function StatRow({ stat, index, isVisible, isMobile, onHover }: {
           fontFamily: "'Open Sauce One', sans-serif",
           transition: 'color 0.3s ease',
         }}>
-          {count}{stat.suffix}
+          <span aria-hidden="true">{count}{stat.suffix}</span>
+          <span className="sr-only">{stat.number}{stat.suffix}</span>
         </span>
         <span style={{
           fontSize: isMobile ? 16 : 'clamp(20px, 2.5vw, 32px)',

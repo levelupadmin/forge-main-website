@@ -91,7 +91,7 @@ export default function Gallery() {
     }}>
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: isMobile ? 16 : 40 }}>
         <div className="forge-subheading">Behind the scenes</div>
-        <div className="forge-heading">at the Forge</div>
+        <h2 className="forge-heading">at the Forge</h2>
       </div>
 
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
