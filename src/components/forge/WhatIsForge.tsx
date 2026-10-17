@@ -65,7 +65,7 @@ export default function WhatIsForge() {
         padding: '0 24px',
       }}>
         <div className="forge-subheading">What is</div>
-        <div className="forge-heading" style={{
+        <h2 className="forge-heading" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -85,7 +85,7 @@ export default function WhatIsForge() {
             ))}
           </svg>
           <span>the Forge?</span>
-        </div>
+        </h2>
       </div>
 
       {/* Photo strip + Quote overlay */}
