@@ -14,7 +14,7 @@ export default function Testimonials() {
     }}>
       <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 24px' }}>
         <div className="forge-subheading">Hear from</div>
-        <div className="forge-heading">Our Alumni</div>
+        <h2 className="forge-heading">Our Alumni</h2>
       </div>
 
       <div ref={scrollRef} className="forge-scroll" style={{

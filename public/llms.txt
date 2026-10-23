@@ -1,0 +1,32 @@
+# the Forge by LevelUp
+
+> The Forge is the residential arm of LevelUp Learning. Each program is a fixed block of days where a small cohort lives together and learns by doing: you build, write, shoot or ship something real with mentors, and leave with work you made.
+
+The Forge is run by LevelUp Learning (registered as LevelUp Edu Pvt Ltd). Programs run for 6 to 15 days. Cohorts are between 20 and 32 people. Entry is by application. The fee covers stay, all meals, mentorship and tools; travel to the venue is not included. No prior experience is needed, and most participants are working professionals who take time off to attend.
+
+Site: https://www.forgebylevelup.com/
+Parent organization: https://www.leveluplearning.in/ (summary for assistants: https://www.leveluplearning.in/llms.txt)
+Contact: forge@leveluplearning.in
+
+## Programs
+
+- [the Forge AI Residency](https://www.forgebylevelup.com/ai): An invite-only residency for founders, operators and business leaders. Five online sessions, then seven days on the ground, to ship a real AI product and an operations layer for your business. Fee: INR 1,50,000 (1.5L) for the 7 days, inclusive of GST. Dates and venue: https://www.forgebylevelup.com/ai/llms.txt
+- [the Forge Filmmaking Bootcamp](https://creators.forgebylevelup.com/filmmaking): Write, direct and shoot your own short film in 15 days (7 days online, 8 days offline), with mentors who have been nominated for the Emmys and made Netflix originals. The fee varies by season and edition, roughly INR 85,000 to 1,05,000.
+- [the Forge Creator Residency](https://creators.forgebylevelup.com/): An invite-only residency for founders and creators who want to build a personal brand through content on social media, making real content every day.
+- [the Forge Writing Retreat](https://creators.forgebylevelup.com/writing): A 6-day residential retreat for screenwriters and authors, in a scenic destination, with bestselling authors and produced screenwriters as mentors. The fee varies by edition.
+
+## What alumni leave with
+
+- Filmmaking: a short film they made.
+- Creator: real content and a personal brand system.
+- Writing: a finished draft.
+- AI Residency: a working product and a live automation.
+
+## Pages
+
+- [Home](https://www.forgebylevelup.com/)
+- [Community](https://www.forgebylevelup.com/community)
+- [Careers](https://www.forgebylevelup.com/careers)
+- [Refund and cancellation policy](https://www.forgebylevelup.com/refund-policy)
+- [Terms and conditions](https://www.forgebylevelup.com/terms-and-conditions)
+- [Privacy policy](https://www.forgebylevelup.com/privacy-policy)

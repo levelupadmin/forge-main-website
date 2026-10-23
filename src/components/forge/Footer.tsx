@@ -1,12 +1,14 @@
 import { Instagram, MessageCircle, Mail, ArrowUpRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+// Real hrefs so crawlers can follow them. Community and Careers are pages;
+// there is no #community or #careers section on the home page.
 const navLinks = [
-  { label: 'Experiences', href: '#experiences' },
-  { label: 'About', href: '#about' },
-  { label: 'Community', href: '#community' },
-  { label: 'Stories', href: '#stories' },
-  { label: 'Careers', href: '#careers' },
+  { label: 'Experiences', href: '/#experiences' },
+  { label: 'About', href: '/#about' },
+  { label: 'Community', href: '/community' },
+  { label: 'Stories', href: '/#stories' },
+  { label: 'Careers', href: '/careers' },
 ];
 
 const programLinks = [
@@ -19,10 +21,13 @@ const programLinks = [
 export default function Footer() {
   const isMobile = useIsMobile();
 
-  const scrollTo = (href: string) => {
-    if (href.startsWith('#')) {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+  // On the home page, scroll to the section instead of reloading.
+  const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const id = href.split('#')[1];
+    const el = id ? document.getElementById(id) : null;
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -122,7 +127,8 @@ export default function Footer() {
               {navLinks.map(link => (
                 <a
                   key={link.href}
-                  onClick={() => scrollTo(link.href)}
+                  href={link.href}
+                  onClick={e => scrollTo(e, link.href)}
                   style={{
                     color: '#FFFFFF', textDecoration: 'none',
                     fontSize: 14, fontWeight: 600, cursor: 'pointer',

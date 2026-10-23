@@ -111,5 +111,5 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
-# Sitemaps
-Sitemap: https://forgebylevelup.com/sitemap.xml
+# Sitemaps and a plain-text summary for assistants: /llms.txt
+Sitemap: https://www.forgebylevelup.com/sitemap.xml

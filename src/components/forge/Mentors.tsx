@@ -71,7 +71,7 @@ export default function Mentors() {
           padding: '0 24px',
         }}>
           <div className="forge-subheading">Learn from</div>
-          <div className="forge-heading">the Best</div>
+          <h2 className="forge-heading">the Best</h2>
           <p style={{
             fontSize: 14,
             opacity: 0.55,
@@ -213,7 +213,7 @@ export default function Mentors() {
         padding: '0 24px',
       }}>
         <div className="forge-subheading">Learn from</div>
-        <div className="forge-heading">the Best</div>
+        <h2 className="forge-heading">the Best</h2>
         <p style={{
           fontSize: 17,
           opacity: 0.55,

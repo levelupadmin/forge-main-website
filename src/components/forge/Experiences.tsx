@@ -36,7 +36,7 @@ export default function Experiences() {
     <section id="experiences" ref={ref} className="experiences-section">
       <div className={`forge-fade-up${isVisible ? ' visible' : ''}`} style={{ textAlign: 'center', marginBottom: 32 }}>
         <div className="forge-subheading">Explore</div>
-        <div className="forge-heading">the Forge Experiences</div>
+        <h2 className="forge-heading">the Forge Experiences</h2>
       </div>
 
       <div className={`forge-fade-up${isVisible ? ' visible' : ''} experiences-toggle-row`} style={{ transitionDelay: '200ms' }}>
@@ -85,8 +85,13 @@ export default function Experiences() {
             </div>
           </div>
 
-          <div className="experiences-info-side">
-            <div className="experiences-title">{program.title}</div>
+          {programs.map((program, idx) => (
+          <div
+            key={program.tabLabel}
+            className="experiences-info-side"
+            style={idx === activeProgram ? undefined : { display: 'none' }}
+          >
+            <h3 className="experiences-title">{program.title}</h3>
             <p className="experiences-description">{program.description}</p>
 
             <div className="experiences-meta-row">
@@ -113,6 +118,7 @@ export default function Experiences() {
                       key={i}
                       src={partner.logo}
                       alt={partner.name}
+                      loading="lazy"
                       className="experiences-powered-by-logo"
                     />
                   ))}
@@ -124,6 +130,7 @@ export default function Experiences() {
               VIEW DETAILS
             </a>
           </div>
+          ))}
         </div>
 
         <div className="experiences-program-dots">

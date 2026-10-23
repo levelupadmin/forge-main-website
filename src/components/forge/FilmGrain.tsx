@@ -21,6 +21,12 @@ export default function FilmGrain() {
     window.addEventListener('resize', resize);
 
     const renderGrain = () => {
+      // createImageData throws on a zero-sized canvas (e.g. a tab opened in
+      // the background), which used to take the whole page down.
+      if (!w || !h) {
+        animId = requestAnimationFrame(renderGrain);
+        return;
+      }
       const imageData = ctx.createImageData(w, h);
       const data = imageData.data;
       const len = data.length;

@@ -53,7 +53,7 @@ export default function LearnDoBecome() {
         style={{ textAlign: 'center', marginBottom: 16 }}
       >
         <div className="forge-subheading">the science behind</div>
-        <div className="forge-heading" style={{
+        <h2 className="forge-heading" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -61,7 +61,7 @@ export default function LearnDoBecome() {
         }}>
           <WaveIcon color="#FFBC3B" />
           <span>the Forge</span>
-        </div>
+        </h2>
       </div>
 
       <p
