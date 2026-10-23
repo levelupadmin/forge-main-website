@@ -37,11 +37,15 @@ const PARENT = {
 // redirects to www, so point structured data at the final URL.
 const absolute = (href) => href.replace(/^https:\/\/forgebylevelup\.com/, SITE);
 
-// The Creator Residency's day total is unconfirmed (the page says 12 days;
-// the online and offline parts do not add up to that), so it stays out of
-// structured data until the visible copy is settled.
-const courseDescription = (p) =>
-  p.tabLabel === "Content Creation" ? p.description.replace("An invite-only 12-day residency", "An invite-only residency") : p.description;
+// Creator Residency length and fee, confirmed by Rahul on 23 Oct 2026. The
+// home page does not show the fee. Filmmaking and Writing fees vary by
+// edition, so they get no Offer.
+const courseExtras = {
+  "Content Creation": {
+    timeRequired: "P12D",
+    offers: { "@type": "Offer", category: "Paid", price: "85000", priceCurrency: "INR" },
+  },
+};
 
 const graph = [
   {
@@ -66,9 +70,10 @@ const graph = [
   ...programs.map((p) => ({
     "@type": "Course",
     name: p.title,
-    description: courseDescription(p),
+    description: p.description,
     url: absolute(p.href),
     provider: { "@id": ORG_ID },
+    ...courseExtras[p.tabLabel],
   })),
   {
     "@type": "FAQPage",
