@@ -32,7 +32,7 @@ export const faqs = [
   {
     question: 'How many people are in each cohort?',
     answer:
-      'Between 20 and 28. This is a hard limit. Small cohorts mean mentors actually work with you, not just present to you.',
+      'Between 20 and 32. This is a hard limit. Small cohorts mean mentors actually work with you, not just present to you.',
   },
   {
     question: 'Why is there an application process?',

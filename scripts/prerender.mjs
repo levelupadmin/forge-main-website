@@ -37,6 +37,12 @@ const PARENT = {
 // redirects to www, so point structured data at the final URL.
 const absolute = (href) => href.replace(/^https:\/\/forgebylevelup\.com/, SITE);
 
+// The Creator Residency's day total is unconfirmed (the page says 12 days;
+// the online and offline parts do not add up to that), so it stays out of
+// structured data until the visible copy is settled.
+const courseDescription = (p) =>
+  p.tabLabel === "Content Creation" ? p.description.replace("An invite-only 12-day residency", "An invite-only residency") : p.description;
+
 const graph = [
   {
     "@type": "Organization",
@@ -60,7 +66,7 @@ const graph = [
   ...programs.map((p) => ({
     "@type": "Course",
     name: p.title,
-    description: p.description,
+    description: courseDescription(p),
     url: absolute(p.href),
     provider: { "@id": ORG_ID },
   })),
